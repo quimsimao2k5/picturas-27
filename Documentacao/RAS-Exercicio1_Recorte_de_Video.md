@@ -37,7 +37,7 @@ O recorte temporal de vídeo é uma operação que se espera que esteja implemen
 | **ID do Caso de Uso** | UC-VID-001 |
 | **Nome** | Recortar um Intervalo Temporal de um Vídeo |
 | **Versão** | v1.2 |
-| **Autor** | Francisco Dias, Rodrigo Rocha, Rodrigo Fernandes, Luís Miguel, Joaquim da Cunha |
+| **Autor** | Francisco Dias, Rodrigo Rocha, Rodrigo Fernandes, Luís Miguel, Joaquim Cunha |
 | **Data** | 2026-10-14 |
 | **Objetivo** | Permite ao utilizador obter um recorte de um vídeo correspondente a um intervalo temporal de um vídeo na sua biblioteca. |
 | **Âmbito** | Módulo de vídeo do PictuRAS — ferramenta básica |

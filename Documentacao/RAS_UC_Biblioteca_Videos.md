@@ -1,4 +1,4 @@
-# 📝 Dossiê — Fase 1: Suporte a Vídeo no PictuRAS
+# 📝 Fase 1: Suporte a Vídeo no PictuRAS
 ### Casos de Uso e Especificação de Requisitos do Sistema
 
 ---
@@ -7,8 +7,8 @@
 
 | **Campo** | **Valor** |
 |---|---|
-| **Grupo / Equipa** | {preencher nº do grupo} |
-| **Autores** | {preencher nomes e números mecanográficos} |
+| **Grupo / Equipa** | Grupo 7 |
+| **Autores** | Francisco Dias (PG63958); Rodrigo Rocha (PG65437); Rodrigo Fernandes (PG64026); Luís Miguel (PG65424); Joaquim Cunha (PG63986) |
 | **Data** | 2026-10-14 |
 | **Versão do documento** | v1.0 |
 | **Unidade Curricular** | Requisitos e Arquiteturas de Software — MEI, Universidade do Minho |
@@ -37,10 +37,10 @@ No contexto do MVP, esta funcionalidade permite validar aspetos essenciais do no
 
 | **Secção** | **Detalhes** |
 |---|---|
-| **ID do Caso de Uso** | UC-VID-003 |
+| **ID do Caso de Uso** | UC-VID-002 |
 | **Nome** | Adicionar um vídeo à biblioteca |
 | **Versão** | v1.0 |
-| **Autor** | {preencher} |
+| **Autores** | Francisco Dias, Rodrigo Rocha, Rodrigo Fernandes, Luís Miguel, Joaquim Cunha |
 | **Data** | 2026-10-14 |
 | **Objetivo** | Permitir ao utilizador submeter um ficheiro de vídeo e disponibilizá-lo na sua biblioteca para consulta e posterior processamento. |
 | **Âmbito** | Módulo de biblioteca, armazenamento e suporte a vídeo do PictuRAS |
