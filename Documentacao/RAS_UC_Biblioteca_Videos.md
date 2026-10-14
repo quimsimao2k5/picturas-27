@@ -131,12 +131,12 @@ Esta funcionalidade permite também validar aspetos essenciais do novo suporte a
 |--------|-----------------------|--------------------------|
 | **Q1** | Qual é o tamanho máximo permitido para cada vídeo nos perfis registado e premium? | Equipa, antes da implementação da funcionalidade de upload e validação de vídeos |
 | **Q2** | Qual é a duração máxima permitida para cada perfil? | Equipa, antes da implementação das regras de validação dos vídeos. |
-| **Q3** | Qual é o espaço total de armazenamento disponibilizado a cada perfil? | Equipa de infraestrutura, antes da implementação do armazenamento persistente de vídeos. |
+| **Q3** | Qual é o espaço total de armazenamento disponibilizado a cada perfil? | Equipa, antes da implementação do armazenamento persistente de vídeos. |
 | **Q4** | Devem ser suportados formatos adicionais, como MOV ou WebM? | Equipa, antes da implementação da validação de formatos e codecs. |
-| **Q5** | O perfil anónimo deve poder carregar vídeos para armazenamento temporário? | Product Owner, antes da implementação das regras de acesso e dos limites associados aos perfis. |
-| **Q6** | Durante quanto tempo deve um vídeo permanecer armazenado na biblioteca? | Product Owner e equipa de infraestrutura, antes da implementação da política de retenção e eliminação de vídeos. |
-| **Q7** | O sistema deve permitir ao utilizador eliminar manualmente vídeos da biblioteca? | Product Owner, antes da implementação das operações de gestão da biblioteca. |
-| **Q8** | Deve existir recuperação automática de um carregamento interrompido ou o utilizador terá de reiniciar a submissão? | Equipa de arquitetura, antes da implementação do mecanismo de upload e recuperação de falhas. |
+| **Q5** | O perfil anónimo deve poder carregar vídeos para armazenamento temporário? | Equipa, antes da implementação das regras de acesso e dos limites associados aos perfis. |
+| **Q6** | Durante quanto tempo deve um vídeo permanecer armazenado na biblioteca? | Equipa, antes da implementação da política de retenção e eliminação de vídeos. |
+| **Q7** | O sistema deve permitir ao utilizador eliminar manualmente vídeos da biblioteca? | Equipa, antes da implementação das operações de gestão da biblioteca. |
+| **Q8** | Deve existir recuperação automática de um carregamento interrompido ou o utilizador terá de reiniciar a submissão? | Equipa, antes da implementação do mecanismo de upload e recuperação de falhas. |
 
 ---
 
