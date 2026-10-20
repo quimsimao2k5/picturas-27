@@ -1,0 +1,16 @@
+{
+  "name": "videos",
+  "version": "0.1.0",
+  "private": true,
+  "description": "PictuRAS - Video Library microservice (UC-VID-002)",
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1692.0",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.3",
+    "morgan": "^1.10.0"
+  }
+}

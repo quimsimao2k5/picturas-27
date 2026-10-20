@@ -24,6 +24,8 @@ const usersURL = "https://users:10001/";
 
 // URL interna do microserviço de projects
 const projects_ms = "https://projects:10002/projects/";
+// Video library service (UC-VID-002) - its videos are deleted with the account (RN13).
+const videos_ms = (process.env.VIDEOS_URL || "http://videos:11002/").replace(/\/?$/, "/");
 
 const max_free_daily_op = process.env.FREE_DAILY_OP || 5;
 
@@ -391,6 +393,18 @@ router.delete("/:user", async function (req, res, next) {
       );
       // Se for para falhar logo: return res.status(502).jsonp("Error deleting user's projects");
       // Aqui estou a continuar mesmo que dê erro, para não bloquear o delete de conta.
+    }
+
+    // 1b) Apagar os vídeos do utilizador no serviço videos (UC-VID-002, RN13)
+    try {
+      await axios.delete(videos_ms + userId);
+    } catch (err) {
+      console.error(
+        "Error deleting user's videos:",
+        err.response?.status,
+        err.response?.data
+      );
+      // Tal como nos projetos, não bloqueia o delete de conta.
     }
 
     // 2) Apagar o próprio utilizador
