@@ -7,10 +7,10 @@
 
 | **Campo** | **Valor** |
 |-----------|-----------|
-| **Grupo / Equipa** | Grupo 7 |
+| **Grupo / Equipa** | PL5-G7 |
 | **Autores** | Francisco Dias (PG63958); Rodrigo Rocha (PG65437); Rodrigo Fernandes (PG64026); Luís Miguel (PG65424); Joaquim da Cunha (PG63986) |
-| **Data** | 2026-10-14 |
-| **Versão do documento** | v1.2 |
+| **Data** | 2026-10-18 |
+| **Versão do documento** | v1.4 |
 | **Unidade Curricular** | Requisitos e Arquiteturas de Software — MEI, Universidade do Minho |
 
 ---
@@ -20,7 +20,7 @@
 | **Campo** | **Valor** |
 |-----------|-----------|
 | **Funcionalidade** | Recorte temporal de vídeo |
-| **Perfil(s) de utilizador abrangido(s)** | **Utilizador registado**. É o perfil em que o recorte tem de respeitar o mecanismo de operações limitadas já existente (5 operações por dia). O perfil Anónimo, por causa das suas operações limitadas, fica fora do âmbito. O perfil Premium segue o mesmo fluxo do que o Registado, mas sem o limite diário. |
+| **Perfil(s) de utilizador abrangido(s)** | **Utilizador registado**. É o perfil em que o recorte tem de respeitar o mecanismo de operações limitadas já existente (5 operações por dia). O perfil Anónimo, por causa das suas operações limitadas, fica fora do âmbito. O perfil Premium segue o mesmo fluxo do que o Registado, mas sem o limite diário de operações e com até 3 recortes em simultâneo (RN4). |
 
 **Justificação no contexto do MVP**
 
@@ -36,9 +36,9 @@ O recorte temporal de vídeo é uma operação que se espera que esteja implemen
 |------------|--------------|
 | **ID do Caso de Uso** | UC-VID-001 |
 | **Nome** | Recortar um Intervalo Temporal de um Vídeo |
-| **Versão** | v1.2 |
+| **Versão** | v1.4 |
 | **Autor** | Francisco Dias, Rodrigo Rocha, Rodrigo Fernandes, Luís Miguel, Joaquim Cunha |
-| **Data** | 2026-10-14 |
+| **Data** | 2026-10-18 |
 | **Objetivo** | Permite ao utilizador obter um recorte de um vídeo correspondente a um intervalo temporal de um vídeo na sua biblioteca. |
 | **Âmbito** | Módulo de vídeo do PictuRAS — ferramenta básica |
 | **Ator Principal** | Utilizador Registado |
@@ -76,12 +76,13 @@ O recorte temporal de vídeo é uma operação que se espera que esteja implemen
 
 | **ID** | **Condição** | **Comportamento do Sistema** |
 |--------|--------------|------------------------------|
-| E1 | Formato ou codec do vídeo de origem não suportado. | Apresenta "Este formato de vídeo não é suportado para recorte", indica os formatos aceites e não abre o ecrã de recorte. Não consome quota. |
+| E1 | Formato ou codec do vídeo de origem não suportado. | Apresenta "Este formato de vídeo não é suportado para recorte", indica os formatos aceites e não abre o ecrã de recorte. Não consome quota. *(Nota: no MVP a biblioteca (`UC-VID-002`, RN4–RN6) só aceita vídeos MP4/MOV com H.264 e áudio AAC, pelo que E1 é uma verificação defensiva que só se torna alcançável na Fase 2, com a aceitação de novos formatos.)* |
 | E2 | Intervalo inválido: início >= fim, fim superior à duração do vídeo ou duração do intervalo fora dos limites. | Assinala o erro, indica o motivo e o limite violado e mantém o botão **Iniciar Recorte** desativado. |
 | E3 | Quota diária esgotada. | Apresenta "Atingiu o limite de operações diárias", indica a hora a que a quota é reposta e sugere o perfil Premium. Não cria o pedido. |
 | E4 | Já existe um recorte do utilizador **Em fila** ou **A processar**. | Apresenta "Já existe um recorte em curso. Aguarde a conclusão" e recusa o pedido. |
 | E5 | Falha a meio do processamento (erro do codificador, ficheiro corrompido, falta de recursos...). | Tenta automaticamente uma segunda vez. Se voltar a falhar, passa o estado para **Falhou**, devolve a operação à quota e notifica o utilizador: "Não foi possível concluir o recorte. Tente novamente". |
 | E6 | O utilizador tenta eliminar o vídeo de origem enquanto o recorte está **Em fila** ou **A processar**. | Impede a eliminação e informa que o vídeo está a ser utilizado numa operação. A eliminação só é possível depois de o estado passar para **Concluído**, **Falhou** ou **Cancelado**. |
+| E7 | O resultado do recorte não cabe no espaço de armazenamento livre da biblioteca do utilizador (`UC-VID-002`, RN10). | No passo 7, se o tamanho estimado do resultado (tamanho do original × duração do intervalo ÷ duração do original) exceder o espaço livre, apresenta "Não existe espaço suficiente na biblioteca para o vídeo recortado", sugere eliminar vídeos ou o perfil Premium e não cria o pedido nem consome quota. Se, no passo 11, o ficheiro real não couber, o pedido passa a **Falhou**, a operação é devolvida à quota, o resultado parcial é eliminado e o utilizador é informado do motivo. |
 
 ### 2.5 Pós-condições
 
@@ -94,10 +95,10 @@ O recorte temporal de vídeo é uma operação que se espera que esteja implemen
 
 | **ID** | **Regra** |
 |--------|-----------|
-| RN1 | Os formatos aceites como entrada e como saída do recorte são MP4 e MOV, com codec de vídeo H.264. |
+| RN1 | Os formatos aceites como entrada e como saída do recorte são MP4 e MOV, com codec de vídeo H.264. O vídeo resultante mantém a faixa de áudio do original em AAC (ou fica sem áudio, se o original não o tiver). |
 | RN2 | O intervalo selecionado é definido com precisão de 1 segundo, tem duração mínima de 1 segundo e máxima do tempo total do vídeo original. O instante inicial tem de ser anterior ao instante final e o instante do fim não pode exceder a duração do vídeo. |
 | RN3 | Cada pedido de recorte conta como 1 operação do limite diário do perfil **Registado**, independentemente da duração do intervalo. A operação é reservada ao submeter o pedido, consumida definitivamente apenas quando o recorte é concluído com sucesso e devolvida se o pedido falhar ou for cancelado. |
-| RN4 | Um utilizador **Registado** só pode ter 1 recorte **Em fila** ou **A processar** em simultâneo. |
+| RN4 | Um utilizador **Registado** só pode ter 1 recorte **Em fila** ou **A processar** em simultâneo; um utilizador **Premium** pode ter até 3. |
 | RN5 | O vídeo original nunca é alterado. O resultado é sempre guardado como um novo vídeo independente da biblioteca. O nome por omissão é `{nome_original}_recorte_{início}-{fim}`, com os instantes em segundos. O recorte preserva a resolução e a taxa de fotogramas do original, com diferença máxima de 1 segundo face à duração do intervalo pedido no MVP. |
 | RN6 | O pedido percorre os estados **Em fila** → **A processar** → **Concluído**, podendo terminar em **Falhou** ou **Cancelado**. O cancelamento só é permitido nos estados **Em fila** e **A processar**. |
 | RN7 | A falha a meio do processamento leva a uma nova tentativa automática antes de o pedido ser marcado como **Falhou**. |
@@ -115,17 +116,18 @@ O recorte temporal de vídeo é uma operação que se espera que esteja implemen
 | A6 | O sistema processa em paralelo pedidos de utilizadores diferentes, até um limite de capacidade definido na arquitetura; quando esse limite é atingido, os pedidos aguardam no estado **Em fila**. |
 | A7 | Valores adotados pela equipa para o MVP: codec H.264, precisão de entrada de 1 s, tolerância de ± 1 s na duração do vídeo resultante e atualização de progresso de 5 em 5 s. |
 | A8 | Os alvos quantitativos e qualitativos de desempenho, fiabilidade, segurança, compatibilidade, manutenibilidade e portabilidade (distinguindo MVP e Produção) seguem as decisões de qualidade `DQ-001` a `DQ-005` registadas na secção 4.3. |
+| A9 | Os pedidos de recorte são registados e geridos no mesmo módulo que gere a biblioteca de vídeos (`UC-VID-002`, A8), o que permite à biblioteca impedir a eliminação do vídeo de origem enquanto o pedido estiver **Em fila** ou **A processar** (E6). |
 
 ### 2.8 Questões em Aberto
 
 | **ID** | **Questão** |
 |--------|-------------|
-| Q1 | Que limites e que prioridade na fila deve ter o perfil **Premium**? |
-| Q2 | O perfil **Anónimo** deve ter acesso a esta funcionalidade? Se sim, como se articula com o facto de não ter biblioteca persistente? |
-| Q3 | Que limites máximos de duração e de dimensão de ficheiro (MB) devem ser impostos por perfil no momento de submissão/carregamento do vídeo? |
-| Q4 | Por quanto tempo devem ser conservados os vídeos recortados e o histórico de pedidos falhados ou cancelados? |
+| Q1 | Que limites e que prioridade na fila deve ter o perfil **Premium**? — **Parcialmente resolvida (v1.4):** até 3 recortes em simultâneo (RN4); a prioridade na fila mantém-se por ordem de chegada no MVP e fica em aberto para a Fase 2. |
+| Q2 | O perfil **Anónimo** deve ter acesso a esta funcionalidade? — **Resolvida (v1.4):** não; a biblioteca de vídeos é exclusiva de Registado e Premium (`UC-VID-002`, RN1, `REQ-VID-LIB-049`). |
+| Q3 | Que limites máximos de duração e de dimensão de ficheiro devem ser impostos por perfil? — **Resolvida (v1.4):** definidos na biblioteca (`UC-VID-002`, RN10: Registado 100 MB / 3 min / 1080p; Premium 1 GB / 30 min / 4K). |
+| Q4 | Por quanto tempo devem ser conservados os vídeos recortados e o histórico de pedidos? — **Resolvida (v1.4):** os vídeos recortados são vídeos comuns da biblioteca, conservados até eliminação manual (`UC-VID-002`, RN13, A6). |
 | Q5 | Deve permitir-se ao utilizador pré-visualizar o recorte no reprodutor durante o passo 4 antes de confirmar? |
-| Q6 | Qual é o limite de espaço de armazenamento na biblioteca por perfil de utilizador e como afeta a criação de novos recortes? |
+| Q6 | Qual é o limite de espaço de armazenamento na biblioteca por perfil e como afeta a criação de novos recortes? — **Resolvida (v1.4):** 500 MB (Registado) / 10 GB (Premium) (`UC-VID-002`, RN10); o resultado conta para esse limite e é verificado ao submeter e no fim (E7). |
 
 ---
 
@@ -135,9 +137,10 @@ O recorte temporal de vídeo é uma operação que se espera que esteja implemen
 |--------------------------|--------------------|--------------------------------------|
 | Claude | Sugestão de Exceções (Exercício 1) | Revisão manual pela equipa e adaptação ao domínio do PictuRAS. |
 | Claude | Sugestão de Regras de Negócio e Assunções (Exercício 1) | Revisão manual; a equipa selecionou e refinou as regras adequadas a esta ferramenta (RN3, RN5 e A6). |
-| Gemini | definição de alvos MVP vs. Produção e decisões de qualidade (DQ-001 a DQ-005) | Revisão manual pela equipa de todos os requisitos, alvos mensuráveis, justificações, análise de completude e matriz de rastreabilidade. |
+| Claude | v1.3: assunção A9 sobre a gestão dos pedidos de recorte, em alinhamento com `UC-VID-002` v1.3 | Decisões tomadas pela equipa em 2026-10-18 em resposta a perguntas do agente. |
+| Claude  | v1.4, no início da implementação: requisitos duplicados (TRIM-001/048/049) passam a referências à biblioteca; Q1–Q4 e Q6 fechadas com referência a `UC-VID-002`; RN4 com limite Premium; nova exceção E7 e REQ-VID-TRIM-062/063 (espaço de armazenamento); nota defensiva em E1/TRIM-036; áudio no RN1; identificação PL5-G7. | Correções e decisões aprovadas pela equipa em 2026-10-18.|
 
-**Grupo / Equipa:** Grupo {nº do grupo} — Francisco Dias (PG63958), Rodrigo Rocha (PG65437), Rodrigo Fernandes (PG64026), Luís Miguel (PG65424), Joaquim da Cunha (PG63986).  
+**Grupo / Equipa:** PL5-G7 — Francisco Dias (PG63958), Rodrigo Rocha (PG65437), Rodrigo Fernandes (PG64026), Luís Miguel (PG65424), Joaquim da Cunha (PG63986).  
 **Declaração de validação:** A equipa revê, compreende e assume integral responsabilidade pelo conteúdo deste dossiê.
 
 ---
@@ -158,7 +161,7 @@ O recorte temporal de vídeo é uma operação que se espera que esteja implemen
 ## 4. Especificação de Requisitos do Sistema (ERS)
 
 **Caso de Uso:** UC-VID-001 — Recortar um Intervalo Temporal de um Vídeo  
-**Versão do dossiê:** v1.2  
+**Versão do dossiê:** v1.4  
 **Baseline do Exercício 1:** v1.1 (REQ-VID-TRIM-001 a REQ-VID-TRIM-056)
 
 ### 4.1 Requisitos da ERS
@@ -167,7 +170,7 @@ O recorte temporal de vídeo é uma operação que se espera que esteja implemen
 
 | **ID** | **Requisito** | **Prioridade** | **Evolução** | **Novo/Alt** | **Origem (UC / RN / decisão)** | **Justificação** | **Critério de aceitação / verificação** |
 |--------|---------------|----------------|--------------|--------------|--------------------------------|-----------------|----------------------------------------|
-| REQ-VID-TRIM-001 | O sistema deve apresentar, na biblioteca do utilizador registado, a lista dos seus vídeos. | Deve ter | Mantido | ALT | UC-VID-001, Passo 1 | Permite ao utilizador visualizar e selecionar os vídeos disponíveis para iniciar operações sobre eles. | Dado um utilizador com 3 vídeos, quando abre a biblioteca, então vê os 3 vídeos listados. |
+| REQ-VID-TRIM-001 | *Referência (v1.4) — especificado em `REQ-VID-LIB-002`, dono único da listagem dos vídeos **Disponíveis** da biblioteca; não é um requisito autónomo deste caso de uso.* | — | Refinado | ALT | UC-VID-001, Passo 1; cf. REQ-VID-LIB-002 | Evita duplicar um requisito partilhado entre casos de uso. | Verificado pelos testes de `REQ-VID-LIB-002`. |
 | REQ-VID-TRIM-002 | O sistema deve apresentar, na biblioteca, o número de operações diárias que o utilizador ainda pode realizar. | Deveria ter | Mantido | ALT | UC-VID-001, Passo 1, RN3 | Informa previamente o utilizador sobre a sua disponibilidade de quota diária antes de configurar um pedido. | Dado um utilizador com 2 das 5 operações usadas, quando abre a biblioteca, então vê 3 operações restantes. |
 | REQ-VID-TRIM-003 | O sistema deve permitir ao utilizador registado selecionar um vídeo da sua biblioteca e escolher a opção Recortar. | Deve ter | Mantido | NOVO | UC-VID-001, Trigger, Passo 2 | Ponto de entrada da funcionalidade de recorte temporal a partir de um vídeo existente na biblioteca. | Dado um vídeo na biblioteca, quando o utilizador o seleciona, então a opção Recortar está disponível e pode ser escolhida. |
 | REQ-VID-TRIM-004 | O sistema deve abrir o ecrã de recorte com um reprodutor e a duração total do vídeo selecionado. | Deve ter | Mantido | NOVO | UC-VID-001, Passo 3 | O utilizador precisa de visualizar o conteúdo e conhecer a duração limite para definir o intervalo de corte. | Dado um vídeo MP4 de 60 s, quando o utilizador escolhe Recortar, então o ecrã mostra o reprodutor e a duração de 60 s. |
@@ -202,21 +205,23 @@ O recorte temporal de vídeo é uma operação que se espera que esteja implemen
 | REQ-VID-TRIM-033 | O sistema deve passar o estado do pedido para Cancelado após o cancelamento confirmado. | Deveria ter | Mantido | NOVO | UC-VID-001, FA2, RN6, Garantia Mínima | Regista de forma explícita o motivo pelo qual o pedido terminou sem gerar vídeo. | Dado um cancelamento confirmado, então o estado do pedido é Cancelado. |
 | REQ-VID-TRIM-034 | O sistema deve manter o processamento em curso quando o utilizador fecha a aplicação ou termina a sessão depois de confirmar o pedido. | Deveria ter | Mantido | NOVO | UC-VID-001, FA3 | Desacopla a execução do trabalho da sessão ativa do cliente, essencial para operações assíncronas. | Dado um pedido A processar, quando o utilizador termina a sessão e volta mais tarde, então o pedido continuou e o recorte está concluído. |
 | REQ-VID-TRIM-035 | O sistema deve apresentar ao utilizador, quando este regressa, a notificação de conclusão ou de falha e o estado atualizado do pedido. | Deveria ter | Mantido | NOVO | UC-VID-001, FA3 | Garante que o utilizador toma conhecimento do desfecho dos trabalhos executados em segundo plano. | Dado um pedido concluído durante a ausência do utilizador, quando este inicia sessão, então vê a notificação e o estado Concluído. |
-| REQ-VID-TRIM-036 | O sistema deve rejeitar o pedido de recorte de um vídeo com formato ou codec não suportado, apresentando a mensagem "Este formato de vídeo não é suportado para recorte" e os formatos aceites, sem abrir o ecrã de recorte nem consumir operação da quota. | Deve ter | Mantido | NOVO | UC-VID-001, E1, Passo 2, RN1 | Impede falhas tardias de processamento sobre formatos incompatíveis e protege a quota do utilizador. | Dado um vídeo AVI, quando o utilizador escolhe Recortar, então surge a mensagem com MP4 e MOV como formatos aceites, o ecrã de recorte não abre e o número de operações restantes não muda. |
+| REQ-VID-TRIM-036 | O sistema deve rejeitar o pedido de recorte de um vídeo com formato ou codec não suportado, apresentando a mensagem "Este formato de vídeo não é suportado para recorte" e os formatos aceites, sem abrir o ecrã de recorte nem consumir operação da quota. *(Verificação defensiva no MVP — ver nota de E1.)* | Deve ter | Refinado | NOVO | UC-VID-001, E1, Passo 2, RN1; cf. REQ-VID-LIB-018, 019, 046 | Impede falhas tardias de processamento sobre formatos incompatíveis e protege a quota do utilizador. | Dado um vídeo registado com formato ou codec fora de MP4/MOV H.264 (injetado diretamente, pois a biblioteca não o aceita no MVP), quando o utilizador escolhe Recortar, então surge a mensagem com MP4 e MOV como formatos aceites, o ecrã de recorte não abre e o número de operações restantes não muda. |
 | REQ-VID-TRIM-037 | O sistema deve validar que a duração do intervalo é de, no mínimo, 1 segundo. | Deve ter | Mantido | NOVO | UC-VID-001, E2, Passo 4, RN2 | Impede a geração de ficheiros de vídeo vazios ou com duração nula. | Dado um intervalo de 0 s (início 10 s, fim 10 s), então é inválido; com um intervalo de 1 s (início 10 s, fim 11 s), então é válido. |
 | REQ-VID-TRIM-038 | O sistema deve validar que o instante inicial é anterior ao instante final. | Deve ter | Mantido | NOVO | UC-VID-001, E2, Passo 4, RN2 | Garante a coerência cronológica dos limites do intervalo de recorte. | Dado início em 30 s e fim em 20 s, então o intervalo é inválido. |
 | REQ-VID-TRIM-039 | O sistema deve validar que o instante final não excede a duração do vídeo. | Deve ter | Mantido | NOVO | UC-VID-001, E2, Passo 4, RN2 | Impede pedidos de recorte fora dos limites temporais do vídeo de origem. | Dado um vídeo de 60 s, então fim em 61 s é inválido e fim em 60 s é válido. |
 | REQ-VID-TRIM-040 | O sistema deve manter o botão Iniciar Recorte desativado enquanto o intervalo for inválido. | Deve ter | Mantido | NOVO | UC-VID-001, E2, Passo 4 | Previne a submissão de pedidos inválidos logo na interface de configuração. | Dado um intervalo inválido, então o botão está desativado; quando o intervalo é corrigido, então o botão fica ativo. |
 | REQ-VID-TRIM-041 | O sistema deve indicar o motivo e o limite violado quando o intervalo definido for inválido. | Deveria ter | Mantido | NOVO | UC-VID-001, E2 | Orienta o utilizador na correção imediata do parâmetro incorreto. | Dado fim em 61 s num vídeo de 60 s, então o erro indica que o instante final excede 60 s. |
 | REQ-VID-TRIM-042 | O sistema deve recusar o pedido, sem o criar, quando o utilizador não tem operações diárias disponíveis, apresentando a mensagem "Atingiu o limite de operações diárias", a hora de reposição da quota e a sugestão do perfil Premium. | Deve ter | Mantido | ALT | UC-VID-001, E3, Passo 7, RN3 | Faz cumprir o modelo de negócio de quotas por perfil e promove a transição para o perfil Premium. | Dado um utilizador com 5 de 5 operações usadas, quando confirma o pedido, então surge a mensagem com a hora de reposição e a sugestão Premium, e nenhum pedido é criado. |
-| REQ-VID-TRIM-043 | O sistema deve recusar o pedido de recorte quando o utilizador já tem um recorte Em fila ou A processar, apresentando a mensagem "Já existe um recorte em curso. Aguarde a conclusão". | Deve ter | Mantido | NOVO | UC-VID-001, E4, Passo 2, RN4 | Evita o monopólio da fila de processamento por um único utilizador e simplifica a gestão de quota reservada. | Dado um recorte A processar, quando o mesmo utilizador escolhe Recortar noutro vídeo, então surge a mensagem e nenhum novo pedido é criado. |
+| REQ-VID-TRIM-043 | O sistema deve recusar o pedido de recorte quando o utilizador já tem o número máximo de recortes Em fila ou A processar do seu perfil (1 para Registado; 3 para Premium), apresentando a mensagem "Já existe um recorte em curso. Aguarde a conclusão". | Deve ter | Refinado | NOVO | UC-VID-001, E4, Passo 2, RN4 | Evita o monopólio da fila de processamento por um único utilizador e simplifica a gestão de quota reservada. | Dado um utilizador Registado com um recorte A processar (ou Premium com 3), quando escolhe Recortar noutro vídeo, então surge a mensagem e nenhum novo pedido é criado; um Premium com 2 recortes ativos consegue criar o terceiro. |
 | REQ-VID-TRIM-044 | O sistema deve repetir automaticamente uma vez o processamento quando ocorrer uma falha a meio. | Deveria ter | Mantido | NOVO | UC-VID-001, E5, RN7 | Absorve falhas transitórias de infraestrutura ou do motor de vídeo sem incomodar o utilizador. | Dado uma falha simulada na primeira tentativa, então o sistema faz uma segunda tentativa sem intervenção do utilizador. |
 | REQ-VID-TRIM-045 | O sistema deve passar o estado do pedido para Falhou quando a segunda tentativa de processamento também falhar. | Deve ter | Mantido | NOVO | UC-VID-001, E5, RN6, RN7, Garantia Mínima | Evita ciclos infinitos de repetição perante erros persistentes e liberta a fila do utilizador. | Dado falhas simuladas nas duas tentativas, então o estado do pedido é Falhou. |
 | REQ-VID-TRIM-046 | O sistema deve devolver à quota a operação reservada quando o pedido passar para Falhou. | Deve ter | Mantido | ALT | UC-VID-001, E5, RN3, Garantia Mínima | Garante justiça na contagem de operações caso o sistema não consiga concluir o serviço. | Dado um pedido que falha, então o número de operações restantes volta ao valor anterior ao pedido. |
 | REQ-VID-TRIM-047 | O sistema deve notificar o utilizador com a mensagem "Não foi possível concluir o recorte. Tente novamente" quando o pedido passar para Falhou. | Deveria ter | Mantido | NOVO | UC-VID-001, E5, Garantia Mínima | Informa claramente o utilizador sobre o insucesso da operação assíncrona e a possibilidade de repetir. | Dado um pedido Falhou, então o utilizador recebe a mensagem indicada. |
-| REQ-VID-TRIM-048 | O sistema deve impedir a eliminação do vídeo de origem enquanto existir um recorte seu Em fila ou A processar, informando que o vídeo está a ser utilizado numa operação. | Deveria ter | Mantido | ALT | UC-VID-001, E6 | Previne erros de leitura por desaparecimento do ficheiro de entrada durante o processamento. | Dado um recorte A processar, quando o utilizador tenta eliminar o vídeo de origem, então a eliminação é impedida e surge a mensagem. |
-| REQ-VID-TRIM-049 | O sistema deve permitir eliminar o vídeo de origem quando o seu recorte estiver Concluído, Falhou ou Cancelado. | Deveria ter | Mantido | ALT | UC-VID-001, E6 | Restaura o controlo normal do utilizador sobre a sua biblioteca assim que o vídeo de origem deixa de estar em uso. | Dado um recorte Concluído, quando o utilizador elimina o vídeo de origem, então a eliminação é efetuada. |
+| REQ-VID-TRIM-048 | *Referência (v1.4) — especificado em `REQ-VID-LIB-058` (bloqueio da eliminação de um vídeo que é origem de um pedido **Em fila** ou **A processar**); não é um requisito autónomo deste caso de uso.* | — | Refinado | ALT | UC-VID-001, E6; cf. REQ-VID-LIB-058 | Evita duplicar um requisito partilhado entre casos de uso. | Verificado pelos testes de `REQ-VID-LIB-058`. |
+| REQ-VID-TRIM-049 | *Referência (v1.4) — especificado em `REQ-VID-LIB-057` e `REQ-VID-LIB-058` (eliminação manual permitida quando o pedido está **Concluído**, **Falhou** ou **Cancelado**); não é um requisito autónomo deste caso de uso.* | — | Refinado | ALT | UC-VID-001, E6; cf. REQ-VID-LIB-057, 058 | Evita duplicar um requisito partilhado entre casos de uso. | Verificado pelos testes de `REQ-VID-LIB-057` e `REQ-VID-LIB-058`. |
 | REQ-VID-TRIM-055 | O sistema deve manter o vídeo recortado na biblioteca, independente do original, mesmo depois de o vídeo de origem ser eliminado. | Deve ter | Mantido | NOVO | UC-VID-001, Garantia de Sucesso, RN5 | Assegura que o resultado gerado é um recurso autónomo na biblioteca do utilizador. | Dado um recorte Concluído, quando o vídeo de origem é eliminado, então o vídeo recortado continua na biblioteca e é reproduzível. |
+| REQ-VID-TRIM-062 | O sistema deve recusar o pedido de recorte, sem o criar nem consumir operação da quota, quando o tamanho estimado do resultado exceder o espaço livre na biblioteca do utilizador. | Deve ter | Novo | NOVO | UC-VID-001, E7, Passo 7; cf. REQ-VID-LIB-017 | Impede que o recorte ultrapasse o limite de armazenamento do perfil (500 MB / 10 GB). | Dado um utilizador Registado com 480 MB ocupados e um vídeo de 100 MB, quando pede um recorte de metade da duração (estimativa de 50 MB), então o pedido é recusado com a mensagem de espaço insuficiente e as operações restantes não mudam. |
+| REQ-VID-TRIM-063 | O sistema deve passar o pedido para Falhou, devolver a operação reservada e eliminar o resultado quando, no fim do processamento, o vídeo recortado não couber no espaço livre da biblioteca, informando o utilizador do motivo. | Deve ter | Novo | NOVO | UC-VID-001, E7, Passo 11, RN3, Garantia Mínima; cf. REQ-VID-LIB-017, 059 | A estimativa inicial pode falhar (ex.: recodificação maior que o original); o limite de armazenamento nunca pode ser ultrapassado. | Dado um pedido cujo resultado real excede o espaço livre, quando o processamento termina, então o pedido fica Falhou com motivo de espaço insuficiente, a operação é devolvida e nenhum ficheiro do resultado permanece. |
 
 #### 4.1.2 Requisitos Não Funcionais e de Qualidade
 
@@ -238,10 +243,10 @@ O recorte temporal de vídeo é uma operação que se espera que esteja implemen
 
 | **Tópico a verificar** | **Aplicável?** | **Decisão / justificação** | **Requisito(s) relacionado(s)** |
 |-----------------------|---------------|----------------------------|--------------------------------|
-| Formato, codec, duração e dimensão do vídeo | Sim (parcial) | O caso de uso opera sobre vídeos já presentes na biblioteca do utilizador (A1). No recorte valida-se o formato/codec de entrada e saída (MP4 e MOV com H.264) e a duração do intervalo (mínimo 1 s, dentro da duração total). Limites de tamanho (MB) e duração máxima no carregamento inicial pertencem à funcionalidade de submissão de vídeo e estão registados nas questões em aberto (Q3, Q6). | REQ-VID-TRIM-005, 007, 036, 037, 038, 039, 050 |
+| Formato, codec, duração e dimensão do vídeo | Sim (parcial) | O caso de uso opera sobre vídeos já presentes na biblioteca do utilizador (A1). No recorte valida-se o formato/codec de entrada e saída (MP4 e MOV com H.264) e a duração do intervalo (mínimo 1 s, dentro da duração total). Limites de tamanho (MB) e duração máxima no carregamento inicial pertencem à funcionalidade de submissão de vídeo e estão definidos na biblioteca (`UC-VID-002`, RN10); o espaço ocupado pelo resultado é verificado em E7. | REQ-VID-TRIM-005, 007, 036, 037, 038, 039, 050 |
 | Estado, progresso, cancelamento e resultado | Sim | Coberto integralmente pelo ciclo de vida do pedido (`Em fila`, `A processar`, `Concluído`, `Falhou`, `Cancelado`), atualização periódica de progresso em percentagem, possibilidade de cancelamento antes da conclusão e criação de um novo vídeo reproduzível e descarregável na biblioteca. | REQ-VID-TRIM-014, 016, 017, 018, 019, 020, 021, 023, 024, 025, 028, 029, 030, 031, 033, 034, 035, 051, 052, 053, 057, 058 |
 | Falhas durante o processamento | Sim | Quando ocorre falha a meio do processamento, o sistema repete automaticamente a execução uma vez (RN7). Se a segunda tentativa falhar, o pedido passa a `Falhou`, a operação reservada é devolvida à quota, os ficheiros parciais são eliminados e o utilizador é notificado. | REQ-VID-TRIM-044, 045, 046, 047, 054, 056 |
-| Persistência e expiração dos ficheiros | Sim (parcial) | O vídeo original mantém-se inalterado e protegido contra eliminação enquanto o recorte está ativo (`Em fila` ou `A processar`). O vídeo recortado é persistido como ficheiro independente na biblioteca e os ficheiros parciais de falhas/cancelamentos são removidos. A política de expiração temporal ou quota de armazenamento na biblioteca está pendente de decisão global (Q4, Q6). | REQ-VID-TRIM-020, 048, 049, 054, 055, 056 |
+| Persistência e expiração dos ficheiros | Sim (parcial) | O vídeo original mantém-se inalterado e protegido contra eliminação enquanto o recorte está ativo (`Em fila` ou `A processar`). O vídeo recortado é persistido como ficheiro independente na biblioteca e os ficheiros parciais de falhas/cancelamentos são removidos. Os vídeos recortados são conservados até eliminação manual e contam para o limite de armazenamento da biblioteca (`UC-VID-002`, RN10, RN13, A6; E7). | REQ-VID-TRIM-020, 048, 049, 054, 055, 056, 062, 063 |
 | Perfis e contagem de operações | Sim | Especificado para o perfil Utilizador Registado (limite de 5 operações/dia). Cada recorte conta como 1 operação independentemente da duração: é reservada na confirmação, consumida na conclusão com sucesso e devolvida em caso de falha ou cancelamento, sugerindo-se o perfil Premium quando esgotada. | REQ-VID-TRIM-002, 013, 022, 032, 042, 046 |
 | Encadeamento de ferramentas e processamento em lote | Não (fora do âmbito) | Excluídos explicitamente do âmbito deste caso de uso (A4 e A5): cada pedido recorta um único intervalo temporal de um único vídeo. O vídeo resultante fica disponível na biblioteca como qualquer outro vídeo, mas não há suporte a *pipelines* de ferramentas nem a submissão em lote na Fase 1. | N/A |
 
@@ -252,7 +257,7 @@ O recorte temporal de vídeo é uma operação que se espera que esteja implemen
 | **Elemento existente afetado** | **Impacto (Manter / Estender / Alterar)** | **Descrição do impacto** | **Requisito(s) relacionado(s)** |
 |--------------------------------|-------------------------------------------|--------------------------|--------------------------------|
 | Limite de 5 operações/dia (perfil Registado) | Estender | Um recorte de vídeo conta como 1 operação, independentemente da duração. A operação passa a ter semântica de reserva ao submeter, consumo definitivo ao concluir e devolução se o pedido falhar ou for cancelado. | REQ-VID-TRIM-002, 013, 022, 032, 042, 046 |
-| Perfis Anónimo e Premium | Manter | Neste caso de uso o recorte está definido para o perfil Registado (com sugestão de upgrade para Premium quando a quota esgota). O acesso do Anónimo e os limites do Premium mantêm-se em aberto (Q1, Q2, Q6). | REQ-VID-TRIM-042 |
+| Perfis Anónimo e Premium | Manter | Neste caso de uso o recorte está definido para o perfil Registado (com sugestão de upgrade para Premium quando a quota esgota). O Anónimo não tem acesso (`UC-VID-002`, RN1) e o Premium não tem limite diário e pode ter até 3 recortes em simultâneo (RN4). | REQ-VID-TRIM-042, 043 |
 | Biblioteca do utilizador e controlo de acesso | Estender | Passa a listar e reproduzir vídeos, a guardar o vídeo recortado como novo recurso independente, a impedir a eliminação do vídeo de origem durante o recorte e a garantir que apenas o proprietário autenticado acede aos vídeos e pedidos. | REQ-VID-TRIM-001, 020, 024, 048, 049, 055, 059 |
 | Exportação / descarregamento | Estender | O mecanismo de exportação passa a permitir descarregar ficheiros de vídeo recortados nos formatos MP4 e MOV, restrito ao respetivo proprietário. | REQ-VID-TRIM-025, 059 |
 | Armazenamento | Estender | Cada recorte concluído ocupa espaço adicional como ficheiro independente, mantendo o original intacto. Exige limpeza automática de ficheiros temporários/parciais em caso de falha ou cancelamento. | REQ-VID-TRIM-020, 054, 055, 056 |
@@ -265,17 +270,17 @@ O recorte temporal de vídeo é uma operação que se espera que esteja implemen
 | **Elemento de origem** | **Descrição abreviada** | **Requisito(s) relacionado(s)** |
 |------------------------|-------------------------|--------------------------------|
 | Trigger | Utilizador seleciona vídeo e escolhe Recortar | REQ-VID-TRIM-003 |
-| Passo 1 | Apresentar vídeos da biblioteca e operações restantes | REQ-VID-TRIM-001, 002, 059 |
+| Passo 1 | Apresentar vídeos da biblioteca e operações restantes | REQ-VID-TRIM-001 (cf. REQ-VID-LIB-002), 002, 059 |
 | Passo 2 | Selecionar vídeo e verificar formato e recorte em curso | REQ-VID-TRIM-003, 036, 043, 050 |
 | Passo 3 | Abrir ecrã de recorte com reprodutor e duração | REQ-VID-TRIM-004 |
 | Passo 4 | Definir e validar intervalo e apresentar duração resultante | REQ-VID-TRIM-005, 006, 026, 037, 038, 039, 040 |
 | Passo 5 | Escolher formato e nome; apresentar resumo do pedido | REQ-VID-TRIM-007, 008, 009, 010, 011 |
 | Passo 6 | Confirmar o pedido com Iniciar Recorte | REQ-VID-TRIM-012, 057 |
-| Passo 7 | Validar quota, reservar operação e registar pedido Em fila | REQ-VID-TRIM-013, 014, 042, 057 |
+| Passo 7 | Validar quota e espaço, reservar operação e registar pedido Em fila | REQ-VID-TRIM-013, 014, 042, 057, 062 |
 | Passo 8 | Colocar pedido em fila, regressar à biblioteca e processar de forma assíncrona | REQ-VID-TRIM-014, 015, 057, 058 |
 | Passo 9 | Passar estado para A processar e atualizar progresso (%) | REQ-VID-TRIM-016, 017, 053 |
 | Passo 10 | Consultar estado atual e progresso do pedido | REQ-VID-TRIM-018, 019, 059 |
-| Passo 11 | Guardar novo vídeo, passar a Concluído e consumir operação | REQ-VID-TRIM-020, 021, 022 |
+| Passo 11 | Guardar novo vídeo, passar a Concluído e consumir operação | REQ-VID-TRIM-020, 021, 022, 063 |
 | Passo 12 | Notificar utilizador da conclusão na aplicação | REQ-VID-TRIM-023 |
 | Passo 13 | Abrir, reproduzir e descarregar o vídeo recortado | REQ-VID-TRIM-024, 025, 059 |
 | FA1 | Intervalo igual à duração total do vídeo | REQ-VID-TRIM-026, 027 |
@@ -286,17 +291,18 @@ O recorte temporal de vídeo é uma operação que se espera que esteja implemen
 | E3 | Quota diária de operações esgotada | REQ-VID-TRIM-042 |
 | E4 | Utilizador já tem um recorte em curso | REQ-VID-TRIM-043 |
 | E5 | Falha a meio do processamento do vídeo | REQ-VID-TRIM-044, 045, 046, 047, 056 |
-| E6 | Tentativa de eliminação do vídeo de origem durante o processamento | REQ-VID-TRIM-048, 049 |
+| E6 | Tentativa de eliminação do vídeo de origem durante o processamento | REQ-VID-TRIM-048, 049 (cf. REQ-VID-LIB-057, 058) |
+| E7 | Resultado do recorte não cabe no espaço livre da biblioteca | REQ-VID-TRIM-062, 063 |
 | RN1 | Formatos aceites e de saída: MP4 e MOV (codec H.264) | REQ-VID-TRIM-007, 036, 050 |
 | RN2 | Regras de validade e precisão (1 s) do intervalo | REQ-VID-TRIM-005, 037, 038, 039 |
 | RN3 | Gestão de quota: reservar, consumir na conclusão, devolver na falha/cancelamento | REQ-VID-TRIM-002, 013, 022, 032, 042, 046 |
-| RN4 | Limite de 1 recorte ativo (Em fila ou A processar) por utilizador | REQ-VID-TRIM-043 |
+| RN4 | Limite de recortes ativos (Em fila ou A processar) por utilizador: 1 Registado, 3 Premium | REQ-VID-TRIM-043 |
 | RN5 | Original inalterado, vídeo independente, nome por omissão, resolução/fps e tolerância de duração | REQ-VID-TRIM-010, 020, 051, 052, 054, 055 |
 | RN6 | Máquina de estados do pedido e regras de cancelamento | REQ-VID-TRIM-014, 016, 019, 021, 028, 029, 033, 045 |
 | RN7 | Uma repetição automática em caso de falha de processamento | REQ-VID-TRIM-044, 045 |
 | RN8 | Atualização do progresso pelo menos de 5 em 5 segundos | REQ-VID-TRIM-053 |
 | Pós-condição de sucesso (Garantia de Sucesso) | Novo vídeo independente com resolução/duração corretas, original intacto, Concluído, quota consumida e notificação | REQ-VID-TRIM-020, 021, 022, 023, 051, 052, 054, 055 |
-| Pós-condição mínima (Garantia Mínima) | Original intacto, sem ficheiros parciais, quota devolvida, estado Falhou/Cancelado e notificação | REQ-VID-TRIM-032, 033, 045, 046, 047, 054, 056 |
+| Pós-condição mínima (Garantia Mínima) | Original intacto, sem ficheiros parciais, quota devolvida, estado Falhou/Cancelado e notificação | REQ-VID-TRIM-032, 033, 045, 046, 047, 054, 056, 063 |
 | A2, A3, A6, A7, A8 | Processamento assíncrono, notificações internas, paralelismo entre utilizadores e parâmetros de qualidade | REQ-VID-TRIM-023, 050, 052, 053, 058 |
 | DQ-001 | Restrição de codecs e tolerância de corte no MVP vs. Produção | REQ-VID-TRIM-050, 052 |
 | DQ-002 | Desempenho na submissão, concorrência assíncrona e limpeza de recursos | REQ-VID-TRIM-056, 057, 058 |

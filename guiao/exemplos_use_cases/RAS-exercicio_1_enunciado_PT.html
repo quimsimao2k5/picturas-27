@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Exercício 1 — Casos de Uso</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+  :root {
+    --paper: #FBFAF8; --surface: #FFFFFF; --surface-alt: #F3F2EE;
+    --ink: #1C1E22; --muted: #63686F; --rule: #E3E0D9;
+    --accent: #1F5F63; --accent-ink: #14464A; --accent-wash: #E8F1F1;
+    --flag: #9A4A16; --flag-wash: #F8EEE5;
+    --shadow: 0 1px 2px rgba(28,30,34,.05);
+    --on-accent: #FFFFFF;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #16181B; --surface: #1D2024; --surface-alt: #22262A;
+      --ink: #E8E6E1; --muted: #A0A5AC; --rule: #32373C;
+      --accent: #6FBFC2; --accent-ink: #9AD6D8; --accent-wash: #1B2E30;
+      --flag: #E0955C; --flag-wash: #2E2318;
+      --shadow: 0 1px 2px rgba(0,0,0,.35);
+      --on-accent: #10282A;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #16181B; --surface: #1D2024; --surface-alt: #22262A;
+    --ink: #E8E6E1; --muted: #A0A5AC; --rule: #32373C;
+    --accent: #6FBFC2; --accent-ink: #9AD6D8; --accent-wash: #1B2E30;
+    --flag: #E0955C; --flag-wash: #2E2318;
+    --shadow: 0 1px 2px rgba(0,0,0,.35);
+    --on-accent: #10282A;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+    font-size: 17px; line-height: 1.62;
+  }
+  img { max-width: 100%; }
+
+  .masthead { border-bottom: 1px solid var(--rule); background: var(--surface); }
+  .wrap { width: 100%; max-width: 48rem; margin: 0 auto; padding-inline: 20px; }
+  .masthead .wrap { padding-block: 26px 22px; }
+
+  .eyebrow {
+    font-family: Archivo, "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px; font-weight: 600; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--muted); margin: 0 0 14px;
+  }
+  h1 {
+    font-family: Archivo, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 700; font-size: clamp(1.7rem, 1.2rem + 2.1vw, 2.35rem);
+    line-height: 1.12; letter-spacing: -.02em; text-wrap: balance; margin: 0 0 6px;
+  }
+  .subtitle { font-size: 1.05rem; font-style: italic; color: var(--muted); margin: 0 0 20px; text-wrap: balance; }
+
+  /* Percurso das cinco aulas: a aula corrente fica marcada */
+  .roadmap { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 20px; padding: 0; list-style: none; }
+  .roadmap li {
+    font-family: Archivo, sans-serif; font-size: 12px; font-weight: 600;
+    letter-spacing: .01em; color: var(--muted); background: var(--surface-alt);
+    border: 1px solid var(--rule); border-radius: 100px; padding: 4px 11px; margin: 0;
+  }
+  .roadmap li[aria-current="step"] {
+    background: var(--accent); border-color: var(--accent); color: var(--on-accent);
+  }
+
+  .facts {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2px; background: var(--rule); border: 1px solid var(--rule);
+    border-radius: 3px; overflow: hidden;
+  }
+  .fact { background: var(--surface); padding: 10px 14px; }
+  .fact dt {
+    font-family: Archivo, sans-serif; font-size: 11px; font-weight: 600;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+  }
+  .fact dd { margin: 2px 0 0; font-family: Archivo, sans-serif; font-size: 15px; font-weight: 600; font-variant-numeric: tabular-nums; }
+
+  main .wrap { padding-block: 8px 64px; }
+  section { padding-block: 32px 0; }
+  h2 {
+    font-family: Archivo, sans-serif; font-size: 1.3rem; font-weight: 700;
+    letter-spacing: -.01em; margin: 0 0 4px; padding-bottom: 8px;
+    border-bottom: 2px solid var(--ink); text-wrap: balance;
+  }
+  h3 { font-family: Archivo, sans-serif; font-size: 1.02rem; font-weight: 600; margin: 24px 0 6px; }
+  p { margin: 0 0 14px; }
+  a { color: var(--accent-ink); }
+  ul, ol { margin: 0 0 14px; padding-left: 1.3em; }
+  li { margin-bottom: 7px; }
+  li::marker { color: var(--muted); }
+  strong { font-weight: 600; }
+  em.term { font-style: italic; }
+  code, .id {
+    font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: .84em;
+    background: var(--surface-alt); border: 1px solid var(--rule);
+    border-radius: 3px; padding: .08em .34em; white-space: nowrap;
+  }
+  .bad, .good { display: block; margin-bottom: 6px; }
+  .bad { color: var(--flag); }
+  .good { color: var(--accent-ink); }
+
+  .lede { font-size: 1.1rem; border-left: 3px solid var(--accent); padding-left: 18px; margin-block: 26px 0; }
+  .lede p:last-child { margin-bottom: 0; }
+
+  .panel {
+    background: var(--surface); border: 1px solid var(--rule); border-radius: 4px;
+    box-shadow: var(--shadow); padding: 18px 20px; margin-block: 18px;
+  }
+  .panel > :last-child { margin-bottom: 0; }
+  .panel-label {
+    font-family: Archivo, sans-serif; font-size: 11px; font-weight: 600;
+    letter-spacing: .09em; text-transform: uppercase; color: var(--accent-ink); margin: 0 0 10px;
+  }
+  .panel.flagged { background: var(--flag-wash); border-color: var(--flag); }
+  .panel.flagged .panel-label { color: var(--flag); }
+
+  ol.steps { list-style: none; margin: 22px 0 0; padding: 0; counter-reset: step; }
+  ol.steps > li {
+    counter-increment: step; position: relative; padding-left: 52px;
+    padding-bottom: 24px; margin-bottom: 0; border-left: 1px solid var(--rule); margin-left: 15px;
+  }
+  ol.steps > li:last-child { border-left-color: transparent; padding-bottom: 6px; }
+  ol.steps > li::before {
+    content: counter(step); position: absolute; left: -15px; top: -2px;
+    width: 30px; height: 30px; display: grid; place-items: center;
+    background: var(--accent); color: var(--on-accent); border-radius: 50%;
+    font-family: Archivo, sans-serif; font-size: 14px; font-weight: 700; font-variant-numeric: tabular-nums;
+  }
+  ol.steps h3 { margin-top: 0; }
+
+  .io {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 2px; background: var(--rule); border: 1px solid var(--rule);
+    border-radius: 3px; overflow: hidden; margin-block: 16px;
+  }
+  .io > div { background: var(--surface); padding: 10px 13px; }
+  .io dt {
+    font-family: Archivo, sans-serif; font-size: 10px; font-weight: 600;
+    letter-spacing: .09em; text-transform: uppercase; color: var(--muted);
+  }
+  .io dd { margin: 3px 0 0; font-size: 15px; line-height: 1.45; }
+
+  .checklist { list-style: none; padding-left: 0; }
+  .checklist li { position: relative; padding-left: 30px; margin-bottom: 9px; }
+  .checklist li::before {
+    content: ""; position: absolute; left: 0; top: .45em;
+    width: 14px; height: 14px; border: 1.5px solid var(--accent); border-radius: 2px;
+  }
+
+  .table-scroll { overflow-x: auto; margin-block: 16px; }
+  table { border-collapse: collapse; width: 100%; font-family: Archivo, sans-serif; font-size: 14px; }
+  th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th {
+    font-size: 11px; font-weight: 600; letter-spacing: .07em; text-transform: uppercase;
+    color: var(--muted); border-bottom: 1px solid var(--ink); white-space: nowrap;
+  }
+  td.aula { font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+  footer {
+    border-top: 1px solid var(--rule); margin-top: 48px; padding-block: 20px 8px;
+    font-family: Archivo, sans-serif; font-size: 13px; color: var(--muted);
+    display: flex; flex-wrap: wrap; gap: 6px 18px; justify-content: space-between;
+  }
+
+  @media (max-width: 480px) {
+    body { font-size: 16px; }
+    ol.steps > li { padding-left: 42px; }
+  }
+  @media print {
+    body { background: #fff; font-size: 11pt; }
+    .panel, .facts, .io, table { box-shadow: none; }
+    section, ol.steps > li { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <p class="eyebrow">Requisitos e Arquiteturas de Software · MEI · Universidade do Minho</p>
+    <h1>Exercício 1 — Casos de Uso</h1>
+    <p class="subtitle">Aplicado ao âmbito da Fase 1 do projeto: suporte a vídeo no PictuRAS</p>
+    <ol class="roadmap">
+      <li aria-current="step">1 · Casos de uso</li>
+      <li>2 · Especificação</li>
+      <li>3 · Refinamento</li>
+      <li>4 · Elicitação</li>
+      <li>5 · Modelação UML</li>
+    </ol>
+    <dl class="facts">
+      <div class="fact"><dt>Aula</dt><dd>01</dd></div>
+      <div class="fact"><dt>Modalidade</dt><dd>Grupo (5)</dd></div>
+      <div class="fact"><dt>Prazo do exercício</dt><dd>Próxima aula (quarta-feira)</dd></div>
+      <div class="fact"><dt>Entrega da Fase 1</dt><dd>16.out</dd></div>
+    </dl>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <div class="lede">
+      <p>O exercício é um <strong>primeiro incremento do levantamento de requisitos da Fase 1</strong> do projeto prático. O que produzir aqui deve poder ser reaproveitado (e refinado) na documentação de requisitos entregue a <strong>16 de outubro</strong></p>
+    </div>
+
+    <section>
+      <h2>Objetivo de aprendizagem</h2>
+      <p>Praticar a especificação de <strong>casos de uso</strong> como ponto de partida para o levantamento de requisitos de um sistema.</p>
+      <ul>
+        <li>Descrever uma funcionalidade do ponto de vista do utilizador, através de um caso de uso <strong>completo e consistente</strong>.</li>
+        <li>Trabalhar num contexto <em>brownfield</em>: estender um sistema que já existe, em vez de partir de uma folha em branco.</li>
+        <li>Tornar explícitas as <strong>regras de negócio, restrições e assunções</strong> que as novas funcionalidades introduzem no sistema existente.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Contexto: o PictuRAS que já existe</h2>
+      <p>O <strong>PictuRAS</strong> é uma plataforma <em>web</em> de processamento de imagens em ambiente <em>cloud</em>, desenvolvida em anos letivos anteriores. Do sistema atual interessa reter:</p>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th scope="col">Dimensão</th><th scope="col">Situação atual</th></tr></thead>
+          <tbody>
+            <tr><td>Perfis de utilização</td><td>Anónimo (operações limitadas, imagens pequenas) · Registado (gratuito, até 5 operações/dia) · Premium (pago, uso ilimitado)</td></tr>
+            <tr><td>Modelo de negócio</td><td><em>Software as a Service</em>, com foco em subscrições premium e um nível gratuito de captação</td></tr>
+            <tr><td>Ferramentas</td><td>Básicas (redimensionamento, binarização, rotação) e avançadas (OCR, contagem de pessoas, identificação de objetos)</td></tr>
+            <tr><td>Encadeamento e lote</td><td>Várias ferramentas em sequência, aplicadas a múltiplas imagens em simultâneo (via <code>.zip</code> ou diretoria)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>O novo âmbito: Fase 1 — suporte a vídeo</h2>
+      <p>A aplicação está hoje limitada ao processamento de <strong>imagens</strong>. O objetivo da Fase 1 é estender o PictuRAS com funcionalidades de <strong>manipulação de vídeo digital</strong>, numa lógica de <strong>MVP</strong>: o foco é a validação funcional das novas funcionalidades, não o nível de robustez, desempenho ou qualidade não funcional exigido a uma solução em produção.</p>
+      <div class="panel flagged">
+        <p class="panel-label">Questões que o vídeo levanta e a imagem não levantava</p>
+        <ul>
+          <li>Ficheiros <strong>muito maiores</strong> e processamento <strong>demorado</strong>: síncrono ou assíncrono? com progresso? com notificação de conclusão?</li>
+          <li><strong>Formatos, codecs, resolução, duração</strong> e taxa de fotogramas aceites.</li>
+          <li>O que significa uma <em>ferramenta</em> aplicada a um vídeo: a todos os fotogramas? a um intervalo temporal? ao ficheiro como um todo?</li>
+          <li>Como é que o vídeo se articula com os <strong>perfis de utilização</strong> e com a contagem de operações.</li>
+          <li>Se e como o vídeo entra no <strong>encadeamento de ferramentas</strong> e no <strong>processamento em lote</strong> já existentes.</li>
+        </ul>
+        <p>Estas questões <strong>não estão respondidas</strong> no enunciado: fazem parte do que cada equipa tem de decidir e documentar.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>A tarefa</h2>
+      <ol class="steps">
+        <li>
+          <h3>Selecionar uma funcionalidade de vídeo</h3>
+          <p>Escolha <strong>uma</strong> funcionalidade de vídeo a introduzir no PictuRAS — por exemplo: carregar/submeter vídeo, recortar um intervalo temporal (<em>trim</em>), extrair fotogramas, redimensionar ou converter vídeo, aplicar uma ferramenta existente a todos os fotogramas, gerar miniatura ou pré-visualização, exportar o vídeo processado.</p>
+          <p>Justifique em 2–3 linhas porque é que essa funcionalidade faz sentido <strong>no MVP</strong>, isto é, porque é que é das primeiras a valer a pena construir.</p>
+        </li>
+        <li>
+          <h3>Escrever um caso de uso</h3>
+          <p>Utilize o template fornecido (<code>RAS-exercicio_1_template_PT.md</code>), preenchendo-o <strong>apenas até à secção “Esboço de requisitos derivados”</strong> (exclusive). Inclua:</p>
+          <ul>
+            <li>ID e nome do caso de uso;</li>
+            <li>ator principal — indicando <strong>qual perfil</strong>: anónimo, registado ou premium — e <em>stakeholders</em>;</li>
+            <li>objetivo e âmbito; pré-condições e <em>trigger</em>;</li>
+            <li>fluxo principal;</li>
+            <li>fluxos alternativos e exceções, incluindo pelo menos uma exceção <strong>específica de vídeo</strong> (formato não suportado, duração ou tamanho excedidos, falha a meio do processamento, …);</li>
+            <li>pós-condições: garantia de sucesso e garantia mínima;</li>
+            <li>regras de negócio e restrições (limites por perfil, quotas, formatos aceites, …);</li>
+            <li>assunções e questões em aberto.</li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>O que entregar</h2>
+      <p>Um documento (Markdown) com as duas peças seguintes.</p>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th scope="col">#</th><th scope="col">Peça</th><th scope="col">Mínimo exigido</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Funcionalidade de vídeo escolhida</td><td>Com justificação do seu lugar no MVP</td></tr>
+            <tr><td>2</td><td>Caso de uso completo</td><td>Segundo o template, até à secção “Esboço de requisitos derivados”</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="panel flagged">
+        <p class="panel-label">Prazo</p>
+        <p>O caso de uso deve estar pronto até à <strong>próxima aula (quarta-feira)</strong>.</p>
+      </div>
+      <div class="panel">
+        <p class="panel-label">Materiais de apoio</p>
+        <ul>
+          <li><code>RAS-exercicio_1_template_PT.md</code> — template de entrega, para preencher.</li>
+          <li><code>RAS-use_case_example-LOGIN_PT.md</code> — exemplo de caso de uso de <strong>Login</strong>.</li>
+          <li><code>RAS-use_case_example-VIDEO_PT.md</code> — exemplo de caso de uso relacionado com a <strong>funcionalidade de vídeo</strong> (gerar miniatura).</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Sugestões</h2>
+      <ul>
+        <li>Faça <strong>suposições razoáveis</strong> quando algo não estiver explicitamente indicado — mas <strong>registe-as</strong> na secção de Assunções. Numa Fase 1 em contexto <em>brownfield</em>, assunções não documentadas são a principal fonte de retrabalho.</li>
+        <li>Escreva fluxos e regras de negócio <strong>concretos e verificáveis</strong>: se não souber dizer como confirmar que um passo ou regra foi cumprido, ainda não está bem descrito.</li>
+        <li>Utilize os <strong>exemplos de Login e de Vídeo</strong> como referência de formato e de nível de detalhe.</li>
+        <li>Se recorrer a agentes de IA para apoiar a redação, <strong>documente</strong> a ferramenta usada, a tarefa apoiada e a validação que fez — é essa a prática exigida em todas as fases do projeto.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Antes de entregar</h2>
+      <ul class="checklist">
+        <li>Funcionalidade de vídeo escolhida <strong>e justificada</strong> no contexto do MVP.</li>
+        <li>Ator principal identificado, com o respetivo perfil.</li>
+        <li>Caso de uso com fluxo principal, ≥1 fluxo alternativo e ≥1 exceção específica de vídeo.</li>
+        <li>Pós-condições com garantia de sucesso <strong>e</strong> garantia mínima.</li>
+        <li>Regras de negócio e restrições preenchidas.</li>
+        <li>Assunções e questões em aberto registadas.</li>
+        <li>Utilização de agentes de IA documentada (se aplicável).</li>
+      </ul>
+    </section>
+
+    <footer>
+      <span>RAS · Aula 01 · Exercício 1 de 5</span>
+      <span>Universidade do Minho · 2026/2027</span>
+    </footer>
+
+  </div>
+</main>
+
+</body>
+</html>

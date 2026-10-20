@@ -28,6 +28,10 @@ app.set("port", port);
 // var server = https.createServer(options, app);
 var server = http.createServer(app);
 
+// Video uploads (UC-VID-002) can take longer than Node's default 5 minute
+// request timeout (1 GB for Premium), so it is disabled for this server.
+server.requestTimeout = 0;
+
 /**
  * Listen on provided port, on all network interfaces.
  */

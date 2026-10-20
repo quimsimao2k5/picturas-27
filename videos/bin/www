@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+
+const http = require("http");
+const app = require("../app");
+
+const port = Number(process.env.PORT) || 11002;
+app.set("port", port);
+
+const server = http.createServer(app);
+
+// Node closes requests after 5 minutes by default (requestTimeout). A 1 GB
+// Premium upload (RN10) can take longer, so the limit is disabled here; idle
+// connections are still closed by the socket timeout below.
+server.requestTimeout = 0;
+server.setTimeout(10 * 60 * 1000);
+
+server.listen(port, () => {
+  console.log(`Videos service listening on port ${port}`);
+});

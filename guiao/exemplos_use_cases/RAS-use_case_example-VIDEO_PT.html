@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Caso de Uso (exemplo) — Gerar Miniatura de um Vídeo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+  :root {
+    --paper: #FBFAF8; --surface: #FFFFFF; --surface-alt: #F3F2EE;
+    --ink: #1C1E22; --muted: #63686F; --rule: #E3E0D9;
+    --accent: #1F5F63; --accent-ink: #14464A; --accent-wash: #E8F1F1;
+    --flag: #9A4A16; --flag-wash: #F8EEE5;
+    --shadow: 0 1px 2px rgba(28,30,34,.05);
+    --on-accent: #FFFFFF;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #16181B; --surface: #1D2024; --surface-alt: #22262A;
+      --ink: #E8E6E1; --muted: #A0A5AC; --rule: #32373C;
+      --accent: #6FBFC2; --accent-ink: #9AD6D8; --accent-wash: #1B2E30;
+      --flag: #E0955C; --flag-wash: #2E2318;
+      --shadow: 0 1px 2px rgba(0,0,0,.35);
+      --on-accent: #10282A;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #16181B; --surface: #1D2024; --surface-alt: #22262A;
+    --ink: #E8E6E1; --muted: #A0A5AC; --rule: #32373C;
+    --accent: #6FBFC2; --accent-ink: #9AD6D8; --accent-wash: #1B2E30;
+    --flag: #E0955C; --flag-wash: #2E2318;
+    --shadow: 0 1px 2px rgba(0,0,0,.35);
+    --on-accent: #10282A;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+    font-size: 17px; line-height: 1.62;
+  }
+
+  .masthead { border-bottom: 1px solid var(--rule); background: var(--surface); }
+  .wrap { width: 100%; max-width: 54rem; margin: 0 auto; padding-inline: 20px; }
+  .masthead .wrap { padding-block: 26px 22px; }
+
+  .eyebrow {
+    font-family: Archivo, "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px; font-weight: 600; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--muted); margin: 0 0 14px;
+  }
+  h1 {
+    font-family: Archivo, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 700; font-size: clamp(1.7rem, 1.2rem + 2.1vw, 2.35rem);
+    line-height: 1.12; letter-spacing: -.02em; text-wrap: balance; margin: 0 0 6px;
+  }
+  .subtitle { font-size: 1.05rem; font-style: italic; color: var(--muted); margin: 0 0 20px; text-wrap: balance; }
+
+  .facts {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2px; background: var(--rule); border: 1px solid var(--rule);
+    border-radius: 3px; overflow: hidden;
+  }
+  .fact { background: var(--surface); padding: 10px 14px; }
+  .fact dt {
+    font-family: Archivo, sans-serif; font-size: 11px; font-weight: 600;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+  }
+  .fact dd { margin: 2px 0 0; font-family: Archivo, sans-serif; font-size: 15px; font-weight: 600; font-variant-numeric: tabular-nums; }
+
+  main .wrap { padding-block: 8px 64px; }
+  section { padding-block: 32px 0; }
+  h2 {
+    font-family: Archivo, sans-serif; font-size: 1.3rem; font-weight: 700;
+    letter-spacing: -.01em; margin: 0 0 4px; padding-bottom: 8px;
+    border-bottom: 2px solid var(--ink); text-wrap: balance;
+  }
+  h3 { font-family: Archivo, sans-serif; font-size: 1.02rem; font-weight: 600; margin: 26px 0 6px; }
+  p { margin: 0 0 14px; }
+  a { color: var(--accent-ink); }
+  ul, ol { margin: 0 0 14px; padding-left: 1.3em; }
+  li { margin-bottom: 7px; }
+  li::marker { color: var(--muted); }
+  strong { font-weight: 600; }
+  code, .id {
+    font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: .84em;
+    background: var(--surface-alt); border: 1px solid var(--rule);
+    border-radius: 3px; padding: .08em .34em; white-space: nowrap;
+  }
+
+  .lede { font-size: 1.1rem; border-left: 3px solid var(--accent); padding-left: 18px; margin-block: 26px 0; }
+  .lede p:last-child { margin-bottom: 0; }
+
+  .panel {
+    background: var(--surface); border: 1px solid var(--rule); border-radius: 4px;
+    box-shadow: var(--shadow); padding: 18px 20px; margin-block: 18px;
+  }
+  .panel > :last-child { margin-bottom: 0; }
+  .panel-label {
+    font-family: Archivo, sans-serif; font-size: 11px; font-weight: 600;
+    letter-spacing: .09em; text-transform: uppercase; color: var(--accent-ink); margin: 0 0 10px;
+  }
+  .panel.flagged { background: var(--flag-wash); border-color: var(--flag); }
+  .panel.flagged .panel-label { color: var(--flag); }
+
+  .table-scroll { overflow-x: auto; margin-block: 16px; }
+  table { border-collapse: collapse; width: 100%; font-family: Archivo, sans-serif; font-size: 14px; }
+  th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th {
+    font-size: 11px; font-weight: 600; letter-spacing: .07em; text-transform: uppercase;
+    color: var(--muted); border-bottom: 1px solid var(--ink); white-space: nowrap;
+  }
+  td ul { margin: 0; padding-left: 1.1em; }
+  td li { margin-bottom: 4px; }
+  td li:last-child { margin-bottom: 0; }
+  td.key { font-weight: 600; color: var(--ink); white-space: nowrap; }
+  td.num, td.rid { font-variant-numeric: tabular-nums; white-space: nowrap; font-weight: 600; }
+  td.dash { color: var(--muted); }
+  .msg { font-style: italic; }
+
+  /* Tabela de identificação: coluna de rótulos fixa e legível */
+  table.meta td:first-child { width: 12.5rem; }
+  table.meta tr:first-child td { border-top: 1px solid var(--ink); }
+
+  footer {
+    border-top: 1px solid var(--rule); margin-top: 48px; padding-block: 20px 8px;
+    font-family: Archivo, sans-serif; font-size: 13px; color: var(--muted);
+    display: flex; flex-wrap: wrap; gap: 6px 18px; justify-content: space-between;
+  }
+
+  @media (max-width: 480px) {
+    body { font-size: 16px; }
+    table.meta td:first-child { width: auto; }
+  }
+  @media print {
+    body { background: #fff; font-size: 11pt; }
+    .panel, .facts, table { box-shadow: none; }
+    section, .table-scroll { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <p class="eyebrow">Requisitos e Arquiteturas de Software · MEI · Universidade do Minho</p>
+    <h1>Caso de Uso (exemplo): Gerar Miniatura de um Vídeo</h1>
+    <p class="subtitle">Aula 01 · Exemplo de aplicação do template ao contexto de vídeo do PictuRAS</p>
+    <dl class="facts">
+      <div class="fact"><dt>ID</dt><dd>UC-VID-000</dd></div>
+      <div class="fact"><dt>Versão</dt><dd>v1.0</dd></div>
+      <div class="fact"><dt>Ator principal</dt><dd>Utilizador Registado</dd></div>
+      <div class="fact"><dt>Data</dt><dd>2026-09-23</dd></div>
+    </dl>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <div class="panel flagged">
+      <p class="panel-label">Como ler este exemplo</p>
+      <p>Este é um caso de uso <strong>deliberadamente simples</strong>. Serve para mostrar a <strong>estrutura</strong> do template aplicada ao contexto de vídeo — nada mais.</p>
+      <p>É simples por construção: é <strong>síncrono</strong> (demora menos de um segundo), opera sobre <strong>um único fotograma</strong>, não altera o vídeo original, não envolve fila de processamento, não tem progresso nem cancelamento, e não interfere com quotas.</p>
+      <p><strong>O caso de uso a escolher pela sua equipa deve ser bastante mais complexo do que este.</strong> Ver a secção final, <em>Porque é que este exemplo é o mínimo</em>.</p>
+    </div>
+
+    <section>
+      <h2>Identificação</h2>
+      <div class="table-scroll">
+        <table class="meta">
+          <tbody>
+            <tr><td class="key">ID do Caso de Uso</td><td><span class="id">UC-VID-000</span> <em>(exemplo; não reutilizar este ID)</em></td></tr>
+            <tr><td class="key">Nome</td><td>Gerar Miniatura de um Vídeo</td></tr>
+            <tr><td class="key">Versão</td><td>v1.0</td></tr>
+            <tr><td class="key">Autor</td><td>André Ferreira</td></tr>
+            <tr><td class="key">Data</td><td>2026-09-23</td></tr>
+            <tr><td class="key">Objetivo</td><td>Permitir ao utilizador obter uma imagem de pré-visualização de um vídeo já existente na sua biblioteca.</td></tr>
+            <tr><td class="key">Âmbito</td><td>Módulo de vídeo do PictuRAS — ferramenta básica</td></tr>
+            <tr><td class="key">Ator Principal</td><td>Utilizador Registado</td></tr>
+            <tr>
+              <td class="key">Stakeholders e Interesses</td>
+              <td>
+                <ul>
+                  <li><strong>Utilizador</strong>: quer reconhecer visualmente os seus vídeos sem os abrir</li>
+                  <li><strong>Proprietário do Sistema</strong>: pretende uma funcionalidade de baixo custo computacional</li>
+                  <li><strong>Equipa de Desenvolvimento</strong>: valida a cadeia de leitura de vídeo com uma operação simples</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td class="key">Pré-condições</td>
+              <td>
+                <ul>
+                  <li>O utilizador tem sessão iniciada</li>
+                  <li>O vídeo já foi submetido com sucesso e está disponível na biblioteca do utilizador</li>
+                </ul>
+              </td>
+            </tr>
+            <tr><td class="key">Trigger</td><td>O utilizador seleciona um vídeo e escolhe a opção <strong>Gerar miniatura</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Fluxo Principal</h2>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th scope="col">Passo</th><th scope="col">Ação do Ator</th><th scope="col">Resposta do Sistema</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="num">1</td><td>O utilizador abre a sua biblioteca de vídeos</td><td>Apresenta a lista de vídeos do utilizador</td></tr>
+            <tr><td class="num">2</td><td>O utilizador seleciona um vídeo e escolhe <strong>Gerar miniatura</strong></td><td class="dash">—</td></tr>
+            <tr><td class="num">3</td><td class="dash">—</td><td>Extrai o fotograma correspondente ao instante 00:00:01 do vídeo</td></tr>
+            <tr><td class="num">4</td><td class="dash">—</td><td>Converte o fotograma em imagem JPEG de 320 × 180 px</td></tr>
+            <tr><td class="num">5</td><td class="dash">—</td><td>Associa a miniatura ao vídeo e apresenta-a na biblioteca</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Fluxos Alternativos</h2>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th scope="col">Fluxo</th><th scope="col">Descrição</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="key">FA1 — Miniatura já existente</td><td>O vídeo já tem miniatura → O sistema pede confirmação antes de a substituir</td></tr>
+            <tr><td class="key">FA2 — Vídeo mais curto do que 1 segundo</td><td>O sistema extrai o primeiro fotograma disponível, em vez do fotograma do instante 00:00:01</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Exceções</h2>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th scope="col">Condição</th><th scope="col">Comportamento do Sistema</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>O ficheiro de vídeo não é legível ou está corrompido</td>
+              <td>Apresenta o erro: <span class="msg">“Não foi possível ler este vídeo”</span> e mantém o vídeo sem miniatura</td>
+            </tr>
+            <tr>
+              <td>A extração do fotograma falha</td>
+              <td>Apresenta o erro: <span class="msg">“Não foi possível gerar a miniatura. Tente novamente.”</span> e não altera o estado do vídeo</td>
+            </tr>
+            <tr>
+              <td>O vídeo ainda está a ser carregado</td>
+              <td>A opção <strong>Gerar miniatura</strong> aparece indisponível, com a indicação <span class="msg">“Disponível após a conclusão do carregamento”</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Pós-condições</h2>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th scope="col">Tipo</th><th scope="col">Resultado</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="key">Garantia de Sucesso</td><td>O vídeo passa a ter uma miniatura associada, visível na biblioteca; o ficheiro de vídeo original mantém-se inalterado</td></tr>
+            <tr><td class="key">Garantia Mínima</td><td>O vídeo mantém-se inalterado e sem miniatura; é apresentada uma mensagem de erro</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Regras de Negócio e Restrições</h2>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th scope="col">ID</th><th scope="col">Regra</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="rid">RN1</td><td>A miniatura é gerada a partir do fotograma do instante 00:00:01 do vídeo</td></tr>
+            <tr><td class="rid">RN2</td><td>A miniatura é armazenada em JPEG, com 320 × 180 px</td></tr>
+            <tr><td class="rid">RN3</td><td>Cada vídeo tem, no máximo, uma miniatura associada</td></tr>
+            <tr><td class="rid">RN4</td><td>A geração de miniatura não é contabilizada na quota diária de operações do perfil do utilizador</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Assunções</h2>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th scope="col">ID</th><th scope="col">Assunção</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="rid">A1</td><td>O vídeo está integralmente armazenado e acessível ao serviço no momento do pedido</td></tr>
+            <tr><td class="rid">A2</td><td>A extração de um único fotograma é suficientemente rápida para ser executada de forma síncrona (&lt; 1 s)</td></tr>
+            <tr><td class="rid">A3</td><td>A relação de aspeto 16:9 é adequada à maioria dos vídeos submetidos</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Questões em Aberto</h2>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th scope="col">ID</th><th scope="col">Questão</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="rid">Q1</td><td>A miniatura deve ser gerada automaticamente no final do carregamento, em vez de a pedido?</td></tr>
+            <tr><td class="rid">Q2</td><td>O utilizador deve poder escolher o instante do vídeo a usar como miniatura?</td></tr>
+            <tr><td class="rid">Q3</td><td>O perfil anónimo deve ter acesso a esta funcionalidade?</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Esboço de requisitos derivados <em>(ilustrativo e incompleto)</em></h2>
+      <p>Mostra como a derivação se faz a partir do caso de uso. Não é uma lista completa. <strong>No Exercício 1 não é pedida esta secção</strong>: o vosso caso de uso termina nas Questões em Aberto. A derivação de requisitos será trabalhada na aula seguinte.</p>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">ID</th><th scope="col">Requisito</th><th scope="col">Tipo</th>
+              <th scope="col">Origem</th><th scope="col">Como verificar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="rid">REQ-VID-THUMB-001</td>
+              <td>O sistema deve gerar uma miniatura a partir do fotograma correspondente ao instante 00:00:01 do vídeo selecionado.</td>
+              <td>F</td>
+              <td>Passo 3, RN1</td>
+              <td>Gerar miniatura de um vídeo conhecido e comparar com o fotograma esperado</td>
+            </tr>
+            <tr>
+              <td class="rid">REQ-VID-THUMB-002</td>
+              <td>O sistema deve armazenar a miniatura em formato JPEG com 320 × 180 px.</td>
+              <td>F</td>
+              <td>Passo 4, RN2</td>
+              <td>Inspecionar o ficheiro gerado: formato e dimensões</td>
+            </tr>
+            <tr>
+              <td class="rid">REQ-VID-THUMB-003</td>
+              <td>O sistema deve manter o ficheiro de vídeo original inalterado após a geração da miniatura.</td>
+              <td>NF (Fiabilidade)</td>
+              <td>Pós-condição de sucesso</td>
+              <td>Comparar o resumo criptográfico do ficheiro antes e depois</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Esboço de matriz de rastreabilidade</h3>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th scope="col">Elemento do Caso de Uso</th><th scope="col">Requisito(s)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="key">Passo 3</td><td class="rid">REQ-VID-THUMB-001</td></tr>
+            <tr><td class="key">Passo 4</td><td class="rid">REQ-VID-THUMB-002</td></tr>
+            <tr><td class="key">RN1</td><td class="rid">REQ-VID-THUMB-001</td></tr>
+            <tr><td class="key">RN2</td><td class="rid">REQ-VID-THUMB-002</td></tr>
+            <tr><td class="key">Pós-condição de sucesso</td><td class="rid">REQ-VID-THUMB-003</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Porque é que este exemplo é o mínimo</h2>
+      <p>Repare no que este caso de uso <strong>não</strong> tem — e que o caso de uso da sua equipa deve ter:</p>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th scope="col">Dimensão</th><th scope="col">Neste exemplo</th><th scope="col">No seu caso de uso</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="key">Duração da operação</td><td>Síncrona, inferior a 1 s</td><td>Processamento demorado, com estados intermédios</td></tr>
+            <tr><td class="key">Estado e acompanhamento</td><td>Não existe</td><td>Fila, progresso, conclusão, falha, eventual cancelamento</td></tr>
+            <tr><td class="key">Volume de dados</td><td>Um fotograma</td><td>O vídeo completo, ou um intervalo significativo</td></tr>
+            <tr><td class="key">Parâmetros do utilizador</td><td>Nenhum</td><td>Intervalo temporal, resolução, formato de saída, ferramenta a aplicar</td></tr>
+            <tr><td class="key">Impacto no sistema existente</td><td>Praticamente nulo</td><td>Quotas e perfis, encadeamento de ferramentas, processamento em lote, armazenamento</td></tr>
+            <tr><td class="key">Exceções</td><td>Três, todas simples</td><td>Incluindo falha a meio do processamento e limites de perfil excedidos</td></tr>
+            <tr><td class="key">Requisitos não funcionais</td><td>Um, trivial</td><td>Pelo menos dois, com alvos mensuráveis</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="panel">
+        <p class="panel-label">Casos de uso com complexidade adequada</p>
+        <ul>
+          <li>Recortar um intervalo temporal de um vídeo</li>
+          <li>Aplicar uma ferramenta existente a todos os fotogramas</li>
+          <li>Converter um vídeo para outro formato ou resolução</li>
+          <li>Extrair uma sequência de fotogramas</li>
+          <li>Submeter um vídeo para processamento com encadeamento de ferramentas</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <span>RAS · Aula 01 · Exemplo de caso de uso</span>
+      <span>UC-VID-000 · v1.0 · 2026-09-23</span>
+    </footer>
+
+  </div>
+</main>
+
+</body>
+</html>

@@ -8,7 +8,7 @@ import {
   SidebarGroup,
   SidebarHeader,
 } from "../ui/sidebar";
-import { Plus, Sparkles } from "lucide-react";
+import { Film, Plus, Sparkles } from "lucide-react";
 import NavUser from "./nav-user-sidebar";
 import { usePathname } from "next/navigation";
 import { Button } from "../ui/button";
@@ -17,6 +17,7 @@ import NewProjectDialog from "./new-project-dialog";
 import ProjectList from "./project-list";
 import { useSession } from "@/providers/session-provider";
 import OperationsCounter from "../operations-counter";
+import TrimNotifier from "../videos/trim-notifier";
 
 export default function DashboardSidebar() {
   const path = usePathname();
@@ -43,6 +44,16 @@ export default function DashboardSidebar() {
                 <Plus /> New Project
               </Button>
             </NewProjectDialog>
+            {/* UC-VID-002: Video Library (anonymous users see the E1 notice) */}
+            <Button
+              className="inline-flex"
+              variant={path.startsWith("/dashboard/videos") ? "secondary" : "outline"}
+              asChild
+            >
+              <Link href="/dashboard/videos">
+                <Film /> Video Library
+              </Link>
+            </Button>
             {(isFreePlan || isAnonymous) && (
               <Button
                 className="inline-flex"
@@ -61,6 +72,8 @@ export default function DashboardSidebar() {
           <ProjectList />
         </SidebarContent>
         <SidebarFooter className="flex flex-col gap-2">
+          {/* UC-VID-001: in-app notification of finished trims */}
+          {!isAnonymous && <TrimNotifier />}
           {(isFreePlan || isAnonymous) && <OperationsCounter />}
 
           {session.user.type !== "anonymous" ? (
