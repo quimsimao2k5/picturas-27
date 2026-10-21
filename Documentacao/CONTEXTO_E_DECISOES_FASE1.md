@@ -21,10 +21,10 @@ Documento de transição e enquadramento para continuidade do desenvolvimento po
 
 ## 2. Divisão dos Casos de Uso e Estado dos Documentos
 
-Os documentos de trabalho da equipa encontram-se na pasta `guiao/use_cases_propostas_por_nos/`:
+Os documentos de trabalho da equipa encontram-se na pasta `Documentacao/`:
 
 1. **`UC-VID-002` — Gerir Biblioteca de Vídeos e Adicionar Vídeo**
-   - **Ficheiro:** `guiao/use_cases_propostas_por_nos/RAS_UC_Biblioteca_Videos.md`
+   - **Ficheiro:** `Documentacao/RAS_UC_Biblioteca_Videos.md`
    - **Versão:** **`v1.3`** (2026-10-18; reaberta apenas para alinhar com a implementação — ver secção 6).
    - **Requisitos:** `REQ-VID-LIB-001` a `REQ-VID-LIB-062` (52 Funcionais + 10 Não Funcionais).
    - **Papel na Arquitetura:** É o **dono único** de todos os requisitos comuns e transversais:
@@ -41,13 +41,13 @@ Os documentos de trabalho da equipa encontram-se na pasta `guiao/use_cases_propo
    - Os outros dois casos de uso referenciam estes IDs na coluna `Origem`.
 
 2. **`UC-VID-003` — Reproduzir Vídeo**
-   - **Ficheiro:** `guiao/use_cases_propostas_por_nos/RAS-exercicio1_Reproducao_Video_v2_1.md`
+   - **Ficheiro:** `Documentacao/RAS-exercicio1_Reproducao_Video_v2_1.md`
    - **Versão:** **`v2.3`** (2026-10-18: removido o limite de 60 fps; REQ-PLAY-014 retirado; novos REQ-PLAY-055/056, nota de idioma e A7 — ver secção 7; o nome do ficheiro mantém `v2_1`).
    - **Requisitos:** `REQ-VID-PLAY-001` a `REQ-VID-PLAY-054` (39 Funcionais ativos + 14 Não Funcionais; `REQ-VID-PLAY-041` marcado formalmente como **RETIRADO** com justificação de retenção; novos `053` e `054`).
    - Alinhado com a biblioteca em formatos (MP4/MOV H.264/AAC), estados de vídeo (`Disponível`), limites de streams concorrentes (1 Registado, 3 Premium) e sem fugas de tecnologias no texto dos requisitos.
 
 3. **`UC-VID-001` — Recortar Intervalo Temporal de um Vídeo**
-   - **Ficheiro:** `guiao/use_cases_propostas_por_nos/RAS-Exercicio1_Recorte_de_Video.md`
+   - **Ficheiro:** `Documentacao/RAS-Exercicio1_Recorte_de_Video.md`
    - **Versão:** **`v1.4`** (2026-10-18: A9; TRIM-001/048/049 passam a referências à biblioteca; Q1–Q4/Q6 fechadas; RN4 Premium ≤ 3; nova E7 + REQ-VID-TRIM-062/063; E1 defensivo; áudio no RN1; PL5-G7 — ver secção 8).
    - **Estado:** `REQ-VID-TRIM-001` a `063`; alinhado com a biblioteca v1.3 e a reprodução v2.3.
 
@@ -202,3 +202,23 @@ Ficou aprovado avançar para o código com as seguintes decisões de desenho:
 - Metas de desempenho (REQ-TRIM-057 ≤ 3 s; REQ-TRIM-058 ≤ 2× a duração em 720p) exigem medição manual com a stack levantada.
 - `REQ-VID-PLAY-038/040` passam a ser verificáveis (resultado reproduzível no painel de pedidos).
 
+
+---
+
+## 9. Correção de bug do código herdado — login (2026-10-21)
+
+**Problema:** o login falhava sempre, mesmo com email e password corretos. Após criar conta o utilizador entrava (o registo devolve logo um JWT válido por 7 dias), mas depois de terminar sessão não conseguia voltar a entrar. No browser: **500 "Error logging in"**.
+
+**Causa:**
+1. `users/routes/users.js` (rota `POST /:email/login`) obtém o utilizador com `User.getOneEmail(...)`.
+2. `users/controllers/user.js` → `getOneEmail` devolvia `user.toJSON()`.
+3. `users/models/user.js` → o `transform` do `toJSON` faz `delete ret.password_hash` (para não expor o hash nas respostas).
+4. `users/auth/auth.js` → `authenticate` chama `bcrypt.compare(password, user.password_hash)` com o hash `undefined`; o bcrypt lança erro ("data and hash arguments required").
+5. A rota apanha o erro no `catch` e responde **701**; o `apiGateway/routes/users.js` converte qualquer erro do serviço `users` em **500**.
+- Efeito secundário: um email inexistente também dava erro (701 → 500) em vez de 401, porque `user` é `null`.
+
+**Correção (2 alterações mínimas):**
+- `users/controllers/user.js` → `getOneEmail` devolve `{ ...user.toJSON(), password_hash: user.password_hash }`. Só o login usa esta função, e a rota já retira o hash da resposta (`removeSensitiveInfo`), por isso o hash continua a não sair do serviço.
+- `users/auth/auth.js` → guarda no início de `authenticate`: `if (!user || !user.password_hash) return false;` (email inexistente → credenciais incorretas, sem exceção).
+
+**Porquê assim:** é a alteração mais pequena que repõe o comportamento esperado sem mudar o modelo, as outras rotas nem o contrato da API; o `toJSON` continua a esconder o hash em todas as outras respostas.

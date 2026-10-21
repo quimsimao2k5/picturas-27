@@ -26,7 +26,10 @@ module.exports.getOne = async (user_id) => {
 module.exports.getOneEmail = async (email) => {
   const emailHash = hashEmail(email);
   const user = await User.findOne({ email_hash: emailHash }).exec();
-  return user ? user.toJSON() : null;
+  // Bug fix (Fase 1, 2026-10-21): o toJSON() do modelo remove o password_hash,
+  // que o login precisa para o bcrypt.compare. Só o login usa esta funcao e a
+  // rota retira o hash da resposta (removeSensitiveInfo).
+  return user ? { ...user.toJSON(), password_hash: user.password_hash } : null;
 };
 
 

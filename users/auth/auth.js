@@ -2,6 +2,8 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 async function authenticate(password, user) {
+  // Bug fix (Fase 1, 2026-10-21): email inexistente ou conta sem password -> credenciais incorretas.
+  if (!user || !user.password_hash) return false;
   return await bcrypt.compare(password, user.password_hash);
 }
 
