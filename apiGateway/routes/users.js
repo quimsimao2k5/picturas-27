@@ -95,7 +95,13 @@ router.post("/:email/login", function (req, res, next) {
       httpsAgent: httpsAgent,
     })
     .then((resp) => res.status(201).jsonp(resp.data))
-    .catch((err) => res.status(500).jsonp("Error logging in"));
+    // Bug fix (Fase 1, 2026-10-23, T-02): passa o 401 do users (credenciais
+    // incorretas) em vez de o transformar em 500. O 201 mantem-se porque o
+    // frontend (lib/session.ts) so aceita o login com 201.
+    .catch((err) =>
+      err.response?.status === 401
+        ? res.status(401).jsonp(err.response.data)
+        : res.status(500).jsonp("Error logging in"));
 });
 
 /**

@@ -23,7 +23,9 @@ const httpsAgent = new https.Agent({
 const usersURL = "https://users:10001/";
 
 // URL interna do microserviço de projects
-const projects_ms = "https://projects:10002/projects/";
+// Bug fix (Fase 1, 2026-10-23, T-03): o projects escuta na 9001 e as rotas
+// estao montadas em "/" (era "https://projects:10002/projects/").
+const projects_ms = "https://projects:9001/";
 // Video library service (UC-VID-002) - its videos are deleted with the account (RN13).
 const videos_ms = (process.env.VIDEOS_URL || "http://videos:11002/").replace(/\/?$/, "/");
 
