@@ -147,7 +147,7 @@ A biblioteca de vídeos é a funcionalidade de base que sustenta todas as restan
 | **Ferramenta / *skill*** | **Tarefa apoiada** | **Validação realizada pela equipa** |
 |---|---|---|
 | **ChatGPT** | Estruturação inicial do caso de uso da biblioteca de vídeos, levantamento preliminar de fluxos alternativos, exceções e primeira versão da secção 4. | Revisão manual dos fluxos alternativos, exceções e requisitos propostos pelo AI.|
-**Claude** | Revisão para a v1.3 no início da implementação: deteção de incoerências entre os três casos de uso e o código; clarificação do limite de resolução independente da orientação (RN10, E9, REQ-055); painel de carregamentos recentes e dispensa de avisos (RN14, FA7, REQ-061, REQ-062); assunção A8 sobre a gestão dos pedidos de processamento. | As quatro decisões foram tomadas pela equipa em resposta a perguntas colocadas pelo agente (2026-10-18).|
+**Claude** | Revisão para a v1.3 no início da implementação: deteção de incoerências entre os três casos de uso e o código; sugestão acerca do limite de resolução independente da orientação (RN10, E9, REQ-055); sugestão de um painel de carregamentos recentes e dispensa de avisos (RN14, FA7, REQ-061, REQ-062); assunção A8 sobre a gestão dos pedidos de processamento. | As quatro decisões foram tomadas pela equipa em resposta a perguntas colocadas pelo agente (2026-10-18).|
 
 **Grupo / Equipa:** PL5-G7 — Francisco Dias (PG63958), Rodrigo Rocha (PG65437), Rodrigo Fernandes (PG64026), Luís Miguel (PG65424), Joaquim Cunha (PG63986).
 

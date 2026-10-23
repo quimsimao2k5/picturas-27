@@ -21,17 +21,17 @@
     [Anónimo], 
     [Operações limitadas, imagens pequenas], 
     [Sem acesso a vídeo. Impedido de aceder à biblioteca, de carregar vídeos ou de reproduzir. É redirecionado para a página de autenticação/registo.], 
-    [RN1, RN5, REQ-VID-LIB-048, REQ-VID-LIB-049, REQ-VID-PLAY-030, REQ-VID-PLAY-031],
+    [UC-VID-002/RN1, UC-VID-003/RN5, REQ-VID-LIB-048, 049, REQ-VID-PLAY-030, 031],
 
     [Registado], 
     [Gratuito, até 5 operações/dia], 
-    [Acesso à biblioteca e reprodução (isentas de quota diária). Acesso ao recorte temporal (consome 1 operação da quota diária de 5). Limites: 100 MB/vídeo, 3 min de duração, resolução até 1080p, 500 MB de armazenamento total e máximo de 1 _stream_ simultâneo.], 
-    [RN1, RN10, RN12, REQ-VID-LIB-001, REQ-VID-LIB-015, REQ-VID-LIB-016, REQ-VID-LIB-017, REQ-VID-LIB-034, REQ-VID-PLAY-039, REQ-VID-TRIM-002],
+    [Acesso à biblioteca e à reprodução, que não consomem a quota diária. Cada recorte consome 1 das 5 operações diárias. Limites: 100 MB/vídeo, 3 min de duração, resolução até 1080p (em qualquer orientação), 500 MB de armazenamento total, 1 _stream_ e 1 recorte ativo de cada vez.], 
+    [UC-VID-002/RN10, RN12; UC-VID-001/RN3; REQ-VID-LIB-015–017, 034, REQ-VID-PLAY-039, REQ-VID-TRIM-002, 043],
 
     [Premium], 
     [Pago, uso ilimitado], 
-    [Uso ilimitado de operações de processamento e prioridade de execução. Limites superiores para vídeo: 1 GB/vídeo, 30 min de duração, resolução até 4K, 10 GB de armazenamento total e até 3 _streams_ e 3 recortes em simultâneo.], 
-    [RN1, RN10, REQ-VID-LIB-001, REQ-VID-LIB-015, REQ-VID-LIB-016, REQ-VID-LIB-017, REQ-VID-PLAY-039, REQ-VID-TRIM-004],
+    [Sem limite diário de operações. Limites superiores para vídeo: 1 GB/vídeo, 30 min de duração, resolução até 4K, 10 GB de armazenamento total, até 3 _streams_ e até 3 recortes ativos em simultâneo. A prioridade do Premium na fila de recortes fica para a Fase 2 (UC-VID-001, Q1).], 
+    [UC-VID-002/RN10, UC-VID-003/RN6, UC-VID-001/RN4; REQ-VID-LIB-015–017, REQ-VID-PLAY-039, REQ-VID-TRIM-043],
   ),
 )
 
@@ -69,4 +69,4 @@
 
 == Elicitação de requisitos
 
-A identificação das funcionalidades, regras de negócio e restrições relativas ao suporte de vídeo decorreu de um processo iterativo de elicitação conduzido pela equipa. A análise exploratória do sistema _brownfield_ e do modelo SaaS existente fundamentou a exclusão do perfil Anónimo e a separação entre operações de consulta/gestão e operações transformadoras que consomem quota diária (RN1, RN12, RN13). Através de sessões internas de _brainstorming_ e _benchmarking_ de plataformas multimédia (e.g., YouTube, Canva), foram estabelecidas as assunções de arquitetura e fixados os valores-alvo do MVP (A4, A5) — designadamente os limites por perfil de tamanho (100 MB / 1 GB), duração (3 min / 30 min), resolução (1080p / 4K) e quota de biblioteca (500 MB / 10 GB), expressos nas regras de negócio RN10 e RN6 e validados nos requisitos funcionais REQ-VID-LIB-015 a REQ-VID-LIB-017, REQ-VID-LIB-055, REQ-VID-PLAY-039 e REQ-VID-TRIM-002.
+Os requisitos foram elicitados pela equipa a partir do enunciado, da análise da solução de base (código e documentos de requisitos e de arquitetura) e de sessões internas de discussão, em que cada caso de uso teve um responsável e foi revisto pelos restantes elementos. As decisões que afetam mais de um caso de uso — perfis abrangidos, formatos e codecs, limites por perfil, isenção de quota nas operações de consulta e gestão, retenção dos vídeos — foram fechadas em conjunto e aplicadas de forma igual nos três (Secção 3.4). Os valores numéricos dos limites do MVP (100 MB / 1 GB, 3 min / 30 min, 1080p / 4K, 500 MB / 10 GB, 1 / 3 _streams_ e 1 / 3 recortes ativos) são decisões da equipa (UC-VID-002/A4) e podem ser alterados por configuração sem mudar o código. Durante a implementação, as dúvidas e incoerências encontradas nos casos de uso foram decididas pela equipa e refletidas nas versões finais (Recorte v1.4, Biblioteca v1.3, Reprodução v2.3).

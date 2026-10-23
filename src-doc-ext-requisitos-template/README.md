@@ -51,3 +51,11 @@ images/baseline/               diagramas da solução de base (a substituir pelo
 Verificação final: `grep -rn "preencher\[" capitulos casos-uso` não deve devolver nada.
 
 Na entrega: o PDF chama-se `doc-ext-requisitos.pdf` e o código-fonte (esta pasta, preenchida) vai em `src-doc-ext-requisitos.zip`.
+
+## Notas do grupo PL5-G7
+
+- Os capítulos 4 (casos de uso) e 5 (ERS) são gerados a partir dos MD em `../Documentacao/`:
+  `python3 ferramentas/gen_uc.py && python3 ferramentas/gen_ers.py`. Alterem os MD e voltem a gerar,
+  em vez de editar `casos-uso/*.typ` e `capitulos/05-ers.typ` à mão.
+- Diagramas em `images/` (fontes editáveis no zip `diagramas_relatorio.zip`).
+- Evidência dos testes automáticos em `evidencias/`.

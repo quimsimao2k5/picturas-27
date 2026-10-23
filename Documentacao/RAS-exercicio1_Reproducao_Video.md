@@ -126,10 +126,10 @@ A reprodução de vídeo no leitor *web* é essencial no MVP do PictuRAS para pe
 
 | **Ferramenta / Skill** | **Tarefa Apoiada** | **Validação Realizada pela Equipa** |
 |------------------------|--------------------|-------------------------------------|
-| **Gemini** | Estruturação inicial do fluxo principal e fluxos alternativos para o caso de uso; revisão crítica da versão v2.1 e alinhamento com a norma ISO/IEC 25010 (Exercício 2). | Revisão manual da sequência de passos, separação entre conceitos de domínio e detalhes de infraestrutura (MinIO), definição das metas MVP vs. Produção e validação da rastreabilidade bidirecional. |
-| **Gemini Notebook** | Levantamento de exceções específicas de vídeo e definição de regras de negócio iniciais. | Validação técnica das exceções de codecs/rede e ajuste das regras de negócio quanto aos formatos, codecs (MP4, MOV, WebM) e limites por perfil (Registado vs. Premium). |
+| **Gemini** | Estruturação inicial do fluxo principal e fluxos alternativos para o caso de uso; revisão crítica da versão v2.1. | Revisão manual da sequência de passos, definição das metas MVP vs. Produção e validação da rastreabilidade bidirecional. |
+| **Gemini** | Levantamento de exceções específicas de vídeo e definição de regras de negócio iniciais. | Validação das exceções de codecs/rede e ajuste das regras de negócio quanto aos formatos, codecs (MP4, MOV) e limites por perfil (Registado vs. Premium). |
 | **Claude** | Revisão do caso de uso para o âmbito exclusivo de reprodução de vídeo e derivação inicial da secção 4 (requisitos, impacto no sistema existente e matriz de rastreabilidade). | Verificação cruzada de todos os 53 requisitos ativos (54 numerados, com `REQ-VID-PLAY-041` retirado) gerados face aos passos, exceções e regras de negócio do `UC-VID-003`, correção de critérios de aceitação ambíguos e eliminação de requisitos órfãos. |
-| **Claude** | v2.3, no início da implementação: deteção de incoerências (reprodução a partir de projetos; conflito entre `RN6` e `REQ-VID-PLAY-048`; idioma das mensagens; local dos registos de auditoria), retirada do `REQ-VID-PLAY-014`, novos `REQ-VID-PLAY-055`/`056`, nota de idioma e assunção A7. | Decisões tomadas pela equipa em 2026-10-18 em resposta a perguntas do agente.|
+| **Claude** | Revisão do v2.3, no início da implementação: deteção de incoerências (reprodução a partir de projetos; conflito entre `RN6` e `REQ-VID-PLAY-048`), retirada do `REQ-VID-PLAY-014`, novos `REQ-VID-PLAY-055`/`056`, nota de idioma e assunção A7. | Decisões tomadas pela equipa em 2026-10-18 em resposta a perguntas do agente.|
 
 **Grupo / Equipa:** PL5-G7 — Francisco Dias (PG63958), Rodrigo Rocha (PG65437), Rodrigo Fernandes (PG64026), Luís Miguel (PG65424), Joaquim Cunha (PG63986).
 

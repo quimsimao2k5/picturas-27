@@ -222,3 +222,27 @@ Ficou aprovado avançar para o código com as seguintes decisões de desenho:
 - `users/auth/auth.js` → guarda no início de `authenticate`: `if (!user || !user.password_hash) return false;` (email inexistente → credenciais incorretas, sem exceção).
 
 **Porquê assim:** é a alteração mais pequena que repõe o comportamento esperado sem mudar o modelo, as outras rotas nem o contrato da API; o `toJSON` continua a esconder o hash em todas as outras respostas.
+
+## 10. Correção de bugs do código herdado — erro do login e eliminação de projetos (2026-10-23)
+
+### 10.1 T-02 — login com credenciais incorretas devolvia 500
+
+**Problema:** com password errada (ou email inexistente) o browser mostrava **500 "Error logging in"** em vez de indicar que as credenciais estão incorretas.
+
+**Causa:** o serviço `users` responde corretamente **401** ("The provided credentials are incorrect"), mas `apiGateway/routes/users.js` (rota `POST /:email/login`) convertia qualquer erro em **500**.
+
+**Correção (1 alteração):** `apiGateway/routes/users.js` → o `catch` do login passa o **401** do `users` (status e mensagem); todos os outros erros continuam a dar 500.
+
+**Porquê assim:** só o caso das credenciais incorretas muda; o resto do contrato fica igual. O **201** de um login bem-sucedido **mantém-se**, porque o frontend (`frontend/lib/session.ts`) só aceita o login se a resposta for 201 — mudar para 200 partia o login. O frontend não tem nenhum tratamento especial para 401 (não redireciona), apenas mostra a mensagem do backend no aviso "Erro no login".
+
+### 10.2 T-03 — apagar a conta não apagava os projetos
+
+**Problema:** ao apagar uma conta, os projetos do utilizador ficavam na base de dados (o erro era registado nos logs do `users` e ignorado).
+
+**Causa:** `users/routes/users.js` chamava o `projects` em `https://projects:10002/projects/<userId>`. Dois erros no mesmo endereço:
+1. **Porta:** o `projects` escuta na **9001** (`projects/bin/www`), não na 10002.
+2. **Caminho:** as rotas do `projects` estão montadas em `/` (`projects/app.js`), sem o prefixo `/projects/`. A rota que apaga todos os projetos de um utilizador é `DELETE /:user` (`projects/routes/projects.js`).
+
+**Correção (1 alteração):** `users/routes/users.js` → `const projects_ms = "https://projects:9001/";` (o mesmo endereço que o `apiGateway` já usa para o `projects`).
+
+**Porquê assim:** é a alteração mais pequena; a rota de eliminação de projetos já existia no `projects`, só nunca era chamada. A chamada continua dentro do `try/catch` existente, por isso, se a eliminação dos projetos falhar, a conta é apagada na mesma (comportamento anterior).

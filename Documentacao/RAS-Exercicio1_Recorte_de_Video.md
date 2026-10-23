@@ -138,7 +138,7 @@ O recorte temporal de vídeo é uma operação que se espera que esteja implemen
 | Claude | Sugestão de Exceções (Exercício 1) | Revisão manual pela equipa e adaptação ao domínio do PictuRAS. |
 | Claude | Sugestão de Regras de Negócio e Assunções (Exercício 1) | Revisão manual; a equipa selecionou e refinou as regras adequadas a esta ferramenta (RN3, RN5 e A6). |
 | Claude | v1.3: assunção A9 sobre a gestão dos pedidos de recorte, em alinhamento com `UC-VID-002` v1.3 | Decisões tomadas pela equipa em 2026-10-18 em resposta a perguntas do agente. |
-| Claude  | v1.4, no início da implementação: requisitos duplicados (TRIM-001/048/049) passam a referências à biblioteca; Q1–Q4 e Q6 fechadas com referência a `UC-VID-002`; RN4 com limite Premium; nova exceção E7 e REQ-VID-TRIM-062/063 (espaço de armazenamento); nota defensiva em E1/TRIM-036; áudio no RN1; identificação PL5-G7. | Correções e decisões aprovadas pela equipa em 2026-10-18.|
+| Claude  | Revisão da v1.4, no início da implementação: requisitos duplicados (TRIM-001/048/049) passam a referências à biblioteca; Q1–Q4 e Q6 fechadas com referência a `UC-VID-002`; RN4 com limite Premium; nova exceção E7 e REQ-VID-TRIM-062/063 (espaço de armazenamento) | Correções e decisões aprovadas pela equipa em 2026-10-18.|
 
 **Grupo / Equipa:** PL5-G7 — Francisco Dias (PG63958), Rodrigo Rocha (PG65437), Rodrigo Fernandes (PG64026), Luís Miguel (PG65424), Joaquim da Cunha (PG63986).  
 **Declaração de validação:** A equipa revê, compreende e assume integral responsabilidade pelo conteúdo deste dossiê.

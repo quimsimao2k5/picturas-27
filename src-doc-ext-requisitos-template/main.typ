@@ -9,7 +9,7 @@
 #show: project
 
 // Antes de entregar: `false` esconde todas as caixas de orientação.
-#mostrar-orientacoes.update(true)
+#mostrar-orientacoes.update(false)
 
 #cover(
   title: "Fase 1 — Suporte a Vídeo",

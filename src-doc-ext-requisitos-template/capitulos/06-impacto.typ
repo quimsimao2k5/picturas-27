@@ -2,60 +2,34 @@
 
 = Impacto no Sistema Existente
 
-A introdução das funcionalidades de manipulação, reprodução e processamento de vídeo no PictuRAS estende a solução *brownfield* sem descaracterizar a arquitetura nem os mecanismos de base. A tabela seguinte detalha a análise de impacto sobre as entidades, regras e requisitos existentes (identificando as ações de *Manter*, *Estender* e *Alterar*).
+O suporte a vídeo estende o PictuRAS sem alterar as funcionalidades de imagem. A única regra existente que muda de significado é o limite diário de 5 operações do perfil Registado: passa a distinguir operações de consulta e gestão de vídeos, que não consomem quota, das operações de processamento, em que cada recorte consome uma operação. A tabela reúne a análise de impacto dos três casos de uso; a coluna _Caso de uso_ indica de onde vem cada linha. O impacto nos componentes de _software_ está no Capítulo 8.
 
 #tab([Impacto no sistema existente],
   tabela(
-    colunas: (3.4cm, 1.9cm, 1fr, 2.1cm, 2.8cm),
+    colunas: (3.2cm, 1.9cm, 1fr, 1.9cm, 3cm),
     tamanho: 8.5pt,
-    [Elemento existente afetado], [Impacto], [Descrição do impacto], [Caso(s) de uso], [Requisitos],
-
-    [Perfis de utilização (Anónimo, Registado, Premium)],
-    [Estender],
-    [Os perfis Registado e Premium passam a dispor de biblioteca pessoal de vídeos com quotas diferenciadas de tamanho, duração, resolução e armazenamento (RN10). A reprodução introduz limites de transmissões simultâneas (RN6: 1 para Registado, 3 para Premium). O perfil Anónimo é bloqueado do ecossistema de vídeo e encaminhado para registo.],
-    [UC-VID-001, UC-VID-002, UC-VID-003],
-    [REQ-VID-LIB-001, 015, 016, 017, 048, 049, 055, REQ-VID-PLAY-001, 029, 030, 039, REQ-VID-TRIM-042, 043],
-
-    [Limite diário de 5 operações (perfil Registado)],
-    [Alterar],
-    [A semântica de contagem é alterada para suportar tarefas demoradas: o recorte reserva 1 operação na submissão, consome-a no sucesso e devolve-a na falha ou cancelamento (RN3). A consulta da biblioteca, o upload, a reprodução e a eliminação são isentas de quota diária (RN12).],
-    [UC-VID-001, UC-VID-002, UC-VID-003],
-    [REQ-VID-LIB-034, REQ-VID-PLAY-028, REQ-VID-TRIM-002, 013, 022, 032, 042, 046],
-
-    [Biblioteca do Utilizador e Gestão de Média],
-    [Estender],
-    [A biblioteca passa a armazenar e gerir vídeos (MP4 e MOV), mantendo uma máquina de estados de ingestão (A carregar, A validar, Disponível, Rejeitado) e metadados técnicos (duração, resolução, codecs). Impede a eliminação de vídeos em uso por pedidos ativos.],
-    [UC-VID-001, UC-VID-002, UC-VID-003],
-    [REQ-VID-LIB-002, 021, 028, 031, 056, 057, 058, REQ-VID-PLAY-004, 022, REQ-VID-TRIM-020, 048, 055],
-
-    [Armazenamento em Nuvem e Ficheiros],
-    [Estender],
-    [Suporta ficheiros binários de grande dimensão no armazenamento de objetos (MinIO/S3). Exige limpeza transacional de ficheiros temporários/parciais em cancelamentos ou falhas e controlo do limite total da biblioteca.],
-    [UC-VID-001, UC-VID-002, UC-VID-003],
-    [REQ-VID-LIB-013, 014, 017, 028, 059, REQ-VID-PLAY-032, REQ-VID-TRIM-054, 056, 062, 063],
-
-    [Mecanismo de Exportação e Download],
-    [Estender],
-    [O mecanismo de exportação existente é estendido para permitir o descarregamento de vídeos recortados em MP4 e MOV, restringindo o acesso exclusivamente ao utilizador proprietário.],
-    [UC-VID-001, UC-VID-002, UC-VID-003],
-    [REQ-VID-LIB-032, REQ-VID-PLAY-025, REQ-VID-TRIM-025, 059],
-
-    [Arquitetura de Processamento e Execução Assíncrona],
-    [Estender],
-    [Introduz uma infraestrutura de fila de trabalhos em segundo plano para vídeo, com máquina de estados (Em fila, A processar, Concluído, Falhou, Cancelado), acompanhamento de progresso %, repetição automática e isolamento do motor FFmpeg.],
-    [UC-VID-001],
-    [REQ-VID-TRIM-014, 016, 017, 028, 031, 034, 044, 053, 057, 058, 060, 061],
-
-    [Segurança e Entrega de Conteúdos],
-    [Estender],
-    [A entrega de vídeo passa a utilizar endereços temporários assinados (presigned URLs com TTL ≤ 30 min no MVP) e HTTP Range Requests (206), evitando expor URLs permanentes e sobrecarregar a memória da API.],
-    [UC-VID-003],
-    [REQ-VID-PLAY-005, 006, 021, 027, 037, 046, 054],
-
-    [Encadeamento de Ferramentas (Pipeline) e Lote (Batch)],
-    [Manter],
-    [Fora do âmbito do MVP da Fase 1. Cada pedido opera autonomamente sobre um único vídeo. A reprodução e a biblioteca servem de pré-visualização e seleção de entrada/saída sem encadeamento automático.],
-    [UC-VID-001, UC-VID-002, UC-VID-003],
-    [N/A (Exclusão explicita em A4/A5)],
+    [Elemento existente afetado], [Impacto], [Descrição do impacto], [Caso de uso], [Requisitos],
+    [Limite de 5 operações/dia (perfil Registado)], [Estender], [Um recorte de vídeo conta como 1 operação, independentemente da duração. A operação passa a ter semântica de reserva ao submeter, consumo definitivo ao concluir e devolução se o pedido falhar ou for cancelado.], [UC-VID-001], [REQ-VID-TRIM-002, 013, 022, 032, 042, 046],
+    [Perfis Anónimo e Premium], [Manter], [Neste caso de uso o recorte está definido para o perfil Registado (com sugestão de upgrade para Premium quando a quota esgota). O Anónimo não tem acesso (#raw("UC-VID-002");, RN1) e o Premium não tem limite diário e pode ter até 3 recortes em simultâneo (RN4).], [UC-VID-001], [REQ-VID-TRIM-042, 043],
+    [Biblioteca do utilizador e controlo de acesso], [Estender], [Passa a listar e reproduzir vídeos, a guardar o vídeo recortado como novo recurso independente, a impedir a eliminação do vídeo de origem durante o recorte e a garantir que apenas o proprietário autenticado acede aos vídeos e pedidos.], [UC-VID-001], [REQ-VID-TRIM-001, 020, 024, 048, 049, 055, 059],
+    [Exportação / descarregamento], [Estender], [O mecanismo de exportação passa a permitir descarregar ficheiros de vídeo recortados nos formatos MP4 e MOV, restrito ao respetivo proprietário.], [UC-VID-001], [REQ-VID-TRIM-025, 059],
+    [Armazenamento], [Estender], [Cada recorte concluído ocupa espaço adicional como ficheiro independente, mantendo o original intacto. Exige limpeza automática de ficheiros temporários/parciais em caso de falha ou cancelamento.], [UC-VID-001], [REQ-VID-TRIM-020, 054, 055, 056],
+    [Processamento de pedidos e arquitetura de ferramentas], [Estender], [Introduz fila de trabalhos assíncronos (1 ativo por utilizador, execução paralela entre utilizadores distintos), máquina de estados, acompanhamento de progresso, repetição automática, cancelamento, desacoplamento modular de ferramentas de vídeo e isolamento do motor externo (ex.: FFmpeg).], [UC-VID-001], [REQ-VID-TRIM-014, 016, 017, 028, 031, 034, 043, 044, 053, 057, 058, 060, 061],
+    [Encadeamento de ferramentas], [Manter], [Fora do âmbito desta funcionalidade (A5). O vídeo recortado é guardado na biblioteca, sem execução encadeada automática com outras ferramentas.], [UC-VID-001], [—],
+    [Processamento em lote], [Manter], [Fora do âmbito desta funcionalidade (A4). Cada pedido opera sobre um único vídeo e um único intervalo.], [UC-VID-001], [—],
+    [Perfis de utilização (Anónimo, Registado, Premium)], [Estender], [Os perfis Registado e Premium passam a dispor de uma biblioteca pessoal de vídeos com limites diferenciados (Registado: 100 MB/vídeo, 3 min, 1080p, 500 MB total; Premium: 1 GB/vídeo, 30 min, 4K, 10 GB total). O perfil Anónimo é bloqueado e encaminhado para registo/autenticação.], [UC-VID-002], [REQ-VID-LIB-001, 015, 016, 017, 048, 049, 055],
+    [Armazenamento de objetos e base de dados], [Estender], [O sistema passa a armazenar ficheiros de vídeo (MP4 e MOV), a atualizar e gerir quotas de espaço ocupado por biblioteca, a libertar espaço na eliminação manual e a limpar dados parciais/temporários em cancelamentos ou falhas.], [UC-VID-002], [REQ-VID-LIB-013, 014, 017, 028, 057, 058, 059],
+    [Biblioteca / gestão de conteúdos], [Estender], [A biblioteca passa a suportar vídeos com identificador único, máquina de estados de ingestão (#raw("A carregar");, #raw("A validar");, #raw("Disponível");, #raw("Rejeitado");), conclusão em segundo plano da validação, extração e consulta de metadados (duração, resolução, tamanho, formato) e eliminação protegida contra vídeos em uso.], [UC-VID-002], [REQ-VID-LIB-002, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 056, 057, 058, 059, 060],
+    [Limite de 5 operações/dia do perfil Registado], [Alterar], [A consulta da biblioteca, o carregamento (#emph[upload];) e a eliminação de vídeos são excluídos da contagem da quota diária; apenas as operações posteriores de processamento consomem quota.], [UC-VID-002], [REQ-VID-LIB-034, 045],
+    [Autenticação e autorização], [Estender], [As regras de controlo de acesso passam a garantir o isolamento estrito entre bibliotecas de utilizadores distintos (consulta, processamento e eliminação) e a proteção contra sessões expiradas antes da conclusão da validação e armazenamento.], [UC-VID-002], [REQ-VID-LIB-032, 033, 043, 048, 049],
+    [Validação de ficheiros], [Estender], [O sistema passa a validar contentores MP4/MOV, codec de vídeo H.264, codec de áudio AAC, integridade do ficheiro e limites de tamanho, duração e resolução por perfil.], [UC-VID-002], [REQ-VID-LIB-015, 016, 018, 019, 020, 035, 036, 037, 040, 041, 046, 047, 050, 051, 052, 053, 054, 055],
+    [Interface do utilizador (#emph[Frontend];)], [Estender], [A interface passa a incluir listagem da biblioteca com espaço ocupado, seleção/substituição de ficheiro, barra de progresso de upload, cancelamento ativo apenas em #raw("A carregar");, apresentação do resultado após saída durante a validação, consulta de metadados, eliminação de vídeo e mensagens de erro específicas.], [UC-VID-002], [REQ-VID-LIB-002, 003, 004, 005, 006, 007, 009, 010, 011, 012, 031, 035, 036, 037, 038, 039, 042, 044, 047, 048, 053, 054, 055, 057, 058, 059, 060, 061, 062],
+    [Ferramentas de processamento e reprodução], [Manter / Articular], [Os vídeos no estado #strong[Disponível]; na biblioteca servem de fonte para a reprodução (#raw("UC-VID-003");) e para as ferramentas de processamento (#raw("UC-VID-001");), impedindo-se a eliminação de vídeos enquanto tiverem pedidos #raw("Em fila"); ou #raw("A processar");.], [UC-VID-002], [REQ-VID-LIB-030, 033, 045, 058],
+    [#strong[Perfis de Utilização]; #emph[(Anónimo, Registado, Premium)];], [#strong[Estender];], [A reprodução de vídeo fica disponível para os perfis #strong[Registado]; e #strong[Premium];, introduzindo limites diferenciados de transmissões simultâneas (#raw("RN6");: 1 para Registado; 3 para Premium). O perfil #strong[Anónimo]; é bloqueado, informado e redirecionado para autenticação/registo (#raw("RN5");), sendo registadas as tentativas de acesso indevido.], [UC-VID-003], [#raw("REQ-VID-PLAY-001");, #raw("029");, #raw("030");, #raw("031");, #raw("039");, #raw("054"); #emph[(cf. #raw("REQ-VID-LIB-001");, #raw("032");, #raw("048");, #raw("049");)];],
+    [#strong[Contagem Diária de Operações]; #emph[(5 operações/dia no perfil Registado)];], [#strong[Manter];], [A regra de negócio existente para edição é preservada: a reprodução de vídeos (originais da biblioteca ou resultados de processamento) é classificada como operação de consulta e #strong[não consome]; quota diária (#raw("RN3");).], [UC-VID-003], [#raw("REQ-VID-PLAY-028"); #emph[(cf. #raw("REQ-VID-LIB-034");)];],
+    [#strong[Biblioteca e Gestão de Pedidos de Processamento];], [#strong[Estender];], [O acesso a vídeos para reprodução verifica o estado do vídeo na biblioteca (#strong[Disponível];) e o estado dos pedidos de processamento (#strong[Em fila];, #strong[A processar];, #strong[Concluído];, #strong[Falhou];, #strong[Cancelado];), tratando também o caso em que um vídeo foi eliminado manualmente (#raw("RN7");, #raw("E4");).], [UC-VID-003], [#raw("REQ-VID-PLAY-002");, #raw("003");, #raw("004");, #raw("022");, #raw("023");, #raw("038");, #raw("040");, #raw("050"); #emph[(cf. #raw("REQ-VID-LIB-002");, #raw("028");, #raw("057");)];],
+    [#strong[Interface #emph[Web]; da Aplicação (#emph[Frontend];)];], [#strong[Estender];], [Inclusão do componente de leitor de vídeo #emph[web]; com suporte a transmissão parcial, controlos de reprodução (#emph[play/pause];, #emph[seek];, volume/#emph[mute];, velocidade, ecrã inteiro, #emph[replay];), indicadores de #emph[buffering];, estados visuais do leitor e mensagens de erro específicas (#raw("E1");–#raw("E7");).], [UC-VID-003], [#raw("REQ-VID-PLAY-002");, #raw("003");, #raw("007");, #raw("008");, #raw("009");, #raw("010");, #raw("011");, #raw("012");, #raw("013");, #raw("015");, #raw("016");, #raw("017");, #raw("018");, #raw("019");, #raw("020");, #raw("022");, #raw("023");, #raw("031");, #raw("033");, #raw("036");, #raw("042");, #raw("043");, #raw("049");, #raw("052");, #raw("053");],
+    [#strong[Armazenamento de Ficheiros e Segurança de Entrega];], [#strong[Estender];], [Emissão e validação de endereços de acesso temporário assinados com tempo de vida limitado (#raw("RN2");), renovação transparente em sessão ativa (#raw("E3a");), bloqueio em sessão expirada (#raw("E3b");), suporte a leitura parcial de segmentos sem sobrecarregar a memória da API principal e auditoria de acessos não autorizados.], [UC-VID-003], [#raw("REQ-VID-PLAY-005");, #raw("006");, #raw("021");, #raw("024");, #raw("025");, #raw("026");, #raw("027");, #raw("032");, #raw("034");, #raw("035");, #raw("037");, #raw("044");, #raw("045");, #raw("046");, #raw("047");, #raw("048");, #raw("051");, #raw("053");, #raw("054");],
+    [#strong[Encadeamento de Ferramentas (#emph[Pipeline];) e Processamento em Lote (#emph[Batch];)];], [#strong[Manter / Articular];], [O motor de #emph[pipeline]; e #emph[batch]; não incorpora a reprodução como um passo de transformação; porém, a interface de pedidos de processamento invoca este serviço para pré-visualizar vídeos de entrada e reproduzir vídeos de saída cujo pedido esteja #strong[Concluído]; (#raw("RN8");).], [UC-VID-003], [#raw("REQ-VID-PLAY-038");, #raw("040");, #raw("050");],
   ),
 )
