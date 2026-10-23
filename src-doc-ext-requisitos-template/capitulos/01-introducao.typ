@@ -25,7 +25,7 @@ O presente incremento tem como principal propósito estender o PictuRAS através
   [Documento de requisitos de base], [doc-ext-requisitos.pdf],
   [Documento de solução arquitetural de base], [doc-sol-arquitetural.pdf],
   [Repositório de partida], [#link("https://github.com/picturas-um/picturas-27")[picturas-um/picturas-27], ramo #raw("main"), _commit_ #raw("781a63e") (2026-10-07)],
-  [Solução entregue], [solucao-ext-mvp.zip e #link("https://github.com/quimsimao2k5/picturas-27")[quimsimao2k5/picturas-27], ramo #raw("main") (_commit_ final indicado na entrega)],
+  [Solução entregue], [solucao-ext-mvp.zip e #link("https://github.com/quimsimao2k5/picturas-27")[quimsimao2k5/picturas-27], ramo #raw("main") à data de entrega (23/10/2026)],
 )
 
 == Resumo do que foi feito

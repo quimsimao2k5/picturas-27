@@ -55,13 +55,13 @@ def main():
     o = ['#import "../template.typ": *', '',
          '// Gerado a partir das secções 4.1 dos três MD em Documentacao/ (gen/gen_ers.py).', '',
          '#paisagem[', '= Especificação de Requisitos do Sistema (ERS)', '',
-         'Os requisitos estão agrupados por caso de uso (coluna _Origem_) e identificados como #raw("REQ-VID-{FUNC}-nnn"): #raw("TRIM") para o recorte (UC-VID-001), #raw("LIB") para a biblioteca (UC-VID-002) e #raw("PLAY") para a reprodução (UC-VID-003). A prioridade segue MoSCoW (#must, #should, #could). A coluna _Novo/Alt_ indica se o requisito é novo ou altera um comportamento do PictuRAS existente. Os requisitos partilhados têm um único dono, a biblioteca (UC-VID-002); as linhas marcadas como _Referência_ remetem para esse dono e as marcadas como _Retirado_ mantêm-se para que os identificadores não sejam reutilizados.', '',
+         'Os requisitos estão agrupados por caso de uso (coluna _Origem_) e identificados como #raw("REQ-VID-{FUNC}-nnn"): #raw("TRIM") para o recorte (UC-VID-001), #raw("LIB") para a biblioteca (UC-VID-002) e #raw("PLAY") para a reprodução (UC-VID-003). A prioridade segue MoSCoW (#must, #should, #could). A coluna _Novo/Alt_ indica se o requisito é novo ou altera um comportamento do PictuRAS existente. Nos requisitos ALT indica-se, entre parênteses, o elemento do documento de requisitos de base que é alterado (ver Capítulo 6). Os requisitos partilhados têm um único dono, a biblioteca (UC-VID-002); as linhas marcadas como _Referência_ remetem para esse dono e as marcadas como _Retirado_ mantêm-se para que os identificadores não sejam reutilizados.', '',
          '== Requisitos Funcionais', '',
          f'#tab([Requisitos funcionais de vídeo (MVP) — {len(fr)} requisitos],',
          '  tabela(',
-         '    colunas: (2.8cm, 1fr, 1.5cm, 1.15cm, 3.1cm, 3.6cm, 4.9cm),',
+         '    colunas: (2.8cm, 1fr, 1.5cm, 1.9cm, 3.1cm, 3.5cm, 4.6cm),',
          '    tamanho: 8pt,',
-         '    [ID], [Requisito], [Prioridade], [Novo/ Alt], [Origem], [Justificação], [Critério de aceitação],']
+         '    [ID], [Requisito], [Prioridade], [Novo/ Alt (base)], [Origem], [Justificação], [Critério de aceitação],']
     for _, r in fr:
         o.append('    ' + ', '.join(r) + ',')
     o += ['  ),', ')', '', '== Requisitos Não Funcionais e de Qualidade', '',
