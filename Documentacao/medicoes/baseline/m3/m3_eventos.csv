@@ -1,0 +1,31 @@
+rep,evento,epoch,detalhe
+1,kill,1794411708.589,"Container picturas-video_tool-1 Killing 
+ Container picturas-video_tool-1 Killed"
+1,start,1794411714.413,"Container picturas-rabbitmq-1 Waiting 
+ Container picturas-rabbitmq-1 Healthy 
+ Container picturas-video_tool-1 Starting 
+ Container picturas-video_tool-1 Started"
+2,kill,1794411891.173,"Container picturas-video_tool-1 Killing 
+ Container picturas-video_tool-1 Killed"
+2,start,1794411896.887,"Container picturas-rabbitmq-1 Waiting 
+ Container picturas-rabbitmq-1 Healthy 
+ Container picturas-video_tool-1 Starting 
+ Container picturas-video_tool-1 Started"
+3,kill,1794412069.256,"Container picturas-video_tool-1 Killing 
+ Container picturas-video_tool-1 Killed"
+3,start,1794412074.89,"Container picturas-rabbitmq-1 Waiting 
+ Container picturas-rabbitmq-1 Healthy 
+ Container picturas-video_tool-1 Starting 
+ Container picturas-video_tool-1 Started"
+4,kill,1794412257.115,"Container picturas-video_tool-1 Killing 
+ Container picturas-video_tool-1 Killed"
+4,start,1794412262.756,"Container picturas-rabbitmq-1 Waiting 
+ Container picturas-rabbitmq-1 Healthy 
+ Container picturas-video_tool-1 Starting 
+ Container picturas-video_tool-1 Started"
+5,kill,1794412432.772,"Container picturas-video_tool-1 Killing 
+ Container picturas-video_tool-1 Killed"
+5,start,1794412438.509,"Container picturas-rabbitmq-1 Waiting 
+ Container picturas-rabbitmq-1 Healthy 
+ Container picturas-video_tool-1 Starting 
+ Container picturas-video_tool-1 Started"

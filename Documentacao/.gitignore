@@ -1,0 +1,21 @@
+# Ficheiros da pasta Documentacao/ que não interessam ao repositório.
+# (O .gitignore da raiz, da solução de base, já exclui .DS_Store, node_modules/, .env e backups/.)
+
+# Ambiente Python local dos scripts de medição (recria-se com medicoes/correr.sh)
+.venv/
+__pycache__/
+*.py[cod]
+
+# Ficheiros do sistema e dos editores
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# Medições de teste ou de verificação corridas à mão (ex.: --out verificacao).
+# Só os resultados oficiais (baseline/ e final/), os scripts e os vídeos vão para o repositório.
+medicoes/*/
+!medicoes/baseline/
+!medicoes/final/
+!medicoes/scripts/
+!medicoes/videos/

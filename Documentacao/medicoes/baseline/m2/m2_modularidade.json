@@ -1,0 +1,235 @@
+{
+  "commit": "0523102",
+  "responsabilidades_por_unidade": {
+    "video_tool": [
+      "codificacao_ffmpeg",
+      "consumir_trabalhos_video",
+      "efeitos_de_tempo",
+      "efeitos_por_fotograma",
+      "extracao_fotogramas",
+      "legendagem"
+    ]
+  },
+  "unidades_com_video": 1,
+  "max_responsabilidades_numa_unidade": 6,
+  "python_video": {
+    "por_ficheiro": {
+      "Tools/utils/__init__.py": {
+        "sloc": 0,
+        "funcoes": 0,
+        "cc_max": 0,
+        "cc_media": 0,
+        "mi": 100.0
+      },
+      "Tools/utils/env.py": {
+        "sloc": 10,
+        "funcoes": 0,
+        "cc_max": 0,
+        "cc_media": 0,
+        "mi": 100.0
+      },
+      "Tools/utils/img_handler.py": {
+        "sloc": 12,
+        "funcoes": 6,
+        "cc_max": 2,
+        "cc_media": 1.33,
+        "mi": 100.0
+      },
+      "Tools/utils/rabbit_mq.py": {
+        "sloc": 28,
+        "funcoes": 4,
+        "cc_max": 2,
+        "cc_media": 1.5,
+        "mi": 88.2
+      },
+      "Tools/utils/tool_msg.py": {
+        "sloc": 71,
+        "funcoes": 4,
+        "cc_max": 6,
+        "cc_media": 3.0,
+        "mi": 71.2
+      },
+      "Tools/video/__init__.py": {
+        "sloc": 0,
+        "funcoes": 0,
+        "cc_max": 0,
+        "cc_media": 0,
+        "mi": 100.0
+      },
+      "Tools/video/effects.py": {
+        "sloc": 45,
+        "funcoes": 10,
+        "cc_max": 6,
+        "cc_media": 1.6,
+        "mi": 73.4
+      },
+      "Tools/video/frame_extraction.py": {
+        "sloc": 80,
+        "funcoes": 4,
+        "cc_max": 14,
+        "cc_media": 8.75,
+        "mi": 46.0
+      },
+      "Tools/video/subtitles.py": {
+        "sloc": 64,
+        "funcoes": 4,
+        "cc_max": 7,
+        "cc_media": 3.25,
+        "mi": 62.5
+      },
+      "Tools/video/video.py": {
+        "sloc": 148,
+        "funcoes": 10,
+        "cc_max": 11,
+        "cc_media": 2.8,
+        "mi": 54.7
+      },
+      "Tools/video/video_processor.py": {
+        "sloc": 264,
+        "funcoes": 13,
+        "cc_max": 22,
+        "cc_media": 7.31,
+        "mi": 35.5
+      }
+    },
+    "sloc_total": 722,
+    "funcoes": 55,
+    "cc_media": 3.87,
+    "cc_max": 22,
+    "funcoes_cc_maior_10": 6
+  },
+  "dependencias_python_video": {
+    "modulos": [
+      "__init__",
+      "effects",
+      "env",
+      "frame_extraction",
+      "img_handler",
+      "rabbit_mq",
+      "subtitles",
+      "tool_msg",
+      "video",
+      "video_processor"
+    ],
+    "dependencias": {
+      "tool_msg": [
+        "rabbit_mq"
+      ],
+      "video": [
+        "effects",
+        "env",
+        "video_processor"
+      ],
+      "video_processor": [
+        "effects",
+        "frame_extraction",
+        "subtitles"
+      ]
+    },
+    "fan_out_max": 3,
+    "fan_in_max": 2,
+    "arestas": 7
+  },
+  "dispersao_procedimentos_video": {
+    "trim": {
+      "ficheiros": [
+        "Tools/video/effects.py",
+        "Tools/video/video_processor.py",
+        "frontend/app/dashboard/[pid]/page.tsx",
+        "frontend/components/toolbar/trim-tool.tsx",
+        "frontend/lib/tool-types.ts",
+        "projects/utils/video.js"
+      ],
+      "n_ficheiros": 6,
+      "componentes": [
+        "Tools/video",
+        "frontend",
+        "projects"
+      ]
+    },
+    "speed": {
+      "ficheiros": [
+        "Tools/video/effects.py",
+        "Tools/video/video_processor.py",
+        "frontend/app/dashboard/[pid]/page.tsx",
+        "frontend/components/toolbar/speed-tool.tsx",
+        "frontend/lib/tool-types.ts",
+        "projects/utils/video.js"
+      ],
+      "n_ficheiros": 6,
+      "componentes": [
+        "Tools/video",
+        "frontend",
+        "projects"
+      ]
+    },
+    "subtitles": {
+      "ficheiros": [
+        "Tools/video/video_processor.py",
+        "frontend/app/dashboard/[pid]/page.tsx",
+        "frontend/components/toolbar/subtitles-tool.tsx",
+        "frontend/components/toolbar/toolbar-button.tsx",
+        "frontend/lib/tool-types.ts",
+        "projects/utils/video.js"
+      ],
+      "n_ficheiros": 6,
+      "componentes": [
+        "Tools/video",
+        "frontend",
+        "projects"
+      ]
+    },
+    "extract_frames": {
+      "ficheiros": [
+        "Tools/video/video_processor.py",
+        "frontend/app/dashboard/[pid]/page.tsx",
+        "frontend/components/toolbar/extract-frames-tool.tsx",
+        "frontend/components/toolbar/toolbar-button.tsx",
+        "frontend/lib/tool-types.ts",
+        "projects/routes/projects.js",
+        "projects/utils/video.js"
+      ],
+      "n_ficheiros": 7,
+      "componentes": [
+        "Tools/video",
+        "frontend",
+        "projects"
+      ]
+    }
+  },
+  "efeitos_duplicados": {
+    "efeitos_video": [
+      "brightness",
+      "contrast",
+      "saturation",
+      "rotate",
+      "resize",
+      "binarization",
+      "cut",
+      "border"
+    ],
+    "duplicados_com_ferramenta_imagem": [
+      "brightness",
+      "contrast",
+      "saturation",
+      "rotate",
+      "resize",
+      "binarization",
+      "cut",
+      "border"
+    ],
+    "n_duplicados": 8
+  },
+  "orquestrador": {
+    "projects/routes/projects.js": {
+      "linhas": 2732,
+      "referencias_video": 35,
+      "rotas": 33
+    },
+    "projects/utils/video.js": {
+      "linhas": 227,
+      "referencias_video": 14,
+      "rotas": 0
+    }
+  }
+}

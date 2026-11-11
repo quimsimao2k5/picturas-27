@@ -1,0 +1,4 @@
+requests>=2.31,<3
+python-socketio[client]>=5.11,<6
+websocket-client>=1.7,<2
+radon>=6,<7

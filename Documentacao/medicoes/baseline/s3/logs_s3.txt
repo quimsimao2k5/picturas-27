@@ -1,0 +1,1891 @@
+# docker compose -p picturas logs --no-color --timestamps --since 2026-11-11T15:14:14+00:00 video_tool projects
+video_tool-1  | 2026-11-11T15:14:54.176061341Z [video] msg=request-0f839c96-7724-4f33-990b-01cc51c1753f preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:14:57.611435593Z [video] msg=request-0f839c96-7724-4f33-990b-01cc51c1753f ok frames=300 t=3.4s
+video_tool-1  | 2026-11-11T15:14:57.612529468Z [video] msg=request-ea6108aa-1c75-4ce5-a9a9-658556c477b6 preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:15:01.001193303Z [video] msg=request-ea6108aa-1c75-4ce5-a9a9-658556c477b6 ok frames=300 t=3.4s
+video_tool-1  | 2026-11-11T15:15:01.036581136Z [video] msg=request-06541ab5-3314-4a9e-b83e-d53d0745960a preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:15:04.758850596Z [video] msg=request-06541ab5-3314-4a9e-b83e-d53d0745960a ok frames=300 t=3.7s
+video_tool-1  | 2026-11-11T15:15:04.760099638Z [video] msg=request-3ecb5029-abd9-4d63-b156-dff471b9bd0e preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:15:08.063247000Z [video] msg=request-3ecb5029-abd9-4d63-b156-dff471b9bd0e ok frames=300 t=3.3s
+video_tool-1  | 2026-11-11T15:15:08.064352125Z [video] msg=request-9b25d290-8af4-4004-a836-5e669f8c72c1 preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:15:11.414952168Z [video] msg=request-9b25d290-8af4-4004-a836-5e669f8c72c1 ok frames=300 t=3.4s
+video_tool-1  | 2026-11-11T15:15:11.415811002Z [video] msg=request-bec72063-4f9e-4e02-ba87-c68eaa415907 preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:15:14.812099003Z [video] msg=request-bec72063-4f9e-4e02-ba87-c68eaa415907 ok frames=300 t=3.4s
+video_tool-1  | 2026-11-11T15:15:14.812903920Z [video] msg=request-95cf55bd-8969-4a9d-840a-c75d942629f1 preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:15:18.060536005Z [video] msg=request-95cf55bd-8969-4a9d-840a-c75d942629f1 ok frames=300 t=3.2s
+video_tool-1  | 2026-11-11T15:15:18.061383255Z [video] msg=request-b7af2094-81d6-4429-9bf1-8e36136943d0 preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:15:21.374412465Z [video] msg=request-b7af2094-81d6-4429-9bf1-8e36136943d0 ok frames=300 t=3.3s
+video_tool-1  | 2026-11-11T15:15:21.375902590Z [video] msg=request-688c9077-bfda-469b-bd36-55ffa724473a preview=False tools=['subtitles']
+video_tool-1  | 2026-11-11T15:17:37.582608500Z [video] msg=request-688c9077-bfda-469b-bd36-55ffa724473a ok frames=4415 t=136.2s
+video_tool-1  | 2026-11-11T15:20:24.224147674Z [video] msg=request-6d0cf218-16dc-4966-94dc-29d2778790bd preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:20:27.849472926Z [video] msg=request-6d0cf218-16dc-4966-94dc-29d2778790bd ok frames=300 t=3.6s
+video_tool-1  | 2026-11-11T15:20:27.850536426Z [video] msg=request-b619d652-0e4f-4ffd-9cb1-1c6623c07b65 preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:20:31.562227636Z [video] msg=request-b619d652-0e4f-4ffd-9cb1-1c6623c07b65 ok frames=300 t=3.7s
+video_tool-1  | 2026-11-11T15:20:31.563449011Z [video] msg=request-87b3b33f-375c-465f-9fce-ce4ff0abd060 preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:20:35.135323305Z [video] msg=request-87b3b33f-375c-465f-9fce-ce4ff0abd060 ok frames=300 t=3.6s
+video_tool-1  | 2026-11-11T15:20:35.136679055Z [video] msg=request-3e4e2e49-bfdd-42c9-9280-6606f43ea256 preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:20:38.404862209Z [video] msg=request-3e4e2e49-bfdd-42c9-9280-6606f43ea256 ok frames=300 t=3.3s
+video_tool-1  | 2026-11-11T15:20:38.406599417Z [video] msg=request-b64c10f3-e365-407b-a3fd-adc0860e2c14 preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:20:42.164808544Z [video] msg=request-b64c10f3-e365-407b-a3fd-adc0860e2c14 ok frames=300 t=3.8s
+video_tool-1  | 2026-11-11T15:20:42.165640877Z [video] msg=request-610ea832-09e7-49ec-a3c3-612563b89d08 preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:20:45.848703837Z [video] msg=request-610ea832-09e7-49ec-a3c3-612563b89d08 ok frames=300 t=3.7s
+video_tool-1  | 2026-11-11T15:20:45.849745754Z [video] msg=request-d5e6bae7-4c28-49ed-84a2-6f58a708a17e preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:20:49.437117381Z [video] msg=request-d5e6bae7-4c28-49ed-84a2-6f58a708a17e ok frames=300 t=3.6s
+video_tool-1  | 2026-11-11T15:20:49.439305714Z [video] msg=request-437b2fc3-c33b-489f-88f2-4ce862e1645d preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:20:53.146766299Z [video] msg=request-437b2fc3-c33b-489f-88f2-4ce862e1645d ok frames=300 t=3.7s
+video_tool-1  | 2026-11-11T15:20:53.147710299Z [video] msg=request-c33a6097-5542-470b-804a-f76ca64447ce preview=False tools=['subtitles']
+video_tool-1  | 2026-11-11T15:22:53.788778924Z [video] msg=request-c33a6097-5542-470b-804a-f76ca64447ce ok frames=4415 t=120.6s
+video_tool-1  | 2026-11-11T15:25:41.513222668Z [video] msg=request-930ce5f0-476c-44de-8cd1-98a3c485edd6 preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:25:45.660362462Z [video] msg=request-930ce5f0-476c-44de-8cd1-98a3c485edd6 ok frames=300 t=4.1s
+video_tool-1  | 2026-11-11T15:25:45.660872462Z [video] msg=request-f12ec1b9-c29e-499e-8f56-2920435ff96e preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:25:49.326869422Z [video] msg=request-f12ec1b9-c29e-499e-8f56-2920435ff96e ok frames=300 t=3.7s
+video_tool-1  | 2026-11-11T15:25:49.328059005Z [video] msg=request-1f443238-f8ab-42ec-b3c8-5150c4c8a927 preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:25:53.589539799Z [video] msg=request-1f443238-f8ab-42ec-b3c8-5150c4c8a927 ok frames=300 t=4.3s
+video_tool-1  | 2026-11-11T15:25:53.592851757Z [video] msg=request-a125a588-b738-4b02-ae65-25d750d690d9 preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:25:57.379325884Z [video] msg=request-a125a588-b738-4b02-ae65-25d750d690d9 ok frames=300 t=3.8s
+video_tool-1  | 2026-11-11T15:25:57.380409593Z [video] msg=request-32306173-9561-4540-a882-c96dcab90964 preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:26:01.068558886Z [video] msg=request-32306173-9561-4540-a882-c96dcab90964 ok frames=300 t=3.7s
+video_tool-1  | 2026-11-11T15:26:01.070159928Z [video] msg=request-3f33bda7-6649-4f99-8a57-84622cdb2278 preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:26:05.348021971Z [video] msg=request-3f33bda7-6649-4f99-8a57-84622cdb2278 ok frames=300 t=4.3s
+video_tool-1  | 2026-11-11T15:26:05.349427846Z [video] msg=request-6936e5d0-697f-425f-88a0-9fa11ee3e36b preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:26:08.977040792Z [video] msg=request-6936e5d0-697f-425f-88a0-9fa11ee3e36b ok frames=300 t=3.6s
+video_tool-1  | 2026-11-11T15:26:08.978045209Z [video] msg=request-c5b909b7-5821-4b1d-83a7-961f9edaadd2 preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:26:13.269644336Z [video] msg=request-c5b909b7-5821-4b1d-83a7-961f9edaadd2 ok frames=300 t=4.3s
+video_tool-1  | 2026-11-11T15:26:13.270517128Z [video] msg=request-9b5840a9-8c99-45ea-b5b6-76c40727f418 preview=False tools=['subtitles']
+video_tool-1  | 2026-11-11T15:28:27.229867217Z [video] msg=request-9b5840a9-8c99-45ea-b5b6-76c40727f418 ok frames=4415 t=134.0s
+video_tool-1  | 2026-11-11T15:31:13.689349753Z [video] msg=request-ef7a4c6e-72ef-4923-ab02-9a86728f0362 preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:31:17.401065588Z [video] msg=request-ef7a4c6e-72ef-4923-ab02-9a86728f0362 ok frames=300 t=3.7s
+video_tool-1  | 2026-11-11T15:31:17.403694796Z [video] msg=request-dfcfc404-6208-4fec-a2fe-88f64b6af796 preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:31:20.956109298Z [video] msg=request-dfcfc404-6208-4fec-a2fe-88f64b6af796 ok frames=300 t=3.6s
+video_tool-1  | 2026-11-11T15:31:20.956931423Z [video] msg=request-d8d09023-5571-41cd-8d4d-35674c8e89b6 preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:31:24.646592925Z [video] msg=request-d8d09023-5571-41cd-8d4d-35674c8e89b6 ok frames=300 t=3.7s
+video_tool-1  | 2026-11-11T15:31:24.647658300Z [video] msg=request-4deec732-093c-4a53-a804-5a7d4f33cd7f preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:31:28.001355343Z [video] msg=request-4deec732-093c-4a53-a804-5a7d4f33cd7f ok frames=300 t=3.4s
+video_tool-1  | 2026-11-11T15:31:28.005032759Z [video] msg=request-7eb464f8-178f-44e8-b31a-dd0c56214496 preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:31:31.523292594Z [video] msg=request-7eb464f8-178f-44e8-b31a-dd0c56214496 ok frames=300 t=3.5s
+video_tool-1  | 2026-11-11T15:31:31.525581844Z [video] msg=request-96c7dea2-4301-4c75-8d9f-5c577e7b51f4 preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:31:35.207920721Z [video] msg=request-96c7dea2-4301-4c75-8d9f-5c577e7b51f4 ok frames=300 t=3.7s
+video_tool-1  | 2026-11-11T15:31:35.209113555Z [video] msg=request-c637f0c2-371c-4a61-9d99-f358af3c6d9e preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:31:38.546309709Z [video] msg=request-c637f0c2-371c-4a61-9d99-f358af3c6d9e ok frames=300 t=3.3s
+video_tool-1  | 2026-11-11T15:31:38.547132459Z [video] msg=request-69639f7e-8418-42b8-b6f8-2723f6bd1b01 preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:31:41.887724252Z [video] msg=request-69639f7e-8418-42b8-b6f8-2723f6bd1b01 ok frames=300 t=3.3s
+video_tool-1  | 2026-11-11T15:31:41.889506877Z [video] msg=request-be06ba0f-4b97-4a5e-94e4-320d206fb6bc preview=False tools=['subtitles']
+video_tool-1  | 2026-11-11T15:33:51.482726965Z [video] msg=request-be06ba0f-4b97-4a5e-94e4-320d206fb6bc ok frames=4415 t=129.6s
+video_tool-1  | 2026-11-11T15:36:37.628142000Z [video] msg=request-87b5cb3e-196d-4da1-80b5-b39852e95827 preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:36:41.080290710Z [video] msg=request-87b5cb3e-196d-4da1-80b5-b39852e95827 ok frames=300 t=3.5s
+video_tool-1  | 2026-11-11T15:36:41.081083085Z [video] msg=request-4752f748-d2ba-4832-b348-f19eb565f9a7 preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:36:44.627396420Z [video] msg=request-4752f748-d2ba-4832-b348-f19eb565f9a7 ok frames=300 t=3.5s
+video_tool-1  | 2026-11-11T15:36:44.628260503Z [video] msg=request-0b578165-af2f-40c4-aa39-ccf9e913835b preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:36:48.024383546Z [video] msg=request-0b578165-af2f-40c4-aa39-ccf9e913835b ok frames=300 t=3.4s
+video_tool-1  | 2026-11-11T15:36:48.028383296Z [video] msg=request-579910ba-a318-4332-9269-e9fa4de25005 preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:36:51.674330048Z [video] msg=request-579910ba-a318-4332-9269-e9fa4de25005 ok frames=300 t=3.6s
+video_tool-1  | 2026-11-11T15:36:51.676839381Z [video] msg=request-6d1976d9-678c-466f-b6a4-a74469a6e760 preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:36:55.199245591Z [video] msg=request-6d1976d9-678c-466f-b6a4-a74469a6e760 ok frames=300 t=3.5s
+video_tool-1  | 2026-11-11T15:36:55.200448508Z [video] msg=request-471d82d7-c6e8-4b6c-a63b-b80d4b5ead44 preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:36:58.392268093Z [video] msg=request-471d82d7-c6e8-4b6c-a63b-b80d4b5ead44 ok frames=300 t=3.2s
+video_tool-1  | 2026-11-11T15:36:58.393410426Z [video] msg=request-e089ee0a-ad22-4118-af04-5e5d2a8c2c5c preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:37:01.852147595Z [video] msg=request-e089ee0a-ad22-4118-af04-5e5d2a8c2c5c ok frames=300 t=3.5s
+video_tool-1  | 2026-11-11T15:37:01.853407011Z [video] msg=request-0cd04e73-40f4-42b4-bf51-4dce99c3a508 preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T15:37:05.290331638Z [video] msg=request-0cd04e73-40f4-42b4-bf51-4dce99c3a508 ok frames=300 t=3.4s
+video_tool-1  | 2026-11-11T15:37:05.291446346Z [video] msg=request-393a1252-c4ac-4f25-98b2-6f1cbe0b7343 preview=False tools=['subtitles']
+video_tool-1  | 2026-11-11T15:39:00.411688886Z [video] msg=request-393a1252-c4ac-4f25-98b2-6f1cbe0b7343 ok frames=4415 t=115.1s
+projects-1    | 2026-11-11T15:14:19.503743422Z [0mPOST /6af4864b39e0eb7147b9ab03 [32m201[0m 8.287 ms - 392[0m
+projects-1    | 2026-11-11T15:14:19.509128797Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:14:19.509138881Z   hasAuth: true,
+projects-1    | 2026-11-11T15:14:19.509140756Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:14:19.509141756Z   caller: '6af4864b39e0eb7147b9ab03'
+projects-1    | 2026-11-11T15:14:19.509142964Z }
+projects-1    | 2026-11-11T15:14:19.517061964Z [0mGET /6af4864b39e0eb7147b9ab03/6af4864ba2b4cfab7be498b9 [32m200[0m 8.446 ms - 96[0m
+projects-1    | 2026-11-11T15:14:19.604992714Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:14:19.829307672Z [0mPOST /6af4864b39e0eb7147b9ab03/6af4864ba2b4cfab7be498b9/video [32m204[0m 245.062 ms - -[0m
+projects-1    | 2026-11-11T15:14:19.836439922Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:14:19.836446714Z   hasAuth: true,
+projects-1    | 2026-11-11T15:14:19.836448381Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:14:19.836449589Z   caller: '6af4864b39e0eb7147b9ab03'
+projects-1    | 2026-11-11T15:14:19.836450672Z }
+projects-1    | 2026-11-11T15:14:19.842603172Z [0mGET /6af4864b39e0eb7147b9ab03/6af4864ba2b4cfab7be498b9 [32m200[0m 6.282 ms - 610[0m
+projects-1    | 2026-11-11T15:14:19.862446381Z [0mPOST /6af4864b39e0eb7147b9ab03/6af4864ba2b4cfab7be498b9/tool [32m204[0m 15.042 ms - -[0m
+projects-1    | 2026-11-11T15:14:20.012243714Z [0mPOST /6af4864b39e0eb7147b9ab0c [32m201[0m 1.392 ms - 392[0m
+projects-1    | 2026-11-11T15:14:20.016146839Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:14:20.016151256Z   hasAuth: true,
+projects-1    | 2026-11-11T15:14:20.016152339Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:14:20.016153173Z   caller: '6af4864b39e0eb7147b9ab0c'
+projects-1    | 2026-11-11T15:14:20.016154006Z }
+projects-1    | 2026-11-11T15:14:20.019728256Z [0mGET /6af4864b39e0eb7147b9ab0c/6af4864ca2b4cfab7be498d5 [32m200[0m 3.646 ms - 96[0m
+projects-1    | 2026-11-11T15:14:20.080256798Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:14:20.217284048Z [0mPOST /6af4864b39e0eb7147b9ab0c/6af4864ca2b4cfab7be498d5/video [32m204[0m 153.882 ms - -[0m
+projects-1    | 2026-11-11T15:14:20.224164089Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:14:20.224169923Z   hasAuth: true,
+projects-1    | 2026-11-11T15:14:20.224171173Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:14:20.224172214Z   caller: '6af4864b39e0eb7147b9ab0c'
+projects-1    | 2026-11-11T15:14:20.224173214Z }
+projects-1    | 2026-11-11T15:14:20.230250714Z [0mGET /6af4864b39e0eb7147b9ab0c/6af4864ca2b4cfab7be498d5 [32m200[0m 6.215 ms - 608[0m
+projects-1    | 2026-11-11T15:14:20.241857298Z [0mPOST /6af4864b39e0eb7147b9ab0c/6af4864ca2b4cfab7be498d5/tool [32m204[0m 7.844 ms - -[0m
+projects-1    | 2026-11-11T15:14:20.388786381Z [0mPOST /6af4864c39e0eb7147b9ab15 [32m201[0m 2.298 ms - 392[0m
+projects-1    | 2026-11-11T15:14:20.392892506Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:14:20.392921256Z   hasAuth: true,
+projects-1    | 2026-11-11T15:14:20.392923506Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:14:20.392924423Z   caller: '6af4864c39e0eb7147b9ab15'
+projects-1    | 2026-11-11T15:14:20.392925214Z }
+projects-1    | 2026-11-11T15:14:20.396753173Z [0mGET /6af4864c39e0eb7147b9ab15/6af4864ca2b4cfab7be498f1 [32m200[0m 3.967 ms - 96[0m
+projects-1    | 2026-11-11T15:14:20.446264173Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:14:20.581774714Z [0mPOST /6af4864c39e0eb7147b9ab15/6af4864ca2b4cfab7be498f1/video [32m204[0m 146.248 ms - -[0m
+projects-1    | 2026-11-11T15:14:20.588074798Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:14:20.588083048Z   hasAuth: true,
+projects-1    | 2026-11-11T15:14:20.588084631Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:14:20.588085798Z   caller: '6af4864c39e0eb7147b9ab15'
+projects-1    | 2026-11-11T15:14:20.588086881Z }
+projects-1    | 2026-11-11T15:14:20.597630423Z [0mGET /6af4864c39e0eb7147b9ab15/6af4864ca2b4cfab7be498f1 [32m200[0m 9.555 ms - 610[0m
+projects-1    | 2026-11-11T15:14:20.612482631Z [0mPOST /6af4864c39e0eb7147b9ab15/6af4864ca2b4cfab7be498f1/tool [32m204[0m 8.545 ms - -[0m
+projects-1    | 2026-11-11T15:14:20.751238506Z [0mPOST /6af4864c39e0eb7147b9ab1e [32m201[0m 1.274 ms - 392[0m
+projects-1    | 2026-11-11T15:14:20.754789840Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:14:20.754795423Z   hasAuth: true,
+projects-1    | 2026-11-11T15:14:20.754796590Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:14:20.754797631Z   caller: '6af4864c39e0eb7147b9ab1e'
+projects-1    | 2026-11-11T15:14:20.754798590Z }
+projects-1    | 2026-11-11T15:14:20.758286506Z [0mGET /6af4864c39e0eb7147b9ab1e/6af4864ca2b4cfab7be4990d [32m200[0m 3.557 ms - 96[0m
+projects-1    | 2026-11-11T15:14:20.804853256Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:14:20.921497965Z [0mPOST /6af4864c39e0eb7147b9ab1e/6af4864ca2b4cfab7be4990d/video [32m204[0m 125.734 ms - -[0m
+projects-1    | 2026-11-11T15:14:20.931529506Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:14:20.931541715Z   hasAuth: true,
+projects-1    | 2026-11-11T15:14:20.931543131Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:14:20.931544215Z   caller: '6af4864c39e0eb7147b9ab1e'
+projects-1    | 2026-11-11T15:14:20.931545423Z }
+projects-1    | 2026-11-11T15:14:20.938183715Z [0mGET /6af4864c39e0eb7147b9ab1e/6af4864ca2b4cfab7be4990d [32m200[0m 6.639 ms - 608[0m
+projects-1    | 2026-11-11T15:14:20.961548423Z [0mPOST /6af4864c39e0eb7147b9ab1e/6af4864ca2b4cfab7be4990d/tool [32m204[0m 16.751 ms - -[0m
+projects-1    | 2026-11-11T15:14:21.127997173Z [0mPOST /6af4864d39e0eb7147b9ab27 [32m201[0m 3.883 ms - 392[0m
+projects-1    | 2026-11-11T15:14:21.132660965Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:14:21.132669798Z   hasAuth: true,
+projects-1    | 2026-11-11T15:14:21.132674381Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:14:21.132678215Z   caller: '6af4864d39e0eb7147b9ab27'
+projects-1    | 2026-11-11T15:14:21.132682173Z }
+projects-1    | 2026-11-11T15:14:21.140210715Z [0mGET /6af4864d39e0eb7147b9ab27/6af4864da2b4cfab7be49929 [32m200[0m 7.825 ms - 96[0m
+projects-1    | 2026-11-11T15:14:21.187615506Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:14:21.295762590Z [0mPOST /6af4864d39e0eb7147b9ab27/6af4864da2b4cfab7be49929/video [32m204[0m 117.902 ms - -[0m
+projects-1    | 2026-11-11T15:14:21.301166173Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:14:21.301172048Z   hasAuth: true,
+projects-1    | 2026-11-11T15:14:21.301173215Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:14:21.301174048Z   caller: '6af4864d39e0eb7147b9ab27'
+projects-1    | 2026-11-11T15:14:21.301174881Z }
+projects-1    | 2026-11-11T15:14:21.315507840Z [0mGET /6af4864d39e0eb7147b9ab27/6af4864da2b4cfab7be49929 [32m200[0m 14.272 ms - 608[0m
+projects-1    | 2026-11-11T15:14:21.328272715Z [0mPOST /6af4864d39e0eb7147b9ab27/6af4864da2b4cfab7be49929/tool [32m204[0m 7.730 ms - -[0m
+projects-1    | 2026-11-11T15:14:21.498652173Z [0mPOST /6af4864d39e0eb7147b9ab30 [32m201[0m 1.723 ms - 392[0m
+projects-1    | 2026-11-11T15:14:21.502872798Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:14:21.502878715Z   hasAuth: true,
+projects-1    | 2026-11-11T15:14:21.502992548Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:14:21.502995090Z   caller: '6af4864d39e0eb7147b9ab30'
+projects-1    | 2026-11-11T15:14:21.502995923Z }
+projects-1    | 2026-11-11T15:14:21.507267382Z [0mGET /6af4864d39e0eb7147b9ab30/6af4864da2b4cfab7be49945 [32m200[0m 4.559 ms - 96[0m
+projects-1    | 2026-11-11T15:14:21.558377673Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:14:21.699776507Z [0mPOST /6af4864d39e0eb7147b9ab30/6af4864da2b4cfab7be49945/video [32m204[0m 155.361 ms - -[0m
+projects-1    | 2026-11-11T15:14:21.705590048Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:14:21.705597048Z   hasAuth: true,
+projects-1    | 2026-11-11T15:14:21.705598257Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:14:21.705599423Z   caller: '6af4864d39e0eb7147b9ab30'
+projects-1    | 2026-11-11T15:14:21.705600548Z }
+projects-1    | 2026-11-11T15:14:21.711698048Z [0mGET /6af4864d39e0eb7147b9ab30/6af4864da2b4cfab7be49945 [32m200[0m 6.179 ms - 608[0m
+projects-1    | 2026-11-11T15:14:21.724729840Z [0mPOST /6af4864d39e0eb7147b9ab30/6af4864da2b4cfab7be49945/tool [32m204[0m 8.476 ms - -[0m
+projects-1    | 2026-11-11T15:14:21.872975632Z [0mPOST /6af4864d39e0eb7147b9ab39 [32m201[0m 1.769 ms - 392[0m
+projects-1    | 2026-11-11T15:14:21.877009507Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:14:21.877014132Z   hasAuth: true,
+projects-1    | 2026-11-11T15:14:21.877015257Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:14:21.877016298Z   caller: '6af4864d39e0eb7147b9ab39'
+projects-1    | 2026-11-11T15:14:21.877017298Z }
+projects-1    | 2026-11-11T15:14:21.880846423Z [0mGET /6af4864d39e0eb7147b9ab39/6af4864da2b4cfab7be49961 [32m200[0m 3.963 ms - 96[0m
+projects-1    | 2026-11-11T15:14:21.940054298Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:14:22.090550632Z [0mPOST /6af4864d39e0eb7147b9ab39/6af4864da2b4cfab7be49961/video [32m204[0m 172.768 ms - -[0m
+projects-1    | 2026-11-11T15:14:22.103442882Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:14:22.103460132Z   hasAuth: true,
+projects-1    | 2026-11-11T15:14:22.103462174Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:14:22.103463007Z   caller: '6af4864d39e0eb7147b9ab39'
+projects-1    | 2026-11-11T15:14:22.103463840Z }
+projects-1    | 2026-11-11T15:14:22.112548382Z [0mGET /6af4864d39e0eb7147b9ab39/6af4864da2b4cfab7be49961 [32m200[0m 9.165 ms - 608[0m
+projects-1    | 2026-11-11T15:14:22.139317215Z [0mPOST /6af4864d39e0eb7147b9ab39/6af4864da2b4cfab7be49961/tool [32m204[0m 20.328 ms - -[0m
+projects-1    | 2026-11-11T15:14:22.292878257Z [0mPOST /6af4864e39e0eb7147b9ab42 [32m201[0m 2.032 ms - 392[0m
+projects-1    | 2026-11-11T15:14:22.299233715Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:14:22.299269465Z   hasAuth: true,
+projects-1    | 2026-11-11T15:14:22.299272299Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:14:22.299274924Z   caller: '6af4864e39e0eb7147b9ab42'
+projects-1    | 2026-11-11T15:14:22.299294507Z }
+projects-1    | 2026-11-11T15:14:22.305181882Z [0mGET /6af4864e39e0eb7147b9ab42/6af4864ea2b4cfab7be4997d [32m200[0m 5.942 ms - 96[0m
+projects-1    | 2026-11-11T15:14:22.369449882Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:14:22.516313590Z [0mPOST /6af4864e39e0eb7147b9ab42/6af4864ea2b4cfab7be4997d/video [32m204[0m 159.097 ms - -[0m
+projects-1    | 2026-11-11T15:14:22.524132840Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:14:22.524139174Z   hasAuth: true,
+projects-1    | 2026-11-11T15:14:22.524140507Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:14:22.524141965Z   caller: '6af4864e39e0eb7147b9ab42'
+projects-1    | 2026-11-11T15:14:22.524142799Z }
+projects-1    | 2026-11-11T15:14:22.530085715Z [0mGET /6af4864e39e0eb7147b9ab42/6af4864ea2b4cfab7be4997d [32m200[0m 6.062 ms - 612[0m
+projects-1    | 2026-11-11T15:14:22.542131799Z [0mPOST /6af4864e39e0eb7147b9ab42/6af4864ea2b4cfab7be4997d/tool [32m204[0m 7.889 ms - -[0m
+projects-1    | 2026-11-11T15:14:22.683542465Z [0mPOST /6af4864e39e0eb7147b9ab4b [32m201[0m 1.285 ms - 394[0m
+projects-1    | 2026-11-11T15:14:22.687147715Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:14:22.687152007Z   hasAuth: true,
+projects-1    | 2026-11-11T15:14:22.687153049Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:14:22.687153882Z   caller: '6af4864e39e0eb7147b9ab4b'
+projects-1    | 2026-11-11T15:14:22.687154715Z }
+projects-1    | 2026-11-11T15:14:22.690818049Z [0mGET /6af4864e39e0eb7147b9ab4b/6af4864ea2b4cfab7be49999 [32m200[0m 3.774 ms - 98[0m
+projects-1    | 2026-11-11T15:14:23.019090757Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:14:23.573496591Z [0mPOST /6af4864e39e0eb7147b9ab4b/6af4864ea2b4cfab7be49999/video [32m204[0m 630.853 ms - -[0m
+projects-1    | 2026-11-11T15:14:23.594637258Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:14:23.594658883Z   hasAuth: true,
+projects-1    | 2026-11-11T15:14:23.594661466Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:14:23.594662508Z   caller: '6af4864e39e0eb7147b9ab4b'
+projects-1    | 2026-11-11T15:14:23.594663341Z }
+projects-1    | 2026-11-11T15:14:23.606537383Z [0mGET /6af4864e39e0eb7147b9ab4b/6af4864ea2b4cfab7be49999 [32m200[0m 12.277 ms - 619[0m
+projects-1    | 2026-11-11T15:14:23.627110966Z [0mPOST /6af4864e39e0eb7147b9ab4b/6af4864ea2b4cfab7be49999/tool [32m204[0m 13.389 ms - -[0m
+projects-1    | 2026-11-11T15:14:53.729182466Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:14:53.729347758Z   hasAuth: true,
+projects-1    | 2026-11-11T15:14:53.729354841Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:14:53.729356758Z   caller: '6af4864e39e0eb7147b9ab4b'
+projects-1    | 2026-11-11T15:14:53.729358216Z }
+projects-1    | 2026-11-11T15:14:53.733533674Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:14:53.733548674Z   hasAuth: true,
+projects-1    | 2026-11-11T15:14:53.733609508Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:14:53.733612299Z   caller: '6af4864e39e0eb7147b9ab42'
+projects-1    | 2026-11-11T15:14:53.733613424Z }
+projects-1    | 2026-11-11T15:14:53.734583966Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:14:53.734603883Z   hasAuth: true,
+projects-1    | 2026-11-11T15:14:53.734606466Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:14:53.734607674Z   caller: '6af4864d39e0eb7147b9ab27'
+projects-1    | 2026-11-11T15:14:53.734608758Z }
+projects-1    | 2026-11-11T15:14:53.736059924Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:14:53.736066008Z   hasAuth: true,
+projects-1    | 2026-11-11T15:14:53.736067174Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:14:53.736070966Z   caller: '6af4864d39e0eb7147b9ab39'
+projects-1    | 2026-11-11T15:14:53.736072841Z }
+projects-1    | 2026-11-11T15:14:53.739544383Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:14:53.739552383Z   hasAuth: true,
+projects-1    | 2026-11-11T15:14:53.739553508Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:14:53.739554966Z   caller: '6af4864d39e0eb7147b9ab30'
+projects-1    | 2026-11-11T15:14:53.739555966Z }
+projects-1    | 2026-11-11T15:14:53.740437299Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:14:53.740441258Z   hasAuth: true,
+projects-1    | 2026-11-11T15:14:53.740442341Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:14:53.740443341Z   caller: '6af4864b39e0eb7147b9ab03'
+projects-1    | 2026-11-11T15:14:53.740444424Z }
+projects-1    | 2026-11-11T15:14:53.742649216Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:14:53.742674883Z   hasAuth: true,
+projects-1    | 2026-11-11T15:14:53.742678633Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:14:53.742683758Z   caller: '6af4864b39e0eb7147b9ab0c'
+projects-1    | 2026-11-11T15:14:53.742686466Z }
+projects-1    | 2026-11-11T15:14:53.743810591Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:14:53.743846591Z   hasAuth: true,
+projects-1    | 2026-11-11T15:14:53.743854799Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:14:53.743857924Z   caller: '6af4864c39e0eb7147b9ab1e'
+projects-1    | 2026-11-11T15:14:53.743859591Z }
+projects-1    | 2026-11-11T15:14:53.746307466Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:14:53.746315008Z   hasAuth: true,
+projects-1    | 2026-11-11T15:14:53.746318383Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:14:53.746322174Z   caller: '6af4864c39e0eb7147b9ab15'
+projects-1    | 2026-11-11T15:14:53.746323341Z }
+projects-1    | 2026-11-11T15:14:53.798305883Z [0mGET /6af4864e39e0eb7147b9ab4b/6af4864ea2b4cfab7be49999 [32m200[0m 71.950 ms - 690[0m
+projects-1    | 2026-11-11T15:14:53.798698591Z [0mGET /6af4864e39e0eb7147b9ab42/6af4864ea2b4cfab7be4997d [32m200[0m 71.558 ms - 708[0m
+projects-1    | 2026-11-11T15:14:53.799205383Z [0mGET /6af4864d39e0eb7147b9ab27/6af4864da2b4cfab7be49929 [32m200[0m 71.789 ms - 708[0m
+projects-1    | 2026-11-11T15:14:53.802811758Z [0mGET /6af4864d39e0eb7147b9ab39/6af4864da2b4cfab7be49961 [32m200[0m 67.220 ms - 710[0m
+projects-1    | 2026-11-11T15:14:53.803022716Z [0mGET /6af4864b39e0eb7147b9ab0c/6af4864ca2b4cfab7be498d5 [32m200[0m 61.719 ms - 708[0m
+projects-1    | 2026-11-11T15:14:53.803479174Z [0mGET /6af4864d39e0eb7147b9ab30/6af4864da2b4cfab7be49945 [32m200[0m 65.213 ms - 712[0m
+projects-1    | 2026-11-11T15:14:53.805059424Z [0mGET /6af4864c39e0eb7147b9ab15/6af4864ca2b4cfab7be498f1 [32m200[0m 59.421 ms - 710[0m
+projects-1    | 2026-11-11T15:14:53.805448466Z [0mGET /6af4864c39e0eb7147b9ab1e/6af4864ca2b4cfab7be4990d [32m200[0m 63.683 ms - 708[0m
+projects-1    | 2026-11-11T15:14:53.805459174Z [0mGET /6af4864b39e0eb7147b9ab03/6af4864ba2b4cfab7be498b9 [32m200[0m 67.042 ms - 708[0m
+projects-1    | 2026-11-11T15:14:53.829652633Z [CALLER] {
+projects-1    | 2026-11-11T15:14:53.829663466Z   userParam: '6af4864d39e0eb7147b9ab27',
+projects-1    | 2026-11-11T15:14:53.829665383Z   forwarded: '6af4864d39e0eb7147b9ab27',
+projects-1    | 2026-11-11T15:14:53.829666174Z   hasAuth: true,
+projects-1    | 2026-11-11T15:14:53.829666924Z   caller: '6af4864d39e0eb7147b9ab27'
+projects-1    | 2026-11-11T15:14:53.829667716Z }
+projects-1    | 2026-11-11T15:14:53.831695966Z [ADV DEBUG] project: 6af4864da2b4cfab7be49929 adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:14:53.833329841Z [CALLER] {
+projects-1    | 2026-11-11T15:14:53.833333466Z   userParam: '6af4864e39e0eb7147b9ab4b',
+projects-1    | 2026-11-11T15:14:53.833334508Z   forwarded: '6af4864e39e0eb7147b9ab4b',
+projects-1    | 2026-11-11T15:14:53.833335299Z   hasAuth: true,
+projects-1    | 2026-11-11T15:14:53.833336216Z   caller: '6af4864e39e0eb7147b9ab4b'
+projects-1    | 2026-11-11T15:14:53.833337008Z }
+projects-1    | 2026-11-11T15:14:53.834560174Z [CALLER] {
+projects-1    | 2026-11-11T15:14:53.834566216Z   userParam: '6af4864d39e0eb7147b9ab39',
+projects-1    | 2026-11-11T15:14:53.834567758Z   forwarded: '6af4864d39e0eb7147b9ab39',
+projects-1    | 2026-11-11T15:14:53.834568883Z   hasAuth: true,
+projects-1    | 2026-11-11T15:14:53.834569966Z   caller: '6af4864d39e0eb7147b9ab39'
+projects-1    | 2026-11-11T15:14:53.834571049Z }
+projects-1    | 2026-11-11T15:14:53.835494466Z [ADV DEBUG] project: 6af4864ea2b4cfab7be49999 adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'subtitles' ]
+projects-1    | 2026-11-11T15:14:53.836266299Z [ADV DEBUG] project: 6af4864da2b4cfab7be49961 adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:14:53.836930133Z [CALLER] {
+projects-1    | 2026-11-11T15:14:53.836932841Z   userParam: '6af4864b39e0eb7147b9ab0c',
+projects-1    | 2026-11-11T15:14:53.836933924Z   forwarded: '6af4864b39e0eb7147b9ab0c',
+projects-1    | 2026-11-11T15:14:53.836934966Z   hasAuth: true,
+projects-1    | 2026-11-11T15:14:53.836936049Z   caller: '6af4864b39e0eb7147b9ab0c'
+projects-1    | 2026-11-11T15:14:53.836937508Z }
+projects-1    | 2026-11-11T15:14:53.837220549Z [CALLER] {
+projects-1    | 2026-11-11T15:14:53.837242633Z   userParam: '6af4864c39e0eb7147b9ab15',
+projects-1    | 2026-11-11T15:14:53.837244383Z   forwarded: '6af4864c39e0eb7147b9ab15',
+projects-1    | 2026-11-11T15:14:53.837245174Z   hasAuth: true,
+projects-1    | 2026-11-11T15:14:53.837245924Z   caller: '6af4864c39e0eb7147b9ab15'
+projects-1    | 2026-11-11T15:14:53.837246674Z }
+projects-1    | 2026-11-11T15:14:53.838199133Z [CALLER] {
+projects-1    | 2026-11-11T15:14:53.838204216Z   userParam: '6af4864d39e0eb7147b9ab30',
+projects-1    | 2026-11-11T15:14:53.838205258Z   forwarded: '6af4864d39e0eb7147b9ab30',
+projects-1    | 2026-11-11T15:14:53.838206049Z   hasAuth: true,
+projects-1    | 2026-11-11T15:14:53.838206841Z   caller: '6af4864d39e0eb7147b9ab30'
+projects-1    | 2026-11-11T15:14:53.838207633Z }
+projects-1    | 2026-11-11T15:14:53.838442883Z [ADV DEBUG] project: 6af4864ca2b4cfab7be498d5 adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:14:53.839120924Z [ADV DEBUG] project: 6af4864ca2b4cfab7be498f1 adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:14:53.839771549Z [CALLER] {
+projects-1    | 2026-11-11T15:14:53.839775466Z   userParam: '6af4864e39e0eb7147b9ab42',
+projects-1    | 2026-11-11T15:14:53.839776591Z   forwarded: '6af4864e39e0eb7147b9ab42',
+projects-1    | 2026-11-11T15:14:53.839777716Z   hasAuth: true,
+projects-1    | 2026-11-11T15:14:53.839778841Z   caller: '6af4864e39e0eb7147b9ab42'
+projects-1    | 2026-11-11T15:14:53.839779799Z }
+projects-1    | 2026-11-11T15:14:53.840227341Z [ADV DEBUG] project: 6af4864da2b4cfab7be49945 adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:14:53.840912799Z [ADV DEBUG] project: 6af4864ea2b4cfab7be4997d adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:14:53.845533799Z [CALLER] {
+projects-1    | 2026-11-11T15:14:53.845542966Z   userParam: '6af4864b39e0eb7147b9ab03',
+projects-1    | 2026-11-11T15:14:53.845544174Z   forwarded: '6af4864b39e0eb7147b9ab03',
+projects-1    | 2026-11-11T15:14:53.845545133Z   hasAuth: true,
+projects-1    | 2026-11-11T15:14:53.845545924Z   caller: '6af4864b39e0eb7147b9ab03'
+projects-1    | 2026-11-11T15:14:53.845546883Z }
+projects-1    | 2026-11-11T15:14:53.845763883Z [CALLER] {
+projects-1    | 2026-11-11T15:14:53.845767133Z   userParam: '6af4864c39e0eb7147b9ab1e',
+projects-1    | 2026-11-11T15:14:53.845768049Z   forwarded: '6af4864c39e0eb7147b9ab1e',
+projects-1    | 2026-11-11T15:14:53.845768883Z   hasAuth: true,
+projects-1    | 2026-11-11T15:14:53.845769633Z   caller: '6af4864c39e0eb7147b9ab1e'
+projects-1    | 2026-11-11T15:14:53.845770424Z }
+projects-1    | 2026-11-11T15:14:53.846774466Z [ADV DEBUG] project: 6af4864ba2b4cfab7be498b9 adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:14:53.847567591Z [ADV DEBUG] project: 6af4864ca2b4cfab7be4990d adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:14:54.116849216Z [0mPOST /6af4864d39e0eb7147b9ab30/6af4864da2b4cfab7be49945/process [32m201[0m 290.703 ms - 7[0m
+projects-1    | 2026-11-11T15:14:54.116905008Z [0mPOST /6af4864c39e0eb7147b9ab1e/6af4864ca2b4cfab7be4990d/process [32m201[0m 290.535 ms - 7[0m
+projects-1    | 2026-11-11T15:14:54.120124466Z [0mPOST /6af4864b39e0eb7147b9ab0c/6af4864ca2b4cfab7be498d5/process [32m201[0m 297.729 ms - 7[0m
+projects-1    | 2026-11-11T15:14:54.125057341Z [0mPOST /6af4864d39e0eb7147b9ab27/6af4864da2b4cfab7be49929/process [32m201[0m 308.221 ms - 7[0m
+projects-1    | 2026-11-11T15:14:54.125872716Z [0mPOST /6af4864b39e0eb7147b9ab03/6af4864ba2b4cfab7be498b9/process [32m201[0m 298.044 ms - 7[0m
+projects-1    | 2026-11-11T15:14:54.132092174Z [0mPOST /6af4864c39e0eb7147b9ab15/6af4864ca2b4cfab7be498f1/process [32m201[0m 311.539 ms - 7[0m
+projects-1    | 2026-11-11T15:14:54.132102633Z [0mPOST /6af4864d39e0eb7147b9ab39/6af4864da2b4cfab7be49961/process [32m201[0m 312.467 ms - 7[0m
+projects-1    | 2026-11-11T15:14:54.134260424Z [0mPOST /6af4864e39e0eb7147b9ab42/6af4864ea2b4cfab7be4997d/process [32m201[0m 310.338 ms - 7[0m
+projects-1    | 2026-11-11T15:14:54.158366258Z [0mPOST /6af4864e39e0eb7147b9ab4b/6af4864ea2b4cfab7be49999/process [32m201[0m 339.451 ms - 7[0m
+projects-1    | 2026-11-11T15:14:57.643259551Z [T-03][RABBIT] msg=request-0f839c96-7724-4f33-990b-01cc51c1753f status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:14:57.647244676Z [RUN-DEBUG] msg=request-0f839c96-7724-4f33-990b-01cc51c1753f curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:14:57.742418093Z [COMMIT] project=6af4864ca2b4cfab7be4990d committedToken=1
+projects-1    | 2026-11-11T15:15:01.052222636Z [T-03][RABBIT] msg=request-ea6108aa-1c75-4ce5-a9a9-658556c477b6 status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:15:01.059608886Z [RUN-DEBUG] msg=request-ea6108aa-1c75-4ce5-a9a9-658556c477b6 curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:15:01.214665845Z [COMMIT] project=6af4864ca2b4cfab7be498d5 committedToken=1
+projects-1    | 2026-11-11T15:15:04.784742263Z [T-03][RABBIT] msg=request-06541ab5-3314-4a9e-b83e-d53d0745960a status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:15:04.788398513Z [RUN-DEBUG] msg=request-06541ab5-3314-4a9e-b83e-d53d0745960a curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:15:04.868511346Z [COMMIT] project=6af4864da2b4cfab7be49945 committedToken=1
+projects-1    | 2026-11-11T15:15:08.071492959Z [T-03][RABBIT] msg=request-3ecb5029-abd9-4d63-b156-dff471b9bd0e status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:15:08.077532042Z [RUN-DEBUG] msg=request-3ecb5029-abd9-4d63-b156-dff471b9bd0e curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:15:08.162715250Z [COMMIT] project=6af4864da2b4cfab7be49929 committedToken=1
+projects-1    | 2026-11-11T15:15:11.425940585Z [T-03][RABBIT] msg=request-9b25d290-8af4-4004-a836-5e669f8c72c1 status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:15:11.429068752Z [RUN-DEBUG] msg=request-9b25d290-8af4-4004-a836-5e669f8c72c1 curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:15:11.563381293Z [COMMIT] project=6af4864ba2b4cfab7be498b9 committedToken=1
+projects-1    | 2026-11-11T15:15:14.824029545Z [T-03][RABBIT] msg=request-bec72063-4f9e-4e02-ba87-c68eaa415907 status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:15:14.828479462Z [RUN-DEBUG] msg=request-bec72063-4f9e-4e02-ba87-c68eaa415907 curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:15:14.916349003Z [COMMIT] project=6af4864ca2b4cfab7be498f1 committedToken=1
+projects-1    | 2026-11-11T15:15:18.068743213Z [T-03][RABBIT] msg=request-95cf55bd-8969-4a9d-840a-c75d942629f1 status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:15:18.088018838Z [RUN-DEBUG] msg=request-95cf55bd-8969-4a9d-840a-c75d942629f1 curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:15:18.164873922Z [COMMIT] project=6af4864da2b4cfab7be49961 committedToken=1
+projects-1    | 2026-11-11T15:15:21.385599715Z [T-03][RABBIT] msg=request-b7af2094-81d6-4429-9bf1-8e36136943d0 status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:15:21.389238173Z [RUN-DEBUG] msg=request-b7af2094-81d6-4429-9bf1-8e36136943d0 curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:15:21.479564048Z [COMMIT] project=6af4864ea2b4cfab7be4997d committedToken=1
+projects-1    | 2026-11-11T15:17:37.624558625Z [T-03][RABBIT] msg=request-688c9077-bfda-469b-bd36-55ffa724473a status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:17:37.636623750Z [RUN-DEBUG] msg=request-688c9077-bfda-469b-bd36-55ffa724473a curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:17:38.007658583Z [COMMIT] project=6af4864ea2b4cfab7be49999 committedToken=1
+projects-1    | 2026-11-11T15:19:38.549982834Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:19:38.550288834Z   hasAuth: true,
+projects-1    | 2026-11-11T15:19:38.550294209Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:19:38.550295500Z   caller: '6af4864b39e0eb7147b9ab03'
+projects-1    | 2026-11-11T15:19:38.550296584Z }
+projects-1    | 2026-11-11T15:19:38.597460750Z [0mGET /6af4864b39e0eb7147b9ab03/6af4864ba2b4cfab7be498b9 [32m200[0m 51.339 ms - 708[0m
+projects-1    | 2026-11-11T15:19:38.609183875Z [0mDELETE /6af4864b39e0eb7147b9ab03/6af4864ba2b4cfab7be498b9 [32m204[0m 5.347 ms - -[0m
+projects-1    | 2026-11-11T15:19:38.630791084Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:19:38.630813084Z   hasAuth: true,
+projects-1    | 2026-11-11T15:19:38.630816917Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:19:38.630821667Z   caller: '6af4864b39e0eb7147b9ab0c'
+projects-1    | 2026-11-11T15:19:38.630825667Z }
+projects-1    | 2026-11-11T15:19:38.640746667Z [0mGET /6af4864b39e0eb7147b9ab0c/6af4864ca2b4cfab7be498d5 [32m200[0m 10.233 ms - 708[0m
+projects-1    | 2026-11-11T15:19:38.651084792Z [0mDELETE /6af4864b39e0eb7147b9ab0c/6af4864ca2b4cfab7be498d5 [32m204[0m 4.806 ms - -[0m
+projects-1    | 2026-11-11T15:19:38.664960500Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:19:38.664964625Z   hasAuth: true,
+projects-1    | 2026-11-11T15:19:38.664965875Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:19:38.664967042Z   caller: '6af4864c39e0eb7147b9ab15'
+projects-1    | 2026-11-11T15:19:38.664968084Z }
+projects-1    | 2026-11-11T15:19:38.669759917Z [0mGET /6af4864c39e0eb7147b9ab15/6af4864ca2b4cfab7be498f1 [32m200[0m 4.953 ms - 712[0m
+projects-1    | 2026-11-11T15:19:38.676593292Z [0mDELETE /6af4864c39e0eb7147b9ab15/6af4864ca2b4cfab7be498f1 [32m204[0m 3.423 ms - -[0m
+projects-1    | 2026-11-11T15:19:38.689559584Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:19:38.689566292Z   hasAuth: true,
+projects-1    | 2026-11-11T15:19:38.689567584Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:19:38.689568667Z   caller: '6af4864c39e0eb7147b9ab1e'
+projects-1    | 2026-11-11T15:19:38.689569875Z }
+projects-1    | 2026-11-11T15:19:38.694861959Z [0mGET /6af4864c39e0eb7147b9ab1e/6af4864ca2b4cfab7be4990d [32m200[0m 5.732 ms - 708[0m
+projects-1    | 2026-11-11T15:19:38.702356500Z [0mDELETE /6af4864c39e0eb7147b9ab1e/6af4864ca2b4cfab7be4990d [32m204[0m 3.670 ms - -[0m
+projects-1    | 2026-11-11T15:19:38.714659959Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:19:38.714663542Z   hasAuth: true,
+projects-1    | 2026-11-11T15:19:38.714664459Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:19:38.714665334Z   caller: '6af4864d39e0eb7147b9ab27'
+projects-1    | 2026-11-11T15:19:38.714666125Z }
+projects-1    | 2026-11-11T15:19:38.719657959Z [0mGET /6af4864d39e0eb7147b9ab27/6af4864da2b4cfab7be49929 [32m200[0m 5.084 ms - 708[0m
+projects-1    | 2026-11-11T15:19:38.729595375Z [0mDELETE /6af4864d39e0eb7147b9ab27/6af4864da2b4cfab7be49929 [32m204[0m 4.172 ms - -[0m
+projects-1    | 2026-11-11T15:19:38.741488834Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:19:38.741492459Z   hasAuth: true,
+projects-1    | 2026-11-11T15:19:38.741493375Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:19:38.741494209Z   caller: '6af4864d39e0eb7147b9ab30'
+projects-1    | 2026-11-11T15:19:38.741495000Z }
+projects-1    | 2026-11-11T15:19:38.745703917Z [0mGET /6af4864d39e0eb7147b9ab30/6af4864da2b4cfab7be49945 [32m200[0m 4.278 ms - 708[0m
+projects-1    | 2026-11-11T15:19:38.753019667Z [0mDELETE /6af4864d39e0eb7147b9ab30/6af4864da2b4cfab7be49945 [32m204[0m 3.862 ms - -[0m
+projects-1    | 2026-11-11T15:19:38.765392667Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:19:38.765397167Z   hasAuth: true,
+projects-1    | 2026-11-11T15:19:38.765398417Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:19:38.765399542Z   caller: '6af4864d39e0eb7147b9ab39'
+projects-1    | 2026-11-11T15:19:38.765400584Z }
+projects-1    | 2026-11-11T15:19:38.770278000Z [0mGET /6af4864d39e0eb7147b9ab39/6af4864da2b4cfab7be49961 [32m200[0m 5.000 ms - 714[0m
+projects-1    | 2026-11-11T15:19:38.777942917Z [0mDELETE /6af4864d39e0eb7147b9ab39/6af4864da2b4cfab7be49961 [32m204[0m 3.985 ms - -[0m
+projects-1    | 2026-11-11T15:19:38.790250417Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:19:38.790253750Z   hasAuth: true,
+projects-1    | 2026-11-11T15:19:38.790254625Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:19:38.790255459Z   caller: '6af4864e39e0eb7147b9ab42'
+projects-1    | 2026-11-11T15:19:38.790256292Z }
+projects-1    | 2026-11-11T15:19:38.794929625Z [0mGET /6af4864e39e0eb7147b9ab42/6af4864ea2b4cfab7be4997d [32m200[0m 4.747 ms - 710[0m
+projects-1    | 2026-11-11T15:19:38.802733875Z [0mDELETE /6af4864e39e0eb7147b9ab42/6af4864ea2b4cfab7be4997d [32m204[0m 4.021 ms - -[0m
+projects-1    | 2026-11-11T15:19:38.814220000Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:19:38.814223834Z   hasAuth: true,
+projects-1    | 2026-11-11T15:19:38.814224750Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:19:38.814225584Z   caller: '6af4864e39e0eb7147b9ab4b'
+projects-1    | 2026-11-11T15:19:38.814226375Z }
+projects-1    | 2026-11-11T15:19:38.819601625Z [0mGET /6af4864e39e0eb7147b9ab4b/6af4864ea2b4cfab7be49999 [32m200[0m 5.491 ms - 690[0m
+projects-1    | 2026-11-11T15:19:38.827935792Z [0mDELETE /6af4864e39e0eb7147b9ab4b/6af4864ea2b4cfab7be49999 [32m204[0m 4.565 ms - -[0m
+projects-1    | 2026-11-11T15:19:49.041011422Z [0mPOST /6af4879439e0eb7147b9abae [32m201[0m 6.783 ms - 392[0m
+projects-1    | 2026-11-11T15:19:49.046415630Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:19:49.046422089Z   hasAuth: true,
+projects-1    | 2026-11-11T15:19:49.046424089Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:19:49.046425214Z   caller: '6af4879439e0eb7147b9abae'
+projects-1    | 2026-11-11T15:19:49.046426297Z }
+projects-1    | 2026-11-11T15:19:49.062751130Z [0mGET /6af4879439e0eb7147b9abae/6af48795a2b4cfab7be49b2f [32m200[0m 16.703 ms - 96[0m
+projects-1    | 2026-11-11T15:19:49.157417630Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:19:49.837896131Z [0mPOST /6af4879439e0eb7147b9abae/6af48795a2b4cfab7be49b2f/video [32m204[0m 709.476 ms - -[0m
+projects-1    | 2026-11-11T15:19:49.849849464Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:19:49.849857381Z   hasAuth: true,
+projects-1    | 2026-11-11T15:19:49.849859339Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:19:49.849860839Z   caller: '6af4879439e0eb7147b9abae'
+projects-1    | 2026-11-11T15:19:49.849861922Z }
+projects-1    | 2026-11-11T15:19:49.864338506Z [0mGET /6af4879439e0eb7147b9abae/6af48795a2b4cfab7be49b2f [32m200[0m 14.768 ms - 608[0m
+projects-1    | 2026-11-11T15:19:49.879907131Z [0mPOST /6af4879439e0eb7147b9abae/6af48795a2b4cfab7be49b2f/tool [32m204[0m 10.778 ms - -[0m
+projects-1    | 2026-11-11T15:19:50.062937631Z [0mPOST /6af4879539e0eb7147b9abb7 [32m201[0m 1.922 ms - 392[0m
+projects-1    | 2026-11-11T15:19:50.067402006Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:19:50.067406547Z   hasAuth: true,
+projects-1    | 2026-11-11T15:19:50.067407631Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:19:50.067408464Z   caller: '6af4879539e0eb7147b9abb7'
+projects-1    | 2026-11-11T15:19:50.067409214Z }
+projects-1    | 2026-11-11T15:19:50.072715631Z [0mGET /6af4879539e0eb7147b9abb7/6af48796a2b4cfab7be49b4b [32m200[0m 5.443 ms - 96[0m
+projects-1    | 2026-11-11T15:19:50.156303423Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:19:50.307824798Z [0mPOST /6af4879539e0eb7147b9abb7/6af48796a2b4cfab7be49b4b/video [32m204[0m 173.811 ms - -[0m
+projects-1    | 2026-11-11T15:19:50.315401839Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:19:50.315433506Z   hasAuth: true,
+projects-1    | 2026-11-11T15:19:50.315435798Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:19:50.315436673Z   caller: '6af4879539e0eb7147b9abb7'
+projects-1    | 2026-11-11T15:19:50.315437506Z }
+projects-1    | 2026-11-11T15:19:50.321295464Z [0mGET /6af4879539e0eb7147b9abb7/6af48796a2b4cfab7be49b4b [32m200[0m 5.985 ms - 608[0m
+projects-1    | 2026-11-11T15:19:50.333174423Z [0mPOST /6af4879539e0eb7147b9abb7/6af48796a2b4cfab7be49b4b/tool [32m204[0m 7.330 ms - -[0m
+projects-1    | 2026-11-11T15:19:50.472300298Z [0mPOST /6af4879639e0eb7147b9abc0 [32m201[0m 1.288 ms - 392[0m
+projects-1    | 2026-11-11T15:19:50.476061214Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:19:50.476066714Z   hasAuth: true,
+projects-1    | 2026-11-11T15:19:50.476067839Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:19:50.476068923Z   caller: '6af4879639e0eb7147b9abc0'
+projects-1    | 2026-11-11T15:19:50.476070006Z }
+projects-1    | 2026-11-11T15:19:50.480147381Z [0mGET /6af4879639e0eb7147b9abc0/6af48796a2b4cfab7be49b67 [32m200[0m 4.167 ms - 96[0m
+projects-1    | 2026-11-11T15:19:50.539078298Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:19:50.653489339Z [0mPOST /6af4879639e0eb7147b9abc0/6af48796a2b4cfab7be49b67/video [32m204[0m 129.913 ms - -[0m
+projects-1    | 2026-11-11T15:19:50.660639548Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:19:50.660648673Z   hasAuth: true,
+projects-1    | 2026-11-11T15:19:50.660649881Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:19:50.660650756Z   caller: '6af4879639e0eb7147b9abc0'
+projects-1    | 2026-11-11T15:19:50.660651589Z }
+projects-1    | 2026-11-11T15:19:50.670785798Z [0mGET /6af4879639e0eb7147b9abc0/6af48796a2b4cfab7be49b67 [32m200[0m 10.517 ms - 610[0m
+projects-1    | 2026-11-11T15:19:50.684079714Z [0mPOST /6af4879639e0eb7147b9abc0/6af48796a2b4cfab7be49b67/tool [32m204[0m 7.746 ms - -[0m
+projects-1    | 2026-11-11T15:19:50.825863965Z [0mPOST /6af4879639e0eb7147b9abc9 [32m201[0m 1.664 ms - 392[0m
+projects-1    | 2026-11-11T15:19:50.830850548Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:19:50.830858881Z   hasAuth: true,
+projects-1    | 2026-11-11T15:19:50.830860006Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:19:50.830861256Z   caller: '6af4879639e0eb7147b9abc9'
+projects-1    | 2026-11-11T15:19:50.830862090Z }
+projects-1    | 2026-11-11T15:19:50.835952090Z [0mGET /6af4879639e0eb7147b9abc9/6af48796a2b4cfab7be49b83 [32m200[0m 5.116 ms - 96[0m
+projects-1    | 2026-11-11T15:19:50.893122298Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:19:51.036850756Z [0mPOST /6af4879639e0eb7147b9abc9/6af48796a2b4cfab7be49b83/video [32m204[0m 159.864 ms - -[0m
+projects-1    | 2026-11-11T15:19:51.050180840Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:19:51.050238881Z   hasAuth: true,
+projects-1    | 2026-11-11T15:19:51.050246298Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:19:51.050273506Z   caller: '6af4879639e0eb7147b9abc9'
+projects-1    | 2026-11-11T15:19:51.050279715Z }
+projects-1    | 2026-11-11T15:19:51.077236923Z [0mGET /6af4879639e0eb7147b9abc9/6af48796a2b4cfab7be49b83 [32m200[0m 26.789 ms - 614[0m
+projects-1    | 2026-11-11T15:19:51.108854673Z [0mPOST /6af4879639e0eb7147b9abc9/6af48796a2b4cfab7be49b83/tool [32m204[0m 17.531 ms - -[0m
+projects-1    | 2026-11-11T15:19:51.303733923Z [0mPOST /6af4879739e0eb7147b9abd2 [32m201[0m 3.272 ms - 392[0m
+projects-1    | 2026-11-11T15:19:51.307843256Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:19:51.307849965Z   hasAuth: true,
+projects-1    | 2026-11-11T15:19:51.307854715Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:19:51.307857798Z   caller: '6af4879739e0eb7147b9abd2'
+projects-1    | 2026-11-11T15:19:51.307858881Z }
+projects-1    | 2026-11-11T15:19:51.314007965Z [0mGET /6af4879739e0eb7147b9abd2/6af48797a2b4cfab7be49b9f [32m200[0m 6.405 ms - 96[0m
+projects-1    | 2026-11-11T15:19:51.390619548Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:19:51.523457215Z [0mPOST /6af4879739e0eb7147b9abd2/6af48797a2b4cfab7be49b9f/video [32m204[0m 154.825 ms - -[0m
+projects-1    | 2026-11-11T15:19:51.529698923Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:19:51.529704340Z   hasAuth: true,
+projects-1    | 2026-11-11T15:19:51.529705382Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:19:51.529706548Z   caller: '6af4879739e0eb7147b9abd2'
+projects-1    | 2026-11-11T15:19:51.529707382Z }
+projects-1    | 2026-11-11T15:19:51.535978215Z [0mGET /6af4879739e0eb7147b9abd2/6af48797a2b4cfab7be49b9f [32m200[0m 6.344 ms - 610[0m
+projects-1    | 2026-11-11T15:19:51.548452965Z [0mPOST /6af4879739e0eb7147b9abd2/6af48797a2b4cfab7be49b9f/tool [32m204[0m 8.042 ms - -[0m
+projects-1    | 2026-11-11T15:19:51.686246423Z [0mPOST /6af4879739e0eb7147b9abdb [32m201[0m 1.423 ms - 392[0m
+projects-1    | 2026-11-11T15:19:51.689894090Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:19:51.689899048Z   hasAuth: true,
+projects-1    | 2026-11-11T15:19:51.689900340Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:19:51.689901382Z   caller: '6af4879739e0eb7147b9abdb'
+projects-1    | 2026-11-11T15:19:51.689902715Z }
+projects-1    | 2026-11-11T15:19:51.693950798Z [0mGET /6af4879739e0eb7147b9abdb/6af48797a2b4cfab7be49bbb [32m200[0m 4.177 ms - 96[0m
+projects-1    | 2026-11-11T15:19:51.740499507Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:19:51.876530173Z [0mPOST /6af4879739e0eb7147b9abdb/6af48797a2b4cfab7be49bbb/video [32m204[0m 146.895 ms - -[0m
+projects-1    | 2026-11-11T15:19:51.883511590Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:19:51.883523882Z   hasAuth: true,
+projects-1    | 2026-11-11T15:19:51.883525798Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:19:51.883526632Z   caller: '6af4879739e0eb7147b9abdb'
+projects-1    | 2026-11-11T15:19:51.883541840Z }
+projects-1    | 2026-11-11T15:19:51.891355382Z [0mGET /6af4879739e0eb7147b9abdb/6af48797a2b4cfab7be49bbb [32m200[0m 7.994 ms - 610[0m
+projects-1    | 2026-11-11T15:19:51.905990090Z [0mPOST /6af4879739e0eb7147b9abdb/6af48797a2b4cfab7be49bbb/tool [32m204[0m 9.742 ms - -[0m
+projects-1    | 2026-11-11T15:19:52.051469798Z [0mPOST /6af4879739e0eb7147b9abe4 [32m201[0m 1.397 ms - 392[0m
+projects-1    | 2026-11-11T15:19:52.055493715Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:19:52.055499007Z   hasAuth: true,
+projects-1    | 2026-11-11T15:19:52.055500173Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:19:52.055501340Z   caller: '6af4879739e0eb7147b9abe4'
+projects-1    | 2026-11-11T15:19:52.055502548Z }
+projects-1    | 2026-11-11T15:19:52.059401590Z [0mGET /6af4879739e0eb7147b9abe4/6af48798a2b4cfab7be49bd7 [32m200[0m 4.012 ms - 96[0m
+projects-1    | 2026-11-11T15:19:52.128632840Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:19:52.302280590Z [0mPOST /6af4879739e0eb7147b9abe4/6af48798a2b4cfab7be49bd7/video [32m204[0m 188.669 ms - -[0m
+projects-1    | 2026-11-11T15:19:52.321233299Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:19:52.321270215Z   hasAuth: true,
+projects-1    | 2026-11-11T15:19:52.321275924Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:19:52.321280007Z   caller: '6af4879739e0eb7147b9abe4'
+projects-1    | 2026-11-11T15:19:52.321283674Z }
+projects-1    | 2026-11-11T15:19:52.339557174Z [0mGET /6af4879739e0eb7147b9abe4/6af48798a2b4cfab7be49bd7 [32m200[0m 19.260 ms - 610[0m
+projects-1    | 2026-11-11T15:19:52.354318882Z [0mPOST /6af4879739e0eb7147b9abe4/6af48798a2b4cfab7be49bd7/tool [32m204[0m 8.169 ms - -[0m
+projects-1    | 2026-11-11T15:19:52.500220632Z [0mPOST /6af4879839e0eb7147b9abed [32m201[0m 1.731 ms - 392[0m
+projects-1    | 2026-11-11T15:19:52.504444299Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:19:52.504449424Z   hasAuth: true,
+projects-1    | 2026-11-11T15:19:52.504451007Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:19:52.504451840Z   caller: '6af4879839e0eb7147b9abed'
+projects-1    | 2026-11-11T15:19:52.504452632Z }
+projects-1    | 2026-11-11T15:19:52.508753799Z [0mGET /6af4879839e0eb7147b9abed/6af48798a2b4cfab7be49bf3 [32m200[0m 4.424 ms - 96[0m
+projects-1    | 2026-11-11T15:19:52.560753090Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:19:52.683973049Z [0mPOST /6af4879839e0eb7147b9abed/6af48798a2b4cfab7be49bf3/video [32m204[0m 138.809 ms - -[0m
+projects-1    | 2026-11-11T15:19:52.690173257Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:19:52.690179424Z   hasAuth: true,
+projects-1    | 2026-11-11T15:19:52.690180674Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:19:52.690181757Z   caller: '6af4879839e0eb7147b9abed'
+projects-1    | 2026-11-11T15:19:52.690182840Z }
+projects-1    | 2026-11-11T15:19:52.695881965Z [0mGET /6af4879839e0eb7147b9abed/6af48798a2b4cfab7be49bf3 [32m200[0m 5.784 ms - 614[0m
+projects-1    | 2026-11-11T15:19:52.707519215Z [0mPOST /6af4879839e0eb7147b9abed/6af48798a2b4cfab7be49bf3/tool [32m204[0m 7.427 ms - -[0m
+projects-1    | 2026-11-11T15:19:52.846911590Z [0mPOST /6af4879839e0eb7147b9abf6 [32m201[0m 1.777 ms - 394[0m
+projects-1    | 2026-11-11T15:19:52.851766507Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:19:52.851776382Z   hasAuth: true,
+projects-1    | 2026-11-11T15:19:52.851777674Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:19:52.851778757Z   caller: '6af4879839e0eb7147b9abf6'
+projects-1    | 2026-11-11T15:19:52.851779799Z }
+projects-1    | 2026-11-11T15:19:52.856417090Z [0mGET /6af4879839e0eb7147b9abf6/6af48798a2b4cfab7be49c0f [32m200[0m 4.758 ms - 98[0m
+projects-1    | 2026-11-11T15:19:53.157959007Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:19:53.586781341Z [0mPOST /6af4879839e0eb7147b9abf6/6af48798a2b4cfab7be49c0f/video [32m204[0m 517.998 ms - -[0m
+projects-1    | 2026-11-11T15:19:53.628288049Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:19:53.628375883Z   hasAuth: true,
+projects-1    | 2026-11-11T15:19:53.628382091Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:19:53.628385508Z   caller: '6af4879839e0eb7147b9abf6'
+projects-1    | 2026-11-11T15:19:53.628386508Z }
+projects-1    | 2026-11-11T15:19:53.666753216Z [0mGET /6af4879839e0eb7147b9abf6/6af48798a2b4cfab7be49c0f [32m200[0m 44.358 ms - 623[0m
+projects-1    | 2026-11-11T15:19:53.702539091Z [0mPOST /6af4879839e0eb7147b9abf6/6af48798a2b4cfab7be49c0f/tool [32m204[0m 25.411 ms - -[0m
+projects-1    | 2026-11-11T15:20:23.794650466Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:20:23.795229924Z   hasAuth: true,
+projects-1    | 2026-11-11T15:20:23.795236466Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:20:23.795238133Z   caller: '6af4879839e0eb7147b9abf6'
+projects-1    | 2026-11-11T15:20:23.795240008Z }
+projects-1    | 2026-11-11T15:20:23.804358674Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:20:23.804367216Z   hasAuth: true,
+projects-1    | 2026-11-11T15:20:23.804368466Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:20:23.804369674Z   caller: '6af4879439e0eb7147b9abae'
+projects-1    | 2026-11-11T15:20:23.804371258Z }
+projects-1    | 2026-11-11T15:20:23.805359049Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:20:23.805366591Z   hasAuth: true,
+projects-1    | 2026-11-11T15:20:23.805368758Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:20:23.805369966Z   caller: '6af4879539e0eb7147b9abb7'
+projects-1    | 2026-11-11T15:20:23.805371174Z }
+projects-1    | 2026-11-11T15:20:23.806504841Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:20:23.806512216Z   hasAuth: true,
+projects-1    | 2026-11-11T15:20:23.806513799Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:20:23.806515049Z   caller: '6af4879739e0eb7147b9abe4'
+projects-1    | 2026-11-11T15:20:23.806516133Z }
+projects-1    | 2026-11-11T15:20:23.807568758Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:20:23.807572716Z   hasAuth: true,
+projects-1    | 2026-11-11T15:20:23.807573674Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:20:23.807574508Z   caller: '6af4879639e0eb7147b9abc0'
+projects-1    | 2026-11-11T15:20:23.807575341Z }
+projects-1    | 2026-11-11T15:20:23.810562049Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:20:23.810585216Z   hasAuth: true,
+projects-1    | 2026-11-11T15:20:23.810588216Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:20:23.810590299Z   caller: '6af4879839e0eb7147b9abed'
+projects-1    | 2026-11-11T15:20:23.810591174Z }
+projects-1    | 2026-11-11T15:20:23.812548216Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:20:23.812551924Z   hasAuth: true,
+projects-1    | 2026-11-11T15:20:23.812552799Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:20:23.812553591Z   caller: '6af4879639e0eb7147b9abc9'
+projects-1    | 2026-11-11T15:20:23.812554633Z }
+projects-1    | 2026-11-11T15:20:23.813252591Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:20:23.813264508Z   hasAuth: true,
+projects-1    | 2026-11-11T15:20:23.813266299Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:20:23.813267133Z   caller: '6af4879739e0eb7147b9abdb'
+projects-1    | 2026-11-11T15:20:23.813268508Z }
+projects-1    | 2026-11-11T15:20:23.817467591Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:20:23.817475799Z   hasAuth: true,
+projects-1    | 2026-11-11T15:20:23.817477091Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:20:23.817477966Z   caller: '6af4879739e0eb7147b9abd2'
+projects-1    | 2026-11-11T15:20:23.817478883Z }
+projects-1    | 2026-11-11T15:20:23.860155258Z [0mGET /6af4879839e0eb7147b9abf6/6af48798a2b4cfab7be49c0f [32m200[0m 71.768 ms - 690[0m
+projects-1    | 2026-11-11T15:20:23.861110758Z [0mGET /6af4879539e0eb7147b9abb7/6af48796a2b4cfab7be49b4b [32m200[0m 70.674 ms - 708[0m
+projects-1    | 2026-11-11T15:20:23.861197674Z [0mGET /6af4879439e0eb7147b9abae/6af48795a2b4cfab7be49b2f [32m200[0m 72.156 ms - 712[0m
+projects-1    | 2026-11-11T15:20:23.863165466Z [0mGET /6af4879739e0eb7147b9abe4/6af48798a2b4cfab7be49bd7 [32m200[0m 71.596 ms - 708[0m
+projects-1    | 2026-11-11T15:20:23.865849508Z [0mGET /6af4879639e0eb7147b9abc0/6af48796a2b4cfab7be49b67 [32m200[0m 59.449 ms - 708[0m
+projects-1    | 2026-11-11T15:20:23.866300591Z [0mGET /6af4879839e0eb7147b9abed/6af48798a2b4cfab7be49bf3 [32m200[0m 56.753 ms - 708[0m
+projects-1    | 2026-11-11T15:20:23.866668591Z [0mGET /6af4879639e0eb7147b9abc9/6af48796a2b4cfab7be49b83 [32m200[0m 55.013 ms - 708[0m
+projects-1    | 2026-11-11T15:20:23.867090216Z [0mGET /6af4879739e0eb7147b9abd2/6af48797a2b4cfab7be49b9f [32m200[0m 50.384 ms - 710[0m
+projects-1    | 2026-11-11T15:20:23.867437008Z [0mGET /6af4879739e0eb7147b9abdb/6af48797a2b4cfab7be49bbb [32m200[0m 55.646 ms - 710[0m
+projects-1    | 2026-11-11T15:20:23.879210799Z [CALLER] {
+projects-1    | 2026-11-11T15:20:23.879244299Z   userParam: '6af4879839e0eb7147b9abf6',
+projects-1    | 2026-11-11T15:20:23.879246341Z   forwarded: '6af4879839e0eb7147b9abf6',
+projects-1    | 2026-11-11T15:20:23.879247216Z   hasAuth: true,
+projects-1    | 2026-11-11T15:20:23.879248049Z   caller: '6af4879839e0eb7147b9abf6'
+projects-1    | 2026-11-11T15:20:23.879248841Z }
+projects-1    | 2026-11-11T15:20:23.879815924Z [CALLER] {
+projects-1    | 2026-11-11T15:20:23.879819008Z   userParam: '6af4879539e0eb7147b9abb7',
+projects-1    | 2026-11-11T15:20:23.879820049Z   forwarded: '6af4879539e0eb7147b9abb7',
+projects-1    | 2026-11-11T15:20:23.879820966Z   hasAuth: true,
+projects-1    | 2026-11-11T15:20:23.879821716Z   caller: '6af4879539e0eb7147b9abb7'
+projects-1    | 2026-11-11T15:20:23.879822508Z }
+projects-1    | 2026-11-11T15:20:23.880523549Z [ADV DEBUG] project: 6af48796a2b4cfab7be49b4b adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:20:23.882233466Z [ADV DEBUG] project: 6af48798a2b4cfab7be49c0f adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'subtitles' ]
+projects-1    | 2026-11-11T15:20:23.899037466Z [CALLER] {
+projects-1    | 2026-11-11T15:20:23.899043966Z   userParam: '6af4879739e0eb7147b9abe4',
+projects-1    | 2026-11-11T15:20:23.899044883Z   forwarded: '6af4879739e0eb7147b9abe4',
+projects-1    | 2026-11-11T15:20:23.899045716Z   hasAuth: true,
+projects-1    | 2026-11-11T15:20:23.899046508Z   caller: '6af4879739e0eb7147b9abe4'
+projects-1    | 2026-11-11T15:20:23.899047299Z }
+projects-1    | 2026-11-11T15:20:23.902145716Z [ADV DEBUG] project: 6af48798a2b4cfab7be49bd7 adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:20:23.903583799Z [CALLER] {
+projects-1    | 2026-11-11T15:20:23.903824258Z   userParam: '6af4879739e0eb7147b9abd2',
+projects-1    | 2026-11-11T15:20:23.903827424Z   forwarded: '6af4879739e0eb7147b9abd2',
+projects-1    | 2026-11-11T15:20:23.903828758Z   hasAuth: true,
+projects-1    | 2026-11-11T15:20:23.903829966Z   caller: '6af4879739e0eb7147b9abd2'
+projects-1    | 2026-11-11T15:20:23.903830841Z }
+projects-1    | 2026-11-11T15:20:23.905244633Z [CALLER] {
+projects-1    | 2026-11-11T15:20:23.905250716Z   userParam: '6af4879839e0eb7147b9abed',
+projects-1    | 2026-11-11T15:20:23.905254008Z   forwarded: '6af4879839e0eb7147b9abed',
+projects-1    | 2026-11-11T15:20:23.905254924Z   hasAuth: true,
+projects-1    | 2026-11-11T15:20:23.905257383Z   caller: '6af4879839e0eb7147b9abed'
+projects-1    | 2026-11-11T15:20:23.905258758Z }
+projects-1    | 2026-11-11T15:20:23.905606674Z [CALLER] {
+projects-1    | 2026-11-11T15:20:23.905608633Z   userParam: '6af4879639e0eb7147b9abc9',
+projects-1    | 2026-11-11T15:20:23.905609424Z   forwarded: '6af4879639e0eb7147b9abc9',
+projects-1    | 2026-11-11T15:20:23.905610174Z   hasAuth: true,
+projects-1    | 2026-11-11T15:20:23.905610924Z   caller: '6af4879639e0eb7147b9abc9'
+projects-1    | 2026-11-11T15:20:23.905611716Z }
+projects-1    | 2026-11-11T15:20:23.905852924Z [CALLER] {
+projects-1    | 2026-11-11T15:20:23.905854924Z   userParam: '6af4879439e0eb7147b9abae',
+projects-1    | 2026-11-11T15:20:23.905869674Z   forwarded: '6af4879439e0eb7147b9abae',
+projects-1    | 2026-11-11T15:20:23.905871466Z   hasAuth: true,
+projects-1    | 2026-11-11T15:20:23.905872216Z   caller: '6af4879439e0eb7147b9abae'
+projects-1    | 2026-11-11T15:20:23.905873049Z }
+projects-1    | 2026-11-11T15:20:23.907418966Z [ADV DEBUG] project: 6af48797a2b4cfab7be49b9f adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:20:23.908463508Z [ADV DEBUG] project: 6af48798a2b4cfab7be49bf3 adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:20:23.909471883Z [ADV DEBUG] project: 6af48796a2b4cfab7be49b83 adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:20:23.910402091Z [ADV DEBUG] project: 6af48795a2b4cfab7be49b2f adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:20:23.911147633Z [CALLER] {
+projects-1    | 2026-11-11T15:20:23.911151091Z   userParam: '6af4879639e0eb7147b9abc0',
+projects-1    | 2026-11-11T15:20:23.911154299Z   forwarded: '6af4879639e0eb7147b9abc0',
+projects-1    | 2026-11-11T15:20:23.911155633Z   hasAuth: true,
+projects-1    | 2026-11-11T15:20:23.911156508Z   caller: '6af4879639e0eb7147b9abc0'
+projects-1    | 2026-11-11T15:20:23.911157299Z }
+projects-1    | 2026-11-11T15:20:23.912249966Z [CALLER] {
+projects-1    | 2026-11-11T15:20:23.912253508Z   userParam: '6af4879739e0eb7147b9abdb',
+projects-1    | 2026-11-11T15:20:23.912254674Z   forwarded: '6af4879739e0eb7147b9abdb',
+projects-1    | 2026-11-11T15:20:23.912255591Z   hasAuth: true,
+projects-1    | 2026-11-11T15:20:23.912256508Z   caller: '6af4879739e0eb7147b9abdb'
+projects-1    | 2026-11-11T15:20:23.912257758Z }
+projects-1    | 2026-11-11T15:20:23.912840049Z [ADV DEBUG] project: 6af48796a2b4cfab7be49b67 adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:20:23.914126674Z [ADV DEBUG] project: 6af48797a2b4cfab7be49bbb adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:20:24.156100508Z [0mPOST /6af4879539e0eb7147b9abb7/6af48796a2b4cfab7be49b4b/process [32m201[0m 280.623 ms - 7[0m
+projects-1    | 2026-11-11T15:20:24.194037924Z [0mPOST /6af4879439e0eb7147b9abae/6af48795a2b4cfab7be49b2f/process [32m201[0m 306.352 ms - 7[0m
+projects-1    | 2026-11-11T15:20:24.203306174Z [0mPOST /6af4879839e0eb7147b9abed/6af48798a2b4cfab7be49bf3/process [32m201[0m 318.697 ms - 7[0m
+projects-1    | 2026-11-11T15:20:24.208431799Z [0mPOST /6af4879739e0eb7147b9abd2/6af48797a2b4cfab7be49b9f/process [32m201[0m 324.783 ms - 7[0m
+projects-1    | 2026-11-11T15:20:24.212019341Z [0mPOST /6af4879739e0eb7147b9abe4/6af48798a2b4cfab7be49bd7/process [32m201[0m 330.175 ms - 7[0m
+projects-1    | 2026-11-11T15:20:24.212026299Z [0mPOST /6af4879739e0eb7147b9abdb/6af48797a2b4cfab7be49bbb/process [32m201[0m 323.105 ms - 7[0m
+projects-1    | 2026-11-11T15:20:24.215290841Z [0mPOST /6af4879639e0eb7147b9abc0/6af48796a2b4cfab7be49b67/process [32m201[0m 327.631 ms - 7[0m
+projects-1    | 2026-11-11T15:20:24.217541674Z [0mPOST /6af4879639e0eb7147b9abc9/6af48796a2b4cfab7be49b83/process [32m201[0m 332.667 ms - 7[0m
+projects-1    | 2026-11-11T15:20:24.241718258Z [0mPOST /6af4879839e0eb7147b9abf6/6af48798a2b4cfab7be49c0f/process [32m201[0m 368.870 ms - 7[0m
+projects-1    | 2026-11-11T15:20:27.877860343Z [T-03][RABBIT] msg=request-6d0cf218-16dc-4966-94dc-29d2778790bd status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:20:27.887102051Z [RUN-DEBUG] msg=request-6d0cf218-16dc-4966-94dc-29d2778790bd curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:20:27.981869468Z [COMMIT] project=6af48796a2b4cfab7be49b4b committedToken=1
+projects-1    | 2026-11-11T15:20:31.591875428Z [T-03][RABBIT] msg=request-b619d652-0e4f-4ffd-9cb1-1c6623c07b65 status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:20:31.595384886Z [RUN-DEBUG] msg=request-b619d652-0e4f-4ffd-9cb1-1c6623c07b65 curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:20:31.719873136Z [COMMIT] project=6af48795a2b4cfab7be49b2f committedToken=1
+projects-1    | 2026-11-11T15:20:35.148427055Z [T-03][RABBIT] msg=request-87b3b33f-375c-465f-9fce-ce4ff0abd060 status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:20:35.157258763Z [RUN-DEBUG] msg=request-87b3b33f-375c-465f-9fce-ce4ff0abd060 curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:20:35.289772221Z [COMMIT] project=6af48798a2b4cfab7be49bf3 committedToken=1
+projects-1    | 2026-11-11T15:20:38.416033417Z [T-03][RABBIT] msg=request-3e4e2e49-bfdd-42c9-9280-6606f43ea256 status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:20:38.422163542Z [RUN-DEBUG] msg=request-3e4e2e49-bfdd-42c9-9280-6606f43ea256 curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:20:38.580200917Z [COMMIT] project=6af48797a2b4cfab7be49b9f committedToken=1
+projects-1    | 2026-11-11T15:20:42.176514127Z [T-03][RABBIT] msg=request-b64c10f3-e365-407b-a3fd-adc0860e2c14 status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:20:42.179598960Z [RUN-DEBUG] msg=request-b64c10f3-e365-407b-a3fd-adc0860e2c14 curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:20:42.380475377Z [COMMIT] project=6af48798a2b4cfab7be49bd7 committedToken=1
+projects-1    | 2026-11-11T15:20:45.860179295Z [T-03][RABBIT] msg=request-610ea832-09e7-49ec-a3c3-612563b89d08 status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:20:45.863313170Z [RUN-DEBUG] msg=request-610ea832-09e7-49ec-a3c3-612563b89d08 curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:20:46.148174754Z [COMMIT] project=6af48797a2b4cfab7be49bbb committedToken=1
+projects-1    | 2026-11-11T15:20:49.452377881Z [T-03][RABBIT] msg=request-d5e6bae7-4c28-49ed-84a2-6f58a708a17e status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:20:49.464501422Z [RUN-DEBUG] msg=request-d5e6bae7-4c28-49ed-84a2-6f58a708a17e curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:20:49.726649797Z [COMMIT] project=6af48796a2b4cfab7be49b67 committedToken=1
+projects-1    | 2026-11-11T15:20:53.158031966Z [T-03][RABBIT] msg=request-437b2fc3-c33b-489f-88f2-4ce862e1645d status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:20:53.161230174Z [RUN-DEBUG] msg=request-437b2fc3-c33b-489f-88f2-4ce862e1645d curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:20:53.299746091Z [COMMIT] project=6af48796a2b4cfab7be49b83 committedToken=1
+projects-1    | 2026-11-11T15:22:53.833159508Z [T-03][RABBIT] msg=request-c33a6097-5542-470b-804a-f76ca64447ce status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:22:53.839058924Z [RUN-DEBUG] msg=request-c33a6097-5542-470b-804a-f76ca64447ce curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:22:54.047698966Z [COMMIT] project=6af48798a2b4cfab7be49c0f committedToken=1
+projects-1    | 2026-11-11T15:24:55.964462550Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:24:55.964537884Z   hasAuth: true,
+projects-1    | 2026-11-11T15:24:55.964540300Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:24:55.964541467Z   caller: '6af4879439e0eb7147b9abae'
+projects-1    | 2026-11-11T15:24:55.964542509Z }
+projects-1    | 2026-11-11T15:24:56.017713509Z [0mGET /6af4879439e0eb7147b9abae/6af48795a2b4cfab7be49b2f [32m200[0m 56.352 ms - 708[0m
+projects-1    | 2026-11-11T15:24:56.031685717Z [0mDELETE /6af4879439e0eb7147b9abae/6af48795a2b4cfab7be49b2f [32m204[0m 5.774 ms - -[0m
+projects-1    | 2026-11-11T15:24:56.058451800Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:24:56.058458634Z   hasAuth: true,
+projects-1    | 2026-11-11T15:24:56.058460259Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:24:56.058461509Z   caller: '6af4879539e0eb7147b9abb7'
+projects-1    | 2026-11-11T15:24:56.058465050Z }
+projects-1    | 2026-11-11T15:24:56.064594717Z [0mGET /6af4879539e0eb7147b9abb7/6af48796a2b4cfab7be49b4b [32m200[0m 6.323 ms - 708[0m
+projects-1    | 2026-11-11T15:24:56.079033634Z [0mDELETE /6af4879539e0eb7147b9abb7/6af48796a2b4cfab7be49b4b [32m204[0m 10.032 ms - -[0m
+projects-1    | 2026-11-11T15:24:56.098367342Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:24:56.098372717Z   hasAuth: true,
+projects-1    | 2026-11-11T15:24:56.098374300Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:24:56.098375842Z   caller: '6af4879639e0eb7147b9abc0'
+projects-1    | 2026-11-11T15:24:56.098377550Z }
+projects-1    | 2026-11-11T15:24:56.103996634Z [0mGET /6af4879639e0eb7147b9abc0/6af48796a2b4cfab7be49b67 [32m200[0m 5.776 ms - 708[0m
+projects-1    | 2026-11-11T15:24:56.112590800Z [0mDELETE /6af4879639e0eb7147b9abc0/6af48796a2b4cfab7be49b67 [32m204[0m 4.251 ms - -[0m
+projects-1    | 2026-11-11T15:24:56.127432509Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:24:56.127436675Z   hasAuth: true,
+projects-1    | 2026-11-11T15:24:56.127437759Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:24:56.127438884Z   caller: '6af4879639e0eb7147b9abc9'
+projects-1    | 2026-11-11T15:24:56.127439884Z }
+projects-1    | 2026-11-11T15:24:56.132488217Z [0mGET /6af4879639e0eb7147b9abc9/6af48796a2b4cfab7be49b83 [32m200[0m 5.166 ms - 708[0m
+projects-1    | 2026-11-11T15:24:56.139620384Z [0mDELETE /6af4879639e0eb7147b9abc9/6af48796a2b4cfab7be49b83 [32m204[0m 3.707 ms - -[0m
+projects-1    | 2026-11-11T15:24:56.151855050Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:24:56.151859425Z   hasAuth: true,
+projects-1    | 2026-11-11T15:24:56.151860592Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:24:56.151861634Z   caller: '6af4879739e0eb7147b9abd2'
+projects-1    | 2026-11-11T15:24:56.151891717Z }
+projects-1    | 2026-11-11T15:24:56.156845509Z [0mGET /6af4879739e0eb7147b9abd2/6af48797a2b4cfab7be49b9f [32m200[0m 4.993 ms - 712[0m
+projects-1    | 2026-11-11T15:24:56.165183509Z [0mDELETE /6af4879739e0eb7147b9abd2/6af48797a2b4cfab7be49b9f [32m204[0m 4.729 ms - -[0m
+projects-1    | 2026-11-11T15:24:56.177684509Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:24:56.177691967Z   hasAuth: true,
+projects-1    | 2026-11-11T15:24:56.177693175Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:24:56.177694175Z   caller: '6af4879739e0eb7147b9abdb'
+projects-1    | 2026-11-11T15:24:56.177694967Z }
+projects-1    | 2026-11-11T15:24:56.186112717Z [0mGET /6af4879739e0eb7147b9abdb/6af48797a2b4cfab7be49bbb [32m200[0m 8.552 ms - 708[0m
+projects-1    | 2026-11-11T15:24:56.193274509Z [0mDELETE /6af4879739e0eb7147b9abdb/6af48797a2b4cfab7be49bbb [32m204[0m 3.481 ms - -[0m
+projects-1    | 2026-11-11T15:24:56.205022217Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:24:56.205026592Z   hasAuth: true,
+projects-1    | 2026-11-11T15:24:56.205027884Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:24:56.205029009Z   caller: '6af4879739e0eb7147b9abe4'
+projects-1    | 2026-11-11T15:24:56.205030092Z }
+projects-1    | 2026-11-11T15:24:56.209384967Z [0mGET /6af4879739e0eb7147b9abe4/6af48798a2b4cfab7be49bd7 [32m200[0m 4.443 ms - 710[0m
+projects-1    | 2026-11-11T15:24:56.217194550Z [0mDELETE /6af4879739e0eb7147b9abe4/6af48798a2b4cfab7be49bd7 [32m204[0m 4.110 ms - -[0m
+projects-1    | 2026-11-11T15:24:56.230333217Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:24:56.230343425Z   hasAuth: true,
+projects-1    | 2026-11-11T15:24:56.230344425Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:24:56.230345217Z   caller: '6af4879839e0eb7147b9abed'
+projects-1    | 2026-11-11T15:24:56.230346009Z }
+projects-1    | 2026-11-11T15:24:56.234616634Z [0mGET /6af4879839e0eb7147b9abed/6af48798a2b4cfab7be49bf3 [32m200[0m 4.334 ms - 712[0m
+projects-1    | 2026-11-11T15:24:56.241522717Z [0mDELETE /6af4879839e0eb7147b9abed/6af48798a2b4cfab7be49bf3 [32m204[0m 3.566 ms - -[0m
+projects-1    | 2026-11-11T15:24:56.253302384Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:24:56.253305675Z   hasAuth: true,
+projects-1    | 2026-11-11T15:24:56.253306509Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:24:56.253307300Z   caller: '6af4879839e0eb7147b9abf6'
+projects-1    | 2026-11-11T15:24:56.253308092Z }
+projects-1    | 2026-11-11T15:24:56.258665175Z [0mGET /6af4879839e0eb7147b9abf6/6af48798a2b4cfab7be49c0f [32m200[0m 5.392 ms - 692[0m
+projects-1    | 2026-11-11T15:24:56.266361092Z [0mDELETE /6af4879839e0eb7147b9abf6/6af48798a2b4cfab7be49c0f [32m204[0m 4.175 ms - -[0m
+projects-1    | 2026-11-11T15:25:06.469884389Z [0mPOST /6af488d239e0eb7147b9ac59 [32m201[0m 5.322 ms - 392[0m
+projects-1    | 2026-11-11T15:25:06.474688014Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:25:06.474717389Z   hasAuth: true,
+projects-1    | 2026-11-11T15:25:06.474719514Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:25:06.474720347Z   caller: '6af488d239e0eb7147b9ac59'
+projects-1    | 2026-11-11T15:25:06.474721139Z }
+projects-1    | 2026-11-11T15:25:06.481647930Z [0mGET /6af488d239e0eb7147b9ac59/6af488d2a2b4cfab7be49da5 [32m200[0m 7.336 ms - 96[0m
+projects-1    | 2026-11-11T15:25:06.589192597Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:25:07.177946125Z [0mPOST /6af488d239e0eb7147b9ac59/6af488d2a2b4cfab7be49da5/video [32m204[0m 623.822 ms - -[0m
+projects-1    | 2026-11-11T15:25:07.188184500Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:25:07.188216416Z   hasAuth: true,
+projects-1    | 2026-11-11T15:25:07.188489833Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:25:07.188494791Z   caller: '6af488d239e0eb7147b9ac59'
+projects-1    | 2026-11-11T15:25:07.188495875Z }
+projects-1    | 2026-11-11T15:25:07.200625583Z [0mGET /6af488d239e0eb7147b9ac59/6af488d2a2b4cfab7be49da5 [32m200[0m 13.580 ms - 610[0m
+projects-1    | 2026-11-11T15:25:07.214971708Z [0mPOST /6af488d239e0eb7147b9ac59/6af488d2a2b4cfab7be49da5/tool [32m204[0m 9.164 ms - -[0m
+projects-1    | 2026-11-11T15:25:07.366277750Z [0mPOST /6af488d339e0eb7147b9ac62 [32m201[0m 1.370 ms - 392[0m
+projects-1    | 2026-11-11T15:25:07.370255666Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:25:07.370260750Z   hasAuth: true,
+projects-1    | 2026-11-11T15:25:07.370262125Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:25:07.370263208Z   caller: '6af488d339e0eb7147b9ac62'
+projects-1    | 2026-11-11T15:25:07.370264208Z }
+projects-1    | 2026-11-11T15:25:07.374056041Z [0mGET /6af488d339e0eb7147b9ac62/6af488d3a2b4cfab7be49dc1 [32m200[0m 3.870 ms - 96[0m
+projects-1    | 2026-11-11T15:25:07.433301583Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:25:07.574282333Z [0mPOST /6af488d339e0eb7147b9ac62/6af488d3a2b4cfab7be49dc1/video [32m204[0m 159.055 ms - -[0m
+projects-1    | 2026-11-11T15:25:07.585736916Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:25:07.585747916Z   hasAuth: true,
+projects-1    | 2026-11-11T15:25:07.585749708Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:25:07.585750625Z   caller: '6af488d339e0eb7147b9ac62'
+projects-1    | 2026-11-11T15:25:07.585751416Z }
+projects-1    | 2026-11-11T15:25:07.593899041Z [0mGET /6af488d339e0eb7147b9ac62/6af488d3a2b4cfab7be49dc1 [32m200[0m 8.463 ms - 608[0m
+projects-1    | 2026-11-11T15:25:07.606791875Z [0mPOST /6af488d339e0eb7147b9ac62/6af488d3a2b4cfab7be49dc1/tool [32m204[0m 7.887 ms - -[0m
+projects-1    | 2026-11-11T15:25:07.746823917Z [0mPOST /6af488d339e0eb7147b9ac6b [32m201[0m 2.678 ms - 392[0m
+projects-1    | 2026-11-11T15:25:07.750568375Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:25:07.750573083Z   hasAuth: true,
+projects-1    | 2026-11-11T15:25:07.750574750Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:25:07.750595667Z   caller: '6af488d339e0eb7147b9ac6b'
+projects-1    | 2026-11-11T15:25:07.750599417Z }
+projects-1    | 2026-11-11T15:25:07.755778417Z [0mGET /6af488d339e0eb7147b9ac6b/6af488d3a2b4cfab7be49ddd [32m200[0m 5.421 ms - 96[0m
+projects-1    | 2026-11-11T15:25:07.808148583Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:25:07.947848792Z [0mPOST /6af488d339e0eb7147b9ac6b/6af488d3a2b4cfab7be49ddd/video [32m204[0m 150.249 ms - -[0m
+projects-1    | 2026-11-11T15:25:07.955335667Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:25:07.955346708Z   hasAuth: true,
+projects-1    | 2026-11-11T15:25:07.955348000Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:25:07.955348917Z   caller: '6af488d339e0eb7147b9ac6b'
+projects-1    | 2026-11-11T15:25:07.955350083Z }
+projects-1    | 2026-11-11T15:25:07.961618000Z [0mGET /6af488d339e0eb7147b9ac6b/6af488d3a2b4cfab7be49ddd [32m200[0m 6.681 ms - 612[0m
+projects-1    | 2026-11-11T15:25:07.973311708Z [0mPOST /6af488d339e0eb7147b9ac6b/6af488d3a2b4cfab7be49ddd/tool [32m204[0m 7.022 ms - -[0m
+projects-1    | 2026-11-11T15:25:08.136278583Z [0mPOST /6af488d439e0eb7147b9ac74 [32m201[0m 3.140 ms - 392[0m
+projects-1    | 2026-11-11T15:25:08.141711583Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:25:08.141725750Z   hasAuth: true,
+projects-1    | 2026-11-11T15:25:08.141728167Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:25:08.141729167Z   caller: '6af488d439e0eb7147b9ac74'
+projects-1    | 2026-11-11T15:25:08.141730000Z }
+projects-1    | 2026-11-11T15:25:08.148491083Z [0mGET /6af488d439e0eb7147b9ac74/6af488d4a2b4cfab7be49df9 [32m200[0m 7.085 ms - 96[0m
+projects-1    | 2026-11-11T15:25:08.210538542Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:25:08.364670625Z [0mPOST /6af488d439e0eb7147b9ac74/6af488d4a2b4cfab7be49df9/video [32m204[0m 172.233 ms - -[0m
+projects-1    | 2026-11-11T15:25:08.370510084Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:25:08.370516000Z   hasAuth: true,
+projects-1    | 2026-11-11T15:25:08.370529209Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:25:08.370530667Z   caller: '6af488d439e0eb7147b9ac74'
+projects-1    | 2026-11-11T15:25:08.370531667Z }
+projects-1    | 2026-11-11T15:25:08.376002250Z [0mGET /6af488d439e0eb7147b9ac74/6af488d4a2b4cfab7be49df9 [32m200[0m 5.568 ms - 610[0m
+projects-1    | 2026-11-11T15:25:08.389934334Z [0mPOST /6af488d439e0eb7147b9ac74/6af488d4a2b4cfab7be49df9/tool [32m204[0m 9.801 ms - -[0m
+projects-1    | 2026-11-11T15:25:08.533653125Z [0mPOST /6af488d439e0eb7147b9ac7d [32m201[0m 1.405 ms - 392[0m
+projects-1    | 2026-11-11T15:25:08.537185459Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:25:08.537189792Z   hasAuth: true,
+projects-1    | 2026-11-11T15:25:08.537190667Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:25:08.537191584Z   caller: '6af488d439e0eb7147b9ac7d'
+projects-1    | 2026-11-11T15:25:08.537192375Z }
+projects-1    | 2026-11-11T15:25:08.540939709Z [0mGET /6af488d439e0eb7147b9ac7d/6af488d4a2b4cfab7be49e15 [32m200[0m 3.839 ms - 96[0m
+projects-1    | 2026-11-11T15:25:08.628491792Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:25:08.785503709Z [0mPOST /6af488d439e0eb7147b9ac7d/6af488d4a2b4cfab7be49e15/video [32m204[0m 179.516 ms - -[0m
+projects-1    | 2026-11-11T15:25:08.792531084Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:25:08.792535667Z   hasAuth: true,
+projects-1    | 2026-11-11T15:25:08.792536500Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:25:08.792537584Z   caller: '6af488d439e0eb7147b9ac7d'
+projects-1    | 2026-11-11T15:25:08.792538709Z }
+projects-1    | 2026-11-11T15:25:08.798964959Z [0mGET /6af488d439e0eb7147b9ac7d/6af488d4a2b4cfab7be49e15 [32m200[0m 6.525 ms - 608[0m
+projects-1    | 2026-11-11T15:25:08.813177709Z [0mPOST /6af488d439e0eb7147b9ac7d/6af488d4a2b4cfab7be49e15/tool [32m204[0m 10.012 ms - -[0m
+projects-1    | 2026-11-11T15:25:08.987217875Z [0mPOST /6af488d439e0eb7147b9ac86 [32m201[0m 3.205 ms - 392[0m
+projects-1    | 2026-11-11T15:25:08.991764292Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:25:08.991772417Z   hasAuth: true,
+projects-1    | 2026-11-11T15:25:08.991777250Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:25:08.991781417Z   caller: '6af488d439e0eb7147b9ac86'
+projects-1    | 2026-11-11T15:25:08.991785709Z }
+projects-1    | 2026-11-11T15:25:08.997844334Z [0mGET /6af488d439e0eb7147b9ac86/6af488d4a2b4cfab7be49e31 [32m200[0m 6.416 ms - 96[0m
+projects-1    | 2026-11-11T15:25:09.057124542Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:25:09.197762792Z [0mPOST /6af488d439e0eb7147b9ac86/6af488d4a2b4cfab7be49e31/video [32m204[0m 155.684 ms - -[0m
+projects-1    | 2026-11-11T15:25:09.205104167Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:25:09.205109251Z   hasAuth: true,
+projects-1    | 2026-11-11T15:25:09.205110167Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:25:09.205111084Z   caller: '6af488d439e0eb7147b9ac86'
+projects-1    | 2026-11-11T15:25:09.205111876Z }
+projects-1    | 2026-11-11T15:25:09.211742084Z [0mGET /6af488d439e0eb7147b9ac86/6af488d4a2b4cfab7be49e31 [32m200[0m 6.717 ms - 610[0m
+projects-1    | 2026-11-11T15:25:09.226409751Z [0mPOST /6af488d439e0eb7147b9ac86/6af488d4a2b4cfab7be49e31/tool [32m204[0m 9.217 ms - -[0m
+projects-1    | 2026-11-11T15:25:09.366681917Z [0mPOST /6af488d539e0eb7147b9ac8f [32m201[0m 1.636 ms - 392[0m
+projects-1    | 2026-11-11T15:25:09.370789417Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:25:09.370795501Z   hasAuth: true,
+projects-1    | 2026-11-11T15:25:09.370797417Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:25:09.370799876Z   caller: '6af488d539e0eb7147b9ac8f'
+projects-1    | 2026-11-11T15:25:09.370800709Z }
+projects-1    | 2026-11-11T15:25:09.375961876Z [0mGET /6af488d539e0eb7147b9ac8f/6af488d5a2b4cfab7be49e4d [32m200[0m 5.196 ms - 96[0m
+projects-1    | 2026-11-11T15:25:09.435909042Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:25:09.568449501Z [0mPOST /6af488d539e0eb7147b9ac8f/6af488d5a2b4cfab7be49e4d/video [32m204[0m 147.664 ms - -[0m
+projects-1    | 2026-11-11T15:25:09.577974501Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:25:09.577985917Z   hasAuth: true,
+projects-1    | 2026-11-11T15:25:09.577989834Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:25:09.577993334Z   caller: '6af488d539e0eb7147b9ac8f'
+projects-1    | 2026-11-11T15:25:09.577995417Z }
+projects-1    | 2026-11-11T15:25:09.593865542Z [0mGET /6af488d539e0eb7147b9ac8f/6af488d5a2b4cfab7be49e4d [32m200[0m 15.982 ms - 610[0m
+projects-1    | 2026-11-11T15:25:09.608228334Z [0mPOST /6af488d539e0eb7147b9ac8f/6af488d5a2b4cfab7be49e4d/tool [32m204[0m 9.068 ms - -[0m
+projects-1    | 2026-11-11T15:25:09.741800834Z [0mPOST /6af488d539e0eb7147b9ac98 [32m201[0m 1.313 ms - 392[0m
+projects-1    | 2026-11-11T15:25:09.745579792Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:25:09.745589626Z   hasAuth: true,
+projects-1    | 2026-11-11T15:25:09.745591667Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:25:09.745592584Z   caller: '6af488d539e0eb7147b9ac98'
+projects-1    | 2026-11-11T15:25:09.745593417Z }
+projects-1    | 2026-11-11T15:25:09.749211084Z [0mGET /6af488d539e0eb7147b9ac98/6af488d5a2b4cfab7be49e69 [32m200[0m 3.751 ms - 96[0m
+projects-1    | 2026-11-11T15:25:09.803415709Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:25:09.918273793Z [0mPOST /6af488d539e0eb7147b9ac98/6af488d5a2b4cfab7be49e69/video [32m204[0m 127.395 ms - -[0m
+projects-1    | 2026-11-11T15:25:09.923757334Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:25:09.923763251Z   hasAuth: true,
+projects-1    | 2026-11-11T15:25:09.923764418Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:25:09.923765376Z   caller: '6af488d539e0eb7147b9ac98'
+projects-1    | 2026-11-11T15:25:09.923766209Z }
+projects-1    | 2026-11-11T15:25:09.929252543Z [0mGET /6af488d539e0eb7147b9ac98/6af488d5a2b4cfab7be49e69 [32m200[0m 5.552 ms - 608[0m
+projects-1    | 2026-11-11T15:25:09.940828793Z [0mPOST /6af488d539e0eb7147b9ac98/6af488d5a2b4cfab7be49e69/tool [32m204[0m 6.949 ms - -[0m
+projects-1    | 2026-11-11T15:25:10.077637584Z [0mPOST /6af488d639e0eb7147b9aca1 [32m201[0m 1.402 ms - 394[0m
+projects-1    | 2026-11-11T15:25:10.081171084Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:25:10.081176043Z   hasAuth: true,
+projects-1    | 2026-11-11T15:25:10.081177209Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:25:10.081178334Z   caller: '6af488d639e0eb7147b9aca1'
+projects-1    | 2026-11-11T15:25:10.081179334Z }
+projects-1    | 2026-11-11T15:25:10.084944709Z [0mGET /6af488d639e0eb7147b9aca1/6af488d6a2b4cfab7be49e85 [32m200[0m 3.826 ms - 98[0m
+projects-1    | 2026-11-11T15:25:10.396962376Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:25:10.707114876Z [0mPOST /6af488d639e0eb7147b9aca1/6af488d6a2b4cfab7be49e85/video [32m204[0m 390.820 ms - -[0m
+projects-1    | 2026-11-11T15:25:10.748107960Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:25:10.748150460Z   hasAuth: true,
+projects-1    | 2026-11-11T15:25:10.748153335Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:25:10.748154376Z   caller: '6af488d639e0eb7147b9aca1'
+projects-1    | 2026-11-11T15:25:10.748155585Z }
+projects-1    | 2026-11-11T15:25:10.768618126Z [0mGET /6af488d639e0eb7147b9aca1/6af488d6a2b4cfab7be49e85 [32m200[0m 25.061 ms - 623[0m
+projects-1    | 2026-11-11T15:25:10.785485626Z [0mPOST /6af488d639e0eb7147b9aca1/6af488d6a2b4cfab7be49e85/tool [32m204[0m 11.109 ms - -[0m
+projects-1    | 2026-11-11T15:25:40.874953543Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:25:40.875079585Z   hasAuth: true,
+projects-1    | 2026-11-11T15:25:40.875085251Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:25:40.875087085Z   caller: '6af488d539e0eb7147b9ac98'
+projects-1    | 2026-11-11T15:25:40.875088126Z }
+projects-1    | 2026-11-11T15:25:40.879288876Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:25:40.879301043Z   hasAuth: true,
+projects-1    | 2026-11-11T15:25:40.879302460Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:25:40.879303668Z   caller: '6af488d239e0eb7147b9ac59'
+projects-1    | 2026-11-11T15:25:40.879304710Z }
+projects-1    | 2026-11-11T15:25:40.880574335Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:25:40.880584918Z   hasAuth: true,
+projects-1    | 2026-11-11T15:25:40.880586543Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:25:40.880587626Z   caller: '6af488d339e0eb7147b9ac62'
+projects-1    | 2026-11-11T15:25:40.880588626Z }
+projects-1    | 2026-11-11T15:25:40.881747168Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:25:40.881763335Z   hasAuth: true,
+projects-1    | 2026-11-11T15:25:40.881766960Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:25:40.881768876Z   caller: '6af488d339e0eb7147b9ac6b'
+projects-1    | 2026-11-11T15:25:40.881770001Z }
+projects-1    | 2026-11-11T15:25:40.883864543Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:25:40.883872876Z   hasAuth: true,
+projects-1    | 2026-11-11T15:25:40.883874210Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:25:40.883875251Z   caller: '6af488d639e0eb7147b9aca1'
+projects-1    | 2026-11-11T15:25:40.883876376Z }
+projects-1    | 2026-11-11T15:25:40.885666251Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:25:40.885671126Z   hasAuth: true,
+projects-1    | 2026-11-11T15:25:40.885672376Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:25:40.885673543Z   caller: '6af488d439e0eb7147b9ac86'
+projects-1    | 2026-11-11T15:25:40.885674918Z }
+projects-1    | 2026-11-11T15:25:40.887794960Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:25:40.887800918Z   hasAuth: true,
+projects-1    | 2026-11-11T15:25:40.887801960Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:25:40.887865126Z   caller: '6af488d439e0eb7147b9ac74'
+projects-1    | 2026-11-11T15:25:40.887867126Z }
+projects-1    | 2026-11-11T15:25:40.888634835Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:25:40.888639001Z   hasAuth: true,
+projects-1    | 2026-11-11T15:25:40.888639918Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:25:40.888640710Z   caller: '6af488d539e0eb7147b9ac8f'
+projects-1    | 2026-11-11T15:25:40.888641626Z }
+projects-1    | 2026-11-11T15:25:40.890256335Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:25:40.890260710Z   hasAuth: true,
+projects-1    | 2026-11-11T15:25:40.890261501Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:25:40.890262293Z   caller: '6af488d439e0eb7147b9ac7d'
+projects-1    | 2026-11-11T15:25:40.890263376Z }
+projects-1    | 2026-11-11T15:25:40.945584585Z [0mGET /6af488d539e0eb7147b9ac98/6af488d5a2b4cfab7be49e69 [32m200[0m 72.964 ms - 708[0m
+projects-1    | 2026-11-11T15:25:40.946599543Z [0mGET /6af488d239e0eb7147b9ac59/6af488d2a2b4cfab7be49da5 [32m200[0m 73.303 ms - 710[0m
+projects-1    | 2026-11-11T15:25:40.948436168Z [0mGET /6af488d339e0eb7147b9ac62/6af488d3a2b4cfab7be49dc1 [32m200[0m 74.412 ms - 710[0m
+projects-1    | 2026-11-11T15:25:40.949512710Z [0mGET /6af488d339e0eb7147b9ac6b/6af488d3a2b4cfab7be49ddd [32m200[0m 68.963 ms - 708[0m
+projects-1    | 2026-11-11T15:25:40.950066585Z [0mGET /6af488d439e0eb7147b9ac74/6af488d4a2b4cfab7be49df9 [32m200[0m 62.984 ms - 708[0m
+projects-1    | 2026-11-11T15:25:40.950622543Z [0mGET /6af488d439e0eb7147b9ac86/6af488d4a2b4cfab7be49e31 [32m200[0m 65.519 ms - 708[0m
+projects-1    | 2026-11-11T15:25:40.951113876Z [0mGET /6af488d539e0eb7147b9ac8f/6af488d5a2b4cfab7be49e4d [32m200[0m 63.939 ms - 710[0m
+projects-1    | 2026-11-11T15:25:40.952201835Z [0mGET /6af488d439e0eb7147b9ac7d/6af488d4a2b4cfab7be49e15 [32m200[0m 62.414 ms - 708[0m
+projects-1    | 2026-11-11T15:25:40.952973626Z [0mGET /6af488d639e0eb7147b9aca1/6af488d6a2b4cfab7be49e85 [32m200[0m 69.830 ms - 692[0m
+projects-1    | 2026-11-11T15:25:40.963276501Z [CALLER] {
+projects-1    | 2026-11-11T15:25:40.963282960Z   userParam: '6af488d539e0eb7147b9ac98',
+projects-1    | 2026-11-11T15:25:40.963284251Z   forwarded: '6af488d539e0eb7147b9ac98',
+projects-1    | 2026-11-11T15:25:40.963285293Z   hasAuth: true,
+projects-1    | 2026-11-11T15:25:40.963286418Z   caller: '6af488d539e0eb7147b9ac98'
+projects-1    | 2026-11-11T15:25:40.963287210Z }
+projects-1    | 2026-11-11T15:25:40.964539543Z [ADV DEBUG] project: 6af488d5a2b4cfab7be49e69 adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:25:40.966502668Z [CALLER] {
+projects-1    | 2026-11-11T15:25:40.966511543Z   userParam: '6af488d339e0eb7147b9ac62',
+projects-1    | 2026-11-11T15:25:40.966513251Z   forwarded: '6af488d339e0eb7147b9ac62',
+projects-1    | 2026-11-11T15:25:40.966514168Z   hasAuth: true,
+projects-1    | 2026-11-11T15:25:40.966516626Z   caller: '6af488d339e0eb7147b9ac62'
+projects-1    | 2026-11-11T15:25:40.966519710Z }
+projects-1    | 2026-11-11T15:25:40.968366876Z [ADV DEBUG] project: 6af488d3a2b4cfab7be49dc1 adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:25:40.998768751Z [CALLER] {
+projects-1    | 2026-11-11T15:25:40.998776918Z   userParam: '6af488d239e0eb7147b9ac59',
+projects-1    | 2026-11-11T15:25:40.998778043Z   forwarded: '6af488d239e0eb7147b9ac59',
+projects-1    | 2026-11-11T15:25:40.998778960Z   hasAuth: true,
+projects-1    | 2026-11-11T15:25:40.998779793Z   caller: '6af488d239e0eb7147b9ac59'
+projects-1    | 2026-11-11T15:25:40.998780585Z }
+projects-1    | 2026-11-11T15:25:40.999141376Z [CALLER] {
+projects-1    | 2026-11-11T15:25:40.999145376Z   userParam: '6af488d439e0eb7147b9ac74',
+projects-1    | 2026-11-11T15:25:40.999146251Z   forwarded: '6af488d439e0eb7147b9ac74',
+projects-1    | 2026-11-11T15:25:40.999147085Z   hasAuth: true,
+projects-1    | 2026-11-11T15:25:40.999148126Z   caller: '6af488d439e0eb7147b9ac74'
+projects-1    | 2026-11-11T15:25:40.999148918Z }
+projects-1    | 2026-11-11T15:25:41.002085293Z [ADV DEBUG] project: 6af488d2a2b4cfab7be49da5 adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:25:41.003129668Z [ADV DEBUG] project: 6af488d4a2b4cfab7be49df9 adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:25:41.004692376Z [CALLER] {
+projects-1    | 2026-11-11T15:25:41.004699960Z   userParam: '6af488d339e0eb7147b9ac6b',
+projects-1    | 2026-11-11T15:25:41.004701210Z   forwarded: '6af488d339e0eb7147b9ac6b',
+projects-1    | 2026-11-11T15:25:41.004702085Z   hasAuth: true,
+projects-1    | 2026-11-11T15:25:41.004703126Z   caller: '6af488d339e0eb7147b9ac6b'
+projects-1    | 2026-11-11T15:25:41.004704001Z }
+projects-1    | 2026-11-11T15:25:41.006773543Z [CALLER] {
+projects-1    | 2026-11-11T15:25:41.006820668Z   userParam: '6af488d539e0eb7147b9ac8f',
+projects-1    | 2026-11-11T15:25:41.006825918Z   forwarded: '6af488d539e0eb7147b9ac8f',
+projects-1    | 2026-11-11T15:25:41.006827043Z   hasAuth: true,
+projects-1    | 2026-11-11T15:25:41.006828043Z   caller: '6af488d539e0eb7147b9ac8f'
+projects-1    | 2026-11-11T15:25:41.006828960Z }
+projects-1    | 2026-11-11T15:25:41.009866251Z [ADV DEBUG] project: 6af488d3a2b4cfab7be49ddd adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:25:41.009870251Z [ADV DEBUG] project: 6af488d5a2b4cfab7be49e4d adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:25:41.012021001Z [CALLER] {
+projects-1    | 2026-11-11T15:25:41.012051626Z   userParam: '6af488d439e0eb7147b9ac86',
+projects-1    | 2026-11-11T15:25:41.012055876Z   forwarded: '6af488d439e0eb7147b9ac86',
+projects-1    | 2026-11-11T15:25:41.012057668Z   hasAuth: true,
+projects-1    | 2026-11-11T15:25:41.012060960Z   caller: '6af488d439e0eb7147b9ac86'
+projects-1    | 2026-11-11T15:25:41.012064335Z }
+projects-1    | 2026-11-11T15:25:41.013694751Z [CALLER] {
+projects-1    | 2026-11-11T15:25:41.013716043Z   userParam: '6af488d639e0eb7147b9aca1',
+projects-1    | 2026-11-11T15:25:41.013719543Z   forwarded: '6af488d639e0eb7147b9aca1',
+projects-1    | 2026-11-11T15:25:41.013777376Z   hasAuth: true,
+projects-1    | 2026-11-11T15:25:41.013782585Z   caller: '6af488d639e0eb7147b9aca1'
+projects-1    | 2026-11-11T15:25:41.013784335Z }
+projects-1    | 2026-11-11T15:25:41.014272418Z [ADV DEBUG] project: 6af488d4a2b4cfab7be49e31 adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:25:41.019312543Z [ADV DEBUG] project: 6af488d6a2b4cfab7be49e85 adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'subtitles' ]
+projects-1    | 2026-11-11T15:25:41.023738210Z [CALLER] {
+projects-1    | 2026-11-11T15:25:41.023755793Z   userParam: '6af488d439e0eb7147b9ac7d',
+projects-1    | 2026-11-11T15:25:41.023760335Z   forwarded: '6af488d439e0eb7147b9ac7d',
+projects-1    | 2026-11-11T15:25:41.023762376Z   hasAuth: true,
+projects-1    | 2026-11-11T15:25:41.023763418Z   caller: '6af488d439e0eb7147b9ac7d'
+projects-1    | 2026-11-11T15:25:41.023764418Z }
+projects-1    | 2026-11-11T15:25:41.028123418Z [ADV DEBUG] project: 6af488d4a2b4cfab7be49e15 adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:25:41.379076460Z [0mPOST /6af488d339e0eb7147b9ac62/6af488d3a2b4cfab7be49dc1/process [32m201[0m 418.121 ms - 7[0m
+projects-1    | 2026-11-11T15:25:41.502759543Z [0mPOST /6af488d439e0eb7147b9ac7d/6af488d4a2b4cfab7be49e15/process [32m201[0m 516.455 ms - 7[0m
+projects-1    | 2026-11-11T15:25:41.507260335Z [0mPOST /6af488d239e0eb7147b9ac59/6af488d2a2b4cfab7be49da5/process [32m201[0m 533.770 ms - 7[0m
+projects-1    | 2026-11-11T15:25:41.514855293Z [0mPOST /6af488d539e0eb7147b9ac8f/6af488d5a2b4cfab7be49e4d/process [32m201[0m 534.682 ms - 7[0m
+projects-1    | 2026-11-11T15:25:41.528335752Z [0mPOST /6af488d339e0eb7147b9ac6b/6af488d3a2b4cfab7be49ddd/process [32m201[0m 550.062 ms - 7[0m
+projects-1    | 2026-11-11T15:25:41.529506377Z [0mPOST /6af488d439e0eb7147b9ac74/6af488d4a2b4cfab7be49df9/process [32m201[0m 553.402 ms - 7[0m
+projects-1    | 2026-11-11T15:25:41.537610710Z [0mPOST /6af488d439e0eb7147b9ac86/6af488d4a2b4cfab7be49e31/process [32m201[0m 554.675 ms - 7[0m
+projects-1    | 2026-11-11T15:25:41.537618627Z [0mPOST /6af488d539e0eb7147b9ac98/6af488d5a2b4cfab7be49e69/process [32m201[0m 579.428 ms - 7[0m
+projects-1    | 2026-11-11T15:25:41.672450543Z [0mPOST /6af488d639e0eb7147b9aca1/6af488d6a2b4cfab7be49e85/process [32m201[0m 690.425 ms - 7[0m
+projects-1    | 2026-11-11T15:25:45.687258087Z [T-03][RABBIT] msg=request-930ce5f0-476c-44de-8cd1-98a3c485edd6 status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:25:45.693415795Z [RUN-DEBUG] msg=request-930ce5f0-476c-44de-8cd1-98a3c485edd6 curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:25:45.878274504Z [COMMIT] project=6af488d3a2b4cfab7be49dc1 committedToken=1
+projects-1    | 2026-11-11T15:25:49.337850339Z [T-03][RABBIT] msg=request-f12ec1b9-c29e-499e-8f56-2920435ff96e status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:25:49.342162547Z [RUN-DEBUG] msg=request-f12ec1b9-c29e-499e-8f56-2920435ff96e curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:25:49.732218464Z [COMMIT] project=6af488d4a2b4cfab7be49e15 committedToken=1
+projects-1    | 2026-11-11T15:25:53.609521716Z [T-03][RABBIT] msg=request-1f443238-f8ab-42ec-b3c8-5150c4c8a927 status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:25:53.614144216Z [RUN-DEBUG] msg=request-1f443238-f8ab-42ec-b3c8-5150c4c8a927 curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:25:53.738365758Z [COMMIT] project=6af488d2a2b4cfab7be49da5 committedToken=1
+projects-1    | 2026-11-11T15:25:57.390878634Z [T-03][RABBIT] msg=request-a125a588-b738-4b02-ae65-25d750d690d9 status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:25:57.396042176Z [RUN-DEBUG] msg=request-a125a588-b738-4b02-ae65-25d750d690d9 curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:25:57.583763426Z [COMMIT] project=6af488d5a2b4cfab7be49e4d committedToken=1
+projects-1    | 2026-11-11T15:26:01.103825053Z [T-03][RABBIT] msg=request-32306173-9561-4540-a882-c96dcab90964 status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:26:01.124151053Z [RUN-DEBUG] msg=request-32306173-9561-4540-a882-c96dcab90964 curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:26:01.356643761Z [COMMIT] project=6af488d3a2b4cfab7be49ddd committedToken=1
+projects-1    | 2026-11-11T15:26:05.359109305Z [T-03][RABBIT] msg=request-3f33bda7-6649-4f99-8a57-84622cdb2278 status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:26:05.362509680Z [RUN-DEBUG] msg=request-3f33bda7-6649-4f99-8a57-84622cdb2278 curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:26:05.497682471Z [COMMIT] project=6af488d4a2b4cfab7be49df9 committedToken=1
+projects-1    | 2026-11-11T15:26:08.984584375Z [T-03][RABBIT] msg=request-6936e5d0-697f-425f-88a0-9fa11ee3e36b status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:26:08.989665625Z [RUN-DEBUG] msg=request-6936e5d0-697f-425f-88a0-9fa11ee3e36b curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:26:09.085005042Z [COMMIT] project=6af488d5a2b4cfab7be49e69 committedToken=1
+projects-1    | 2026-11-11T15:26:13.282801669Z [T-03][RABBIT] msg=request-c5b909b7-5821-4b1d-83a7-961f9edaadd2 status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:26:13.287476878Z [RUN-DEBUG] msg=request-c5b909b7-5821-4b1d-83a7-961f9edaadd2 curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:26:13.427344461Z [COMMIT] project=6af488d4a2b4cfab7be49e31 committedToken=1
+projects-1    | 2026-11-11T15:28:27.301558217Z [T-03][RABBIT] msg=request-9b5840a9-8c99-45ea-b5b6-76c40727f418 status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:28:27.309043801Z [RUN-DEBUG] msg=request-9b5840a9-8c99-45ea-b5b6-76c40727f418 curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:28:27.526815926Z [COMMIT] project=6af488d6a2b4cfab7be49e85 committedToken=1
+projects-1    | 2026-11-11T15:30:27.867686884Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:30:27.867866843Z   hasAuth: true,
+projects-1    | 2026-11-11T15:30:27.867871426Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:30:27.867873093Z   caller: '6af488d239e0eb7147b9ac59'
+projects-1    | 2026-11-11T15:30:27.867874259Z }
+projects-1    | 2026-11-11T15:30:27.919381176Z [0mGET /6af488d239e0eb7147b9ac59/6af488d2a2b4cfab7be49da5 [32m200[0m 59.104 ms - 708[0m
+projects-1    | 2026-11-11T15:30:27.933579718Z [0mDELETE /6af488d239e0eb7147b9ac59/6af488d2a2b4cfab7be49da5 [32m204[0m 7.197 ms - -[0m
+projects-1    | 2026-11-11T15:30:27.952361926Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:30:27.952406051Z   hasAuth: true,
+projects-1    | 2026-11-11T15:30:27.952408926Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:30:27.952409759Z   caller: '6af488d339e0eb7147b9ac62'
+projects-1    | 2026-11-11T15:30:27.952410551Z }
+projects-1    | 2026-11-11T15:30:27.958638551Z [0mGET /6af488d339e0eb7147b9ac62/6af488d3a2b4cfab7be49dc1 [32m200[0m 6.257 ms - 712[0m
+projects-1    | 2026-11-11T15:30:27.973562968Z [0mDELETE /6af488d339e0eb7147b9ac62/6af488d3a2b4cfab7be49dc1 [32m204[0m 8.362 ms - -[0m
+projects-1    | 2026-11-11T15:30:27.992779801Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:30:27.992794259Z   hasAuth: true,
+projects-1    | 2026-11-11T15:30:27.992795676Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:30:27.992798176Z   caller: '6af488d339e0eb7147b9ac6b'
+projects-1    | 2026-11-11T15:30:27.992801259Z }
+projects-1    | 2026-11-11T15:30:28.024101509Z [0mGET /6af488d339e0eb7147b9ac6b/6af488d3a2b4cfab7be49ddd [32m200[0m 28.523 ms - 708[0m
+projects-1    | 2026-11-11T15:30:28.037672885Z [0mDELETE /6af488d339e0eb7147b9ac6b/6af488d3a2b4cfab7be49ddd [32m204[0m 6.185 ms - -[0m
+projects-1    | 2026-11-11T15:30:28.054994551Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:30:28.055004010Z   hasAuth: true,
+projects-1    | 2026-11-11T15:30:28.055005301Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:30:28.055006260Z   caller: '6af488d439e0eb7147b9ac74'
+projects-1    | 2026-11-11T15:30:28.055007093Z }
+projects-1    | 2026-11-11T15:30:28.060973010Z [0mGET /6af488d439e0eb7147b9ac74/6af488d4a2b4cfab7be49df9 [32m200[0m 6.092 ms - 710[0m
+projects-1    | 2026-11-11T15:30:28.068782760Z [0mDELETE /6af488d439e0eb7147b9ac74/6af488d4a2b4cfab7be49df9 [32m204[0m 3.947 ms - -[0m
+projects-1    | 2026-11-11T15:30:28.081273135Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:30:28.081279510Z   hasAuth: true,
+projects-1    | 2026-11-11T15:30:28.081280801Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:30:28.081281676Z   caller: '6af488d439e0eb7147b9ac7d'
+projects-1    | 2026-11-11T15:30:28.081282510Z }
+projects-1    | 2026-11-11T15:30:28.086229926Z [0mGET /6af488d439e0eb7147b9ac7d/6af488d4a2b4cfab7be49e15 [32m200[0m 5.054 ms - 708[0m
+projects-1    | 2026-11-11T15:30:28.094120010Z [0mDELETE /6af488d439e0eb7147b9ac7d/6af488d4a2b4cfab7be49e15 [32m204[0m 4.127 ms - -[0m
+projects-1    | 2026-11-11T15:30:28.107233468Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:30:28.107238010Z   hasAuth: true,
+projects-1    | 2026-11-11T15:30:28.107239051Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:30:28.107239885Z   caller: '6af488d439e0eb7147b9ac86'
+projects-1    | 2026-11-11T15:30:28.107240718Z }
+projects-1    | 2026-11-11T15:30:28.111978843Z [0mGET /6af488d439e0eb7147b9ac86/6af488d4a2b4cfab7be49e31 [32m200[0m 4.825 ms - 710[0m
+projects-1    | 2026-11-11T15:30:28.119435051Z [0mDELETE /6af488d439e0eb7147b9ac86/6af488d4a2b4cfab7be49e31 [32m204[0m 3.759 ms - -[0m
+projects-1    | 2026-11-11T15:30:28.135427760Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:30:28.135433843Z   hasAuth: true,
+projects-1    | 2026-11-11T15:30:28.135435135Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:30:28.135436135Z   caller: '6af488d539e0eb7147b9ac8f'
+projects-1    | 2026-11-11T15:30:28.135437135Z }
+projects-1    | 2026-11-11T15:30:28.140517885Z [0mGET /6af488d539e0eb7147b9ac8f/6af488d5a2b4cfab7be49e4d [32m200[0m 5.290 ms - 708[0m
+projects-1    | 2026-11-11T15:30:28.148058885Z [0mDELETE /6af488d539e0eb7147b9ac8f/6af488d5a2b4cfab7be49e4d [32m204[0m 3.606 ms - -[0m
+projects-1    | 2026-11-11T15:30:28.160531968Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:30:28.160537426Z   hasAuth: true,
+projects-1    | 2026-11-11T15:30:28.160538593Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:30:28.160539635Z   caller: '6af488d539e0eb7147b9ac98'
+projects-1    | 2026-11-11T15:30:28.160540676Z }
+projects-1    | 2026-11-11T15:30:28.165034885Z [0mGET /6af488d539e0eb7147b9ac98/6af488d5a2b4cfab7be49e69 [32m200[0m 4.580 ms - 710[0m
+projects-1    | 2026-11-11T15:30:28.173495468Z [0mDELETE /6af488d539e0eb7147b9ac98/6af488d5a2b4cfab7be49e69 [32m204[0m 4.748 ms - -[0m
+projects-1    | 2026-11-11T15:30:28.187975510Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:30:28.187980343Z   hasAuth: true,
+projects-1    | 2026-11-11T15:30:28.187981510Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:30:28.187982510Z   caller: '6af488d639e0eb7147b9aca1'
+projects-1    | 2026-11-11T15:30:28.187983301Z }
+projects-1    | 2026-11-11T15:30:28.193667260Z [0mGET /6af488d639e0eb7147b9aca1/6af488d6a2b4cfab7be49e85 [32m200[0m 5.778 ms - 690[0m
+projects-1    | 2026-11-11T15:30:28.201975301Z [0mDELETE /6af488d639e0eb7147b9aca1/6af488d6a2b4cfab7be49e85 [32m204[0m 4.183 ms - -[0m
+projects-1    | 2026-11-11T15:30:38.418391208Z [0mPOST /6af48a1e39e0eb7147b9ad04 [32m201[0m 7.501 ms - 392[0m
+projects-1    | 2026-11-11T15:30:38.424303000Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:30:38.424309167Z   hasAuth: true,
+projects-1    | 2026-11-11T15:30:38.424310667Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:30:38.424311792Z   caller: '6af48a1e39e0eb7147b9ad04'
+projects-1    | 2026-11-11T15:30:38.424313417Z }
+projects-1    | 2026-11-11T15:30:38.439811625Z [0mGET /6af48a1e39e0eb7147b9ad04/6af48a1ea2b4cfab7be4a01b [32m200[0m 16.006 ms - 96[0m
+projects-1    | 2026-11-11T15:30:38.546743167Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:30:39.158251750Z [0mPOST /6af48a1e39e0eb7147b9ad04/6af48a1ea2b4cfab7be4a01b/video [32m204[0m 641.385 ms - -[0m
+projects-1    | 2026-11-11T15:30:39.177260084Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:30:39.177272001Z   hasAuth: true,
+projects-1    | 2026-11-11T15:30:39.177273959Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:30:39.177275209Z   caller: '6af48a1e39e0eb7147b9ad04'
+projects-1    | 2026-11-11T15:30:39.177310459Z }
+projects-1    | 2026-11-11T15:30:39.195771334Z [0mGET /6af48a1e39e0eb7147b9ad04/6af48a1ea2b4cfab7be4a01b [32m200[0m 18.654 ms - 608[0m
+projects-1    | 2026-11-11T15:30:39.226034209Z [0mPOST /6af48a1e39e0eb7147b9ad04/6af48a1ea2b4cfab7be4a01b/tool [32m204[0m 23.418 ms - -[0m
+projects-1    | 2026-11-11T15:30:39.386796417Z [0mPOST /6af48a1f39e0eb7147b9ad0d [32m201[0m 2.596 ms - 392[0m
+projects-1    | 2026-11-11T15:30:39.391273251Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:30:39.391281626Z   hasAuth: true,
+projects-1    | 2026-11-11T15:30:39.391284417Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:30:39.391285459Z   caller: '6af48a1f39e0eb7147b9ad0d'
+projects-1    | 2026-11-11T15:30:39.391286251Z }
+projects-1    | 2026-11-11T15:30:39.395996376Z [0mGET /6af48a1f39e0eb7147b9ad0d/6af48a1fa2b4cfab7be4a037 [32m200[0m 4.920 ms - 96[0m
+projects-1    | 2026-11-11T15:30:39.460890417Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:30:39.591323126Z [0mPOST /6af48a1f39e0eb7147b9ad0d/6af48a1fa2b4cfab7be4a037/video [32m204[0m 148.694 ms - -[0m
+projects-1    | 2026-11-11T15:30:39.597460417Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:30:39.597467251Z   hasAuth: true,
+projects-1    | 2026-11-11T15:30:39.597468584Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:30:39.597469792Z   caller: '6af48a1f39e0eb7147b9ad0d'
+projects-1    | 2026-11-11T15:30:39.597470876Z }
+projects-1    | 2026-11-11T15:30:39.604345126Z [0mGET /6af48a1f39e0eb7147b9ad0d/6af48a1fa2b4cfab7be4a037 [32m200[0m 6.901 ms - 610[0m
+projects-1    | 2026-11-11T15:30:39.620477167Z [0mPOST /6af48a1f39e0eb7147b9ad0d/6af48a1fa2b4cfab7be4a037/tool [32m204[0m 8.809 ms - -[0m
+projects-1    | 2026-11-11T15:30:39.756644917Z [0mPOST /6af48a1f39e0eb7147b9ad16 [32m201[0m 1.671 ms - 392[0m
+projects-1    | 2026-11-11T15:30:39.760270292Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:30:39.760275834Z   hasAuth: true,
+projects-1    | 2026-11-11T15:30:39.760277626Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:30:39.760278584Z   caller: '6af48a1f39e0eb7147b9ad16'
+projects-1    | 2026-11-11T15:30:39.760279376Z }
+projects-1    | 2026-11-11T15:30:39.764278876Z [0mGET /6af48a1f39e0eb7147b9ad16/6af48a1fa2b4cfab7be4a053 [32m200[0m 4.041 ms - 96[0m
+projects-1    | 2026-11-11T15:30:39.829163709Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:30:39.972105959Z [0mPOST /6af48a1f39e0eb7147b9ad16/6af48a1fa2b4cfab7be4a053/video [32m204[0m 157.710 ms - -[0m
+projects-1    | 2026-11-11T15:30:39.977803626Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:30:39.977808834Z   hasAuth: true,
+projects-1    | 2026-11-11T15:30:39.977810251Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:30:39.977811334Z   caller: '6af48a1f39e0eb7147b9ad16'
+projects-1    | 2026-11-11T15:30:39.977812376Z }
+projects-1    | 2026-11-11T15:30:39.984046376Z [0mGET /6af48a1f39e0eb7147b9ad16/6af48a1fa2b4cfab7be4a053 [32m200[0m 6.348 ms - 608[0m
+projects-1    | 2026-11-11T15:30:40.001001293Z [0mPOST /6af48a1f39e0eb7147b9ad16/6af48a1fa2b4cfab7be4a053/tool [32m204[0m 8.426 ms - -[0m
+projects-1    | 2026-11-11T15:30:40.151059876Z [0mPOST /6af48a2039e0eb7147b9ad1f [32m201[0m 1.983 ms - 392[0m
+projects-1    | 2026-11-11T15:30:40.155992293Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:30:40.156000918Z   hasAuth: true,
+projects-1    | 2026-11-11T15:30:40.156001918Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:30:40.156002918Z   caller: '6af48a2039e0eb7147b9ad1f'
+projects-1    | 2026-11-11T15:30:40.156003793Z }
+projects-1    | 2026-11-11T15:30:40.162717126Z [0mGET /6af48a2039e0eb7147b9ad1f/6af48a20a2b4cfab7be4a06f [32m200[0m 6.858 ms - 96[0m
+projects-1    | 2026-11-11T15:30:40.218168126Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:30:40.346431001Z [0mPOST /6af48a2039e0eb7147b9ad1f/6af48a20a2b4cfab7be4a06f/video [32m204[0m 144.868 ms - -[0m
+projects-1    | 2026-11-11T15:30:40.352655959Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:30:40.352661626Z   hasAuth: true,
+projects-1    | 2026-11-11T15:30:40.352662834Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:30:40.352663959Z   caller: '6af48a2039e0eb7147b9ad1f'
+projects-1    | 2026-11-11T15:30:40.352665043Z }
+projects-1    | 2026-11-11T15:30:40.359648293Z [0mGET /6af48a2039e0eb7147b9ad1f/6af48a20a2b4cfab7be4a06f [32m200[0m 6.919 ms - 610[0m
+projects-1    | 2026-11-11T15:30:40.374342001Z [0mPOST /6af48a2039e0eb7147b9ad1f/6af48a20a2b4cfab7be4a06f/tool [32m204[0m 8.357 ms - -[0m
+projects-1    | 2026-11-11T15:30:40.516357209Z [0mPOST /6af48a2039e0eb7147b9ad28 [32m201[0m 1.816 ms - 392[0m
+projects-1    | 2026-11-11T15:30:40.520186418Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:30:40.520191584Z   hasAuth: true,
+projects-1    | 2026-11-11T15:30:40.520192501Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:30:40.520193293Z   caller: '6af48a2039e0eb7147b9ad28'
+projects-1    | 2026-11-11T15:30:40.520194126Z }
+projects-1    | 2026-11-11T15:30:40.524424626Z [0mGET /6af48a2039e0eb7147b9ad28/6af48a20a2b4cfab7be4a08b [32m200[0m 4.306 ms - 96[0m
+projects-1    | 2026-11-11T15:30:40.570484585Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:30:40.688257168Z [0mPOST /6af48a2039e0eb7147b9ad28/6af48a20a2b4cfab7be4a08b/video [32m204[0m 129.306 ms - -[0m
+projects-1    | 2026-11-11T15:30:40.696673001Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:30:40.696682960Z   hasAuth: true,
+projects-1    | 2026-11-11T15:30:40.696684210Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:30:40.696685043Z   caller: '6af48a2039e0eb7147b9ad28'
+projects-1    | 2026-11-11T15:30:40.696685876Z }
+projects-1    | 2026-11-11T15:30:40.704606668Z [0mGET /6af48a2039e0eb7147b9ad28/6af48a20a2b4cfab7be4a08b [32m200[0m 8.007 ms - 610[0m
+projects-1    | 2026-11-11T15:30:40.717131918Z [0mPOST /6af48a2039e0eb7147b9ad28/6af48a20a2b4cfab7be4a08b/tool [32m204[0m 7.514 ms - -[0m
+projects-1    | 2026-11-11T15:30:40.856261751Z [0mPOST /6af48a2039e0eb7147b9ad31 [32m201[0m 1.224 ms - 392[0m
+projects-1    | 2026-11-11T15:30:40.860210626Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:30:40.860214543Z   hasAuth: true,
+projects-1    | 2026-11-11T15:30:40.860215835Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:30:40.860217043Z   caller: '6af48a2039e0eb7147b9ad31'
+projects-1    | 2026-11-11T15:30:40.860218001Z }
+projects-1    | 2026-11-11T15:30:40.864016585Z [0mGET /6af48a2039e0eb7147b9ad31/6af48a20a2b4cfab7be4a0a7 [32m200[0m 3.943 ms - 96[0m
+projects-1    | 2026-11-11T15:30:40.951432043Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:30:41.093020501Z [0mPOST /6af48a2039e0eb7147b9ad31/6af48a20a2b4cfab7be4a0a7/video [32m204[0m 162.255 ms - -[0m
+projects-1    | 2026-11-11T15:30:41.112395335Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:30:41.112469376Z   hasAuth: true,
+projects-1    | 2026-11-11T15:30:41.112474251Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:30:41.112478960Z   caller: '6af48a2039e0eb7147b9ad31'
+projects-1    | 2026-11-11T15:30:41.112481501Z }
+projects-1    | 2026-11-11T15:30:41.154556418Z [0mGET /6af48a2039e0eb7147b9ad31/6af48a20a2b4cfab7be4a0a7 [32m200[0m 43.352 ms - 608[0m
+projects-1    | 2026-11-11T15:30:41.250771751Z [0mPOST /6af48a2039e0eb7147b9ad31/6af48a20a2b4cfab7be4a0a7/tool [32m204[0m 75.305 ms - -[0m
+projects-1    | 2026-11-11T15:30:41.437893252Z [0mPOST /6af48a2139e0eb7147b9ad3a [32m201[0m 2.348 ms - 392[0m
+projects-1    | 2026-11-11T15:30:41.442825710Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:30:41.442837585Z   hasAuth: true,
+projects-1    | 2026-11-11T15:30:41.442839793Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:30:41.442840877Z   caller: '6af48a2139e0eb7147b9ad3a'
+projects-1    | 2026-11-11T15:30:41.442842002Z }
+projects-1    | 2026-11-11T15:30:41.447747877Z [0mGET /6af48a2139e0eb7147b9ad3a/6af48a21a2b4cfab7be4a0c3 [32m200[0m 5.046 ms - 96[0m
+projects-1    | 2026-11-11T15:30:41.516269543Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:30:41.745056835Z [0mPOST /6af48a2139e0eb7147b9ad3a/6af48a21a2b4cfab7be4a0c3/video [32m204[0m 248.011 ms - -[0m
+projects-1    | 2026-11-11T15:30:41.758092835Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:30:41.758100918Z   hasAuth: true,
+projects-1    | 2026-11-11T15:30:41.758102293Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:30:41.758103335Z   caller: '6af48a2139e0eb7147b9ad3a'
+projects-1    | 2026-11-11T15:30:41.758104418Z }
+projects-1    | 2026-11-11T15:30:41.769653502Z [0mGET /6af48a2139e0eb7147b9ad3a/6af48a21a2b4cfab7be4a0c3 [32m200[0m 11.816 ms - 610[0m
+projects-1    | 2026-11-11T15:30:41.784006168Z [0mPOST /6af48a2139e0eb7147b9ad3a/6af48a21a2b4cfab7be4a0c3/tool [32m204[0m 8.830 ms - -[0m
+projects-1    | 2026-11-11T15:30:41.933304418Z [0mPOST /6af48a2139e0eb7147b9ad43 [32m201[0m 1.731 ms - 392[0m
+projects-1    | 2026-11-11T15:30:41.937603543Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:30:41.937607543Z   hasAuth: true,
+projects-1    | 2026-11-11T15:30:41.937608877Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:30:41.937609918Z   caller: '6af48a2139e0eb7147b9ad43'
+projects-1    | 2026-11-11T15:30:41.937610918Z }
+projects-1    | 2026-11-11T15:30:41.942170835Z [0mGET /6af48a2139e0eb7147b9ad43/6af48a21a2b4cfab7be4a0df [32m200[0m 4.610 ms - 96[0m
+projects-1    | 2026-11-11T15:30:42.001168210Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:30:42.150214669Z [0mPOST /6af48a2139e0eb7147b9ad43/6af48a21a2b4cfab7be4a0df/video [32m204[0m 162.681 ms - -[0m
+projects-1    | 2026-11-11T15:30:42.160378585Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:30:42.160413002Z   hasAuth: true,
+projects-1    | 2026-11-11T15:30:42.160416252Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:30:42.160418127Z   caller: '6af48a2139e0eb7147b9ad43'
+projects-1    | 2026-11-11T15:30:42.160420502Z }
+projects-1    | 2026-11-11T15:30:42.169905419Z [0mGET /6af48a2139e0eb7147b9ad43/6af48a21a2b4cfab7be4a0df [32m200[0m 10.023 ms - 612[0m
+projects-1    | 2026-11-11T15:30:42.183904335Z [0mPOST /6af48a2139e0eb7147b9ad43/6af48a21a2b4cfab7be4a0df/tool [32m204[0m 7.715 ms - -[0m
+projects-1    | 2026-11-11T15:30:42.344839544Z [0mPOST /6af48a2239e0eb7147b9ad4c [32m201[0m 1.452 ms - 394[0m
+projects-1    | 2026-11-11T15:30:42.349252502Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:30:42.349260044Z   hasAuth: true,
+projects-1    | 2026-11-11T15:30:42.349262002Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:30:42.349262794Z   caller: '6af48a2239e0eb7147b9ad4c'
+projects-1    | 2026-11-11T15:30:42.349263585Z }
+projects-1    | 2026-11-11T15:30:42.353182585Z [0mGET /6af48a2239e0eb7147b9ad4c/6af48a22a2b4cfab7be4a0fb [32m200[0m 3.982 ms - 98[0m
+projects-1    | 2026-11-11T15:30:42.670900002Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:30:43.033629002Z [0mPOST /6af48a2239e0eb7147b9ad4c/6af48a22a2b4cfab7be4a0fb/video [32m204[0m 453.513 ms - -[0m
+projects-1    | 2026-11-11T15:30:43.079346502Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:30:43.079392877Z   hasAuth: true,
+projects-1    | 2026-11-11T15:30:43.079394961Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:30:43.079396002Z   caller: '6af48a2239e0eb7147b9ad4c'
+projects-1    | 2026-11-11T15:30:43.079397252Z }
+projects-1    | 2026-11-11T15:30:43.098701169Z [0mGET /6af48a2239e0eb7147b9ad4c/6af48a22a2b4cfab7be4a0fb [32m200[0m 20.384 ms - 619[0m
+projects-1    | 2026-11-11T15:30:43.117055919Z [0mPOST /6af48a2239e0eb7147b9ad4c/6af48a22a2b4cfab7be4a0fb/tool [32m204[0m 10.329 ms - -[0m
+projects-1    | 2026-11-11T15:31:13.210508961Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:31:13.210608794Z   hasAuth: true,
+projects-1    | 2026-11-11T15:31:13.210613752Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:31:13.210661502Z   caller: '6af48a1e39e0eb7147b9ad04'
+projects-1    | 2026-11-11T15:31:13.210664086Z }
+projects-1    | 2026-11-11T15:31:13.215918752Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:31:13.215937877Z   hasAuth: true,
+projects-1    | 2026-11-11T15:31:13.215939586Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:31:13.215940544Z   caller: '6af48a2139e0eb7147b9ad43'
+projects-1    | 2026-11-11T15:31:13.215941294Z }
+projects-1    | 2026-11-11T15:31:13.218595544Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:31:13.218607461Z   hasAuth: true,
+projects-1    | 2026-11-11T15:31:13.218609086Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:31:13.218609961Z   caller: '6af48a2239e0eb7147b9ad4c'
+projects-1    | 2026-11-11T15:31:13.218610794Z }
+projects-1    | 2026-11-11T15:31:13.219940086Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:31:13.219982544Z   hasAuth: true,
+projects-1    | 2026-11-11T15:31:13.219984669Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:31:13.219985586Z   caller: '6af48a1f39e0eb7147b9ad16'
+projects-1    | 2026-11-11T15:31:13.219986586Z }
+projects-1    | 2026-11-11T15:31:13.220735669Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:31:13.220740294Z   hasAuth: true,
+projects-1    | 2026-11-11T15:31:13.220741836Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:31:13.220742711Z   caller: '6af48a2039e0eb7147b9ad1f'
+projects-1    | 2026-11-11T15:31:13.220743502Z }
+projects-1    | 2026-11-11T15:31:13.223309211Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:31:13.223325836Z   hasAuth: true,
+projects-1    | 2026-11-11T15:31:13.223329127Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:31:13.223330169Z   caller: '6af48a1f39e0eb7147b9ad0d'
+projects-1    | 2026-11-11T15:31:13.223330961Z }
+projects-1    | 2026-11-11T15:31:13.225139544Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:31:13.225169669Z   hasAuth: true,
+projects-1    | 2026-11-11T15:31:13.225171836Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:31:13.225172711Z   caller: '6af48a2039e0eb7147b9ad31'
+projects-1    | 2026-11-11T15:31:13.225173544Z }
+projects-1    | 2026-11-11T15:31:13.226094794Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:31:13.226100836Z   hasAuth: true,
+projects-1    | 2026-11-11T15:31:13.226102002Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:31:13.226102919Z   caller: '6af48a2139e0eb7147b9ad3a'
+projects-1    | 2026-11-11T15:31:13.226103961Z }
+projects-1    | 2026-11-11T15:31:13.231583711Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:31:13.231593919Z   hasAuth: true,
+projects-1    | 2026-11-11T15:31:13.231595836Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:31:13.231596877Z   caller: '6af48a2039e0eb7147b9ad28'
+projects-1    | 2026-11-11T15:31:13.231599836Z }
+projects-1    | 2026-11-11T15:31:13.298994086Z [0mGET /6af48a1e39e0eb7147b9ad04/6af48a1ea2b4cfab7be4a01b [32m200[0m 90.818 ms - 712[0m
+projects-1    | 2026-11-11T15:31:13.299304211Z [0mGET /6af48a2139e0eb7147b9ad43/6af48a21a2b4cfab7be4a0df [32m200[0m 89.813 ms - 708[0m
+projects-1    | 2026-11-11T15:31:13.299964752Z [0mGET /6af48a2239e0eb7147b9ad4c/6af48a22a2b4cfab7be4a0fb [32m200[0m 82.358 ms - 690[0m
+projects-1    | 2026-11-11T15:31:13.300840169Z [0mGET /6af48a1f39e0eb7147b9ad16/6af48a1fa2b4cfab7be4a053 [32m200[0m 83.151 ms - 710[0m
+projects-1    | 2026-11-11T15:31:13.301167127Z [0mGET /6af48a2039e0eb7147b9ad1f/6af48a20a2b4cfab7be4a06f [32m200[0m 83.200 ms - 710[0m
+projects-1    | 2026-11-11T15:31:13.301444336Z [0mGET /6af48a1f39e0eb7147b9ad0d/6af48a1fa2b4cfab7be4a037 [32m200[0m 79.091 ms - 712[0m
+projects-1    | 2026-11-11T15:31:13.302009586Z [0mGET /6af48a2039e0eb7147b9ad31/6af48a20a2b4cfab7be4a0a7 [32m200[0m 77.503 ms - 712[0m
+projects-1    | 2026-11-11T15:31:13.302581544Z [0mGET /6af48a2039e0eb7147b9ad28/6af48a20a2b4cfab7be4a08b [32m200[0m 72.090 ms - 708[0m
+projects-1    | 2026-11-11T15:31:13.303294211Z [0mGET /6af48a2139e0eb7147b9ad3a/6af48a21a2b4cfab7be4a0c3 [32m200[0m 78.691 ms - 708[0m
+projects-1    | 2026-11-11T15:31:13.339310544Z [CALLER] {
+projects-1    | 2026-11-11T15:31:13.339332336Z   userParam: '6af48a2139e0eb7147b9ad43',
+projects-1    | 2026-11-11T15:31:13.339335919Z   forwarded: '6af48a2139e0eb7147b9ad43',
+projects-1    | 2026-11-11T15:31:13.339336794Z   hasAuth: true,
+projects-1    | 2026-11-11T15:31:13.339337669Z   caller: '6af48a2139e0eb7147b9ad43'
+projects-1    | 2026-11-11T15:31:13.339338544Z }
+projects-1    | 2026-11-11T15:31:13.339823127Z [CALLER] {
+projects-1    | 2026-11-11T15:31:13.339827461Z   userParam: '6af48a2039e0eb7147b9ad1f',
+projects-1    | 2026-11-11T15:31:13.339828627Z   forwarded: '6af48a2039e0eb7147b9ad1f',
+projects-1    | 2026-11-11T15:31:13.339829627Z   hasAuth: true,
+projects-1    | 2026-11-11T15:31:13.339830419Z   caller: '6af48a2039e0eb7147b9ad1f'
+projects-1    | 2026-11-11T15:31:13.339831252Z }
+projects-1    | 2026-11-11T15:31:13.340674836Z [CALLER] {
+projects-1    | 2026-11-11T15:31:13.340678002Z   userParam: '6af48a1e39e0eb7147b9ad04',
+projects-1    | 2026-11-11T15:31:13.340678877Z   forwarded: '6af48a1e39e0eb7147b9ad04',
+projects-1    | 2026-11-11T15:31:13.340679752Z   hasAuth: true,
+projects-1    | 2026-11-11T15:31:13.340680544Z   caller: '6af48a1e39e0eb7147b9ad04'
+projects-1    | 2026-11-11T15:31:13.340681336Z }
+projects-1    | 2026-11-11T15:31:13.341731961Z [ADV DEBUG] project: 6af48a21a2b4cfab7be4a0df adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:31:13.342607752Z [ADV DEBUG] project: 6af48a20a2b4cfab7be4a06f adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:31:13.343354586Z [ADV DEBUG] project: 6af48a1ea2b4cfab7be4a01b adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:31:13.344013294Z [CALLER] {
+projects-1    | 2026-11-11T15:31:13.344016169Z   userParam: '6af48a1f39e0eb7147b9ad0d',
+projects-1    | 2026-11-11T15:31:13.344017127Z   forwarded: '6af48a1f39e0eb7147b9ad0d',
+projects-1    | 2026-11-11T15:31:13.344027294Z   hasAuth: true,
+projects-1    | 2026-11-11T15:31:13.344028169Z   caller: '6af48a1f39e0eb7147b9ad0d'
+projects-1    | 2026-11-11T15:31:13.344029002Z }
+projects-1    | 2026-11-11T15:31:13.344895961Z [ADV DEBUG] project: 6af48a1fa2b4cfab7be4a037 adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:31:13.345582752Z [CALLER] {
+projects-1    | 2026-11-11T15:31:13.345585294Z   userParam: '6af48a2039e0eb7147b9ad28',
+projects-1    | 2026-11-11T15:31:13.345586086Z   forwarded: '6af48a2039e0eb7147b9ad28',
+projects-1    | 2026-11-11T15:31:13.345586877Z   hasAuth: true,
+projects-1    | 2026-11-11T15:31:13.345587669Z   caller: '6af48a2039e0eb7147b9ad28'
+projects-1    | 2026-11-11T15:31:13.345588461Z }
+projects-1    | 2026-11-11T15:31:13.345858669Z [CALLER] {
+projects-1    | 2026-11-11T15:31:13.345860419Z   userParam: '6af48a2239e0eb7147b9ad4c',
+projects-1    | 2026-11-11T15:31:13.345861252Z   forwarded: '6af48a2239e0eb7147b9ad4c',
+projects-1    | 2026-11-11T15:31:13.345862044Z   hasAuth: true,
+projects-1    | 2026-11-11T15:31:13.345862794Z   caller: '6af48a2239e0eb7147b9ad4c'
+projects-1    | 2026-11-11T15:31:13.345863586Z }
+projects-1    | 2026-11-11T15:31:13.347088669Z [ADV DEBUG] project: 6af48a20a2b4cfab7be4a08b adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:31:13.347803544Z [ADV DEBUG] project: 6af48a22a2b4cfab7be4a0fb adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'subtitles' ]
+projects-1    | 2026-11-11T15:31:13.349793836Z [CALLER] {
+projects-1    | 2026-11-11T15:31:13.349796544Z   userParam: '6af48a2039e0eb7147b9ad31',
+projects-1    | 2026-11-11T15:31:13.349797586Z   forwarded: '6af48a2039e0eb7147b9ad31',
+projects-1    | 2026-11-11T15:31:13.349798336Z   hasAuth: true,
+projects-1    | 2026-11-11T15:31:13.349799127Z   caller: '6af48a2039e0eb7147b9ad31'
+projects-1    | 2026-11-11T15:31:13.349799877Z }
+projects-1    | 2026-11-11T15:31:13.351108169Z [CALLER] {
+projects-1    | 2026-11-11T15:31:13.351113336Z   userParam: '6af48a2139e0eb7147b9ad3a',
+projects-1    | 2026-11-11T15:31:13.351114544Z   forwarded: '6af48a2139e0eb7147b9ad3a',
+projects-1    | 2026-11-11T15:31:13.351115419Z   hasAuth: true,
+projects-1    | 2026-11-11T15:31:13.351116211Z   caller: '6af48a2139e0eb7147b9ad3a'
+projects-1    | 2026-11-11T15:31:13.351117044Z }
+projects-1    | 2026-11-11T15:31:13.352042752Z [ADV DEBUG] project: 6af48a20a2b4cfab7be4a0a7 adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:31:13.352967794Z [CALLER] {
+projects-1    | 2026-11-11T15:31:13.352972794Z   userParam: '6af48a1f39e0eb7147b9ad16',
+projects-1    | 2026-11-11T15:31:13.352973961Z   forwarded: '6af48a1f39e0eb7147b9ad16',
+projects-1    | 2026-11-11T15:31:13.352974752Z   hasAuth: true,
+projects-1    | 2026-11-11T15:31:13.352975502Z   caller: '6af48a1f39e0eb7147b9ad16'
+projects-1    | 2026-11-11T15:31:13.352976336Z }
+projects-1    | 2026-11-11T15:31:13.353575502Z [ADV DEBUG] project: 6af48a21a2b4cfab7be4a0c3 adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:31:13.355501919Z [ADV DEBUG] project: 6af48a1fa2b4cfab7be4a053 adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:31:13.612596503Z [0mPOST /6af48a1f39e0eb7147b9ad0d/6af48a1fa2b4cfab7be4a037/process [32m201[0m 283.949 ms - 7[0m
+projects-1    | 2026-11-11T15:31:13.614132461Z [0mPOST /6af48a2039e0eb7147b9ad28/6af48a20a2b4cfab7be4a08b/process [32m201[0m 284.587 ms - 7[0m
+projects-1    | 2026-11-11T15:31:13.631067336Z [0mPOST /6af48a2039e0eb7147b9ad31/6af48a20a2b4cfab7be4a0a7/process [32m201[0m 298.925 ms - 7[0m
+projects-1    | 2026-11-11T15:31:13.633377419Z [0mPOST /6af48a1e39e0eb7147b9ad04/6af48a1ea2b4cfab7be4a01b/process [32m201[0m 306.743 ms - 7[0m
+projects-1    | 2026-11-11T15:31:13.636829253Z [0mPOST /6af48a2139e0eb7147b9ad3a/6af48a21a2b4cfab7be4a0c3/process [32m201[0m 303.343 ms - 7[0m
+projects-1    | 2026-11-11T15:31:13.640067919Z [0mPOST /6af48a1f39e0eb7147b9ad16/6af48a1fa2b4cfab7be4a053/process [32m201[0m 306.451 ms - 7[0m
+projects-1    | 2026-11-11T15:31:13.641921336Z [0mPOST /6af48a2139e0eb7147b9ad43/6af48a21a2b4cfab7be4a0df/process [32m201[0m 319.913 ms - 7[0m
+projects-1    | 2026-11-11T15:31:13.643516586Z [0mPOST /6af48a2039e0eb7147b9ad1f/6af48a20a2b4cfab7be4a06f/process [32m201[0m 319.342 ms - 7[0m
+projects-1    | 2026-11-11T15:31:13.677086044Z [0mPOST /6af48a2239e0eb7147b9ad4c/6af48a22a2b4cfab7be4a0fb/process [32m201[0m 346.605 ms - 7[0m
+projects-1    | 2026-11-11T15:31:17.423341379Z [T-03][RABBIT] msg=request-ef7a4c6e-72ef-4923-ab02-9a86728f0362 status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:31:17.427421421Z [RUN-DEBUG] msg=request-ef7a4c6e-72ef-4923-ab02-9a86728f0362 curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:31:17.520155629Z [COMMIT] project=6af48a21a2b4cfab7be4a0c3 committedToken=1
+projects-1    | 2026-11-11T15:31:20.967871464Z [T-03][RABBIT] msg=request-dfcfc404-6208-4fec-a2fe-88f64b6af796 status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:31:20.981207089Z [RUN-DEBUG] msg=request-dfcfc404-6208-4fec-a2fe-88f64b6af796 curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:31:21.128599215Z [COMMIT] project=6af48a20a2b4cfab7be4a08b committedToken=1
+projects-1    | 2026-11-11T15:31:24.662265425Z [T-03][RABBIT] msg=request-d8d09023-5571-41cd-8d4d-35674c8e89b6 status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:31:24.672731008Z [RUN-DEBUG] msg=request-d8d09023-5571-41cd-8d4d-35674c8e89b6 curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:31:24.775304300Z [COMMIT] project=6af48a1ea2b4cfab7be4a01b committedToken=1
+projects-1    | 2026-11-11T15:31:28.019451384Z [T-03][RABBIT] msg=request-4deec732-093c-4a53-a804-5a7d4f33cd7f status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:31:28.026389218Z [RUN-DEBUG] msg=request-4deec732-093c-4a53-a804-5a7d4f33cd7f curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:31:28.176477551Z [COMMIT] project=6af48a20a2b4cfab7be4a0a7 committedToken=1
+projects-1    | 2026-11-11T15:31:31.565003428Z [T-03][RABBIT] msg=request-7eb464f8-178f-44e8-b31a-dd0c56214496 status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:31:31.571264095Z [RUN-DEBUG] msg=request-7eb464f8-178f-44e8-b31a-dd0c56214496 curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:31:31.860623470Z [COMMIT] project=6af48a1fa2b4cfab7be4a037 committedToken=1
+projects-1    | 2026-11-11T15:31:35.218892930Z [T-03][RABBIT] msg=request-96c7dea2-4301-4c75-8d9f-5c577e7b51f4 status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:31:35.222495305Z [RUN-DEBUG] msg=request-96c7dea2-4301-4c75-8d9f-5c577e7b51f4 curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:31:35.317295638Z [COMMIT] project=6af48a21a2b4cfab7be4a0df committedToken=1
+projects-1    | 2026-11-11T15:31:38.557476500Z [T-03][RABBIT] msg=request-c637f0c2-371c-4a61-9d99-f358af3c6d9e status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:31:38.562971959Z [RUN-DEBUG] msg=request-c637f0c2-371c-4a61-9d99-f358af3c6d9e curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:31:38.698314000Z [COMMIT] project=6af48a1fa2b4cfab7be4a053 committedToken=1
+projects-1    | 2026-11-11T15:31:41.906156960Z [T-03][RABBIT] msg=request-69639f7e-8418-42b8-b6f8-2723f6bd1b01 status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:31:41.918861127Z [RUN-DEBUG] msg=request-69639f7e-8418-42b8-b6f8-2723f6bd1b01 curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:31:42.073350460Z [COMMIT] project=6af48a20a2b4cfab7be4a06f committedToken=1
+projects-1    | 2026-11-11T15:33:51.551890590Z [T-03][RABBIT] msg=request-be06ba0f-4b97-4a5e-94e4-320d206fb6bc status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:33:51.560690131Z [RUN-DEBUG] msg=request-be06ba0f-4b97-4a5e-94e4-320d206fb6bc curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:33:51.920965423Z [COMMIT] project=6af48a22a2b4cfab7be4a0fb committedToken=1
+projects-1    | 2026-11-11T15:35:52.312339132Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:35:52.312718132Z   hasAuth: true,
+projects-1    | 2026-11-11T15:35:52.312760423Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:35:52.312788340Z   caller: '6af48a1e39e0eb7147b9ad04'
+projects-1    | 2026-11-11T15:35:52.312790798Z }
+projects-1    | 2026-11-11T15:35:52.369741298Z [0mGET /6af48a1e39e0eb7147b9ad04/6af48a1ea2b4cfab7be4a01b [32m200[0m 64.481 ms - 708[0m
+projects-1    | 2026-11-11T15:35:52.384118465Z [0mDELETE /6af48a1e39e0eb7147b9ad04/6af48a1ea2b4cfab7be4a01b [32m204[0m 6.996 ms - -[0m
+projects-1    | 2026-11-11T15:35:52.406321798Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:35:52.406330590Z   hasAuth: true,
+projects-1    | 2026-11-11T15:35:52.406333507Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:35:52.406334632Z   caller: '6af48a1f39e0eb7147b9ad0d'
+projects-1    | 2026-11-11T15:35:52.406335673Z }
+projects-1    | 2026-11-11T15:35:52.414659548Z [0mGET /6af48a1f39e0eb7147b9ad0d/6af48a1fa2b4cfab7be4a037 [32m200[0m 8.295 ms - 708[0m
+projects-1    | 2026-11-11T15:35:52.425660882Z [0mDELETE /6af48a1f39e0eb7147b9ad0d/6af48a1fa2b4cfab7be4a037 [32m204[0m 5.507 ms - -[0m
+projects-1    | 2026-11-11T15:35:52.439020340Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:35:52.439025382Z   hasAuth: true,
+projects-1    | 2026-11-11T15:35:52.439033215Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:35:52.439034507Z   caller: '6af48a1f39e0eb7147b9ad16'
+projects-1    | 2026-11-11T15:35:52.439139340Z }
+projects-1    | 2026-11-11T15:35:52.444792590Z [0mGET /6af48a1f39e0eb7147b9ad16/6af48a1fa2b4cfab7be4a053 [32m200[0m 5.884 ms - 710[0m
+projects-1    | 2026-11-11T15:35:52.453140798Z [0mDELETE /6af48a1f39e0eb7147b9ad16/6af48a1fa2b4cfab7be4a053 [32m204[0m 4.364 ms - -[0m
+projects-1    | 2026-11-11T15:35:52.466682715Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:35:52.466687340Z   hasAuth: true,
+projects-1    | 2026-11-11T15:35:52.466688340Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:35:52.466691298Z   caller: '6af48a2039e0eb7147b9ad1f'
+projects-1    | 2026-11-11T15:35:52.466692715Z }
+projects-1    | 2026-11-11T15:35:52.472659007Z [0mGET /6af48a2039e0eb7147b9ad1f/6af48a20a2b4cfab7be4a06f [32m200[0m 6.074 ms - 712[0m
+projects-1    | 2026-11-11T15:35:52.480246340Z [0mDELETE /6af48a2039e0eb7147b9ad1f/6af48a20a2b4cfab7be4a06f [32m204[0m 3.994 ms - -[0m
+projects-1    | 2026-11-11T15:35:52.492180882Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:35:52.492184298Z   hasAuth: true,
+projects-1    | 2026-11-11T15:35:52.492185340Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:35:52.492186173Z   caller: '6af48a2039e0eb7147b9ad28'
+projects-1    | 2026-11-11T15:35:52.492187007Z }
+projects-1    | 2026-11-11T15:35:52.497451548Z [0mGET /6af48a2039e0eb7147b9ad28/6af48a20a2b4cfab7be4a08b [32m200[0m 5.314 ms - 712[0m
+projects-1    | 2026-11-11T15:35:52.506803757Z [0mDELETE /6af48a2039e0eb7147b9ad28/6af48a20a2b4cfab7be4a08b [32m204[0m 3.961 ms - -[0m
+projects-1    | 2026-11-11T15:35:52.518812507Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:35:52.518816965Z   hasAuth: true,
+projects-1    | 2026-11-11T15:35:52.518818423Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:35:52.518819548Z   caller: '6af48a2039e0eb7147b9ad31'
+projects-1    | 2026-11-11T15:35:52.518820548Z }
+projects-1    | 2026-11-11T15:35:52.523658090Z [0mGET /6af48a2039e0eb7147b9ad31/6af48a20a2b4cfab7be4a0a7 [32m200[0m 4.935 ms - 708[0m
+projects-1    | 2026-11-11T15:35:52.531167340Z [0mDELETE /6af48a2039e0eb7147b9ad31/6af48a20a2b4cfab7be4a0a7 [32m204[0m 4.048 ms - -[0m
+projects-1    | 2026-11-11T15:35:52.544568298Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:35:52.544573965Z   hasAuth: true,
+projects-1    | 2026-11-11T15:35:52.544575173Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:35:52.544576173Z   caller: '6af48a2139e0eb7147b9ad3a'
+projects-1    | 2026-11-11T15:35:52.544577132Z }
+projects-1    | 2026-11-11T15:35:52.549307424Z [0mGET /6af48a2139e0eb7147b9ad3a/6af48a21a2b4cfab7be4a0c3 [32m200[0m 4.845 ms - 708[0m
+projects-1    | 2026-11-11T15:35:52.557299757Z [0mDELETE /6af48a2139e0eb7147b9ad3a/6af48a21a2b4cfab7be4a0c3 [32m204[0m 4.464 ms - -[0m
+projects-1    | 2026-11-11T15:35:52.584568174Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:35:52.584587757Z   hasAuth: true,
+projects-1    | 2026-11-11T15:35:52.584590007Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:35:52.584591174Z   caller: '6af48a2139e0eb7147b9ad43'
+projects-1    | 2026-11-11T15:35:52.584599007Z }
+projects-1    | 2026-11-11T15:35:52.590534340Z [0mGET /6af48a2139e0eb7147b9ad43/6af48a21a2b4cfab7be4a0df [32m200[0m 6.319 ms - 712[0m
+projects-1    | 2026-11-11T15:35:52.601142965Z [0mDELETE /6af48a2139e0eb7147b9ad43/6af48a21a2b4cfab7be4a0df [32m204[0m 5.479 ms - -[0m
+projects-1    | 2026-11-11T15:35:52.615949507Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:35:52.615957965Z   hasAuth: true,
+projects-1    | 2026-11-11T15:35:52.615959340Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:35:52.615960382Z   caller: '6af48a2239e0eb7147b9ad4c'
+projects-1    | 2026-11-11T15:35:52.615961382Z }
+projects-1    | 2026-11-11T15:35:52.622420424Z [0mGET /6af48a2239e0eb7147b9ad4c/6af48a22a2b4cfab7be4a0fb [32m200[0m 6.482 ms - 692[0m
+projects-1    | 2026-11-11T15:35:52.632596590Z [0mDELETE /6af48a2239e0eb7147b9ad4c/6af48a22a2b4cfab7be4a0fb [32m204[0m 5.716 ms - -[0m
+projects-1    | 2026-11-11T15:36:02.895285678Z [0mPOST /6af48b6239e0eb7147b9adaf [32m201[0m 7.543 ms - 392[0m
+projects-1    | 2026-11-11T15:36:02.901739553Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:36:02.901746262Z   hasAuth: true,
+projects-1    | 2026-11-11T15:36:02.901748178Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:36:02.901749595Z   caller: '6af48b6239e0eb7147b9adaf'
+projects-1    | 2026-11-11T15:36:02.901751303Z }
+projects-1    | 2026-11-11T15:36:02.910956637Z [0mGET /6af48b6239e0eb7147b9adaf/6af48b62a2b4cfab7be4a291 [32m200[0m 9.636 ms - 96[0m
+projects-1    | 2026-11-11T15:36:03.002368512Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:36:03.702430595Z [0mPOST /6af48b6239e0eb7147b9adaf/6af48b62a2b4cfab7be4a291/video [32m204[0m 726.996 ms - -[0m
+projects-1    | 2026-11-11T15:36:03.729571095Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:36:03.729585804Z   hasAuth: true,
+projects-1    | 2026-11-11T15:36:03.729587012Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:36:03.729589637Z   caller: '6af48b6239e0eb7147b9adaf'
+projects-1    | 2026-11-11T15:36:03.729591095Z }
+projects-1    | 2026-11-11T15:36:03.761057096Z [0mGET /6af48b6239e0eb7147b9adaf/6af48b62a2b4cfab7be4a291 [32m200[0m 31.969 ms - 608[0m
+projects-1    | 2026-11-11T15:36:03.780980846Z [0mPOST /6af48b6239e0eb7147b9adaf/6af48b62a2b4cfab7be4a291/tool [32m204[0m 12.275 ms - -[0m
+projects-1    | 2026-11-11T15:36:03.939829346Z [0mPOST /6af48b6339e0eb7147b9adb8 [32m201[0m 1.719 ms - 392[0m
+projects-1    | 2026-11-11T15:36:03.944037971Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:36:03.944041262Z   hasAuth: true,
+projects-1    | 2026-11-11T15:36:03.944042137Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:36:03.944043012Z   caller: '6af48b6339e0eb7147b9adb8'
+projects-1    | 2026-11-11T15:36:03.944043846Z }
+projects-1    | 2026-11-11T15:36:03.948243012Z [0mGET /6af48b6339e0eb7147b9adb8/6af48b63a2b4cfab7be4a2ad [32m200[0m 4.344 ms - 96[0m
+projects-1    | 2026-11-11T15:36:04.038921221Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:36:04.228618387Z [0mPOST /6af48b6339e0eb7147b9adb8/6af48b63a2b4cfab7be4a2ad/video [32m204[0m 211.586 ms - -[0m
+projects-1    | 2026-11-11T15:36:04.236309637Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:36:04.236314012Z   hasAuth: true,
+projects-1    | 2026-11-11T15:36:04.236314971Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:36:04.236315804Z   caller: '6af48b6339e0eb7147b9adb8'
+projects-1    | 2026-11-11T15:36:04.236316596Z }
+projects-1    | 2026-11-11T15:36:04.242426846Z [0mGET /6af48b6339e0eb7147b9adb8/6af48b63a2b4cfab7be4a2ad [32m200[0m 6.170 ms - 608[0m
+projects-1    | 2026-11-11T15:36:04.255083054Z [0mPOST /6af48b6339e0eb7147b9adb8/6af48b63a2b4cfab7be4a2ad/tool [32m204[0m 8.020 ms - -[0m
+projects-1    | 2026-11-11T15:36:04.408249512Z [0mPOST /6af48b6439e0eb7147b9adc1 [32m201[0m 1.592 ms - 392[0m
+projects-1    | 2026-11-11T15:36:04.413605012Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:36:04.413615012Z   hasAuth: true,
+projects-1    | 2026-11-11T15:36:04.413616221Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:36:04.413617179Z   caller: '6af48b6439e0eb7147b9adc1'
+projects-1    | 2026-11-11T15:36:04.413618012Z }
+projects-1    | 2026-11-11T15:36:04.418564596Z [0mGET /6af48b6439e0eb7147b9adc1/6af48b64a2b4cfab7be4a2c9 [32m200[0m 5.053 ms - 96[0m
+projects-1    | 2026-11-11T15:36:04.494737554Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:36:04.630600054Z [0mPOST /6af48b6439e0eb7147b9adc1/6af48b64a2b4cfab7be4a2c9/video [32m204[0m 148.131 ms - -[0m
+projects-1    | 2026-11-11T15:36:04.637722179Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:36:04.637733179Z   hasAuth: true,
+projects-1    | 2026-11-11T15:36:04.637735263Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:36:04.637736221Z   caller: '6af48b6439e0eb7147b9adc1'
+projects-1    | 2026-11-11T15:36:04.637737013Z }
+projects-1    | 2026-11-11T15:36:04.644397471Z [0mGET /6af48b6439e0eb7147b9adc1/6af48b64a2b4cfab7be4a2c9 [32m200[0m 7.588 ms - 610[0m
+projects-1    | 2026-11-11T15:36:04.659979846Z [0mPOST /6af48b6439e0eb7147b9adc1/6af48b64a2b4cfab7be4a2c9/tool [32m204[0m 10.766 ms - -[0m
+projects-1    | 2026-11-11T15:36:04.808417013Z [0mPOST /6af48b6439e0eb7147b9adca [32m201[0m 3.170 ms - 392[0m
+projects-1    | 2026-11-11T15:36:04.812517263Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:36:04.812533513Z   hasAuth: true,
+projects-1    | 2026-11-11T15:36:04.812536138Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:36:04.812537888Z   caller: '6af48b6439e0eb7147b9adca'
+projects-1    | 2026-11-11T15:36:04.812540096Z }
+projects-1    | 2026-11-11T15:36:04.817578596Z [0mGET /6af48b6439e0eb7147b9adca/6af48b64a2b4cfab7be4a2e5 [32m200[0m 5.212 ms - 96[0m
+projects-1    | 2026-11-11T15:36:04.866620179Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:36:04.976342429Z [0mPOST /6af48b6439e0eb7147b9adca/6af48b64a2b4cfab7be4a2e5/video [32m204[0m 120.800 ms - -[0m
+projects-1    | 2026-11-11T15:36:04.987488596Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:36:04.987507263Z   hasAuth: true,
+projects-1    | 2026-11-11T15:36:04.987511346Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:36:04.987512221Z   caller: '6af48b6439e0eb7147b9adca'
+projects-1    | 2026-11-11T15:36:04.987513138Z }
+projects-1    | 2026-11-11T15:36:04.996804013Z [0mGET /6af48b6439e0eb7147b9adca/6af48b64a2b4cfab7be4a2e5 [32m200[0m 9.439 ms - 608[0m
+projects-1    | 2026-11-11T15:36:05.011313179Z [0mPOST /6af48b6439e0eb7147b9adca/6af48b64a2b4cfab7be4a2e5/tool [32m204[0m 7.946 ms - -[0m
+projects-1    | 2026-11-11T15:36:05.150603930Z [0mPOST /6af48b6539e0eb7147b9add3 [32m201[0m 1.299 ms - 392[0m
+projects-1    | 2026-11-11T15:36:05.154666846Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:36:05.154671721Z   hasAuth: true,
+projects-1    | 2026-11-11T15:36:05.154672971Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:36:05.154673971Z   caller: '6af48b6539e0eb7147b9add3'
+projects-1    | 2026-11-11T15:36:05.154674930Z }
+projects-1    | 2026-11-11T15:36:05.158321263Z [0mGET /6af48b6539e0eb7147b9add3/6af48b65a2b4cfab7be4a301 [32m200[0m 3.700 ms - 96[0m
+projects-1    | 2026-11-11T15:36:05.210669096Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:36:05.316322971Z [0mPOST /6af48b6539e0eb7147b9add3/6af48b65a2b4cfab7be4a301/video [32m204[0m 119.195 ms - -[0m
+projects-1    | 2026-11-11T15:36:05.322759846Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:36:05.322767221Z   hasAuth: true,
+projects-1    | 2026-11-11T15:36:05.322768763Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:36:05.322770055Z   caller: '6af48b6539e0eb7147b9add3'
+projects-1    | 2026-11-11T15:36:05.322771180Z }
+projects-1    | 2026-11-11T15:36:05.328922888Z [0mGET /6af48b6539e0eb7147b9add3/6af48b65a2b4cfab7be4a301 [32m200[0m 6.238 ms - 610[0m
+projects-1    | 2026-11-11T15:36:05.341595180Z [0mPOST /6af48b6539e0eb7147b9add3/6af48b65a2b4cfab7be4a301/tool [32m204[0m 8.516 ms - -[0m
+projects-1    | 2026-11-11T15:36:05.479673846Z [0mPOST /6af48b6539e0eb7147b9addc [32m201[0m 1.527 ms - 392[0m
+projects-1    | 2026-11-11T15:36:05.483762763Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:36:05.483766471Z   hasAuth: true,
+projects-1    | 2026-11-11T15:36:05.483767430Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:36:05.483768346Z   caller: '6af48b6539e0eb7147b9addc'
+projects-1    | 2026-11-11T15:36:05.483769138Z }
+projects-1    | 2026-11-11T15:36:05.487697138Z [0mGET /6af48b6539e0eb7147b9addc/6af48b65a2b4cfab7be4a31d [32m200[0m 4.029 ms - 96[0m
+projects-1    | 2026-11-11T15:36:05.566676680Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:36:05.689964055Z [0mPOST /6af48b6539e0eb7147b9addc/6af48b65a2b4cfab7be4a31d/video [32m204[0m 143.080 ms - -[0m
+projects-1    | 2026-11-11T15:36:05.701452305Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:36:05.701471721Z   hasAuth: true,
+projects-1    | 2026-11-11T15:36:05.701475055Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:36:05.701476638Z   caller: '6af48b6539e0eb7147b9addc'
+projects-1    | 2026-11-11T15:36:05.701477596Z }
+projects-1    | 2026-11-11T15:36:05.710309221Z [0mGET /6af48b6539e0eb7147b9addc/6af48b65a2b4cfab7be4a31d [32m200[0m 9.086 ms - 610[0m
+projects-1    | 2026-11-11T15:36:05.724708805Z [0mPOST /6af48b6539e0eb7147b9addc/6af48b65a2b4cfab7be4a31d/tool [32m204[0m 8.180 ms - -[0m
+projects-1    | 2026-11-11T15:36:05.866618388Z [0mPOST /6af48b6539e0eb7147b9ade5 [32m201[0m 1.395 ms - 392[0m
+projects-1    | 2026-11-11T15:36:05.871449138Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:36:05.871453388Z   hasAuth: true,
+projects-1    | 2026-11-11T15:36:05.871454263Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:36:05.871455180Z   caller: '6af48b6539e0eb7147b9ade5'
+projects-1    | 2026-11-11T15:36:05.871476930Z }
+projects-1    | 2026-11-11T15:36:05.875441055Z [0mGET /6af48b6539e0eb7147b9ade5/6af48b65a2b4cfab7be4a339 [32m200[0m 4.031 ms - 96[0m
+projects-1    | 2026-11-11T15:36:05.922761305Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:36:06.039275763Z [0mPOST /6af48b6539e0eb7147b9ade5/6af48b65a2b4cfab7be4a339/video [32m204[0m 127.602 ms - -[0m
+projects-1    | 2026-11-11T15:36:06.045336597Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:36:06.045344638Z   hasAuth: true,
+projects-1    | 2026-11-11T15:36:06.045346180Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:36:06.045347305Z   caller: '6af48b6539e0eb7147b9ade5'
+projects-1    | 2026-11-11T15:36:06.045348305Z }
+projects-1    | 2026-11-11T15:36:06.051572930Z [0mGET /6af48b6539e0eb7147b9ade5/6af48b65a2b4cfab7be4a339 [32m200[0m 6.396 ms - 608[0m
+projects-1    | 2026-11-11T15:36:06.065754638Z [0mPOST /6af48b6539e0eb7147b9ade5/6af48b65a2b4cfab7be4a339/tool [32m204[0m 8.764 ms - -[0m
+projects-1    | 2026-11-11T15:36:06.207050097Z [0mPOST /6af48b6639e0eb7147b9adee [32m201[0m 1.652 ms - 392[0m
+projects-1    | 2026-11-11T15:36:06.211172263Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:36:06.211177930Z   hasAuth: true,
+projects-1    | 2026-11-11T15:36:06.211179513Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:36:06.211180347Z   caller: '6af48b6639e0eb7147b9adee'
+projects-1    | 2026-11-11T15:36:06.211181138Z }
+projects-1    | 2026-11-11T15:36:06.215491347Z [0mGET /6af48b6639e0eb7147b9adee/6af48b66a2b4cfab7be4a355 [32m200[0m 4.459 ms - 96[0m
+projects-1    | 2026-11-11T15:36:06.265903138Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:36:06.412670430Z [0mPOST /6af48b6639e0eb7147b9adee/6af48b66a2b4cfab7be4a355/video [32m204[0m 156.077 ms - -[0m
+projects-1    | 2026-11-11T15:36:06.428627805Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:36:06.428660305Z   hasAuth: true,
+projects-1    | 2026-11-11T15:36:06.428692388Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:36:06.428696597Z   caller: '6af48b6639e0eb7147b9adee'
+projects-1    | 2026-11-11T15:36:06.428698263Z }
+projects-1    | 2026-11-11T15:36:06.446893055Z [0mGET /6af48b6639e0eb7147b9adee/6af48b66a2b4cfab7be4a355 [32m200[0m 16.767 ms - 610[0m
+projects-1    | 2026-11-11T15:36:06.467617680Z [0mPOST /6af48b6639e0eb7147b9adee/6af48b66a2b4cfab7be4a355/tool [32m204[0m 13.891 ms - -[0m
+projects-1    | 2026-11-11T15:36:06.620572639Z [0mPOST /6af48b6639e0eb7147b9adf7 [32m201[0m 2.110 ms - 394[0m
+projects-1    | 2026-11-11T15:36:06.625707139Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:36:06.625712430Z   hasAuth: true,
+projects-1    | 2026-11-11T15:36:06.625713847Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:36:06.625716430Z   caller: '6af48b6639e0eb7147b9adf7'
+projects-1    | 2026-11-11T15:36:06.625718972Z }
+projects-1    | 2026-11-11T15:36:06.630108180Z [0mGET /6af48b6639e0eb7147b9adf7/6af48b66a2b4cfab7be4a371 [32m200[0m 4.491 ms - 98[0m
+projects-1    | 2026-11-11T15:36:06.905577847Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T15:36:07.134058764Z [0mPOST /6af48b6639e0eb7147b9adf7/6af48b66a2b4cfab7be4a371/video [32m204[0m 304.401 ms - -[0m
+projects-1    | 2026-11-11T15:36:07.145302764Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:36:07.145320764Z   hasAuth: true,
+projects-1    | 2026-11-11T15:36:07.145322764Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:36:07.145323722Z   caller: '6af48b6639e0eb7147b9adf7'
+projects-1    | 2026-11-11T15:36:07.145324597Z }
+projects-1    | 2026-11-11T15:36:07.154257180Z [0mGET /6af48b6639e0eb7147b9adf7/6af48b66a2b4cfab7be4a371 [32m200[0m 9.083 ms - 619[0m
+projects-1    | 2026-11-11T15:36:07.170424347Z [0mPOST /6af48b6639e0eb7147b9adf7/6af48b66a2b4cfab7be4a371/tool [32m204[0m 9.770 ms - -[0m
+projects-1    | 2026-11-11T15:36:37.245551916Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:36:37.245653750Z   hasAuth: true,
+projects-1    | 2026-11-11T15:36:37.245658291Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:36:37.245659458Z   caller: '6af48b6239e0eb7147b9adaf'
+projects-1    | 2026-11-11T15:36:37.245660666Z }
+projects-1    | 2026-11-11T15:36:37.249212958Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:36:37.249242875Z   hasAuth: true,
+projects-1    | 2026-11-11T15:36:37.249251000Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:36:37.249254541Z   caller: '6af48b6539e0eb7147b9ade5'
+projects-1    | 2026-11-11T15:36:37.249256833Z }
+projects-1    | 2026-11-11T15:36:37.249928541Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:36:37.249949416Z   hasAuth: true,
+projects-1    | 2026-11-11T15:36:37.249956666Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:36:37.249959625Z   caller: '6af48b6439e0eb7147b9adc1'
+projects-1    | 2026-11-11T15:36:37.249962000Z }
+projects-1    | 2026-11-11T15:36:37.251661041Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:36:37.251702000Z   hasAuth: true,
+projects-1    | 2026-11-11T15:36:37.251704291Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:36:37.251705166Z   caller: '6af48b6339e0eb7147b9adb8'
+projects-1    | 2026-11-11T15:36:37.251706000Z }
+projects-1    | 2026-11-11T15:36:37.255787875Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:36:37.255797291Z   hasAuth: true,
+projects-1    | 2026-11-11T15:36:37.255798416Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:36:37.255799333Z   caller: '6af48b6639e0eb7147b9adee'
+projects-1    | 2026-11-11T15:36:37.255800250Z }
+projects-1    | 2026-11-11T15:36:37.259276125Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:36:37.259291041Z   hasAuth: true,
+projects-1    | 2026-11-11T15:36:37.259293291Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:36:37.259294333Z   caller: '6af48b6639e0eb7147b9adf7'
+projects-1    | 2026-11-11T15:36:37.259297250Z }
+projects-1    | 2026-11-11T15:36:37.260936833Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:36:37.260944083Z   hasAuth: true,
+projects-1    | 2026-11-11T15:36:37.260945250Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:36:37.260946166Z   caller: '6af48b6539e0eb7147b9addc'
+projects-1    | 2026-11-11T15:36:37.260947458Z }
+projects-1    | 2026-11-11T15:36:37.261779791Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:36:37.261783000Z   hasAuth: true,
+projects-1    | 2026-11-11T15:36:37.261783833Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:36:37.261785125Z   caller: '6af48b6439e0eb7147b9adca'
+projects-1    | 2026-11-11T15:36:37.261786125Z }
+projects-1    | 2026-11-11T15:36:37.264553750Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:36:37.264593833Z   hasAuth: true,
+projects-1    | 2026-11-11T15:36:37.264600250Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:36:37.264602125Z   caller: '6af48b6539e0eb7147b9add3'
+projects-1    | 2026-11-11T15:36:37.264608375Z }
+projects-1    | 2026-11-11T15:36:37.313669333Z [0mGET /6af48b6239e0eb7147b9adaf/6af48b62a2b4cfab7be4a291 [32m200[0m 72.722 ms - 708[0m
+projects-1    | 2026-11-11T15:36:37.313965916Z [0mGET /6af48b6439e0eb7147b9adc1/6af48b64a2b4cfab7be4a2c9 [32m200[0m 71.670 ms - 708[0m
+projects-1    | 2026-11-11T15:36:37.314588208Z [0mGET /6af48b6539e0eb7147b9ade5/6af48b65a2b4cfab7be4a339 [32m200[0m 72.972 ms - 712[0m
+projects-1    | 2026-11-11T15:36:37.315343625Z [0mGET /6af48b6339e0eb7147b9adb8/6af48b63a2b4cfab7be4a2ad [32m200[0m 72.788 ms - 710[0m
+projects-1    | 2026-11-11T15:36:37.316704541Z [0mGET /6af48b6639e0eb7147b9adee/6af48b66a2b4cfab7be4a355 [32m200[0m 73.667 ms - 708[0m
+projects-1    | 2026-11-11T15:36:37.317681833Z [0mGET /6af48b6639e0eb7147b9adf7/6af48b66a2b4cfab7be4a371 [32m200[0m 58.776 ms - 694[0m
+projects-1    | 2026-11-11T15:36:37.318408250Z [0mGET /6af48b6539e0eb7147b9addc/6af48b65a2b4cfab7be4a31d [32m200[0m 56.654 ms - 710[0m
+projects-1    | 2026-11-11T15:36:37.318424875Z [0mGET /6af48b6439e0eb7147b9adca/6af48b64a2b4cfab7be4a2e5 [32m200[0m 56.643 ms - 710[0m
+projects-1    | 2026-11-11T15:36:37.318469875Z [0mGET /6af48b6539e0eb7147b9add3/6af48b65a2b4cfab7be4a301 [32m200[0m 53.804 ms - 710[0m
+projects-1    | 2026-11-11T15:36:37.340915250Z [CALLER] {
+projects-1    | 2026-11-11T15:36:37.340936583Z   userParam: '6af48b6239e0eb7147b9adaf',
+projects-1    | 2026-11-11T15:36:37.340938375Z   forwarded: '6af48b6239e0eb7147b9adaf',
+projects-1    | 2026-11-11T15:36:37.340940166Z   hasAuth: true,
+projects-1    | 2026-11-11T15:36:37.340941125Z   caller: '6af48b6239e0eb7147b9adaf'
+projects-1    | 2026-11-11T15:36:37.340942125Z }
+projects-1    | 2026-11-11T15:36:37.342443583Z [ADV DEBUG] project: 6af48b62a2b4cfab7be4a291 adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:36:37.349025916Z [CALLER] {
+projects-1    | 2026-11-11T15:36:37.349034666Z   userParam: '6af48b6439e0eb7147b9adc1',
+projects-1    | 2026-11-11T15:36:37.349035916Z   forwarded: '6af48b6439e0eb7147b9adc1',
+projects-1    | 2026-11-11T15:36:37.349036833Z   hasAuth: true,
+projects-1    | 2026-11-11T15:36:37.349037708Z   caller: '6af48b6439e0eb7147b9adc1'
+projects-1    | 2026-11-11T15:36:37.349038541Z }
+projects-1    | 2026-11-11T15:36:37.349177083Z [CALLER] {
+projects-1    | 2026-11-11T15:36:37.349181000Z   userParam: '6af48b6539e0eb7147b9ade5',
+projects-1    | 2026-11-11T15:36:37.349182333Z   forwarded: '6af48b6539e0eb7147b9ade5',
+projects-1    | 2026-11-11T15:36:37.349183375Z   hasAuth: true,
+projects-1    | 2026-11-11T15:36:37.349184166Z   caller: '6af48b6539e0eb7147b9ade5'
+projects-1    | 2026-11-11T15:36:37.349185000Z }
+projects-1    | 2026-11-11T15:36:37.350574291Z [ADV DEBUG] project: 6af48b64a2b4cfab7be4a2c9 adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:36:37.351465250Z [ADV DEBUG] project: 6af48b65a2b4cfab7be4a339 adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:36:37.354983875Z [CALLER] {
+projects-1    | 2026-11-11T15:36:37.354993250Z   userParam: '6af48b6439e0eb7147b9adca',
+projects-1    | 2026-11-11T15:36:37.354996291Z   forwarded: '6af48b6439e0eb7147b9adca',
+projects-1    | 2026-11-11T15:36:37.354997375Z   hasAuth: true,
+projects-1    | 2026-11-11T15:36:37.354998541Z   caller: '6af48b6439e0eb7147b9adca'
+projects-1    | 2026-11-11T15:36:37.354999333Z }
+projects-1    | 2026-11-11T15:36:37.355322791Z [CALLER] {
+projects-1    | 2026-11-11T15:36:37.355325000Z   userParam: '6af48b6639e0eb7147b9adee',
+projects-1    | 2026-11-11T15:36:37.355326375Z   forwarded: '6af48b6639e0eb7147b9adee',
+projects-1    | 2026-11-11T15:36:37.355327291Z   hasAuth: true,
+projects-1    | 2026-11-11T15:36:37.355328083Z   caller: '6af48b6639e0eb7147b9adee'
+projects-1    | 2026-11-11T15:36:37.355328875Z }
+projects-1    | 2026-11-11T15:36:37.355790000Z [CALLER] {
+projects-1    | 2026-11-11T15:36:37.355805416Z   userParam: '6af48b6639e0eb7147b9adf7',
+projects-1    | 2026-11-11T15:36:37.355807750Z   forwarded: '6af48b6639e0eb7147b9adf7',
+projects-1    | 2026-11-11T15:36:37.355809416Z   hasAuth: true,
+projects-1    | 2026-11-11T15:36:37.355827083Z   caller: '6af48b6639e0eb7147b9adf7'
+projects-1    | 2026-11-11T15:36:37.355872458Z }
+projects-1    | 2026-11-11T15:36:37.356337458Z [ADV DEBUG] project: 6af48b64a2b4cfab7be4a2e5 adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:36:37.357228583Z [ADV DEBUG] project: 6af48b66a2b4cfab7be4a355 adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:36:37.357972708Z [ADV DEBUG] project: 6af48b66a2b4cfab7be4a371 adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'subtitles' ]
+projects-1    | 2026-11-11T15:36:37.364935500Z [CALLER] {
+projects-1    | 2026-11-11T15:36:37.365356583Z   userParam: '6af48b6539e0eb7147b9addc',
+projects-1    | 2026-11-11T15:36:37.365364083Z   forwarded: '6af48b6539e0eb7147b9addc',
+projects-1    | 2026-11-11T15:36:37.365367166Z   hasAuth: true,
+projects-1    | 2026-11-11T15:36:37.365368208Z   caller: '6af48b6539e0eb7147b9addc'
+projects-1    | 2026-11-11T15:36:37.365369041Z }
+projects-1    | 2026-11-11T15:36:37.366057666Z [CALLER] {
+projects-1    | 2026-11-11T15:36:37.366065875Z   userParam: '6af48b6339e0eb7147b9adb8',
+projects-1    | 2026-11-11T15:36:37.366066750Z   forwarded: '6af48b6339e0eb7147b9adb8',
+projects-1    | 2026-11-11T15:36:37.366067541Z   hasAuth: true,
+projects-1    | 2026-11-11T15:36:37.366068416Z   caller: '6af48b6339e0eb7147b9adb8'
+projects-1    | 2026-11-11T15:36:37.366070208Z }
+projects-1    | 2026-11-11T15:36:37.370265666Z [ADV DEBUG] project: 6af48b63a2b4cfab7be4a2ad adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:36:37.371311666Z [ADV DEBUG] project: 6af48b65a2b4cfab7be4a31d adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:36:37.372913750Z [CALLER] {
+projects-1    | 2026-11-11T15:36:37.372917833Z   userParam: '6af48b6539e0eb7147b9add3',
+projects-1    | 2026-11-11T15:36:37.372919041Z   forwarded: '6af48b6539e0eb7147b9add3',
+projects-1    | 2026-11-11T15:36:37.372920041Z   hasAuth: true,
+projects-1    | 2026-11-11T15:36:37.372920833Z   caller: '6af48b6539e0eb7147b9add3'
+projects-1    | 2026-11-11T15:36:37.372921708Z }
+projects-1    | 2026-11-11T15:36:37.375435625Z [ADV DEBUG] project: 6af48b65a2b4cfab7be4a301 adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T15:36:37.575024458Z [0mPOST /6af48b6239e0eb7147b9adaf/6af48b62a2b4cfab7be4a291/process [32m201[0m 246.092 ms - 7[0m
+projects-1    | 2026-11-11T15:36:37.575068041Z [0mPOST /6af48b6439e0eb7147b9adca/6af48b64a2b4cfab7be4a2e5/process [32m201[0m 239.499 ms - 7[0m
+projects-1    | 2026-11-11T15:36:37.575072583Z [0mPOST /6af48b6539e0eb7147b9ade5/6af48b65a2b4cfab7be4a339/process [32m201[0m 242.856 ms - 7[0m
+projects-1    | 2026-11-11T15:36:37.578947750Z [0mPOST /6af48b6439e0eb7147b9adc1/6af48b64a2b4cfab7be4a2c9/process [32m201[0m 247.888 ms - 7[0m
+projects-1    | 2026-11-11T15:36:37.585968750Z [0mPOST /6af48b6539e0eb7147b9addc/6af48b65a2b4cfab7be4a31d/process [32m201[0m 243.764 ms - 7[0m
+projects-1    | 2026-11-11T15:36:37.596586333Z [0mPOST /6af48b6339e0eb7147b9adb8/6af48b63a2b4cfab7be4a2ad/process [32m201[0m 253.293 ms - 7[0m
+projects-1    | 2026-11-11T15:36:37.600370833Z [0mPOST /6af48b6539e0eb7147b9add3/6af48b65a2b4cfab7be4a301/process [32m201[0m 254.862 ms - 7[0m
+projects-1    | 2026-11-11T15:36:37.602090250Z [0mPOST /6af48b6639e0eb7147b9adee/6af48b66a2b4cfab7be4a355/process [32m201[0m 266.236 ms - 7[0m
+projects-1    | 2026-11-11T15:36:37.630087916Z [0mPOST /6af48b6639e0eb7147b9adf7/6af48b66a2b4cfab7be4a371/process [32m201[0m 291.709 ms - 7[0m
+projects-1    | 2026-11-11T15:36:41.110463210Z [T-03][RABBIT] msg=request-87b5cb3e-196d-4da1-80b5-b39852e95827 status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:36:41.114218626Z [RUN-DEBUG] msg=request-87b5cb3e-196d-4da1-80b5-b39852e95827 curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:36:41.235381335Z [COMMIT] project=6af48b62a2b4cfab7be4a291 committedToken=1
+projects-1    | 2026-11-11T15:36:44.639927503Z [T-03][RABBIT] msg=request-4752f748-d2ba-4832-b348-f19eb565f9a7 status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:36:44.643339086Z [RUN-DEBUG] msg=request-4752f748-d2ba-4832-b348-f19eb565f9a7 curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:36:44.739188503Z [COMMIT] project=6af48b64a2b4cfab7be4a2e5 committedToken=1
+projects-1    | 2026-11-11T15:36:48.045731755Z [T-03][RABBIT] msg=request-0b578165-af2f-40c4-aa39-ccf9e913835b status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:36:48.052879838Z [RUN-DEBUG] msg=request-0b578165-af2f-40c4-aa39-ccf9e913835b curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:36:48.229038713Z [COMMIT] project=6af48b65a2b4cfab7be4a339 committedToken=1
+projects-1    | 2026-11-11T15:36:51.714217381Z [T-03][RABBIT] msg=request-579910ba-a318-4332-9269-e9fa4de25005 status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:36:51.718339590Z [RUN-DEBUG] msg=request-579910ba-a318-4332-9269-e9fa4de25005 curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:36:51.823898715Z [COMMIT] project=6af48b64a2b4cfab7be4a2c9 committedToken=1
+projects-1    | 2026-11-11T15:36:55.208955425Z [T-03][RABBIT] msg=request-6d1976d9-678c-466f-b6a4-a74469a6e760 status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:36:55.212344425Z [RUN-DEBUG] msg=request-6d1976d9-678c-466f-b6a4-a74469a6e760 curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:36:55.306774133Z [COMMIT] project=6af48b65a2b4cfab7be4a31d committedToken=1
+projects-1    | 2026-11-11T15:36:58.403082385Z [T-03][RABBIT] msg=request-471d82d7-c6e8-4b6c-a63b-b80d4b5ead44 status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:36:58.408320176Z [RUN-DEBUG] msg=request-471d82d7-c6e8-4b6c-a63b-b80d4b5ead44 curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:36:58.492912843Z [COMMIT] project=6af48b63a2b4cfab7be4a2ad committedToken=1
+projects-1    | 2026-11-11T15:37:01.864063970Z [T-03][RABBIT] msg=request-e089ee0a-ad22-4118-af04-5e5d2a8c2c5c status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:37:01.867751886Z [RUN-DEBUG] msg=request-e089ee0a-ad22-4118-af04-5e5d2a8c2c5c curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:37:01.961700428Z [COMMIT] project=6af48b66a2b4cfab7be4a355 committedToken=1
+projects-1    | 2026-11-11T15:37:05.304443888Z [T-03][RABBIT] msg=request-0cd04e73-40f4-42b4-bf51-4dce99c3a508 status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:37:05.307986388Z [RUN-DEBUG] msg=request-0cd04e73-40f4-42b4-bf51-4dce99c3a508 curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:37:05.432638430Z [COMMIT] project=6af48b65a2b4cfab7be4a301 committedToken=1
+projects-1    | 2026-11-11T15:39:00.480419886Z [T-03][RABBIT] msg=request-393a1252-c4ac-4f25-98b2-6f1cbe0b7343 status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T15:39:00.492355136Z [RUN-DEBUG] msg=request-393a1252-c4ac-4f25-98b2-6f1cbe0b7343 curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T15:39:00.724791386Z [COMMIT] project=6af48b66a2b4cfab7be4a371 committedToken=1
+projects-1    | 2026-11-11T15:41:00.948472761Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:41:00.948559594Z   hasAuth: true,
+projects-1    | 2026-11-11T15:41:00.948565386Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:41:00.948567469Z   caller: '6af48b6239e0eb7147b9adaf'
+projects-1    | 2026-11-11T15:41:00.948568886Z }
+projects-1    | 2026-11-11T15:41:00.995400302Z [0mGET /6af48b6239e0eb7147b9adaf/6af48b62a2b4cfab7be4a291 [32m200[0m 48.113 ms - 708[0m
+projects-1    | 2026-11-11T15:41:01.011065511Z [0mDELETE /6af48b6239e0eb7147b9adaf/6af48b62a2b4cfab7be4a291 [32m204[0m 6.450 ms - -[0m
+projects-1    | 2026-11-11T15:41:01.031517969Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:41:01.031524928Z   hasAuth: true,
+projects-1    | 2026-11-11T15:41:01.031526136Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:41:01.031527178Z   caller: '6af48b6339e0eb7147b9adb8'
+projects-1    | 2026-11-11T15:41:01.031528219Z }
+projects-1    | 2026-11-11T15:41:01.037398761Z [0mGET /6af48b6339e0eb7147b9adb8/6af48b63a2b4cfab7be4a2ad [32m200[0m 5.930 ms - 712[0m
+projects-1    | 2026-11-11T15:41:01.046279511Z [0mDELETE /6af48b6339e0eb7147b9adb8/6af48b63a2b4cfab7be4a2ad [32m204[0m 4.072 ms - -[0m
+projects-1    | 2026-11-11T15:41:01.062615969Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:41:01.062621136Z   hasAuth: true,
+projects-1    | 2026-11-11T15:41:01.062628719Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:41:01.062629928Z   caller: '6af48b6439e0eb7147b9adc1'
+projects-1    | 2026-11-11T15:41:01.062630969Z }
+projects-1    | 2026-11-11T15:41:01.067610553Z [0mGET /6af48b6439e0eb7147b9adc1/6af48b64a2b4cfab7be4a2c9 [32m200[0m 5.037 ms - 710[0m
+projects-1    | 2026-11-11T15:41:01.075286261Z [0mDELETE /6af48b6439e0eb7147b9adc1/6af48b64a2b4cfab7be4a2c9 [32m204[0m 3.725 ms - -[0m
+projects-1    | 2026-11-11T15:41:01.089941719Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:41:01.089948803Z   hasAuth: true,
+projects-1    | 2026-11-11T15:41:01.089950136Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:41:01.089951511Z   caller: '6af48b6439e0eb7147b9adca'
+projects-1    | 2026-11-11T15:41:01.089952928Z }
+projects-1    | 2026-11-11T15:41:01.094742803Z [0mGET /6af48b6439e0eb7147b9adca/6af48b64a2b4cfab7be4a2e5 [32m200[0m 4.862 ms - 708[0m
+projects-1    | 2026-11-11T15:41:01.102556261Z [0mDELETE /6af48b6439e0eb7147b9adca/6af48b64a2b4cfab7be4a2e5 [32m204[0m 3.801 ms - -[0m
+projects-1    | 2026-11-11T15:41:01.114839886Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:41:01.114844303Z   hasAuth: true,
+projects-1    | 2026-11-11T15:41:01.114845219Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:41:01.114846094Z   caller: '6af48b6539e0eb7147b9add3'
+projects-1    | 2026-11-11T15:41:01.114846886Z }
+projects-1    | 2026-11-11T15:41:01.120291303Z [0mGET /6af48b6539e0eb7147b9add3/6af48b65a2b4cfab7be4a301 [32m200[0m 5.517 ms - 712[0m
+projects-1    | 2026-11-11T15:41:01.128010803Z [0mDELETE /6af48b6539e0eb7147b9add3/6af48b65a2b4cfab7be4a301 [32m204[0m 3.732 ms - -[0m
+projects-1    | 2026-11-11T15:41:01.152369219Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:41:01.152375053Z   hasAuth: true,
+projects-1    | 2026-11-11T15:41:01.152376011Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:41:01.152376886Z   caller: '6af48b6539e0eb7147b9addc'
+projects-1    | 2026-11-11T15:41:01.152377761Z }
+projects-1    | 2026-11-11T15:41:01.158553386Z [0mGET /6af48b6539e0eb7147b9addc/6af48b65a2b4cfab7be4a31d [32m200[0m 6.226 ms - 708[0m
+projects-1    | 2026-11-11T15:41:01.166865928Z [0mDELETE /6af48b6539e0eb7147b9addc/6af48b65a2b4cfab7be4a31d [32m204[0m 4.255 ms - -[0m
+projects-1    | 2026-11-11T15:41:01.180829219Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:41:01.180836053Z   hasAuth: true,
+projects-1    | 2026-11-11T15:41:01.180837094Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:41:01.180837969Z   caller: '6af48b6539e0eb7147b9ade5'
+projects-1    | 2026-11-11T15:41:01.180838761Z }
+projects-1    | 2026-11-11T15:41:01.186748053Z [0mGET /6af48b6539e0eb7147b9ade5/6af48b65a2b4cfab7be4a339 [32m200[0m 6.507 ms - 708[0m
+projects-1    | 2026-11-11T15:41:01.201780303Z [0mDELETE /6af48b6539e0eb7147b9ade5/6af48b65a2b4cfab7be4a339 [32m204[0m 8.017 ms - -[0m
+projects-1    | 2026-11-11T15:41:01.220521969Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:41:01.220533094Z   hasAuth: true,
+projects-1    | 2026-11-11T15:41:01.220534469Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:41:01.220535386Z   caller: '6af48b6639e0eb7147b9adee'
+projects-1    | 2026-11-11T15:41:01.220536261Z }
+projects-1    | 2026-11-11T15:41:01.229569136Z [0mGET /6af48b6639e0eb7147b9adee/6af48b66a2b4cfab7be4a355 [32m200[0m 9.132 ms - 710[0m
+projects-1    | 2026-11-11T15:41:01.260367928Z [0mDELETE /6af48b6639e0eb7147b9adee/6af48b66a2b4cfab7be4a355 [32m204[0m 16.952 ms - -[0m
+projects-1    | 2026-11-11T15:41:01.280627011Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T15:41:01.280639928Z   hasAuth: true,
+projects-1    | 2026-11-11T15:41:01.280641094Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T15:41:01.280642094Z   caller: '6af48b6639e0eb7147b9adf7'
+projects-1    | 2026-11-11T15:41:01.280642928Z }
+projects-1    | 2026-11-11T15:41:01.288173344Z [0mGET /6af48b6639e0eb7147b9adf7/6af48b66a2b4cfab7be4a371 [32m200[0m 7.658 ms - 692[0m
+projects-1    | 2026-11-11T15:41:01.301745511Z [0mDELETE /6af48b6639e0eb7147b9adf7/6af48b66a2b4cfab7be4a371 [32m204[0m 5.508 ms - -[0m

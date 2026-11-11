@@ -1,0 +1,101 @@
+[14:33:02] === aquecimento ===
+[14:33:02] Aquecimento: legendagem do vídeo de fala (descarrega o modelo Whisper) e um brilho no vídeo de 10 s
+[14:35:12]   aquec-legendas: total=126.31034302711487 erro=None
+[14:35:17]   aquec-brilho: total=4.4490721225738525 erro=None
+[14:35:18]   logs de video_tool, projects guardados em aquecimento/logs_aquecimento.txt
+[14:35:18] === aquecimento concluído em 2.3 min ===
+[14:35:18] === s4 ===
+[14:35:18] S4 rep 1/5: sample_10s_720p.mp4
+[14:35:33] S4 rep 1/5: 02_curto_720p_30s.mp4
+[14:35:56] S4 rep 1/5: 01_demo_1080p_150s.mp4
+[14:38:41] S4 rep 2/5: sample_10s_720p.mp4
+[14:38:58] S4 rep 2/5: 02_curto_720p_30s.mp4
+[14:39:20] S4 rep 2/5: 01_demo_1080p_150s.mp4
+[14:41:29] S4 rep 3/5: sample_10s_720p.mp4
+[14:41:44] S4 rep 3/5: 02_curto_720p_30s.mp4
+[14:42:07] S4 rep 3/5: 01_demo_1080p_150s.mp4
+[14:44:35] S4 rep 4/5: sample_10s_720p.mp4
+[14:44:49] S4 rep 4/5: 02_curto_720p_30s.mp4
+[14:45:11] S4 rep 4/5: 01_demo_1080p_150s.mp4
+[14:47:23] S4 rep 5/5: sample_10s_720p.mp4
+[14:47:38] S4 rep 5/5: 02_curto_720p_30s.mp4
+[14:48:00] S4 rep 5/5: 01_demo_1080p_150s.mp4
+[14:50:40]   logs de video_tool, projects guardados em s4/logs_s4.txt
+[14:50:40] === s4 concluído em 15.4 min ===
+[14:50:40] === s1 ===
+[14:50:40] S1 rep 1/5: controlo (vídeo curto sozinho)
+[14:50:56] S1 rep 1/5: legendagem + vídeo curto
+[14:53:42]   curto: sozinho=4.4s com legendagem=161.6s (espera 157.1s)
+[14:53:52] S1 rep 2/5: controlo (vídeo curto sozinho)
+[14:54:07] S1 rep 2/5: legendagem + vídeo curto
+[14:57:01]   curto: sozinho=3.6s com legendagem=168.7s (espera 165.0s)
+[14:57:11] S1 rep 3/5: controlo (vídeo curto sozinho)
+[14:57:26] S1 rep 3/5: legendagem + vídeo curto
+[14:59:55]   curto: sozinho=4.0s com legendagem=144.7s (espera 141.0s)
+[15:00:05] S1 rep 4/5: controlo (vídeo curto sozinho)
+[15:00:20] S1 rep 4/5: legendagem + vídeo curto
+[15:02:30]   curto: sozinho=3.5s com legendagem=126.6s (espera 123.3s)
+[15:02:40] S1 rep 5/5: controlo (vídeo curto sozinho)
+[15:02:55] S1 rep 5/5: legendagem + vídeo curto
+[15:05:10]   curto: sozinho=3.9s com legendagem=131.6s (espera 128.3s)
+[15:05:21]   logs de video_tool, projects guardados em s1/logs_s1.txt
+[15:05:21] === s1 concluído em 14.7 min ===
+[15:05:21] === s2 ===
+[15:05:21] S2 N=1 rep 1/5
+[15:05:26]   makespan=3.9s débito=15.22 vídeos/min
+[15:05:36] S2 N=1 rep 2/5
+[15:05:41]   makespan=3.8s débito=15.94 vídeos/min
+[15:05:51] S2 N=1 rep 3/5
+[15:05:56]   makespan=3.8s débito=15.91 vídeos/min
+[15:06:06] S2 N=1 rep 4/5
+[15:06:11]   makespan=3.8s débito=15.97 vídeos/min
+[15:06:21] S2 N=1 rep 5/5
+[15:06:26]   makespan=3.8s débito=15.69 vídeos/min
+[15:06:36] S2 N=2 rep 1/5
+[15:06:52]   makespan=14.3s débito=8.40 vídeos/min
+[15:07:02] S2 N=2 rep 2/5
+[15:07:13]   makespan=8.1s débito=14.87 vídeos/min
+[15:07:23] S2 N=2 rep 3/5
+[15:07:33]   makespan=6.5s débito=18.36 vídeos/min
+[15:07:43] S2 N=2 rep 4/5
+[15:07:52]   makespan=6.7s débito=17.81 vídeos/min
+[15:08:02] S2 N=2 rep 5/5
+[15:08:12]   makespan=7.2s débito=16.73 vídeos/min
+[15:08:23] S2 N=4 rep 1/5
+[15:08:40]   makespan=13.8s débito=17.45 vídeos/min
+[15:08:50] S2 N=4 rep 2/5
+[15:09:07]   makespan=13.7s débito=17.56 vídeos/min
+[15:09:17] S2 N=4 rep 3/5
+[15:09:34]   makespan=13.6s débito=17.67 vídeos/min
+[15:09:44] S2 N=4 rep 4/5
+[15:10:01]   makespan=14.2s débito=16.92 vídeos/min
+[15:10:11] S2 N=4 rep 5/5
+[15:10:28]   makespan=13.7s débito=17.55 vídeos/min
+[15:10:38] S2 N=8 rep 1/5
+[15:11:12]   makespan=29.1s débito=16.51 vídeos/min
+[15:11:23] S2 N=8 rep 2/5
+[15:11:58]   makespan=30.3s débito=15.83 vídeos/min
+[15:12:08] S2 N=8 rep 3/5
+[15:12:42]   makespan=28.4s débito=16.87 vídeos/min
+[15:12:53] S2 N=8 rep 4/5
+[15:13:26]   makespan=28.6s débito=16.81 vídeos/min
+[15:13:37] S2 N=8 rep 5/5
+[15:14:08]   makespan=27.3s débito=17.56 vídeos/min
+[15:14:19]   logs de video_tool, projects guardados em s2/logs_s2.txt
+[15:14:19] === s2 concluído em 9.0 min ===
+[15:14:19] === s3 ===
+[15:14:19] S3 rep 1/5
+[15:19:48] S3 rep 2/5
+[15:25:06] S3 rep 3/5
+[15:30:38] S3 rep 4/5
+[15:36:02] S3 rep 5/5
+[15:41:11]   logs de video_tool, projects guardados em s3/logs_s3.txt
+[15:41:11] === s3 concluído em 26.9 min ===
+[15:41:11] === m3 ===
+[15:41:11] M3 rep 1/5 (serviço terminado: video_tool)
+[15:44:15] M3 rep 2/5 (serviço terminado: video_tool)
+[15:47:13] M3 rep 3/5 (serviço terminado: video_tool)
+[15:50:18] M3 rep 4/5 (serviço terminado: video_tool)
+[15:53:16] M3 rep 5/5 (serviço terminado: video_tool)
+[15:56:18]   logs de video_tool, projects guardados em m3/logs_m3.txt
+[15:56:18] === m3 concluído em 15.1 min ===

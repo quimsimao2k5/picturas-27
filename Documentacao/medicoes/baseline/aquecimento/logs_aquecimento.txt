@@ -1,0 +1,85 @@
+# docker compose -p picturas logs --no-color --timestamps --since 2026-11-11T14:32:57+00:00 video_tool projects
+video_tool-1  | 2026-11-11T14:33:06.452999583Z [video] msg=request-afb487cc-47ff-4e84-9eb9-db678081e154 preview=False tools=['subtitles']
+video_tool-1  | 2026-11-11T14:35:11.821009086Z [video] msg=request-afb487cc-47ff-4e84-9eb9-db678081e154 ok frames=4415 t=125.4s
+video_tool-1  | 2026-11-11T14:35:13.197463128Z [video] msg=request-77ec5dc6-d78c-42c9-8817-c0c2dea114f8 preview=False tools=['brightness']
+video_tool-1  | 2026-11-11T14:35:17.325454838Z [video] msg=request-77ec5dc6-d78c-42c9-8817-c0c2dea114f8 ok frames=300 t=4.1s
+projects-1    | 2026-11-11T14:33:03.286515054Z [0mPOST /6af47c9f39e0eb7147b9a312 [32m201[0m 47.844 ms - 395[0m
+projects-1    | 2026-11-11T14:33:03.300948513Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T14:33:03.300976429Z   hasAuth: true,
+projects-1    | 2026-11-11T14:33:03.300978304Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T14:33:03.300979513Z   caller: '6af47c9f39e0eb7147b9a312'
+projects-1    | 2026-11-11T14:33:03.300980596Z }
+projects-1    | 2026-11-11T14:33:03.332289054Z [0mGET /6af47c9f39e0eb7147b9a312/6af47c9fa2b4cfab7be47b77 [32m200[0m 35.857 ms - 99[0m
+projects-1    | 2026-11-11T14:33:03.751598513Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T14:33:05.248400680Z [0mPOST /6af47c9f39e0eb7147b9a312/6af47c9fa2b4cfab7be47b77/video [32m204[0m 1608.103 ms - -[0m
+projects-1    | 2026-11-11T14:33:05.295505680Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T14:33:05.295534555Z   hasAuth: true,
+projects-1    | 2026-11-11T14:33:05.295536722Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T14:33:05.295537889Z   caller: '6af47c9f39e0eb7147b9a312'
+projects-1    | 2026-11-11T14:33:05.295538930Z }
+projects-1    | 2026-11-11T14:33:05.336947139Z [0mGET /6af47c9f39e0eb7147b9a312/6af47c9fa2b4cfab7be47b77 [32m200[0m 41.855 ms - 622[0m
+projects-1    | 2026-11-11T14:33:05.369010180Z [0mPOST /6af47c9f39e0eb7147b9a312/6af47c9fa2b4cfab7be47b77/tool [32m204[0m 23.298 ms - -[0m
+projects-1    | 2026-11-11T14:33:05.594511666Z [0mPOST /6af47ca139e0eb7147b9a31b [32m201[0m 2.376 ms - 393[0m
+projects-1    | 2026-11-11T14:33:05.599473333Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T14:33:05.599481083Z   hasAuth: true,
+projects-1    | 2026-11-11T14:33:05.599482541Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T14:33:05.599483625Z   caller: '6af47ca139e0eb7147b9a31b'
+projects-1    | 2026-11-11T14:33:05.599484583Z }
+projects-1    | 2026-11-11T14:33:05.606781833Z [0mGET /6af47ca139e0eb7147b9a31b/6af47ca1a2b4cfab7be47b93 [32m200[0m 7.527 ms - 97[0m
+projects-1    | 2026-11-11T14:33:05.724127833Z PROJECTS-MS /:user/:project/video HIT, file = true
+projects-1    | 2026-11-11T14:33:05.950671750Z [0mPOST /6af47ca139e0eb7147b9a31b/6af47ca1a2b4cfab7be47b93/video [32m204[0m 265.244 ms - -[0m
+projects-1    | 2026-11-11T14:33:05.958212875Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T14:33:05.958225083Z   hasAuth: true,
+projects-1    | 2026-11-11T14:33:05.958228708Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T14:33:05.958230291Z   caller: '6af47ca139e0eb7147b9a31b'
+projects-1    | 2026-11-11T14:33:05.958231875Z }
+projects-1    | 2026-11-11T14:33:05.971845583Z [0mGET /6af47ca139e0eb7147b9a31b/6af47ca1a2b4cfab7be47b93 [32m200[0m 13.155 ms - 615[0m
+projects-1    | 2026-11-11T14:33:05.999228750Z [0mPOST /6af47ca139e0eb7147b9a31b/6af47ca1a2b4cfab7be47b93/tool [32m204[0m 13.551 ms - -[0m
+projects-1    | 2026-11-11T14:33:06.016699625Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T14:33:06.016714333Z   hasAuth: true,
+projects-1    | 2026-11-11T14:33:06.016715583Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T14:33:06.016716458Z   caller: '6af47c9f39e0eb7147b9a312'
+projects-1    | 2026-11-11T14:33:06.016717500Z }
+projects-1    | 2026-11-11T14:33:06.024397958Z [0mGET /6af47c9f39e0eb7147b9a312/6af47c9fa2b4cfab7be47b77 [32m200[0m 7.863 ms - 691[0m
+projects-1    | 2026-11-11T14:33:06.036640833Z [CALLER] {
+projects-1    | 2026-11-11T14:33:06.036650291Z   userParam: '6af47c9f39e0eb7147b9a312',
+projects-1    | 2026-11-11T14:33:06.036651500Z   forwarded: '6af47c9f39e0eb7147b9a312',
+projects-1    | 2026-11-11T14:33:06.036652375Z   hasAuth: true,
+projects-1    | 2026-11-11T14:33:06.036653208Z   caller: '6af47c9f39e0eb7147b9a312'
+projects-1    | 2026-11-11T14:33:06.036654000Z }
+projects-1    | 2026-11-11T14:33:06.038069541Z [ADV DEBUG] project: 6af47c9fa2b4cfab7be47b77 adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'subtitles' ]
+projects-1    | 2026-11-11T14:33:06.367969542Z [0mPOST /6af47c9f39e0eb7147b9a312/6af47c9fa2b4cfab7be47b77/process [32m201[0m 336.972 ms - 7[0m
+projects-1    | 2026-11-11T14:35:11.857592044Z [T-03][RABBIT] msg=request-afb487cc-47ff-4e84-9eb9-db678081e154 status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T14:35:11.866474128Z [RUN-DEBUG] msg=request-afb487cc-47ff-4e84-9eb9-db678081e154 curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T14:35:12.579214253Z [COMMIT] project=6af47c9fa2b4cfab7be47b77 committedToken=1
+projects-1    | 2026-11-11T14:35:12.793837670Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T14:35:12.793905461Z   hasAuth: true,
+projects-1    | 2026-11-11T14:35:12.793912170Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T14:35:12.793916378Z   caller: '6af47ca139e0eb7147b9a31b'
+projects-1    | 2026-11-11T14:35:12.793920295Z }
+projects-1    | 2026-11-11T14:35:12.851146336Z [0mGET /6af47ca139e0eb7147b9a31b/6af47ca1a2b4cfab7be47b93 [32m200[0m 58.282 ms - 709[0m
+projects-1    | 2026-11-11T14:35:12.870153961Z [CALLER] {
+projects-1    | 2026-11-11T14:35:12.870163586Z   userParam: '6af47ca139e0eb7147b9a31b',
+projects-1    | 2026-11-11T14:35:12.870191420Z   forwarded: '6af47ca139e0eb7147b9a31b',
+projects-1    | 2026-11-11T14:35:12.870193545Z   hasAuth: true,
+projects-1    | 2026-11-11T14:35:12.870194336Z   caller: '6af47ca139e0eb7147b9a31b'
+projects-1    | 2026-11-11T14:35:12.870195253Z }
+projects-1    | 2026-11-11T14:35:12.871337253Z [ADV DEBUG] project: 6af47ca1a2b4cfab7be47b93 adv_ops: 0 totalAdv: 0 charged: 0 newTools: 0 tools: [ 'brightness' ]
+projects-1    | 2026-11-11T14:35:13.128313045Z [0mPOST /6af47ca139e0eb7147b9a31b/6af47ca1a2b4cfab7be47b93/process [32m201[0m 265.105 ms - 7[0m
+projects-1    | 2026-11-11T14:35:17.336832797Z [T-03][RABBIT] msg=request-77ec5dc6-d78c-42c9-8817-c0c2dea114f8 status=success outType=video curPos=0 key=
+projects-1    | 2026-11-11T14:35:17.340023213Z [RUN-DEBUG] msg=request-77ec5dc6-d78c-42c9-8817-c0c2dea114f8 curPos=0 processTok=1 activeTok=1
+projects-1    | 2026-11-11T14:35:17.525881380Z [COMMIT] project=6af47ca1a2b4cfab7be47b93 committedToken=1
+projects-1    | 2026-11-11T14:35:17.654386380Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T14:35:17.654427172Z   hasAuth: true,
+projects-1    | 2026-11-11T14:35:17.654429255Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T14:35:17.654430214Z   caller: '6af47c9f39e0eb7147b9a312'
+projects-1    | 2026-11-11T14:35:17.654431214Z }
+projects-1    | 2026-11-11T14:35:17.679440547Z [0mGET /6af47c9f39e0eb7147b9a312/6af47c9fa2b4cfab7be47b77 [32m200[0m 26.396 ms - 693[0m
+projects-1    | 2026-11-11T14:35:17.696975339Z [0mDELETE /6af47c9f39e0eb7147b9a312/6af47c9fa2b4cfab7be47b77 [32m204[0m 7.242 ms - -[0m
+projects-1    | 2026-11-11T14:35:17.753894255Z [GET /:user/:project headers] {
+projects-1    | 2026-11-11T14:35:17.753901797Z   hasAuth: true,
+projects-1    | 2026-11-11T14:35:17.753902714Z   authStart: 'Bearer eyJhbGciOiJIU',
+projects-1    | 2026-11-11T14:35:17.753903505Z   caller: '6af47ca139e0eb7147b9a31b'
+projects-1    | 2026-11-11T14:35:17.753904297Z }
+projects-1    | 2026-11-11T14:35:17.761028630Z [0mGET /6af47ca139e0eb7147b9a31b/6af47ca1a2b4cfab7be47b93 [32m200[0m 7.256 ms - 709[0m
+projects-1    | 2026-11-11T14:35:17.771600797Z [0mDELETE /6af47ca139e0eb7147b9a31b/6af47ca1a2b4cfab7be47b93 [32m204[0m 5.346 ms - -[0m

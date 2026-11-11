@@ -1,0 +1,50 @@
+sequenceDiagram
+    autonumber
+    actor U as Utilizador (browser)
+    participant N as nginx :8080
+    participant G as API Gateway
+    participant P as projects (orquestrador)
+    participant S as img_storage / SeaweedFS
+    participant Q as RabbitMQ (exchange «picturas»)
+    participant V as video_tool
+    participant W as WS Gateway
+
+    Note over U,S: Carregamento
+    U->>N: POST /api-gateway/projects/:user/:project/video (multipart)
+    N->>G: proxy (client_max_body_size 1100 MB)
+    Note right of G: multer.memoryStorage: vídeo inteiro em memória
+    G->>P: POST /:user/:project/video (buffer + X-Project-Version)
+    P->>P: ffprobe + validateVideo (limites free/premium)
+    P->>S: guarda original (src)
+    P-->>U: 204 + X-Project-Version
+
+    Note over U,P: Definição do pipeline
+    U->>G: POST …/tool {procedure, params}
+    G->>P: insertPipelineTool + validateFrameExtraction
+    P-->>U: 201 (versão do projeto +1)
+
+    Note over U,W: Apply
+    U->>G: POST …/process {runnerUserId}
+    G->>P: POST /:user/:project/process
+    P->>S: descarrega o original para o volume image_data
+    P->>Q: 1 mensagem por vídeo → video_queue (pipeline completo)
+    P-->>U: 201
+    Q->>V: entrega (prefetch_count = 1, ack manual)
+    loop por fotograma (ffmpeg decode → PIL → ffmpeg encode)
+        V->>V: apply_frame_effects
+        V->>Q: video-progress (%) → ws_queue
+        Q->>W: ws_queue
+        W-->>U: evento video-progress (Socket.IO, sala do utilizador)
+    end
+    opt legendas / extração de fotogramas
+        V->>V: etapas ordenadas no mesmo worker (Faster-Whisper, frames)
+    end
+
+    Note over U,W: Resultado
+    V->>Q: resposta → project_queue (correlationId)
+    V->>Q: ack da mensagem (só no fim)
+    Q->>P: project_queue
+    P->>S: guarda o resultado (out) e cria Result
+    P->>Q: update-client-process → ws_queue
+    Q->>W: ws_queue
+    W-->>U: process-update → frontend atualiza resultados
