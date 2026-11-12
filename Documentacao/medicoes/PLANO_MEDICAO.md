@@ -69,17 +69,19 @@ Na solução de base espera-se: S1 com atraso próximo da duração da legendage
 
 | Métrica | O que mede | Método | Instrumento |
 |---|---|---|---|
-| **M1** Impacto de uma mudança | Quantas unidades implantáveis e responsabilidades de vídeo são afetadas por uma mudança típica | Para cada mudança de referência, lista dos ficheiros alterados; o script indica as unidades (serviços Compose) a reconstruir e a reiniciar, a partir do que cada Dockerfile copia, e as responsabilidades de vídeo interrompidas | `modularidade.py m1` |
+| **M1** Impacto de uma mudança | Quantas unidades implantáveis e funcionalidades de vídeo são afetadas por uma mudança típica | Para cada mudança de referência, lista dos ficheiros alterados; o script indica as unidades (serviços Compose) a reconstruir e a reiniciar, a partir do que cada Dockerfile copia, e as responsabilidades de vídeo interrompidas | `modularidade.py m1` |
 | **M2** Acoplamento estático | Como o processamento de vídeo está dividido | Responsabilidades de vídeo por unidade implantável (consumir trabalhos de vídeo, efeitos por fotograma, efeitos de tempo, legendagem, extração de fotogramas, codificação); SLOC e complexidade ciclomática do Python de vídeo; dependências entre módulos; dispersão dos procedimentos de vídeo pelos componentes; efeitos duplicados entre imagem e vídeo; tamanho e ramificação do orquestrador | `modularidade.py m2` (radon e análise do código) |
 | **M3** Isolamento de falhas | Se uma falha na legendagem afeta os outros trabalhos de vídeo | Legendagem do vídeo de 177 s; a 20 % do progresso, 4 utilizadores pedem brilho no vídeo de 10 s; 5 s depois o serviço que faz a legendagem é terminado (`SIGKILL`) e arrancado 5 s depois | % de trabalhos curtos afetados (com erro, ou com tempo de conclusão acima de 1,5 × o tempo máximo de S2 com N = 4); trabalhos curtos com erro; legendagens concluídas |
 
-Mudanças de referência para M1 (a confirmar pela equipa, ver secção 8):
+**Escala do M1 e do M2 (decisão D24):** contam-se **funcionalidades de vídeo** — edição (efeitos de fotograma e de tempo), legendagem e extração de fotogramas. O script deteta 6 responsabilidades técnicas no código; duas delas (consumir trabalhos da fila e codificar com ffmpeg) são infraestrutura comum a todos os serviços de vídeo e não contam como funcionalidades. As 6 continuam nos resultados como detalhe. A base foi recalculada com esta escala a partir do mesmo código (`0523102`), sem medir de novo: os valores antigos mantêm-se iguais.
+
+Mudanças de referência para M1 (decisão D18). Não são aplicadas ao produto: servem só para medir o impacto de uma mudança típica, antes e depois do *refactoring*.
 
 | ID | Mudança | Ficheiros alterados na base |
 |---|---|---|
 | C1 | Alterar a configuração da legendagem (ex.: modelo Whisper) | `docker-compose.yaml` (bloco do `video_tool`) |
 | C2 | Corrigir a lógica da legendagem | `Tools/video/subtitles.py` |
-| C3 | Acrescentar um efeito de vídeo novo (REQ-VID-EDIT-013) | A obter de um ramo de sonda descartável (nunca integrado) |
+| C3 | Acrescentar um efeito de vídeo novo (REQ-VID-EDIT-013): sépia, só para vídeo e para todo o projeto | Os da sonda `baseline/m1/C3_sonda.patch`, escrita num ramo descartável a partir de `0523102` e nunca integrada: `Tools/video/effects.py`, `projects/utils/video.js`, `frontend/lib/tool-types.ts`, `frontend/components/toolbar/toolbar.tsx`, `frontend/components/toolbar/sepia-tool.tsx` (novo), `frontend/app/dashboard/[pid]/page.tsx` |
 
 ## 6. Como correr
 
@@ -87,10 +89,23 @@ Mudanças de referência para M1 (a confirmar pela equipa, ver secção 8):
 
 ```bash
 cd Documentacao/medicoes
-./lancar_medicao.sh baseline   # ou: ./lancar_medicao.sh final
+./lancar_medicao.sh baseline   # final: ver medicao_final.command (indica os serviços de vídeo novos ao M3 e aos logs)
 ```
 
-O `lancar_medicao.sh` limpa os dados da instância (mantendo o modelo Whisper, D12), corre `docker compose up -d --build`, espera que a API responda e chama o `correr.sh`; tudo o que aparece no Terminal fica em `<fase>/terminal.log`. O `correr.sh` cria um ambiente Python isolado (`.venv`), regista o ambiente, corre M2, o aquecimento e os cenários S4, S1, S2, S3 e M3, e gera o resumo. Cada cenário pode também correr sozinho (`python scripts/cenarios.py s1 --reps 5 --out baseline`). M1 corre à parte (`python scripts/modularidade.py m1 ...`). Depois do refactoring, se a legendagem passar para outro serviço, indica-se esse serviço em M3 com `--servico-legendas <serviço>`; é a única opção que muda.
+O `lancar_medicao.sh` limpa os dados da instância (mantendo o modelo Whisper, D12), corre `docker compose up -d --build`, espera que a API responda e chama o `correr.sh`; tudo o que aparece no Terminal fica em `<fase>/terminal.log`. O `correr.sh` cria um ambiente Python isolado (`.venv`), regista o ambiente, corre M2, o aquecimento e os cenários S4, S1, S2, S3 e M3, e gera o resumo. Cada cenário pode também correr sozinho (`python scripts/cenarios.py s1 --reps 5 --out baseline`). M1 corre à parte, porque não precisa da solução a correr (ver a seguir). Depois do refactoring, se a legendagem passar para outro serviço, indica-se esse serviço em M3 com `--servico-legendas <serviço>`; é a única opção que muda.
+
+**M1 (impacto de uma mudança),** a correr em `Documentacao/medicoes/scripts/`:
+
+```bash
+# C1 — configuração da legendagem: indica o serviço que faz a legendagem (na base, video_tool)
+python modularidade.py m1 --ficheiros docker-compose.yaml:video_tool --nome C1 --out ../baseline/m1
+# C2 — código da legendagem: indica o ficheiro que a implementa (na base, Tools/video/subtitles.py)
+python modularidade.py m1 --ficheiros Tools/video/subtitles.py --nome C2 --out ../baseline/m1
+# C3 — efeito novo: num ramo descartável com a sonda aplicada (e com esse ramo em checkout)
+python modularidade.py m1 --diff <commit-de-partida>..<ramo-da-sonda> --nome C3 --out ../baseline/m1
+```
+
+Na medição final repetem-se as três mudanças sobre o código refatorado: C1 e C2 com o serviço e o ficheiro onde a legendagem passar a estar, e C3 com o mesmo efeito sépia escrito de novo como a nova arquitetura exigir (o número de ficheiros e de serviços tocados é precisamente o que se mede). O `analisar.py` junta os resultados ao `resumo.md`.
 
 Duração da medição completa: **1 h 24 min** na medição inicial (mais ≈ 8 min de construção das imagens).
 

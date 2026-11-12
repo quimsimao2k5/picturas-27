@@ -48,6 +48,19 @@ RESPONSABILIDADES = {
 }
 
 
+# Funcionalidades de vídeo que o utilizador vê (decisão D24): agrupam as responsabilidades
+# acima; "consumir trabalhos" e "codificação" são infraestrutura comum a todos os serviços.
+FUNCIONALIDADES = {
+    "edicao": ["efeitos_por_fotograma", "efeitos_de_tempo"],
+    "legendagem": ["legendagem"],
+    "extracao_fotogramas": ["extracao_fotogramas"],
+}
+
+
+def funcionalidades(resps):
+    return sorted(f for f, rs in FUNCIONALIDADES.items() if any(r in resps for r in rs))
+
+
 # ---------------------------------------------------------------- Compose/Docker
 def compose_services() -> dict[str, dict]:
     """{serviço: {context, dockerfile}} para os serviços com `build` (lê o YAML sem dependências)."""
@@ -278,6 +291,7 @@ def m1(changed: list[str], nome: str) -> dict:
                 rebuild.add(name)
                 restart.add(name)
     interrompidas = sorted({r for u in restart for r in resp.get(u, [])})
+    func_interrompidas = funcionalidades(interrompidas)
     return {
         "mudanca": nome,
         "ficheiros_alterados": changed,
@@ -287,6 +301,8 @@ def m1(changed: list[str], nome: str) -> dict:
         "unidades_a_reiniciar": sorted(restart),
         "responsabilidades_de_video_interrompidas": interrompidas,
         "n_responsabilidades_interrompidas": len(interrompidas),
+        "funcionalidades_de_video_interrompidas": func_interrompidas,
+        "n_funcionalidades_interrompidas": len(func_interrompidas),
     }
 
 
@@ -311,6 +327,8 @@ def main():
             "responsabilidades_por_unidade": resp,
             "unidades_com_video": len(resp),
             "max_responsabilidades_numa_unidade": max((len(v) for v in resp.values()), default=0),
+            "funcionalidades_por_unidade": {u: funcionalidades(v) for u, v in resp.items() if funcionalidades(v)},
+            "max_funcionalidades_numa_unidade": max((len(funcionalidades(v)) for v in resp.values()), default=0),
             "python_video": radon_metrics(pyfiles),
             "dependencias_python_video": python_imports(pyfiles),
             "dispersao_procedimentos_video": dispersao(),

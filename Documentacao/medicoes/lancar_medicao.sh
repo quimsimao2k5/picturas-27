@@ -1,13 +1,14 @@
 #!/bin/bash
 # Lança a solução e corre uma medição completa da Fase 2 (par A), sempre com o mesmo método.
 #   ./lancar_medicao.sh baseline   (medição inicial)
-#   ./lancar_medicao.sh final      (medição final, depois do refactoring)
+#   ./lancar_medicao.sh final [opções do cenarios.py]   (medição final, depois do refactoring)
 # No Mac, abre-se com duplo clique em medicao_inicial.command ou medicao_final.command.
 # Tudo o que aparece no Terminal fica também em <fase>/terminal.log.
 set -o pipefail
 export PATH="/usr/local/bin:/opt/homebrew/bin:/Applications/Docker.app/Contents/Resources/bin:$PATH"
 
 FASE="${1:?indicar baseline ou final}"
+shift   # o resto dos argumentos segue para o correr.sh (opções do cenarios.py)
 MEDICOES="$(cd "$(dirname "$0")" && pwd)"
 REPO="$(cd "$MEDICOES/../.." && pwd)"
 mkdir -p "$MEDICOES/$FASE"
@@ -49,7 +50,7 @@ docker compose ps --format '{{.Service}}\t{{.Status}}'
 
 echo "=== Medição completa: $(date) ==="
 # caffeinate impede o Mac de adormecer durante a medição
-caffeinate -dimsu "$MEDICOES/correr.sh" "$FASE"
+caffeinate -dimsu "$MEDICOES/correr.sh" "$FASE" "$@"
 rc=$?
 echo "=== Fim: $(date) · código de saída $rc ==="
 [ $rc -eq 0 ] && echo "CONCLUÍDO" || echo "TERMINOU COM ERRO"

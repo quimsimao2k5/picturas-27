@@ -1,0 +1,116 @@
+diff --git a/Tools/video/effects.py b/Tools/video/effects.py
+index 88e5e4a..32b7100 100644
+--- a/Tools/video/effects.py
++++ b/Tools/video/effects.py
+@@ -42,6 +42,10 @@ def border(img: Image.Image, borderWidth: int, r: int, g: int, b: int) -> Image.
+     return ImageOps.expand(img, border=int(borderWidth), fill=(int(r), int(g), int(b)))
+ 
+ 
++def sepia(img: Image.Image) -> Image.Image:
++    return ImageOps.colorize(ImageOps.grayscale(img), "#704214", "#C0A080")
++
++
+ # Effects applied frame by frame
+ FRAME_EFFECTS = {
+     "brightness": brightness,
+@@ -52,6 +56,7 @@ FRAME_EFFECTS = {
+     "binarization": binarization,
+     "cut": cut,
+     "border": border,
++    "sepia": sepia,
+ }
+ 
+ # Effects that act on time (only meaningful for video)
+diff --git a/frontend/app/dashboard/[pid]/page.tsx b/frontend/app/dashboard/[pid]/page.tsx
+index ef7ea59..e8e430d 100644
+--- a/frontend/app/dashboard/[pid]/page.tsx
++++ b/frontend/app/dashboard/[pid]/page.tsx
+@@ -111,7 +111,7 @@ export default function Project({
+   const projectImgs = project.data?.imgs ?? [];
+   const projectVideos = projectImgs.filter((i) => isVideo(i));
+   const imageToolCount = (project.data?.tools ?? []).filter(
+-    (t) => !["trim", "speed", "subtitles", "extract_frames"].includes(t.procedure),
++    (t) => !["trim", "speed", "subtitles", "extract_frames", "sepia"].includes(t.procedure),
+   ).length;
+   const totalProcessingSteps =
+     imageToolCount * (projectImgs.length - projectVideos.length) + projectVideos.length;
+diff --git a/frontend/components/toolbar/sepia-tool.tsx b/frontend/components/toolbar/sepia-tool.tsx
+new file mode 100644
+index 0000000..a52d9ed
+--- /dev/null
++++ b/frontend/components/toolbar/sepia-tool.tsx
+@@ -0,0 +1,26 @@
++import { useState } from "react";
++import { Palette } from "lucide-react";
++import { ToolbarButton } from "./toolbar-button";
++import { useCurrentImage } from "@/providers/project-provider";
++import { isVideo } from "@/lib/projects";
++
++/** Probe C3 (never merged): project-wide sepia effect for every video. */
++export default function SepiaTool({ disabled }: { disabled: boolean }) {
++  const [open, setOpen] = useState(false);
++  const currentImage = useCurrentImage();
++  return (
++    <ToolbarButton
++      open={open}
++      setOpen={setOpen}
++      tool={{ procedure: "sepia", params: {} }}
++      icon={Palette}
++      label="Sepia"
++      disabled={disabled}
++      previewDisabled={!currentImage || !isVideo(currentImage)}
++    >
++      <p className="max-w-64 text-xs text-muted-foreground">
++        Applies a sepia tone to every video in this project.
++      </p>
++    </ToolbarButton>
++  );
++}
+diff --git a/frontend/components/toolbar/toolbar.tsx b/frontend/components/toolbar/toolbar.tsx
+index 2cc593e..893ad72 100644
+--- a/frontend/components/toolbar/toolbar.tsx
++++ b/frontend/components/toolbar/toolbar.tsx
+@@ -34,6 +34,7 @@ import ExpandAITool from "./expand-ai-tool";
+ import TrimTool from "./trim-tool";
+ import SpeedTool from "./speed-tool";
+ import SubtitlesTool from "./subtitles-tool";
++import SepiaTool from "./sepia-tool";
+ import ExtractFramesTool from "./extract-frames-tool";
+ import { isVideo } from "@/lib/projects";
+ 
+@@ -82,6 +83,7 @@ export function Toolbar() {
+         <TrimTool disabled={disabled} />
+         <SpeedTool disabled={disabled} />
+         {hasVideos && <SubtitlesTool disabled={disabled} />}
++        {hasVideos && <SepiaTool disabled={disabled} />}
+         {hasVideos && <ExtractFramesTool disabled={disabled} />}
+         {!hasVideos && (
+           <>
+diff --git a/frontend/lib/tool-types.ts b/frontend/lib/tool-types.ts
+index 6a72718..f99cf4a 100644
+--- a/frontend/lib/tool-types.ts
++++ b/frontend/lib/tool-types.ts
+@@ -120,5 +120,6 @@ export type ToolNames =
+   | "trim"
+   | "speed"
+   | "subtitles"
++  | "sepia"
+   | "extract_frames"
+   | "project";
+diff --git a/projects/utils/video.js b/projects/utils/video.js
+index 942c2be..78697e3 100644
+--- a/projects/utils/video.js
++++ b/projects/utils/video.js
+@@ -15,10 +15,10 @@ const ALLOWED_VIDEO_CODECS = ["h264", "hevc", "vp8", "vp9", "av1", "mpeg4"];
+ // Effects the video worker can apply
+ const VIDEO_TOOLS = [
+   "brightness", "contrast", "saturation", "rotate", "resize",
+-  "binarization", "cut", "border", "trim", "speed", "subtitles", "extract_frames",
++  "binarization", "cut", "border", "trim", "speed", "subtitles", "extract_frames", "sepia",
+ ];
+ // Effects that only exist for video (images ignore them)
+-const VIDEO_ONLY_TOOLS = ["trim", "speed", "subtitles", "extract_frames"];
++const VIDEO_ONLY_TOOLS = ["trim", "speed", "subtitles", "extract_frames", "sepia"];
+ 
+ // Effects that belong to the video they were defined on (params.imgId),
+ // because their values only make sense for that video

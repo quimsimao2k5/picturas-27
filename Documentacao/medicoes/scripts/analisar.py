@@ -238,8 +238,6 @@ def main():
         p = os.path.join(d, extra)
         if os.path.exists(p):
             res["m2"] = json.load(open(p))
-    with open(os.path.join(d, "resumo.json"), "w") as f:
-        json.dump(res, f, indent=2, ensure_ascii=False)
     md = [f"# Resumo das medições — {os.path.basename(d)}", ""]
     titles = {"s1": "S1 — Bloqueio pela legendagem", "s2": "S2 — Carga concorrente",
               "s3": "S3 — Adaptação à carga", "s4": "S4 — Tempo de edição / duração",
@@ -247,14 +245,33 @@ def main():
     for k, t in titles.items():
         if res.get(k):
             md.append(table(t, res[k]))
+    m1 = {}
+    for nome in ("C1", "C2", "C3"):
+        pth = os.path.join(d, "m1", f"m1_{nome}.json")
+        if os.path.exists(pth):
+            m1[nome] = json.load(open(pth))
+    if m1:
+        res["m1"] = m1
+        md += ["### M1 — Impacto de uma mudança", "",
+               "| Mudança | Ficheiros | Componentes | Unidades a reconstruir | Unidades a reiniciar | Funcionalidades de vídeo interrompidas | (responsabilidades técnicas) |",
+               "|---|---|---|---|---|---|---|"]
+        for nome, r in m1.items():
+            md.append(f"| {nome} | {r['n_ficheiros']} | {', '.join(r['componentes_alterados'])} | "
+                      f"{', '.join(r['unidades_a_reconstruir']) or '—'} | {', '.join(r['unidades_a_reiniciar']) or '—'} | "
+                      f"{r.get('n_funcionalidades_interrompidas', '–')} ({', '.join(r.get('funcionalidades_de_video_interrompidas', []))}) | "
+                      f"{r['n_responsabilidades_interrompidas']} |")
+        md.append("")
     if res.get("m2"):
         m = res["m2"]
         md += ["### M2 — Acoplamento estático", "",
                f"- Unidades implantáveis com responsabilidades de vídeo: {m['unidades_com_video']}",
-               f"- Máximo de responsabilidades de vídeo numa unidade: {m['max_responsabilidades_numa_unidade']}",
+               f"- Máximo de funcionalidades de vídeo numa unidade (edição, legendagem, extração): {m.get('max_funcionalidades_numa_unidade', '–')} — {m.get('funcionalidades_por_unidade', {})}",
+               f"- Máximo de responsabilidades técnicas numa unidade (detalhe): {m['max_responsabilidades_numa_unidade']}",
                f"- Python de vídeo: {m['python_video'].get('sloc_total')} SLOC, CC média {m['python_video'].get('cc_media')}, "
                f"CC máx. {m['python_video'].get('cc_max')}, funções com CC > 10: {m['python_video'].get('funcoes_cc_maior_10')}",
                f"- Efeitos duplicados entre imagem e vídeo: {m['efeitos_duplicados']['n_duplicados']}", ""]
+    with open(os.path.join(d, "resumo.json"), "w") as f:
+        json.dump(res, f, indent=2, ensure_ascii=False)
     open(os.path.join(d, "resumo.md"), "w").write("\n".join(md))
     print("\n".join(md))
 

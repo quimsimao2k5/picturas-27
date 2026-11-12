@@ -12,6 +12,14 @@
   },
   "unidades_com_video": 1,
   "max_responsabilidades_numa_unidade": 6,
+  "funcionalidades_por_unidade": {
+    "video_tool": [
+      "edicao",
+      "extracao_fotogramas",
+      "legendagem"
+    ]
+  },
+  "max_funcionalidades_numa_unidade": 3,
   "python_video": {
     "por_ficheiro": {
       "Tools/utils/__init__.py": {

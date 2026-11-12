@@ -1,0 +1,9 @@
+Testes de regressão — baseline — 2026-11-12T10:47Z
+Commit: c52ed209126b0d86149f01d56e9a13fa8490a0cd (Registo de decisoes ate ao momento, e medicoes iniciais de valores)
+Alterações locais ao código: 0 ficheiros
+Máquina: Mac14,7 · Apple M2
+Docker: 29.8.0
+Execução: dentro das imagens Docker do video_tool e do projects (docker compose run --rm --no-deps)
+
+Tools/video/tests: 74 passed in 39.08s  (código de saída 0)
+projects/tests:    ℹ pass 8 ℹ fail 0  (código de saída 0)

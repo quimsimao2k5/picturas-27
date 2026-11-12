@@ -1,0 +1,30 @@
+{
+  "mudanca": "C1",
+  "ficheiros_alterados": [
+    "docker-compose.yaml:video_tool"
+  ],
+  "n_ficheiros": 1,
+  "componentes_alterados": [
+    "docker-compose.yaml"
+  ],
+  "unidades_a_reconstruir": [],
+  "unidades_a_reiniciar": [
+    "video_tool"
+  ],
+  "responsabilidades_de_video_interrompidas": [
+    "codificacao_ffmpeg",
+    "consumir_trabalhos_video",
+    "efeitos_de_tempo",
+    "efeitos_por_fotograma",
+    "extracao_fotogramas",
+    "legendagem"
+  ],
+  "n_responsabilidades_interrompidas": 6,
+  "funcionalidades_de_video_interrompidas": [
+    "edicao",
+    "extracao_fotogramas",
+    "legendagem"
+  ],
+  "n_funcionalidades_interrompidas": 3,
+  "commit": "0523102"
+}

@@ -75,9 +75,18 @@
 | curtos_total_s | 20 | 132.81 | 122.72 | 142.93 | 7.24 |
 | legendagens_concluidas | | 5/5 | | | |
 
+### M1 — Impacto de uma mudança
+
+| Mudança | Ficheiros | Componentes | Unidades a reconstruir | Unidades a reiniciar | Funcionalidades de vídeo interrompidas | (responsabilidades técnicas) |
+|---|---|---|---|---|---|---|
+| C1 | 1 | docker-compose.yaml | — | video_tool | 3 (edicao, extracao_fotogramas, legendagem) | 6 |
+| C2 | 1 | Tools/video | video_tool | video_tool | 3 (edicao, extracao_fotogramas, legendagem) | 6 |
+| C3 | 6 | Tools/video, frontend, projects | frontend, projects, video_tool | frontend, projects, video_tool | 3 (edicao, extracao_fotogramas, legendagem) | 6 |
+
 ### M2 — Acoplamento estático
 
 - Unidades implantáveis com responsabilidades de vídeo: 1
-- Máximo de responsabilidades de vídeo numa unidade: 6
+- Máximo de funcionalidades de vídeo numa unidade (edição, legendagem, extração): 3 — {'video_tool': ['edicao', 'extracao_fotogramas', 'legendagem']}
+- Máximo de responsabilidades técnicas numa unidade (detalhe): 6
 - Python de vídeo: 722 SLOC, CC média 3.87, CC máx. 22, funções com CC > 10: 6
 - Efeitos duplicados entre imagem e vídeo: 8
