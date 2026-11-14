@@ -262,7 +262,8 @@ services:
       context: ./Tools
       dockerfile: video_effects/Dockerfile
     restart: on-failure
-    mem_limit: ${VIDEO_EFFECTS_MEM_LIMIT:-1g}
+    # normalizing a 1080p video for captioning needs more than 1 GB (D35)
+    mem_limit: ${VIDEO_EFFECTS_MEM_LIMIT:-3g}
     environment:
       VIDEO_PREVIEW_SECONDS: 3
     networks:

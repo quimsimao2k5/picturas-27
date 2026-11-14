@@ -1,0 +1,25 @@
+{
+  "mudanca": "C1",
+  "ficheiros_alterados": [
+    "docker-compose.yaml:video_subtitles"
+  ],
+  "n_ficheiros": 1,
+  "componentes_alterados": [
+    "docker-compose.yaml"
+  ],
+  "unidades_a_reconstruir": [],
+  "unidades_a_reiniciar": [
+    "video_subtitles"
+  ],
+  "responsabilidades_de_video_interrompidas": [
+    "codificacao_ffmpeg",
+    "consumir_trabalhos_video",
+    "legendagem"
+  ],
+  "n_responsabilidades_interrompidas": 3,
+  "funcionalidades_de_video_interrompidas": [
+    "legendagem"
+  ],
+  "n_funcionalidades_interrompidas": 1,
+  "commit": "aee398d"
+}

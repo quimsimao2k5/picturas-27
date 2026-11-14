@@ -1,0 +1,27 @@
+{
+  "mudanca": "C2",
+  "ficheiros_alterados": [
+    "Tools/video_subtitles/subtitles.py"
+  ],
+  "n_ficheiros": 1,
+  "componentes_alterados": [
+    "Tools/video_subtitles"
+  ],
+  "unidades_a_reconstruir": [
+    "video_subtitles"
+  ],
+  "unidades_a_reiniciar": [
+    "video_subtitles"
+  ],
+  "responsabilidades_de_video_interrompidas": [
+    "codificacao_ffmpeg",
+    "consumir_trabalhos_video",
+    "legendagem"
+  ],
+  "n_responsabilidades_interrompidas": 3,
+  "funcionalidades_de_video_interrompidas": [
+    "legendagem"
+  ],
+  "n_funcionalidades_interrompidas": 1,
+  "commit": "aee398d"
+}

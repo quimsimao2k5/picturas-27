@@ -1,0 +1,39 @@
+{
+  "mudanca": "C3",
+  "ficheiros_alterados": [
+    "Tools/video_effects/effects.py",
+    "frontend/app/dashboard/[pid]/page.tsx",
+    "frontend/components/toolbar/sepia-tool.tsx",
+    "frontend/components/toolbar/toolbar.tsx",
+    "frontend/lib/tool-types.ts",
+    "projects/utils/video.js"
+  ],
+  "n_ficheiros": 6,
+  "componentes_alterados": [
+    "Tools/video_effects",
+    "frontend",
+    "projects"
+  ],
+  "unidades_a_reconstruir": [
+    "frontend",
+    "projects",
+    "video_effects"
+  ],
+  "unidades_a_reiniciar": [
+    "frontend",
+    "projects",
+    "video_effects"
+  ],
+  "responsabilidades_de_video_interrompidas": [
+    "codificacao_ffmpeg",
+    "consumir_trabalhos_video",
+    "efeitos_de_tempo",
+    "efeitos_por_fotograma"
+  ],
+  "n_responsabilidades_interrompidas": 4,
+  "funcionalidades_de_video_interrompidas": [
+    "edicao"
+  ],
+  "n_funcionalidades_interrompidas": 1,
+  "commit": "a735891"
+}

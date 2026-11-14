@@ -401,7 +401,7 @@ All configuration currently lives as `environment:` entries in `docker-compose.y
 | `VIDEO_EFFECTS_MIN_REPLICAS` / `_MAX_REPLICAS`   | `1` / `3`                  | autoscaler             | Replica limits of `video_effects`            |
 | `VIDEO_SUBTITLES_MIN_REPLICAS` / `_MAX_REPLICAS` | `1` / `2`                  | autoscaler             | Replica limits of `video_subtitles`          |
 | `VIDEO_FRAMES_MIN_REPLICAS` / `_MAX_REPLICAS`    | `1` / `2`                  | autoscaler             | Replica limits of `video_frames`             |
-| `VIDEO_EFFECTS_MEM_LIMIT`                     | `1g`                          | video_effects          | Memory limit of each replica                 |
+| `VIDEO_EFFECTS_MEM_LIMIT`                     | `3g`                          | video_effects          | Memory limit of each replica                 |
 | `VIDEO_SUBTITLES_MEM_LIMIT`                   | `3g`                          | video_subtitles        | Memory limit of each replica                 |
 | `VIDEO_FRAMES_MEM_LIMIT`                      | `512m`                        | video_frames           | Memory limit of each replica                 |
 
