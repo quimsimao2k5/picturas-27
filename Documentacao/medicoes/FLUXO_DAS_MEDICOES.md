@@ -78,7 +78,7 @@ Cada trabalho é feito por um **utilizador de teste próprio**, pela interface p
 | 2 | **S1** — bloqueio pela legendagem | (a) brilho no vídeo de 10 s sozinho (controlo); (b) pede a legendagem do vídeo de 177 s, espera que comece e pede o brilho no vídeo de 10 s para outro utilizador |
 | 3 | **S2** — carga concorrente | 1, 2, 4 e 8 utilizadores pedem o brilho **no mesmo instante** (uma barreira sincroniza as threads) |
 | 4 | **S3** — adaptação à carga | 30 s de calma → rajada (8 brilhos + 1 legendagem ao mesmo tempo) → 120 s de calma, sempre a amostrar recursos |
-| 5 | **M3** — isolamento de falhas | Pede a legendagem; aos 20 % de progresso, 4 utilizadores pedem brilhos; 5 s depois **termina à força** o serviço que faz a legendagem (`docker compose kill -s SIGKILL`) e volta a arrancá-lo 5 s depois |
+| 5 | **M3** — isolamento de falhas | Pede a legendagem; aos 55 % de progresso (já na etapa da legendagem, D33), 4 utilizadores pedem brilhos; 5 s depois **termina à força** o serviço que faz a legendagem (`docker compose kill -s SIGKILL`) e volta a arrancá-lo 5 s depois |
 
 Entre repetições há uma pausa de 10 s.
 

@@ -1,4 +1,4 @@
-"""PictuRAS video processing.
+"""PictuRAS video effects stage (video_effects service).
 
 Decodes the video once with ffmpeg, applies the effect pipeline to every
 frame with the same PIL operations as the image tools, and encodes once to
@@ -12,16 +12,14 @@ Speed changes the playback rate (0.25x to 5x): frame timestamps are rescaled
 while decoding and the audio tempo is changed by the same factor, so both stay
 in sync. Trim times always refer to the original video.
 """
-import json
 import os
 import subprocess
 import tempfile
-from pathlib import Path
-from fractions import Fraction
 
 from PIL import Image
 
 from effects import SUPPORTED, UnsupportedEffect, apply_frame_effects
+from video_common.media import InvalidVideo, ProcessingError, probe  # noqa: F401 (re-exported)
 
 # Preview: only the first seconds
 PREVIEW_SECONDS = float(os.getenv("VIDEO_PREVIEW_SECONDS", "3"))
@@ -31,67 +29,12 @@ MIN_SPEED = 0.25
 MAX_SPEED = 5.0
 
 
-class InvalidVideo(Exception):
-    """File is not a readable video (corrupted, no video stream, ...)."""
-
-
 class InvalidTrim(Exception):
     """Trim parameters outside the video duration or with end before start."""
 
 
 class InvalidSpeed(Exception):
     """Speed factor outside the allowed range or not numeric."""
-
-
-class ProcessingError(Exception):
-    """ffmpeg failure while decoding or encoding."""
-
-
-def probe(path: str, prefer_video_duration: bool = False) -> dict:
-    """Reads the video characteristics with ffprobe."""
-    cmd = [
-        "ffprobe", "-v", "error", "-print_format", "json",
-        "-show_format", "-show_streams", path,
-    ]
-    res = subprocess.run(cmd, capture_output=True, text=True)
-    if res.returncode != 0:
-        raise InvalidVideo(f"Unreadable video file: {res.stderr.strip()[:200]}")
-
-    data = json.loads(res.stdout or "{}")
-    streams = data.get("streams", [])
-    video = next((s for s in streams if s.get("codec_type") == "video"), None)
-    audio = next((s for s in streams if s.get("codec_type") == "audio"), None)
-    if video is None:
-        raise InvalidVideo("The file has no video stream")
-
-    fmt = data.get("format", {})
-    duration = float(
-        (video.get("duration") if prefer_video_duration else None)
-        or fmt.get("duration") or video.get("duration") or 0
-    )
-    if duration <= 0:
-        raise InvalidVideo("Could not determine the video duration")
-
-    fps_str = video.get("avg_frame_rate") or video.get("r_frame_rate") or "0/1"
-    try:
-        fps = float(Fraction(fps_str))
-    except (ZeroDivisionError, ValueError):
-        fps = 0.0
-    if fps <= 0:
-        fps_str, fps = "25/1", 25.0
-
-    return {
-        "duration": duration,
-        "width": int(video["width"]),
-        "height": int(video["height"]),
-        "fps": fps,
-        "fps_str": fps_str,
-        "video_codec": video.get("codec_name"),
-        "audio_codec": audio.get("codec_name") if audio else None,
-        "has_audio": audio is not None,
-        "format_name": fmt.get("format_name"),
-        "size_bytes": int(fmt.get("size") or os.path.getsize(path)),
-    }
 
 
 def resolve_trim(tools: list, duration: float) -> tuple:
@@ -151,14 +94,9 @@ def atempo_chain(factor: float) -> str:
 
 
 def validate_tools(tools: list) -> None:
-    extractors = [i for i, tool in enumerate(tools) if tool.get("procedure") == "extract_frames"]
-    if extractors:
-        from frame_extraction import InvalidExtraction, validate_params
-        if extractors != [len(tools) - 1]:
-            raise InvalidExtraction("Frame extraction must appear once, at the end of the pipeline")
-        validate_params(tools[-1].get("params", {}))
+    """This stage only applies frame and time effects."""
     for tool in tools:
-        if tool.get("procedure") not in SUPPORTED | {"subtitles", "extract_frames"}:
+        if tool.get("procedure") not in SUPPORTED:
             raise UnsupportedEffect(
                 f"Effect '{tool.get('procedure')}' is not available for video"
             )
@@ -285,85 +223,10 @@ def _read(f) -> str:
 
 def process_video(input_path: str, output_path: str, tools: list,
                   progress_cb=None, preview: bool = False) -> dict:
-    """Run caption stages in order, keeping the existing fast path for other tools.
+    """Effects stage: frame and time effects in one decode and one encode.
 
-    Captioning is a video-to-video effect. Effects after it act on the captioned
-    frames too. Work stays temporary until the entire pipeline succeeds.
+    With `preview`, only the first PREVIEW_SECONDS of the output are produced.
+    Captions and frame extraction are separate stages, run by their own
+    services and chained by the projects orchestrator.
     """
-    validate_tools(tools)
-    if tools and tools[-1].get("procedure") == "extract_frames":
-        from frame_extraction import extract_frames
-        if len(tools) == 1:
-            # With no preceding edits, seek directly in the original. Extracting
-            # a few stills must not transcode an entire long video or add a lossy
-            # generation before a PNG export. Use video duration when available
-            # so a longer audio stream does not create out-of-range sample times.
-            return extract_frames(input_path, output_path,
-                                  probe(input_path, prefer_video_duration=True),
-                                  tools[-1].get("params", {}),
-                                  progress_cb or (lambda _: None), preview=preview)
-        target = Path(output_path).resolve()
-        target.parent.mkdir(parents=True, exist_ok=True)
-        with tempfile.TemporaryDirectory(prefix="frame-source-", dir=target.parent) as work:
-            edited = str(Path(work) / "edited.mp4")
-            # Sampling spans the complete edited timeline, including in preview.
-            info = process_video(input_path, edited, tools[:-1],
-                                 lambda pct: progress_cb(int(pct * 0.7)) if progress_cb else None,
-                                 preview=False)
-            return extract_frames(edited, output_path, info, tools[-1].get("params", {}),
-                                  lambda pct: progress_cb(70 + int(pct * 0.3)) if progress_cb else None,
-                                  preview=preview)
-    if not any(t.get("procedure") == "subtitles" for t in tools):
-        return _process_video(input_path, output_path, tools, progress_cb, preview)
-
-    from subtitles import caption_video
-
-    stages, pending = [], []
-    for tool in tools:
-        if tool.get("procedure") == "subtitles":
-            # Normalize the first input to MP4/H.264 even when captioning is a no-op.
-            if pending or not stages:
-                stages.append(pending)
-                pending = []
-            stages.append(None)
-        else:
-            pending.append(tool)
-    if pending:
-        stages.append(pending)
-
-    # A preview is the first seconds of the final timeline. Cutting the initial
-    # input before a later trim/speed would discard needed frames or produce the
-    # wrong preview length. Keep preceding stages complete until the final
-    # temporal stage; ordinary pipelines still limit input before recognition.
-    # This deliberately trades more recognition work for correct downstream cuts.
-    preview_stage = max(
-        (index for index, stage in enumerate(stages)
-         if stage is not None and any(
-             tool.get("procedure") in {"trim", "speed"} for tool in stage)),
-        default=0,
-    )
-
-    target = Path(output_path).resolve()
-    target.parent.mkdir(parents=True, exist_ok=True)
-    with tempfile.TemporaryDirectory(prefix="captions-", dir=target.parent) as work:
-        current = input_path
-        for index, stage in enumerate(stages):
-            next_path = str(Path(work) / f"stage-{index}.mp4")
-
-            def progress(percent):
-                if progress_cb:
-                    progress_cb(min(99, int((index + percent / 100) * 100 / len(stages))))
-
-            progress(0)
-            if stage is None:
-                caption_video(current, next_path, probe(current), progress)
-            else:
-                _process_video(current, next_path, stage, progress,
-                               preview=preview and index == preview_stage)
-            current = next_path
-        result = probe(current)
-        result["frames"] = round(result["duration"] * result["fps"])
-        os.replace(current, target)
-    if progress_cb:
-        progress_cb(100)
-    return result
+    return _process_video(input_path, output_path, tools, progress_cb, preview)

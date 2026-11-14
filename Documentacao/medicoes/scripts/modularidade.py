@@ -255,7 +255,8 @@ def dispersao() -> dict:
 
 def duplicacao() -> dict:
     """Efeitos por fotograma do worker de vídeo que também existem como ferramenta de imagem."""
-    src = read("Tools/video/effects.py")
+    # base: Tools/video/; depois do refactoring: Tools/video_effects/
+    src = read("Tools/video/effects.py") or read("Tools/video_effects/effects.py")
     m = re.search(r"FRAME_EFFECTS\s*=\s*\{(.*?)\}", src, re.S)
     names = re.findall(r"[\"'](\w+)[\"']", m.group(1)) if m else []
     dup = [n for n in names if os.path.isdir(os.path.join(REPO, "Tools", n))]

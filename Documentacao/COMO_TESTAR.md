@@ -91,9 +91,9 @@ Cada trabalho é feito por um **utilizador de teste próprio**, pela API públic
 ### 3.7 M3 — Isolamento de falhas (modularidade)
 
 - **Pergunta:** se o serviço que faz a legendagem falhar a meio, o que acontece aos outros vídeos?
-- **Fluxo:** legendagem do vídeo de 177 s; aos 20 % de progresso, 4 utilizadores pedem brilhos no vídeo de 10 s; 5 s depois, o serviço da legendagem é **terminado à força** (`docker compose kill -s SIGKILL`) e arrancado 5 s depois. Na base é o `video_tool`; depois do *refactoring* é o `video_subtitles` (opção `--servico-legendas`).
+- **Fluxo:** legendagem do vídeo de 177 s; aos 55 % de progresso (já na etapa da legendagem, D33), 4 utilizadores pedem brilhos no vídeo de 10 s; 5 s depois, o serviço da legendagem é **terminado à força** (`docker compose kill -s SIGKILL`) e arrancado 5 s depois. Na base é o `video_tool`; depois do *refactoring* é o `video_subtitles` (opção `--servico-legendas`).
 - **Métricas:** % de vídeos curtos afetados (com erro ou com tempo de conclusão acima de 1,5 × o máximo do S2 com 4 utilizadores); vídeos curtos falhados; legendagens concluídas (sem perda de trabalho).
-- **Base:** **100 % afetados** (133 s em vez de 14 s), 0 perdidos, 5/5 legendagens refeitas.
+- **Base:** **100 % afetados** (131,5 s em vez de 14 s), 0 perdidos, 5/5 legendagens refeitas. Medido a 12/11/2026 com `medicoes/m3_base.command`, que lança o código da base (commit `0f70be2`) numa pasta ao lado (`../picturas-27-base`, *git worktree*) e corre só o M3. A primeira medição, com a falha aos 20 %, deu o mesmo (100 %, 132,8 s) e está guardada em `medicoes/baseline/m3_20pct/`.
 - **Alvo / mínimo:** 0 % / ≤ 25 % afetados; 0 perdidos.
 
 ### 3.8 M2 — Acoplamento estático (modularidade)
@@ -121,8 +121,17 @@ Cada trabalho é feito por um **utilizador de teste próprio**, pela API públic
 ../.venv/bin/python modularidade.py m1 --ficheiros Tools/video/subtitles.py --nome C2 --out ../baseline/m1
 # C3: com o ramo da sonda em checkout
 ../.venv/bin/python modularidade.py m1 --diff <commit-de-partida>..<ramo-da-sonda> --nome C3 --out ../baseline/m1
-# Final: o mesmo, com o serviço e o ficheiro onde a legendagem passar a estar
-#   (ex.: docker-compose.yaml:video_subtitles e Tools/video_subtitles/subtitles.py) e a sonda C3 reescrita
+
+# Final (serviço video_subtitles, ficheiro Tools/video_subtitles/subtitles.py)
+../.venv/bin/python modularidade.py m1 --ficheiros docker-compose.yaml:video_subtitles --nome C1 --out ../final/m1
+../.venv/bin/python modularidade.py m1 --ficheiros Tools/video_subtitles/subtitles.py --nome C2 --out ../final/m1
+# C3 final: a mesma sonda, com o efeito em Tools/video_effects/effects.py (final/m1/C3_sonda.patch),
+# num ramo descartável que nunca é integrado; os comandos git correm na raiz do repositório
+(cd ../../.. && git switch -c sonda-c3 && git apply Documentacao/medicoes/final/m1/C3_sonda.patch \
+  && git add Tools frontend projects && git commit -qm "Sonda C3 (nunca integrada)")
+../.venv/bin/python modularidade.py m1 --diff HEAD~1..HEAD --nome C3 --out ../final/m1
+(cd ../../.. && git switch - && git branch -D sonda-c3)
+
 ../.venv/bin/python analisar.py ../<fase>        # junta o M1 ao resumo.md
 ```
 
@@ -151,15 +160,24 @@ Cada trabalho é feito por um **utilizador de teste próprio**, pela API públic
 - **O que testam:** os testes automáticos que já vêm com a solução.
   - `Tools/video/tests` (74, pytest): processamento de vídeo (efeitos, `trim`, `speed`, codificação), legendagem com o reconhecimento de fala **simulado** e extração de fotogramas.
   - `projects/tests` (8, `node --test`): encadeamento do pipeline de vídeo, regras da extração de fotogramas, despacho do lote de trabalhos.
-- **Fluxo:** constrói as imagens do `video_tool` e do `projects` a partir do código atual e corre cada conjunto num **contentor temporário** (`docker compose run --rm --no-deps`). Os outros serviços não arrancam: os testes verificam o código, não o sistema a correr.
-- **Esperado:** 74/74 e 8/8 (base: tudo a passar). Depois do *refactoring* os testes de `Tools/video/tests` mudam de pasta com o código (D30), sem mudar o que verificam.
+- **Fluxo:** constrói as imagens dos serviços de vídeo e do `projects` a partir do código atual e corre cada conjunto num **contentor temporário** (`docker compose run --rm --no-deps`). Os outros serviços não arrancam: os testes verificam o código, não o sistema a correr. O script deteta a estrutura: na base usa o `video_tool`; depois do *refactoring*, cada conjunto corre na imagem do seu serviço.
+- **Esperado:** 74/74 e 8/8 (base: tudo a passar). Depois do *refactoring* os 74 testes de `Tools/video/tests` mudam de pasta com o código (D30), sem mudar o que verificam:
+
+| Pasta (depois) | Testes da base | Imagem onde correm |
+|---|---|---|
+| `Tools/video_effects/tests` | 29 (efeitos, `trim`, `speed`, codificação) | `video_effects` |
+| `Tools/video_subtitles/tests` | 3 (ficheiro de legendas) | `video_subtitles` |
+| `Tools/video_frames/tests` | 20 (parâmetros da extração) | `video_frames` |
+| `Tools/tests/video_pipeline` | 22 (pipelines completos: legendagem e extração depois de outras etapas) | `video_subtitles`, com `Tools/` montado só para leitura |
+
+  Os 22 do pipeline completo passam pelos três serviços, encadeados como o `projects` os encadeia (`pipeline.py`); só muda o `import` de `process_video`. Somam-se os testes novos: 11 do *worker* comum (`Tools/video_common/tests`), 9 da divisão em etapas (`Tools/tests/video_pipeline/test_stages.py`), 7 do `autoscaler` (`autoscaler/tests`) e 2 do `projects` (`video-stages.test.js`). **Esperado no final: 101 pytest e 10 `node --test`, todos a passar.**
 
 | Quando | Mac (duplo clique) | Terminal |
 |---|---|---|
 | Base | `testes_regressao/testes_inicial.command` | `cd Documentacao/testes_regressao && ./correr_testes.sh baseline` |
 | Final | `testes_regressao/testes_final.command` | `cd Documentacao/testes_regressao && ./correr_testes.sh final` |
 
-Resultados em `testes_regressao/<fase>/`: `pytest_video_tool.txt`, `node_projects.txt`, `ambiente.txt` (resumo) e `terminal.log`.
+Resultados em `testes_regressao/<fase>/`: `pytest_<serviço>.txt` (na base, `pytest_video_tool.txt`), `node_projects.txt`, `ambiente.txt` (resumo) e `terminal.log`.
 
 ### 4.2 Teste de ponta a ponta (15 verificações)
 
@@ -185,7 +203,7 @@ Resultados em `testes_regressao/<fase>/`: `ponta_a_ponta.txt` (lista de verifica
 
 ## 5. Ordem para a fase final (depois do *refactoring*)
 
-1. `testes_regressao/testes_final.command` → 82 testes a passar.
+1. `testes_regressao/testes_final.command` → 101 pytest + 10 `node --test` a passar (os 82 da base, noutras pastas, e 29 novos).
 2. `testes_regressao/ponta_a_ponta_final.command` → 15/15.
 3. `medicoes/medicao_final.command` → S1–S4, M2, M3 (≈ 1 h 30).
 4. M1 sobre o código novo (3.9).

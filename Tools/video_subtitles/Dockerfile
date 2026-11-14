@@ -1,3 +1,4 @@
+# video_subtitles: speech recognition and burned-in captions stage
 FROM python:3.11-slim
 
 # ffmpeg/ffprobe isolated in the container
@@ -7,9 +8,11 @@ RUN apt-get update \
 
 WORKDIR /app
 
-COPY ./video .
 COPY ./utils ./utils
 RUN pip install --no-cache-dir -r ./utils/requirements.txt
+COPY ./video_subtitles/requirements.txt ./requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
+COPY ./video_common ./video_common
+COPY ./video_subtitles .
 
-CMD [ "python", "-u", "video.py" ]
+CMD [ "python", "-u", "subtitles_service.py" ]

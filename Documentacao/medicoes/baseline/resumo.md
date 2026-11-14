@@ -72,7 +72,7 @@
 | referencia_s2_n4_tempo_max_s | | 13.67 | | | |
 | curtos_afetados_pct | 5 | 100.0 | 100.0 | 100.0 | 0.0 |
 | curtos_falhados_por_rep | 5 | 0 | 0 | 0 | 0.0 |
-| curtos_total_s | 20 | 132.81 | 122.72 | 142.93 | 7.24 |
+| curtos_total_s | 20 | 131.5 | 120.74 | 170.77 | 21.12 |
 | legendagens_concluidas | | 5/5 | | | |
 
 ### M1 — Impacto de uma mudança

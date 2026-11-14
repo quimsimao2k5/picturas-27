@@ -1,0 +1,12 @@
+Testes de regressão — final — 2026-11-14T14:08Z
+Commit: 0f70be28db291419d6a52a715a273428e8895ade (Decisoes e testes finais antes de mexer no codigo base)
+Alterações locais ao código: 30 ficheiros
+Máquina: Mac14,7 · Apple M2
+Docker: 29.8.0
+Execução: dentro das imagens Docker de video_effects video_subtitles video_frames autoscaler e do projects (docker compose run --rm --no-deps)
+Tools/video_effects/tests:   40 passed in 8.32s  (código de saída 0)
+Tools/video_subtitles/tests: 3 passed in 0.01s  (código de saída 0)
+Tools/video_frames/tests:    20 passed in 0.02s  (código de saída 0)
+Tools/tests/video_pipeline:  31 passed in 24.72s  (código de saída 0)
+autoscaler/tests:            7 passed in 0.20s  (código de saída 0)
+projects/tests:              ℹ pass 10 ℹ fail 0  (código de saída 0)

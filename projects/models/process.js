@@ -12,6 +12,8 @@ var processSchema = new mongoose.Schema({
   cache_key: { type: String, required: false },
   cancelToken: { type: Number, required: false },
   token: { type: Number, required: true },
+  // Video jobs: stages, work directory and final output (see utils/video.js)
+  video_job: { type: mongoose.Schema.Types.Mixed, required: false },
 }, { timestamps: true });
 
 module.exports = mongoose.model("process", processSchema);

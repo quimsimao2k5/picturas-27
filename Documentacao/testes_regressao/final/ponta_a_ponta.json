@@ -1,0 +1,98 @@
+{
+  "inicio": "2026-11-14T14:12:40",
+  "verificacoes_ok": 15,
+  "verificacoes": 15,
+  "resultado": "OK",
+  "detalhe": [
+    {
+      "caso": "A",
+      "verificacao": "pré-visualização da imagem",
+      "ok": true,
+      "detalhe": ""
+    },
+    {
+      "caso": "A",
+      "verificacao": "pré-visualização é o PNG rodado (480×640)",
+      "ok": true,
+      "detalhe": "(480, 640)"
+    },
+    {
+      "caso": "A",
+      "verificacao": "processamento sem erro",
+      "ok": true,
+      "detalhe": "1 evento(s)"
+    },
+    {
+      "caso": "A",
+      "verificacao": "1 resultado",
+      "ok": true,
+      "detalhe": "1"
+    },
+    {
+      "caso": "A",
+      "verificacao": "resultado é PNG rodado 90° (480×640)",
+      "ok": true,
+      "detalhe": "(480, 640)"
+    },
+    {
+      "caso": "B",
+      "verificacao": "pré-visualização do vídeo",
+      "ok": true,
+      "detalhe": ""
+    },
+    {
+      "caso": "B",
+      "verificacao": "pré-visualização é MP4 com ≤ 3,5 s",
+      "ok": true,
+      "detalhe": "3.0"
+    },
+    {
+      "caso": "B",
+      "verificacao": "processamento sem erro (imagem + vídeo)",
+      "ok": true,
+      "detalhe": "2 evento(s)"
+    },
+    {
+      "caso": "B",
+      "verificacao": "2 resultados",
+      "ok": true,
+      "detalhe": "2"
+    },
+    {
+      "caso": "B",
+      "verificacao": "imagem com o brilho e sem efeitos de vídeo (640×480 PNG)",
+      "ok": true,
+      "detalhe": "(640, 480)"
+    },
+    {
+      "caso": "B",
+      "verificacao": "vídeo em MP4 cortado para ≈ 5 s",
+      "ok": true,
+      "detalhe": "5.0"
+    },
+    {
+      "caso": "C",
+      "verificacao": "processamento sem erro",
+      "ok": true,
+      "detalhe": "1 evento(s)"
+    },
+    {
+      "caso": "C",
+      "verificacao": "3 fotogramas como resultados",
+      "ok": true,
+      "detalhe": "3"
+    },
+    {
+      "caso": "C",
+      "verificacao": "fotogramas são PNG 1280×720",
+      "ok": true,
+      "detalhe": "{(1280, 720)}"
+    },
+    {
+      "caso": "C",
+      "verificacao": "nomes únicos",
+      "ok": true,
+      "detalhe": "['6af86c789414e906fdb416be-frame-0001-000000000ms.png', '6af86c789414e906fdb416be-frame-0002-000003333ms.png', '6af86c789414e906fdb416be-frame-0003-000006667ms.png']"
+    }
+  ]
+}

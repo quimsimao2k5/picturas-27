@@ -253,13 +253,34 @@ services:
       - image_data:/app/images
 
   # Video worker (ffmpeg isolated in the container)
-  video_tool:
+  # Video: three services, one per stage of a video pipeline, chained by
+  # projects (see projects/utils/video.js). Each consumes its own queue;
+  # the autoscaler adds and removes replicas according to the queue sizes.
+  # Memory limits are per replica and can be changed through the environment.
+  video_effects:
     build:
       context: ./Tools
-      dockerfile: video/Dockerfile
+      dockerfile: video_effects/Dockerfile
     restart: on-failure
+    mem_limit: ${VIDEO_EFFECTS_MEM_LIMIT:-1g}
     environment:
       VIDEO_PREVIEW_SECONDS: 3
+    networks:
+      - elk
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    volumes:
+      - image_data:/app/images
+
+  video_subtitles:
+    build:
+      context: ./Tools
+      dockerfile: video_subtitles/Dockerfile
+    restart: on-failure
+    # captioning a 177 s 1080p video peaked at 2.3 GB in the baseline measurements
+    mem_limit: ${VIDEO_SUBTITLES_MEM_LIMIT:-3g}
+    environment:
       WHISPER_MODEL: small
       WHISPER_CACHE_DIR: /models/whisper
       WHISPER_CPU_THREADS: 2
@@ -271,6 +292,57 @@ services:
     volumes:
       - image_data:/app/images
       - whisper_models:/models/whisper
+
+  video_frames:
+    build:
+      context: ./Tools
+      dockerfile: video_frames/Dockerfile
+    restart: on-failure
+    mem_limit: ${VIDEO_FRAMES_MEM_LIMIT:-512m}
+    networks:
+      - elk
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    volumes:
+      - image_data:/app/images
+
+  autoscaler:
+    build:
+      context: ./autoscaler
+    restart: on-failure
+    environment:
+      RABBITMQ_API: http://rabbitmq:15672
+      RABBITMQ_USERNAME: user
+      RABBITMQ_PASSWORD: password
+      # must match the Compose project name above
+      COMPOSE_PROJECT: picturas
+      POLL_INTERVAL_S: 2
+      MESSAGES_PER_REPLICA: 1
+      SCALE_DOWN_AFTER_S: 30
+      STOP_TIMEOUT_S: 900
+      VIDEO_EFFECTS_MIN_REPLICAS: ${VIDEO_EFFECTS_MIN_REPLICAS:-1}
+      VIDEO_EFFECTS_MAX_REPLICAS: ${VIDEO_EFFECTS_MAX_REPLICAS:-3}
+      VIDEO_SUBTITLES_MIN_REPLICAS: ${VIDEO_SUBTITLES_MIN_REPLICAS:-1}
+      VIDEO_SUBTITLES_MAX_REPLICAS: ${VIDEO_SUBTITLES_MAX_REPLICAS:-2}
+      VIDEO_FRAMES_MIN_REPLICAS: ${VIDEO_FRAMES_MIN_REPLICAS:-1}
+      VIDEO_FRAMES_MAX_REPLICAS: ${VIDEO_FRAMES_MAX_REPLICAS:-2}
+    networks:
+      - elk
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+      video_effects:
+        condition: service_started
+      video_subtitles:
+        condition: service_started
+      video_frames:
+        condition: service_started
+    # Docker API access, needed to create and remove replicas. Only this
+    # service mounts it; it publishes no ports and only acts on the video
+    # services of this Compose project.
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
 
   border_tool:
     build:

@@ -1,0 +1,2 @@
+# Plus Tools/utils/requirements.txt (pika, Pillow, pytz, python-dotenv).
+faster-whisper==1.2.1

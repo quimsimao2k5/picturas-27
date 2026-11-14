@@ -372,10 +372,10 @@
     },
     "curtos_total_s": {
       "n": 20,
-      "mediana": 132.81,
-      "min": 122.72,
-      "max": 142.93,
-      "iqr": 7.24
+      "mediana": 131.5,
+      "min": 120.74,
+      "max": 170.77,
+      "iqr": 21.12
     },
     "legendagens_concluidas": "5/5"
   },

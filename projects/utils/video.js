@@ -202,6 +202,98 @@ function insertPipelineTool(tools, tool) {
   return ordered.map((item, position) => ({ ...(item.toObject ? item.toObject() : item), position }));
 }
 
+// ---- Video stages ---------------------------------------------------------
+// A video pipeline runs as a chain of stages, one message each, sent to the
+// service that owns the stage (as the image tools are chained one by one):
+//   video_effects   - consecutive frame/time effects, one decode and one encode
+//   video_subtitles - one subtitles tool (speech recognition + captions)
+//   video_frames    - extract_frames, always the last stage
+// The rules are the ones the single video worker used internally.
+const VIDEO_STAGE_SERVICES = ["video_effects", "video_subtitles", "video_frames"];
+const TEMPORAL_TOOLS = ["trim", "speed"];
+
+function editStages(tools, preview) {
+  if (!tools.some((t) => t.procedure === "subtitles")) {
+    return [{ service: "video_effects", tools: [...tools], previewCut: !!preview }];
+  }
+  const stages = [];
+  let pending = [];
+  for (const tool of tools) {
+    if (tool.procedure === "subtitles") {
+      // An effects stage first normalizes the input to MP4/H.264, even if empty
+      if (pending.length || !stages.length) {
+        stages.push({ service: "video_effects", tools: pending });
+        pending = [];
+      }
+      stages.push({ service: "video_subtitles", tools: [tool] });
+    } else {
+      pending.push(tool);
+    }
+  }
+  if (pending.length) stages.push({ service: "video_effects", tools: pending });
+  // A preview is the first seconds of the final timeline: cut it in the last
+  // effects stage with trim/speed (or the first one), keeping earlier stages whole.
+  let cut = 0;
+  stages.forEach((stage, i) => {
+    if (stage.service === "video_effects" && stage.tools.some((t) => TEMPORAL_TOOLS.includes(t.procedure))) cut = i;
+  });
+  stages.forEach((stage, i) => {
+    if (stage.service === "video_effects") stage.previewCut = !!preview && i === cut;
+  });
+  return stages;
+}
+
+// Splits the ordered pipeline of one video (videoPipeline) into stages
+function videoStages(tools, preview = false) {
+  const list = tools || [];
+  const last = list[list.length - 1];
+  if (!last || last.procedure !== "extract_frames") return editStages(list, preview);
+  // Sampling spans the complete edited timeline, including in preview;
+  // extraction alone reads the original without transcoding.
+  const before = list.slice(0, -1);
+  return [...(before.length ? editStages(before, false) : []), { service: "video_frames", tools: [last] }];
+}
+
+// Parameters of the message for stage `index` of a video job
+function videoStageParams(job, index) {
+  const stage = job.stages[index];
+  return {
+    tools: stage.tools,
+    preview: !!job.preview,
+    previewCut: !!stage.previewCut,
+    stage: index,
+    stages: job.stages.length,
+    progress: job.progress,
+  };
+}
+
+// The last stage writes the final output; the others write into the job's
+// work directory on the shared volume, removed when the job ends.
+function videoStageOutput(job, index) {
+  return index === job.stages.length - 1 ? job.final_uri : `${job.work_dir}/stage-${index}.mp4`;
+}
+
+// Everything the orchestrator needs to chain the stages of one video
+function newVideoJob(tools, { preview, progress, finalUri }) {
+  return {
+    stages: videoStages(tools, preview),
+    preview: !!preview,
+    progress,
+    final_uri: finalUri,
+    work_dir: `${path.posix.dirname(finalUri)}/video-stages-${uuidv4()}`,
+    started_at: new Date(),
+  };
+}
+
+function removeVideoWorkDir(job, baseDir) {
+  if (!job || !job.work_dir) return;
+  try {
+    fs.rmSync(path.resolve(baseDir, job.work_dir), { recursive: true, force: true });
+  } catch (err) {
+    console.error(`[video] could not remove ${job.work_dir}: ${err.message}`);
+  }
+}
+
 // One operation per applied effect, per video, regardless of duration
 function videoOps(project) {
   return (project.imgs || [])
@@ -224,4 +316,10 @@ module.exports = {
   videoOps,
   validateFrameExtraction,
   insertPipelineTool,
+  VIDEO_STAGE_SERVICES,
+  videoStages,
+  videoStageParams,
+  videoStageOutput,
+  newVideoJob,
+  removeVideoWorkDir,
 };

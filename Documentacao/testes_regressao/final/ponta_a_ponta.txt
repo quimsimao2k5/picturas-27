@@ -1,0 +1,19 @@
+Teste de ponta a ponta — 2026-11-14 14:12
+
+[OK] A · pré-visualização da imagem
+[OK] A · pré-visualização é o PNG rodado (480×640)
+[OK] A · processamento sem erro
+[OK] A · 1 resultado
+[OK] A · resultado é PNG rodado 90° (480×640)
+[OK] B · pré-visualização do vídeo
+[OK] B · pré-visualização é MP4 com ≤ 3,5 s
+[OK] B · processamento sem erro (imagem + vídeo)
+[OK] B · 2 resultados
+[OK] B · imagem com o brilho e sem efeitos de vídeo (640×480 PNG)
+[OK] B · vídeo em MP4 cortado para ≈ 5 s
+[OK] C · processamento sem erro
+[OK] C · 3 fotogramas como resultados
+[OK] C · fotogramas são PNG 1280×720
+[OK] C · nomes únicos
+
+15/15 verificações OK — OK

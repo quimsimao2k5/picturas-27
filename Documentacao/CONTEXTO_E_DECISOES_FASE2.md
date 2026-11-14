@@ -126,6 +126,7 @@ Análise estática do código no commit `b638a13` (revalidada a 4/11/2026, 14:55
 | Q9 | ~~Usamos a vista da arquitetura dos docentes (`arquitetura_global.puml`) na secção 1.2 do Exercício 6?~~ **Decidida (D19).** | (a) tal como está, citando a fonte; (b) adaptá-la (ex.: marcar as fragilidades F1–F4 e as filas do vídeo) e citar a fonte; (c) fazer a nossa de raiz | (b): já está correta e destaca o caminho do vídeo; acrescentar o que é nosso e dizer o que foi adaptado |
 | Q10 | Onde e quando preenchemos o template do Bloco 1? | (a) agora, numa cópia em `Documentacao/exercicio6/` (sem mexer em `fase2/enunciados/`), com o agente a propor o conteúdo a partir da análise já feita e a equipa a rever; (b) depois da medição inicial, para já ter medições como evidência; (c) cada elemento uma secção | (a) para as secções 0–2 e (b) para fechar a matriz (secção 3.3) com medições |
 | Q12 | ~~Acrescentamos testes de regressão para o que os testes da base não cobrem (caminho das imagens, ponta a ponta)?~~ **Decidida (D32).** | (a) não: usar os testes da base (82) e os cenários de medição como verificação do vídeo; (b) acrescentar um teste de ponta a ponta simples (uma imagem e um vídeo pela API, com o cliente dos scripts de medição), corrido antes e depois do *refactoring*; (c) testes unitários novos para o `projects` | (b): o *refactoring* mexe no encadeamento do `projects`, que também serve as imagens; um teste de ponta a ponta reutiliza o cliente que já existe |
+| QI-9 | ~~Quando se termina a legendagem no M3, depois do *refactoring*? O cenário termina o serviço da legendagem 5 s depois de o vídeo de 177 s chegar aos 20 % do progresso. Uma legendagem tem duas etapas (normalização no `video_effects`, 0–50 %, e legendagem no `video_subtitles`, 50–100 %), tanto na base (dentro do `video_tool`) como agora. Aos 20 % o trabalho ainda está no `video_effects`, por isso o `video_subtitles` seria terminado parado e a legendagem em curso não seria interrompida~~ **Decidida (D33).** | (a) manter os 20 % (mesmo instrumento; na versão final o serviço morto não tem trabalho); (b) terminar quando o vídeo passa dos 55 % (já na etapa de legendagem) só na medição final; (c) terminar aos 55 % nas duas fases, repetindo o M3 da base (≈ 30 min no Mac, com o código da base) | (c): o cenário passa a testar o que diz (a legendagem a meio) nas duas fases, com o mesmo instrumento |
 | Q8 | ~~Mudamos este documento para `Documentacao/` (D4)?~~ **Decidida (D14).** | (a) mover para `fase2/picturas-27/Documentacao/` e deixar de o manter em `fase2/`; (b) manter em `fase2/` até à entrega | (a), para ficar versionado com o código e as medições |
 
 ### 4.1 Pares de requisitos possíveis (Q1)
@@ -156,7 +157,7 @@ Análise estática do código no commit `b638a13` (revalidada a 4/11/2026, 14:55
   - **S2:** débito de 15,9 / 16,7 / 17,6 / 16,8 vídeos/min com 1 / 2 / 4 / 8 utilizadores; tempo máximo de conclusão 3,8 / 7,2 / 13,7 / 28,5 s; nunca mais de 1 vídeo em processamento.
   - **S3:** 1 réplica do `video_tool` sempre; até 9 vídeos à espera; CPU média do `video_tool` na rajada 319 % de 800 %; rajada em 158,8 s.
   - **S4:** tempo / duração 0,39× (10 s), 0,38× (30 s), 0,90× (150 s, 1080p).
-  - **M3:** o `video_tool` foi terminado ≈ 33 s depois de pedida a legendagem; a mesma mensagem foi reentregue e a legendagem refeita (5/5 concluídas); 100 % dos vídeos curtos atrasados (132,8 s contra 13,7 s em S2 com N = 4), nenhum perdido.
+  - **M3:** o `video_tool` foi terminado ≈ 33 s depois de pedida a legendagem; a mesma mensagem foi reentregue e a legendagem refeita (5/5 concluídas); 100 % dos vídeos curtos atrasados (132,8 s contra 13,7 s em S2 com N = 4), nenhum perdido. **Repetido a 12/11/2026 com a falha aos 55 % (D33):** o mesmo resultado, 100 % dos vídeos curtos atrasados (mediana 131,5 s), nenhum perdido, 5/5 legendagens concluídas; é este o valor de referência da base (`baseline/m3/`; o de 20 % fica em `baseline/m3_20pct/`).
   - **M1 (medido a 12/11/2026, `baseline/m1/`):** C1 (modelo Whisper) e C2 (`subtitles.py`) obrigam a reiniciar o `video_tool` e interrompem as 6 responsabilidades de vídeo; C3 (efeito sépia, sonda num ramo descartável, `baseline/m1/C3_sonda.patch`) toca 6 ficheiros em 3 componentes (`Tools/video`, `projects`, `frontend`), reconstrói 3 unidades e também interrompe as 6.
   - **M2:** 1 unidade implantável com as 6 responsabilidades de vídeo; 722 SLOC de Python de vídeo, CC máx. 22, 6 funções com CC > 10; 8 efeitos duplicados.
   - Hipóteses H-01 a H-04 do Exercício 6 confirmadas.
@@ -189,6 +190,32 @@ Método e cenários em `medicoes/PLANO_MEDICAO.md`; valores de base em `medicoes
 
 (¹) Quando a tabela foi aprovada, o valor de base do M1 ainda não tinha sido medido: foi estimado a partir do M2 (o `video_tool` é uma única unidade com as 6 responsabilidades de vídeo). A medição do M1, feita no mesmo dia (`baseline/m1/`), confirmou o valor. O M1 é uma métrica de análise estática: o resultado decorre da estrutura do sistema e dos ficheiros que cada mudança toca.
 
+## 4C. *Refactoring* — Implementação (12/11/2026, por aprovar)
+
+Segue o `DESENHO_SOLUCAO.md` e as decisões D24–D32.
+
+**O que mudou no código**
+
+| Área | Alteração |
+|---|---|
+| `Tools/video/` | Removida. O código passou para três serviços, cada um com a sua fila, `Dockerfile` e testes: `Tools/video_effects/` (efeitos de fotograma, `trim`, `speed`; `effects.py` e `video_processor.py`), `Tools/video_subtitles/` (`subtitles.py`) e `Tools/video_frames/` (`frame_extraction.py`) |
+| `Tools/video_common/` | Novo (D25): *worker* RabbitMQ comum (`worker.py`: consome a fila, `prefetch 1`, confirmação no fim, respostas e progresso no formato de antes, códigos de erro 2000–2005, paragem graciosa com `SIGTERM`), `ffprobe` e erros (`media.py`), *fixtures* dos testes |
+| `projects` | `utils/video.js`: `videoStages` divide o pipeline de cada vídeo em etapas (as mesmas regras que o `video_tool` usava por dentro). `routes/projects.js`: o *Apply* e a pré-visualização enviam a etapa 0; o `process_msg` envia a etapa seguinte quando uma etapa intermédia responde (sem gravar resultado nem avisar o utilizador) e só a última segue o caminho de antes. `models/process.js`: campo `video_job` (etapas, pasta de trabalho, saída final). A pasta dos ficheiros intermédios é apagada no fim, em erro e no cancelamento |
+| `autoscaler/` | Novo (D26–D28): lê a API de gestão do RabbitMQ a cada 2 s, 1 réplica por mensagem (à espera + em processamento), desce após 30 s, remove primeiro réplicas paradas, clona o contentor do Compose pela API do Docker e pára réplicas com `SIGTERM` (até 900 s para acabarem o trabalho em curso) |
+| Configuração | `docker-compose.yaml`: `video_tool` substituído por `video_effects`, `video_subtitles`, `video_frames` e `autoscaler` (limites de réplicas e de memória por variáveis de ambiente, D31). `rabbitMQ/definitions.json`: três filas novas, `video_queue` removida. `rabbitmq.conf`: estatísticas das filas a cada 1 s (eram 5 s) para o *autoscaler* reagir mais depressa |
+| Documentação | `README.md` e `AGENTS.md` atualizados (arquitetura, variáveis, testes, resolução de problemas) |
+
+**Testes (na *cloud*, fora do Docker):** os 74 testes Python da base passam nas pastas novas (29 + 3 + 20 + 22, ver `COMO_TESTAR.md` 4.1) e os 8 do `projects` também. Testes novos: 11 do *worker* comum, 9 + 2 da divisão em etapas (Python e `projects`, com os mesmos casos) e 7 do *autoscaler*. O *autoscaler* foi ainda experimentado contra um Docker real (subir de 1 para 3 réplicas com os *labels*, volumes, rede e limite de memória do original; descer para 1 após o período de espera). Falta correr tudo no Mac (`testes_final.command`, `ponta_a_ponta_final.command`).
+
+**Pré-visualização dos resultados estáticos** (calculados sobre o código novo; a repetir no Mac depois do *commit*): **M2 = 1** funcionalidade por serviço (base 3); **M1 C1 = C2 = 1** funcionalidade interrompida (base 3); C3 continua a tocar 6 ficheiros em 3 componentes, mas interrompe 1 funcionalidade (base 3).
+
+**Pontos a confirmar pela equipa**
+
+- **Limite de memória da legendagem (aprovado, D34):** 3 GB por réplica, e não os 1,5 GB do exemplo do QI-8: na medição inicial a legendagem do vídeo de 177 s chegou a 2,3 GB no `video_tool`. Efeitos 1 GB e extração 512 MB, como no exemplo. Com 2 réplicas de legendagem a trabalhar ao mesmo tempo a memória do Docker (6 GB) pode não chegar; nenhum cenário de medição tem duas legendagens em simultâneo.
+- **Instrumento de medição:** o `modularidade.py` lia os efeitos duplicados de `Tools/video/effects.py`; passa a ler de `Tools/video_effects/effects.py` quando o primeiro não existe (só muda o caminho). O marcador "consumir trabalhos de vídeo" do M2 procura `basic_consume(` com "video" na mesma linha; no *worker* comum o atributo da fila chama-se `video_queue`, por isso continua a ser detetado (é infraestrutura comum e não conta para as funcionalidades, D24).
+- **Verificação cruzada dos logs:** cada etapa escreve a sua linha `[video] msg=… ok …`; um vídeo com legendas tem duas (normalização + legendagem).
+- **M3 (D33):** o serviço da legendagem passa a ser terminado aos 55 % do progresso, nas duas fases (`cenarios.py --m3-progresso`, 55 por omissão). O M3 da base foi repetido aos 55 % a 12/11/2026 (secção 4A): 100 % afetados, como aos 20 %.
+
 ## 5. Próximos Passos Propostos
 
 1. ~~Equipa decide Q1–Q5.~~ Feito a 4/11/2026 (secção 6).
@@ -201,7 +228,7 @@ Método e cenários em `medicoes/PLANO_MEDICAO.md`; valores de base em `medicoes
 7. ~~**Testes de regressão na base.**~~ Feito a 12/11/2026 (secção 4A).
 8. ~~**Desenho da solução.**~~ `Documentacao/DESENHO_SOLUCAO.md`, aprovado a 12/11/2026 com as decisões D24–D32.
 8a. ~~**Teste de ponta a ponta na base** (D32).~~ Feito a 12/11/2026: 15/15 OK.
-9. ***Refactoring***, com os testes de regressão.
+9. ***Refactoring*** implementado a 12/11/2026 (secção 4C), **à espera da aprovação da equipa**; depois, testes de regressão e de ponta a ponta no Mac.
 10. **Medição final** (`medicoes/medicao_final.command`) e M1 sobre o código refatorado; comparação com a base e com os alvos.
 11. **Relatório e defesa:** Exercício 6 (adaptar a vista dos docentes, D19; Bloco 2 quando sair); descrever no relatório e no PowerPoint o que é e o que faz cada medição (S1–S4, M1–M3) e o fluxo das medições (`medicoes/FLUXO_DAS_MEDICOES.md`).
 
@@ -245,3 +272,5 @@ Método e cenários em `medicoes/PLANO_MEDICAO.md`; valores de base em `medicoes
 | D30 | 12/11/2026 | QI-6 e QI-7 — Ficheiros intermédios e testes atuais | Ficheiros intermédios no **volume `image_data`**, apagados no fim, em erro ou em cancelamento; os testes de `Tools/video/tests` **mudam de pasta com o código**, sem mudar o que verificam, mais testes novos da divisão em etapas | SeaweedFS; testes no sítio atual | Como hoje entre o `projects` e os workers; testes junto do código que testam |
 | D31 | 12/11/2026 | QI-8 — Limites de memória e máximo de réplicas | **Configuráveis por variáveis de ambiente**, com valores por omissão folgados para a máquina de medição (D3); nas medições usam-se os valores por omissão | Sem limites de memória; limites fixos no compose | O limite é por réplica e não prejudica máquinas maiores; quem tiver outra máquina ajusta o máximo de réplicas sem mexer no código |
 | D32 | 12/11/2026 | Q12 — Teste de ponta a ponta | **Sim**: uma imagem e um vídeo processados pela API, com o cliente dos scripts de medição, corridos na base e depois do *refactoring* | Não; testes unitários do `projects` | Cobre o caminho das imagens, que os testes da base não cobrem e que o *refactoring* toca (encadeamento no `projects`) |
+| D33 | 12/11/2026 | QI-9 — Momento da falha no M3 | **Terminar o serviço da legendagem aos 55 % do progresso nas duas fases**, repetindo o M3 da base com o código da base | Manter os 20 %; 55 % só na final | Aos 20 % o vídeo ainda está na normalização (`video_effects`); aos 55 % já está na legendagem, que é o que o cenário quer testar |
+| D34 | 12/11/2026 | Limite de memória da legendagem | **3 GB por réplica** (efeitos 1 GB, extração 512 MB), configuráveis (D31) | 1,5 GB (exemplo do QI-8); 3 GB com máximo de 1 réplica | Na medição inicial a legendagem do vídeo de 177 s chegou a 2,3 GB |

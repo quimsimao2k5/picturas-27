@@ -23,15 +23,42 @@ if ! docker info >/dev/null 2>&1; then
   until docker info >/dev/null 2>&1; do sleep 5; done
 fi
 
-# Constrói as imagens a partir do código atual, para testar exatamente esse código
-echo "=== Construir as imagens do video_tool e do projects ==="
-docker compose build video_tool projects || { echo "ERRO: build falhou"; exit 1; }
+# Constrói as imagens a partir do código atual, para testar exatamente esse código.
+# Base: um só video_tool. Depois do refactoring: video_effects, video_subtitles,
+# video_frames e autoscaler (cada conjunto de testes corre na imagem do seu serviço).
+if [ -d Tools/video_effects ]; then
+  SERVICOS_PY="video_effects video_subtitles video_frames autoscaler"
+else
+  SERVICOS_PY="video_tool"
+fi
+echo "=== Construir as imagens ($SERVICOS_PY projects) ==="
+docker compose build $SERVICOS_PY projects || { echo "ERRO: build falhou"; exit 1; }
 
-echo "=== Tools/video/tests (pytest, dentro da imagem do video_tool) ==="
-docker compose run --rm --no-deps video_tool \
-  sh -c "pip install -q pytest && python -m pytest -v -p no:cacheprovider tests" \
-  | tee "$OUT/pytest_video_tool.txt"
-rc_video=$?
+PYTEST="pip install -q pytest && python -m pytest -v -p no:cacheprovider"
+rc_video=0
+resumo_py=""
+corre_pytest() {  # corre_pytest <nome> <ficheiro> <serviço> <comando> [opções do docker compose run]
+  local nome="$1" ficheiro="$OUT/$2" svc="$3" cmd="$4"; shift 4
+  echo "=== $nome (pytest, dentro da imagem do $svc) ==="
+  docker compose run --rm --no-deps "$@" "$svc" sh -c "$cmd" | tee "$ficheiro"
+  local rc=$?
+  [ $rc -eq 0 ] || rc_video=$rc
+  resumo_py="$resumo_py
+$(printf '%-28s' "$nome:") $(grep -Eo '[0-9]+ (passed|failed)[^=]*' "$ficheiro" | tail -1) (código de saída $rc)"
+}
+
+if [ "$SERVICOS_PY" = "video_tool" ]; then
+  corre_pytest "Tools/video/tests" pytest_video_tool.txt video_tool "$PYTEST tests"
+else
+  corre_pytest "Tools/video_effects/tests" pytest_video_effects.txt video_effects "$PYTEST tests video_common/tests"
+  corre_pytest "Tools/video_subtitles/tests" pytest_video_subtitles.txt video_subtitles "$PYTEST tests"
+  corre_pytest "Tools/video_frames/tests" pytest_video_frames.txt video_frames "$PYTEST tests"
+  # testes do pipeline completo (os três serviços encadeados como o projects faz):
+  # correm na imagem da legendagem, que tem todas as dependências, com Tools/ montado só para leitura
+  corre_pytest "Tools/tests/video_pipeline" pytest_video_pipeline.txt video_subtitles \
+    "$PYTEST /src/tests/video_pipeline" -v "$REPO/Tools:/src:ro" -e PYTHONDONTWRITEBYTECODE=1
+  corre_pytest "autoscaler/tests" pytest_autoscaler.txt autoscaler "$PYTEST tests"
+fi
 
 echo "=== projects/tests (node --test, dentro da imagem do projects) ==="
 docker compose run --rm --no-deps projects \
@@ -45,10 +72,9 @@ rc_projects=$?
   echo "Alterações locais ao código: $(git status --short -- . ':!Documentacao' | wc -l | tr -d ' ') ficheiros"
   echo "Máquina: $(sysctl -n hw.model 2>/dev/null) · $(sysctl -n machdep.cpu.brand_string 2>/dev/null)"
   echo "Docker: $(docker version --format '{{.Server.Version}}')"
-  echo "Execução: dentro das imagens Docker do video_tool e do projects (docker compose run --rm --no-deps)"
-  echo
-  echo "Tools/video/tests: $(grep -Eo '[0-9]+ (passed|failed)[^=]*' "$OUT/pytest_video_tool.txt" | tail -1) (código de saída $rc_video)"
-  echo "projects/tests:    $(grep -E '(ℹ|#) (pass|fail) ' "$OUT/node_projects.txt" | tr '\n' ' ') (código de saída $rc_projects)"
+  echo "Execução: dentro das imagens Docker de $SERVICOS_PY e do projects (docker compose run --rm --no-deps)"
+  echo "${resumo_py#?}"
+  echo "$(printf '%-28s' "projects/tests:") $(grep -E '(ℹ|#) (pass|fail) ' "$OUT/node_projects.txt" | tr '\n' ' ') (código de saída $rc_projects)"
 } > "$OUT/ambiente.txt"
 cat "$OUT/ambiente.txt"
 [ $rc_video -eq 0 ] && [ $rc_projects -eq 0 ] && echo "TESTES OK" || echo "HÁ TESTES A FALHAR"

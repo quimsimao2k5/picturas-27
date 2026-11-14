@@ -110,8 +110,8 @@ are **not** published to the host unless noted otherwise — they talk to each o
    └────────┘ └────────┘ │     └────────┘   │
                          │                  │
                     ┌────▼──────────────────┴────┐
-                    │      RabbitMQ  :5672       │◄─── 16 image tools + video_tool
-                    │    exchange "picturas"     │     (one queue per tool)
+                    │      RabbitMQ  :5672       │◄─── 16 image tools + 3 video services
+                    │    exchange "picturas"     │     (one queue per tool/service)
                     └────────────────────────────┘
 ```
 
@@ -151,14 +151,35 @@ exchange:
 > (`prcsousa/picturas-watermark-tool-ms`) instead of being built from this repository — it is a
 > deliberate example of integrating a third-party service.
 
-**Videos** are handled by a single worker, `video_tool` (`Tools/video/`), instead of the image
-tools. For each video, `projects` sends **one** message with the whole pipeline to
-`video_queue`; the worker probes the file with `ffprobe`, decodes it once, applies the frame
-effects (`Tools/video/effects.py`, the same PIL operations as the image tools), encodes once to
-MP4/H.264 + AAC and reports progress as `video-progress` events on `ws_queue`. It acknowledges
-the message only at the end and leaves no partial output on failure. `ffmpeg` is installed only
-inside this container. Automatic subtitles and frame extraction run as ordered stages of the
-same worker (`Tools/video/subtitles.py`, `Tools/video/frame_extraction.py`).
+**Videos** are handled by three video services instead of the image tools, one per kind of
+stage, each with its own queue:
+
+| Service           | Queue                   | Stage                                                                   |
+| ----------------- | ----------------------- | ----------------------------------------------------------------------- |
+| `video_effects`   | `video_effects_queue`   | Frame effects and `trim`/`speed`: one decode, one encode to MP4/H.264 + AAC |
+| `video_subtitles` | `video_subtitles_queue` | Speech recognition (Faster-Whisper) and burned-in captions              |
+| `video_frames`    | `video_frames_queue`    | Frame extraction (always the last stage)                                |
+
+`projects` splits the pipeline of each video into stages (`videoStages` in
+`projects/utils/video.js`): consecutive effects form one effects stage, each `subtitles` is a
+stage of its own, and `extract_frames` is the last one. It sends the first stage and, as it
+already does for image tools, sends the next stage when the previous one replies on
+`project_queue`. Intermediate files go to a work directory on the shared `image_data` volume and
+are removed when the job ends, fails or is cancelled; only the last stage produces the result.
+Each service probes its input with `ffprobe`, reports progress as `video-progress` events on
+`ws_queue` (as a share of the whole pipeline: one bar from 0 to 100 %), acknowledges the message
+only at the end and leaves no partial output on failure. The frame effects
+(`Tools/video_effects/effects.py`) are the same PIL operations as the image tools. The
+RabbitMQ worker, `ffprobe` helper and errors shared by the three services live in
+`Tools/video_common/`. `ffmpeg` is installed only inside these containers.
+
+The **`autoscaler`** (`autoscaler/`) keeps the number of replicas of each video service in line
+with its queue: every 2 s it reads the queue sizes in the RabbitMQ management API and asks for one
+replica per message (waiting or in progress), within the limits below; it adds replicas at once
+and removes them only after 30 s of lower load, idle replicas first. Replicas are created and
+removed through the Docker API, so the `autoscaler` mounts `/var/run/docker.sock` (the only
+service that does; it publishes no ports and only touches the video services of this Compose
+project). A removed replica gets `SIGTERM` and finishes its current job first.
 
 ### Infrastructure
 
@@ -373,10 +394,21 @@ All configuration currently lives as `environment:` entries in `docker-compose.y
 | `GEN_EXPAND_URL`                              | `http://generative-mock:7860` | expand_ai              | Generative image API endpoint                |
 | `VIDEO_FREE_MAX_DURATION_S` / `_MAX_SIZE_MB`  | `60` / `100`                  | projects               | Video upload limits for free accounts        |
 | `VIDEO_PREMIUM_MAX_DURATION_S` / `_SIZE_MB`   | `600` / `1024`                | projects               | Video upload limits for premium accounts     |
-| `VIDEO_PREVIEW_SECONDS`                       | `3`                           | video_tool             | Length of a video preview render             |
-| `WHISPER_MODEL`                               | `small`                       | video_tool             | Faster-Whisper model for automatic subtitles |
-| `WHISPER_CACHE_DIR`                           | `/models/whisper`             | video_tool             | Model cache (the `whisper_models` volume)    |
-| `WHISPER_CPU_THREADS`                         | `2`                           | video_tool             | CPU threads for speech recognition           |
+| `VIDEO_PREVIEW_SECONDS`                       | `3`                           | video_effects          | Length of a video preview render             |
+| `WHISPER_MODEL`                               | `small`                       | video_subtitles        | Faster-Whisper model for automatic subtitles |
+| `WHISPER_CACHE_DIR`                           | `/models/whisper`             | video_subtitles        | Model cache (the `whisper_models` volume)    |
+| `WHISPER_CPU_THREADS`                         | `2`                           | video_subtitles        | CPU threads for speech recognition           |
+| `VIDEO_EFFECTS_MIN_REPLICAS` / `_MAX_REPLICAS`   | `1` / `3`                  | autoscaler             | Replica limits of `video_effects`            |
+| `VIDEO_SUBTITLES_MIN_REPLICAS` / `_MAX_REPLICAS` | `1` / `2`                  | autoscaler             | Replica limits of `video_subtitles`          |
+| `VIDEO_FRAMES_MIN_REPLICAS` / `_MAX_REPLICAS`    | `1` / `2`                  | autoscaler             | Replica limits of `video_frames`             |
+| `VIDEO_EFFECTS_MEM_LIMIT`                     | `1g`                          | video_effects          | Memory limit of each replica                 |
+| `VIDEO_SUBTITLES_MEM_LIMIT`                   | `3g`                          | video_subtitles        | Memory limit of each replica                 |
+| `VIDEO_FRAMES_MEM_LIMIT`                      | `512m`                        | video_frames           | Memory limit of each replica                 |
+
+The replica and memory variables are read from the shell or a `.env` file next to
+`docker-compose.yaml` (for example `VIDEO_SUBTITLES_MAX_REPLICAS=1` on a machine with little
+memory). The `autoscaler` also takes `POLL_INTERVAL_S`, `MESSAGES_PER_REPLICA`,
+`SCALE_DOWN_AFTER_S` and `STOP_TIMEOUT_S`, set in its block of `docker-compose.yaml`.
 
 ⚠️ If you change `JWT_SECRET_KEY`, change it in **all three** services (`users`, `api_gateway`,
 `ws_gateway`) or authentication silently breaks.
@@ -422,7 +454,12 @@ picturas-27/
 │   ├── models/               #   pre-downloaded ML weights (e.g. yolov5su.pt)
 │   ├── bg_remove_ai/  cut_ai/  expand_ai/  obj_ai/  people_ai/  text_ai/  upgrade_ai/
 │   ├── binarization/  border/  brightness/  contrast/  cut/  resize/  rotate/  saturation/
-│   └── video/                #   video_tool: ffmpeg worker for whole video pipelines
+│   ├── video_common/         #   RabbitMQ stage worker, ffprobe and errors shared by the video services
+│   ├── video_effects/        #   video_effects: frame effects, trim and speed (ffmpeg + PIL)
+│   ├── video_subtitles/      #   video_subtitles: automatic subtitles (Faster-Whisper)
+│   ├── video_frames/         #   video_frames: frame extraction
+│   └── tests/video_pipeline/ #   tests of whole pipelines across the three video services
+├── autoscaler/               # Adjusts the replicas of the video services to their queues
 ├── samples/video/            # Sample videos for manual tests (valid, MOV, too long, corrupted)
 ├── rabbitMQ/                 # Broker image with queue/exchange definitions
 ├── nginx/nginx.conf          # Reverse proxy, TLS, CORS, WebSocket routing
@@ -437,8 +474,9 @@ picturas-27/
 
 ## 🎬 Video Tools
 
-Besides `trim` and `speed`, projects with videos have two project-wide, video-only tools. Both
-run inside the existing `video_tool` worker; images in the same project skip them.
+Besides `trim` and `speed`, projects with videos have two project-wide, video-only tools. Each
+runs in its own service (`video_subtitles` and `video_frames`); images in the same project skip
+them.
 
 ### Automatic subtitles
 
@@ -521,22 +559,30 @@ Python tools have no bind mount — rebuild them after every change:
 docker compose up -d --build border_tool
 ```
 
-### Testing the video worker
+### Testing the video services
 
 The tests run on the host, with no image to build. They only need Python 3.11+ and
-`ffmpeg`/`ffprobe` on the `PATH` (`brew install ffmpeg`, `apt install ffmpeg`, ...):
+`ffmpeg`/`ffprobe` on the `PATH` (`brew install ffmpeg`, `apt install ffmpeg`, ...). Each folder
+is run on its own:
 
 ```bash
-cd Tools/video
-python3 -m venv .venv && .venv/bin/pip install -r requirements-dev.txt   # once
-.venv/bin/python -m pytest -q tests
+cd Tools
+python3 -m venv .venv && .venv/bin/pip install -r video_common/requirements-dev.txt   # once
+for t in video_effects/tests video_subtitles/tests video_frames/tests video_common/tests tests/video_pipeline; do
+  .venv/bin/python -m pytest -q "$t"
+done
 ```
 
-Without ffmpeg on the host, run them in the already-built worker image instead:
-`docker compose run --rm video_tool sh -c "pip install -q pytest && python -m pytest -q tests"`.
+`Tools/tests/video_pipeline` runs whole pipelines through the three services, chained in-process
+the way `projects` chains them. Without ffmpeg on the host, run the tests in the already-built
+images instead, e.g.
+`docker compose run --rm --no-deps video_effects sh -c "pip install -q pytest && python -m pytest -q tests video_common/tests"`
+(and `tests` in `video_subtitles` and `video_frames`). The autoscaler's tests:
+`docker compose run --rm --no-deps autoscaler sh -c "pip install -q pytest && python -m pytest -q tests"`.
 
 The media tests use real FFmpeg; speech recognition is simulated, so no model is downloaded.
-The orchestration tests for the video pipeline and frame extraction run inside `projects`:
+The orchestration tests for the video pipeline, its split into stages and frame extraction run
+inside `projects`:
 
 ```bash
 docker compose run --rm --no-deps projects sh -c "node --test tests/*.test.js"
@@ -602,8 +648,11 @@ is a valid MP4, MOV or WebM. Videos must go to `POST /:user/:project/video`; the
 endpoint rejects them.
 
 **A video stays at 0% or never finishes**
-There is a single `video_tool` with no replicas, so videos are processed one at a time. Check
-`docker compose logs -f video_tool` and the depth of `video_queue` in RabbitMQ.
+Check the queue of the stage it is in (`video_effects_queue`, `video_subtitles_queue`,
+`video_frames_queue`) in RabbitMQ (<http://localhost:15672>), the service logs
+(`docker compose logs -f video_effects video_subtitles video_frames`) and the replica decisions
+(`docker compose logs -f autoscaler`). With the default limits, at most 3 effects, 2 captioning
+and 2 extraction jobs run at the same time; the rest wait in their queues.
 
 **`expand_ai` fails**
 It depends on `generative-mock` being healthy. Check <http://localhost:7860> and

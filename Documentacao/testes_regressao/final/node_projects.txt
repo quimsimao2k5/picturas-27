@@ -1,0 +1,18 @@
+✔ extraction is project-wide and terminal, with ordinary effects inserted before it (3.009208ms)
+✔ extraction validates active mode parameters and disallows targeted/potentially unbounded inputs (0.274041ms)
+✔ manifest validation rejects escaped, duplicate and oversized frame output before upload (11.410958ms)
+✔ all extracted images retain the source ID and run token; upload failure rolls back only this batch (1.572416ms)
+✔ a fast first worker cannot commit while later sources are still being scheduled (3.943917ms)
+✔ registration failure starts no workers and rolls back only newly registered jobs (2.091083ms)
+✔ a cancelled run cannot overwrite the committed results with a delayed commit (5.311125ms)
+✔ captions apply to all videos, while images skip them and trim stays targeted (2.874333ms)
+✔ a video pipeline is split into effects, captions and extraction stages (3.199375ms)
+✔ only the last stage writes the final output; the others share one work directory (6.7725ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 136.896958

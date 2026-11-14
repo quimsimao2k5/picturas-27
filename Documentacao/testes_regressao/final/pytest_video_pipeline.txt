@@ -1,0 +1,39 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.18, pytest-9.2.0, pluggy-1.7.0 -- /usr/local/bin/python
+rootdir: /src/tests/video_pipeline
+plugins: anyio-4.16.0
+collecting ... collected 31 items
+
+../src/tests/video_pipeline/test_frame_extraction.py::test_count_images_and_original_preserved[png-.png] PASSED [  3%]
+../src/tests/video_pipeline/test_frame_extraction.py::test_count_images_and_original_preserved[jpeg-.jpg] PASSED [  6%]
+../src/tests/video_pipeline/test_frame_extraction.py::test_interval_sampling PASSED [  9%]
+../src/tests/video_pipeline/test_frame_extraction.py::test_preview_contact_sheet_uses_full_edited_timeline PASSED [ 12%]
+../src/tests/video_pipeline/test_frame_extraction.py::test_preceding_effects_apply_to_every_frame PASSED [ 16%]
+../src/tests/video_pipeline/test_frame_extraction.py::test_extraction_must_be_terminal_once[tools0] PASSED [ 19%]
+../src/tests/video_pipeline/test_frame_extraction.py::test_extraction_must_be_terminal_once[tools1] PASSED [ 22%]
+../src/tests/video_pipeline/test_frame_extraction.py::test_extractor_failure_leaves_previous_output PASSED [ 25%]
+../src/tests/video_pipeline/test_frame_extraction.py::test_extraction_does_not_load_speech_model PASSED [ 29%]
+../src/tests/video_pipeline/test_frame_extraction.py::test_captions_run_before_extraction PASSED [ 32%]
+../src/tests/video_pipeline/test_frame_extraction.py::test_extraction_only_seeks_original_without_transcoding[png] PASSED [ 35%]
+../src/tests/video_pipeline/test_frame_extraction.py::test_extraction_only_seeks_original_without_transcoding[jpeg] PASSED [ 38%]
+../src/tests/video_pipeline/test_frame_extraction.py::test_extraction_uses_video_duration_when_audio_is_longer PASSED [ 41%]
+../src/tests/video_pipeline/test_stages.py::test_split_into_stages[tools0-False-expected0] PASSED [ 45%]
+../src/tests/video_pipeline/test_stages.py::test_split_into_stages[tools1-True-expected1] PASSED [ 48%]
+../src/tests/video_pipeline/test_stages.py::test_split_into_stages[tools2-False-expected2] PASSED [ 51%]
+../src/tests/video_pipeline/test_stages.py::test_split_into_stages[tools3-True-expected3] PASSED [ 54%]
+../src/tests/video_pipeline/test_stages.py::test_split_into_stages[tools4-True-expected4] PASSED [ 58%]
+../src/tests/video_pipeline/test_stages.py::test_split_into_stages[tools5-True-expected5] PASSED [ 61%]
+../src/tests/video_pipeline/test_stages.py::test_split_into_stages[tools6-True-expected6] PASSED [ 64%]
+../src/tests/video_pipeline/test_stages.py::test_split_into_stages[tools7-False-expected7] PASSED [ 67%]
+../src/tests/video_pipeline/test_stages.py::test_split_into_stages[tools8-False-expected8] PASSED [ 70%]
+../src/tests/video_pipeline/test_subtitles.py::test_no_audio_does_not_load_model PASSED [ 74%]
+../src/tests/video_pipeline/test_subtitles.py::test_caption_rendering_preserves_audio_and_original PASSED [ 77%]
+../src/tests/video_pipeline/test_subtitles.py::test_order_and_preview PASSED [ 80%]
+../src/tests/video_pipeline/test_subtitles.py::test_no_speech_is_noop PASSED [ 83%]
+../src/tests/video_pipeline/test_subtitles.py::test_model_failure_does_not_publish_partial_output PASSED [ 87%]
+../src/tests/video_pipeline/test_subtitles.py::test_preview_after_temporal_edit[following0-1] PASSED [ 90%]
+../src/tests/video_pipeline/test_subtitles.py::test_preview_after_temporal_edit[following1-3] PASSED [ 93%]
+../src/tests/video_pipeline/test_subtitles.py::test_preview_after_temporal_edit[following2-2] PASSED [ 96%]
+../src/tests/video_pipeline/test_subtitles.py::test_encoder_failure_preserves_previous_output PASSED [100%]
+
+============================= 31 passed in 24.72s ==============================

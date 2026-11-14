@@ -1,0 +1,732 @@
+{
+  "s1": {
+    "curto_sozinho_total_s": {
+      "n": 5,
+      "mediana": 3.88,
+      "min": 3.54,
+      "max": 4.44,
+      "iqr": 0.65
+    },
+    "curto_com_legendagem_espera_s": {
+      "n": 5,
+      "mediana": 141.01,
+      "min": 123.29,
+      "max": 165.0,
+      "iqr": 35.26
+    },
+    "curto_com_legendagem_total_s": {
+      "n": 5,
+      "mediana": 144.69,
+      "min": 126.55,
+      "max": 168.68,
+      "iqr": 36.05
+    },
+    "atraso_causado_pela_legendagem_s": {
+      "n": 5,
+      "mediana": 140.7,
+      "min": 123.01,
+      "max": 165.1,
+      "iqr": 35.75
+    },
+    "legendagem_total_s": {
+      "n": 5,
+      "mediana": 141.77,
+      "min": 123.99,
+      "max": 165.79,
+      "iqr": 35.43
+    }
+  },
+  "s2": {
+    "N=1": {
+      "makespan_s": {
+        "n": 5,
+        "mediana": 3.77,
+        "min": 3.76,
+        "max": 3.94,
+        "iqr": 0.12
+      },
+      "debito_videos_min": {
+        "n": 5,
+        "mediana": 15.91,
+        "min": 15.22,
+        "max": 15.97,
+        "iqr": 0.51
+      },
+      "max_videos_em_processamento_simultaneo": {
+        "n": 5,
+        "mediana": 1,
+        "min": 1,
+        "max": 1,
+        "iqr": 0.0
+      },
+      "tempo_medio_conclusao_s": {
+        "n": 5,
+        "mediana": 3.77,
+        "min": 3.76,
+        "max": 3.94,
+        "iqr": 0.12
+      },
+      "tempo_max_conclusao_s": {
+        "n": 5,
+        "mediana": 3.77,
+        "min": 3.76,
+        "max": 3.94,
+        "iqr": 0.12
+      },
+      "espera_media_s": {
+        "n": 5,
+        "mediana": 0.4,
+        "min": 0.36,
+        "max": 0.43,
+        "iqr": 0.06
+      },
+      "trabalhos_com_erro": 0
+    },
+    "N=2": {
+      "makespan_s": {
+        "n": 5,
+        "mediana": 7.17,
+        "min": 6.54,
+        "max": 14.28,
+        "iqr": 4.54
+      },
+      "debito_videos_min": {
+        "n": 5,
+        "mediana": 16.73,
+        "min": 8.41,
+        "max": 18.36,
+        "iqr": 6.45
+      },
+      "max_videos_em_processamento_simultaneo": {
+        "n": 5,
+        "mediana": 1,
+        "min": 1,
+        "max": 1,
+        "iqr": 0.0
+      },
+      "tempo_medio_conclusao_s": {
+        "n": 5,
+        "mediana": 5.46,
+        "min": 4.97,
+        "max": 9.53,
+        "iqr": 2.78
+      },
+      "tempo_max_conclusao_s": {
+        "n": 5,
+        "mediana": 7.17,
+        "min": 6.54,
+        "max": 14.26,
+        "iqr": 4.52
+      },
+      "espera_media_s": {
+        "n": 5,
+        "mediana": 2.14,
+        "min": 1.91,
+        "max": 2.78,
+        "iqr": 0.63
+      },
+      "trabalhos_com_erro": 0
+    },
+    "N=4": {
+      "makespan_s": {
+        "n": 5,
+        "mediana": 13.68,
+        "min": 13.58,
+        "max": 14.18,
+        "iqr": 0.34
+      },
+      "debito_videos_min": {
+        "n": 5,
+        "mediana": 17.55,
+        "min": 16.92,
+        "max": 17.67,
+        "iqr": 0.43
+      },
+      "max_videos_em_processamento_simultaneo": {
+        "n": 5,
+        "mediana": 1,
+        "min": 1,
+        "max": 1,
+        "iqr": 0.0
+      },
+      "tempo_medio_conclusao_s": {
+        "n": 5,
+        "mediana": 8.65,
+        "min": 8.6,
+        "max": 8.98,
+        "iqr": 0.2
+      },
+      "tempo_max_conclusao_s": {
+        "n": 5,
+        "mediana": 13.67,
+        "min": 13.57,
+        "max": 14.17,
+        "iqr": 0.35
+      },
+      "espera_media_s": {
+        "n": 5,
+        "mediana": 5.4,
+        "min": 5.36,
+        "max": 5.6,
+        "iqr": 0.15
+      },
+      "trabalhos_com_erro": 0
+    },
+    "N=8": {
+      "makespan_s": {
+        "n": 5,
+        "mediana": 28.56,
+        "min": 27.33,
+        "max": 30.33,
+        "iqr": 1.81
+      },
+      "debito_videos_min": {
+        "n": 5,
+        "mediana": 16.8,
+        "min": 15.83,
+        "max": 17.56,
+        "iqr": 1.05
+      },
+      "max_videos_em_processamento_simultaneo": {
+        "n": 5,
+        "mediana": 1,
+        "min": 1,
+        "max": 1,
+        "iqr": 0.0
+      },
+      "tempo_medio_conclusao_s": {
+        "n": 5,
+        "mediana": 16.3,
+        "min": 15.55,
+        "max": 17.2,
+        "iqr": 1.0
+      },
+      "tempo_max_conclusao_s": {
+        "n": 5,
+        "mediana": 28.48,
+        "min": 27.21,
+        "max": 30.2,
+        "iqr": 1.77
+      },
+      "espera_media_s": {
+        "n": 5,
+        "mediana": 12.9,
+        "min": 12.28,
+        "max": 13.58,
+        "iqr": 0.82
+      },
+      "trabalhos_com_erro": 0
+    }
+  },
+  "s3": {
+    "replicas_video_max": {
+      "n": 5,
+      "mediana": 1,
+      "min": 1,
+      "max": 1,
+      "iqr": 0.0
+    },
+    "variacao_replicas_video": {
+      "n": 5,
+      "mediana": 0,
+      "min": 0,
+      "max": 0,
+      "iqr": 0.0
+    },
+    "max_videos_a_espera": {
+      "n": 5,
+      "mediana": 9,
+      "min": 9,
+      "max": 9,
+      "iqr": 0.0
+    },
+    "max_videos_em_processamento_simultaneo": {
+      "n": 5,
+      "mediana": 1,
+      "min": 1,
+      "max": 1,
+      "iqr": 0.0
+    },
+    "cpu_video_medio_na_rajada_pct": {
+      "n": 5,
+      "mediana": 318.96,
+      "min": 312.3,
+      "max": 320.75,
+      "iqr": 6.27
+    },
+    "duracao_rajada_s": {
+      "n": 5,
+      "mediana": 158.84,
+      "min": 143.58,
+      "max": 166.78,
+      "iqr": 18.62
+    },
+    "detalhe": {
+      "rep1": {
+        "servicos_video": [
+          "video_tool"
+        ],
+        "replicas_max_por_servico": {
+          "video_tool": 1
+        }
+      },
+      "rep2": {
+        "servicos_video": [
+          "video_tool"
+        ],
+        "replicas_max_por_servico": {
+          "video_tool": 1
+        }
+      },
+      "rep3": {
+        "servicos_video": [
+          "video_tool"
+        ],
+        "replicas_max_por_servico": {
+          "video_tool": 1
+        }
+      },
+      "rep4": {
+        "servicos_video": [
+          "video_tool"
+        ],
+        "replicas_max_por_servico": {
+          "video_tool": 1
+        }
+      },
+      "rep5": {
+        "servicos_video": [
+          "video_tool"
+        ],
+        "replicas_max_por_servico": {
+          "video_tool": 1
+        }
+      }
+    }
+  },
+  "s4": {
+    "sample_10s_720p.mp4": {
+      "total_s": {
+        "n": 5,
+        "mediana": 3.91,
+        "min": 3.62,
+        "max": 4.02,
+        "iqr": 0.31
+      },
+      "razao_tempo_duracao": {
+        "n": 5,
+        "mediana": 0.39,
+        "min": 0.36,
+        "max": 0.4,
+        "iqr": 0.03
+      }
+    },
+    "02_curto_720p_30s.mp4": {
+      "total_s": {
+        "n": 5,
+        "mediana": 11.52,
+        "min": 10.35,
+        "max": 11.77,
+        "iqr": 1.13
+      },
+      "razao_tempo_duracao": {
+        "n": 5,
+        "mediana": 0.38,
+        "min": 0.34,
+        "max": 0.39,
+        "iqr": 0.04
+      }
+    },
+    "01_demo_1080p_150s.mp4": {
+      "total_s": {
+        "n": 5,
+        "mediana": 134.73,
+        "min": 116.62,
+        "max": 150.27,
+        "iqr": 30.41
+      },
+      "razao_tempo_duracao": {
+        "n": 5,
+        "mediana": 0.9,
+        "min": 0.78,
+        "max": 1.0,
+        "iqr": 0.2
+      }
+    }
+  },
+  "m3": {
+    "referencia_s2_n4_tempo_max_s": 13.67,
+    "curtos_afetados_pct": {
+      "n": 5,
+      "mediana": 100.0,
+      "min": 100.0,
+      "max": 100.0,
+      "iqr": 0.0
+    },
+    "curtos_falhados_por_rep": {
+      "n": 5,
+      "mediana": 0,
+      "min": 0,
+      "max": 0,
+      "iqr": 0.0
+    },
+    "curtos_total_s": {
+      "n": 20,
+      "mediana": 132.81,
+      "min": 122.72,
+      "max": 142.93,
+      "iqr": 7.24
+    },
+    "legendagens_concluidas": "5/5"
+  },
+  "m2": {
+    "commit": "0523102",
+    "responsabilidades_por_unidade": {
+      "video_tool": [
+        "codificacao_ffmpeg",
+        "consumir_trabalhos_video",
+        "efeitos_de_tempo",
+        "efeitos_por_fotograma",
+        "extracao_fotogramas",
+        "legendagem"
+      ]
+    },
+    "unidades_com_video": 1,
+    "max_responsabilidades_numa_unidade": 6,
+    "funcionalidades_por_unidade": {
+      "video_tool": [
+        "edicao",
+        "extracao_fotogramas",
+        "legendagem"
+      ]
+    },
+    "max_funcionalidades_numa_unidade": 3,
+    "python_video": {
+      "por_ficheiro": {
+        "Tools/utils/__init__.py": {
+          "sloc": 0,
+          "funcoes": 0,
+          "cc_max": 0,
+          "cc_media": 0,
+          "mi": 100.0
+        },
+        "Tools/utils/env.py": {
+          "sloc": 10,
+          "funcoes": 0,
+          "cc_max": 0,
+          "cc_media": 0,
+          "mi": 100.0
+        },
+        "Tools/utils/img_handler.py": {
+          "sloc": 12,
+          "funcoes": 6,
+          "cc_max": 2,
+          "cc_media": 1.33,
+          "mi": 100.0
+        },
+        "Tools/utils/rabbit_mq.py": {
+          "sloc": 28,
+          "funcoes": 4,
+          "cc_max": 2,
+          "cc_media": 1.5,
+          "mi": 88.2
+        },
+        "Tools/utils/tool_msg.py": {
+          "sloc": 71,
+          "funcoes": 4,
+          "cc_max": 6,
+          "cc_media": 3.0,
+          "mi": 71.2
+        },
+        "Tools/video/__init__.py": {
+          "sloc": 0,
+          "funcoes": 0,
+          "cc_max": 0,
+          "cc_media": 0,
+          "mi": 100.0
+        },
+        "Tools/video/effects.py": {
+          "sloc": 45,
+          "funcoes": 10,
+          "cc_max": 6,
+          "cc_media": 1.6,
+          "mi": 73.4
+        },
+        "Tools/video/frame_extraction.py": {
+          "sloc": 80,
+          "funcoes": 4,
+          "cc_max": 14,
+          "cc_media": 8.75,
+          "mi": 46.0
+        },
+        "Tools/video/subtitles.py": {
+          "sloc": 64,
+          "funcoes": 4,
+          "cc_max": 7,
+          "cc_media": 3.25,
+          "mi": 62.5
+        },
+        "Tools/video/video.py": {
+          "sloc": 148,
+          "funcoes": 10,
+          "cc_max": 11,
+          "cc_media": 2.8,
+          "mi": 54.7
+        },
+        "Tools/video/video_processor.py": {
+          "sloc": 264,
+          "funcoes": 13,
+          "cc_max": 22,
+          "cc_media": 7.31,
+          "mi": 35.5
+        }
+      },
+      "sloc_total": 722,
+      "funcoes": 55,
+      "cc_media": 3.87,
+      "cc_max": 22,
+      "funcoes_cc_maior_10": 6
+    },
+    "dependencias_python_video": {
+      "modulos": [
+        "__init__",
+        "effects",
+        "env",
+        "frame_extraction",
+        "img_handler",
+        "rabbit_mq",
+        "subtitles",
+        "tool_msg",
+        "video",
+        "video_processor"
+      ],
+      "dependencias": {
+        "tool_msg": [
+          "rabbit_mq"
+        ],
+        "video": [
+          "effects",
+          "env",
+          "video_processor"
+        ],
+        "video_processor": [
+          "effects",
+          "frame_extraction",
+          "subtitles"
+        ]
+      },
+      "fan_out_max": 3,
+      "fan_in_max": 2,
+      "arestas": 7
+    },
+    "dispersao_procedimentos_video": {
+      "trim": {
+        "ficheiros": [
+          "Tools/video/effects.py",
+          "Tools/video/video_processor.py",
+          "frontend/app/dashboard/[pid]/page.tsx",
+          "frontend/components/toolbar/trim-tool.tsx",
+          "frontend/lib/tool-types.ts",
+          "projects/utils/video.js"
+        ],
+        "n_ficheiros": 6,
+        "componentes": [
+          "Tools/video",
+          "frontend",
+          "projects"
+        ]
+      },
+      "speed": {
+        "ficheiros": [
+          "Tools/video/effects.py",
+          "Tools/video/video_processor.py",
+          "frontend/app/dashboard/[pid]/page.tsx",
+          "frontend/components/toolbar/speed-tool.tsx",
+          "frontend/lib/tool-types.ts",
+          "projects/utils/video.js"
+        ],
+        "n_ficheiros": 6,
+        "componentes": [
+          "Tools/video",
+          "frontend",
+          "projects"
+        ]
+      },
+      "subtitles": {
+        "ficheiros": [
+          "Tools/video/video_processor.py",
+          "frontend/app/dashboard/[pid]/page.tsx",
+          "frontend/components/toolbar/subtitles-tool.tsx",
+          "frontend/components/toolbar/toolbar-button.tsx",
+          "frontend/lib/tool-types.ts",
+          "projects/utils/video.js"
+        ],
+        "n_ficheiros": 6,
+        "componentes": [
+          "Tools/video",
+          "frontend",
+          "projects"
+        ]
+      },
+      "extract_frames": {
+        "ficheiros": [
+          "Tools/video/video_processor.py",
+          "frontend/app/dashboard/[pid]/page.tsx",
+          "frontend/components/toolbar/extract-frames-tool.tsx",
+          "frontend/components/toolbar/toolbar-button.tsx",
+          "frontend/lib/tool-types.ts",
+          "projects/routes/projects.js",
+          "projects/utils/video.js"
+        ],
+        "n_ficheiros": 7,
+        "componentes": [
+          "Tools/video",
+          "frontend",
+          "projects"
+        ]
+      }
+    },
+    "efeitos_duplicados": {
+      "efeitos_video": [
+        "brightness",
+        "contrast",
+        "saturation",
+        "rotate",
+        "resize",
+        "binarization",
+        "cut",
+        "border"
+      ],
+      "duplicados_com_ferramenta_imagem": [
+        "brightness",
+        "contrast",
+        "saturation",
+        "rotate",
+        "resize",
+        "binarization",
+        "cut",
+        "border"
+      ],
+      "n_duplicados": 8
+    },
+    "orquestrador": {
+      "projects/routes/projects.js": {
+        "linhas": 2732,
+        "referencias_video": 35,
+        "rotas": 33
+      },
+      "projects/utils/video.js": {
+        "linhas": 227,
+        "referencias_video": 14,
+        "rotas": 0
+      }
+    }
+  },
+  "m1": {
+    "C1": {
+      "mudanca": "C1",
+      "ficheiros_alterados": [
+        "docker-compose.yaml:video_tool"
+      ],
+      "n_ficheiros": 1,
+      "componentes_alterados": [
+        "docker-compose.yaml"
+      ],
+      "unidades_a_reconstruir": [],
+      "unidades_a_reiniciar": [
+        "video_tool"
+      ],
+      "responsabilidades_de_video_interrompidas": [
+        "codificacao_ffmpeg",
+        "consumir_trabalhos_video",
+        "efeitos_de_tempo",
+        "efeitos_por_fotograma",
+        "extracao_fotogramas",
+        "legendagem"
+      ],
+      "n_responsabilidades_interrompidas": 6,
+      "funcionalidades_de_video_interrompidas": [
+        "edicao",
+        "extracao_fotogramas",
+        "legendagem"
+      ],
+      "n_funcionalidades_interrompidas": 3,
+      "commit": "0523102"
+    },
+    "C2": {
+      "mudanca": "C2",
+      "ficheiros_alterados": [
+        "Tools/video/subtitles.py"
+      ],
+      "n_ficheiros": 1,
+      "componentes_alterados": [
+        "Tools/video"
+      ],
+      "unidades_a_reconstruir": [
+        "video_tool"
+      ],
+      "unidades_a_reiniciar": [
+        "video_tool"
+      ],
+      "responsabilidades_de_video_interrompidas": [
+        "codificacao_ffmpeg",
+        "consumir_trabalhos_video",
+        "efeitos_de_tempo",
+        "efeitos_por_fotograma",
+        "extracao_fotogramas",
+        "legendagem"
+      ],
+      "n_responsabilidades_interrompidas": 6,
+      "funcionalidades_de_video_interrompidas": [
+        "edicao",
+        "extracao_fotogramas",
+        "legendagem"
+      ],
+      "n_funcionalidades_interrompidas": 3,
+      "commit": "0523102"
+    },
+    "C3": {
+      "mudanca": "C3",
+      "ficheiros_alterados": [
+        "Tools/video/effects.py",
+        "frontend/app/dashboard/[pid]/page.tsx",
+        "frontend/components/toolbar/sepia-tool.tsx",
+        "frontend/components/toolbar/toolbar.tsx",
+        "frontend/lib/tool-types.ts",
+        "projects/utils/video.js"
+      ],
+      "n_ficheiros": 6,
+      "componentes_alterados": [
+        "Tools/video",
+        "frontend",
+        "projects"
+      ],
+      "unidades_a_reconstruir": [
+        "frontend",
+        "projects",
+        "video_tool"
+      ],
+      "unidades_a_reiniciar": [
+        "frontend",
+        "projects",
+        "video_tool"
+      ],
+      "responsabilidades_de_video_interrompidas": [
+        "codificacao_ffmpeg",
+        "consumir_trabalhos_video",
+        "efeitos_de_tempo",
+        "efeitos_por_fotograma",
+        "extracao_fotogramas",
+        "legendagem"
+      ],
+      "n_responsabilidades_interrompidas": 6,
+      "funcionalidades_de_video_interrompidas": [
+        "edicao",
+        "extracao_fotogramas",
+        "legendagem"
+      ],
+      "n_funcionalidades_interrompidas": 3,
+      "commit": "3312d3e"
+    }
+  }
+}

@@ -262,6 +262,11 @@ def m3(args):
     Na base a legendagem corre no `video_tool`; depois do refactoring, indica-se o
     serviço que a faz com --servico-legendas. Mede-se o que acontece aos 4 vídeos
     curtos (sem legendas) pedidos durante a legendagem.
+
+    O serviço é terminado 5 s depois de a legendagem passar --m3-progresso (55 %, D33):
+    a legendagem tem duas etapas, normalização (0–50 %) e legendagem (50–100 %), e aos
+    55 % o trabalho já está na etapa da legendagem, tanto na base como depois do
+    refactoring (onde a normalização corre no video_effects).
     """
     w = Writer(args.out, "m3")
     svc = args.servico_legendas
@@ -272,12 +277,13 @@ def m3(args):
         if new:
             ev.writerow(["rep", "evento", "epoch", "detalhe"])
         for rep in range(1, args.reps + 1):
-            log(f"M3 rep {rep}/{args.reps} (serviço terminado: {svc})")
+            log(f"M3 rep {rep}/{args.reps} (serviço terminado: {svc}, a {args.m3_progresso:g} %)")
             longo = prepare_user(f"m3r{rep}-legendas", VIDEO_FALA, LEGENDAS)
             curtos = [prepare_user(f"m3r{rep}-curto{i}", VIDEO_10S, BRILHO) for i in range(1, 5)]
             mon = Monitor(w.dir, f"m3_rep{rep}", args.intervalo).start()
             longo.process()
-            wait_until(lambda: (longo.job.last_percent or 0) >= 20 or longo.job._done.is_set(), args.timeout)
+            wait_until(lambda: (longo.job.last_percent or 0) >= args.m3_progresso or longo.job._done.is_set(),
+                       args.timeout)
             submit_together(curtos)
             time.sleep(5)
             t_kill = time.time()
@@ -315,6 +321,8 @@ def main():
     p.add_argument("--calma-depois", type=float, default=120)
     p.add_argument("--servico-legendas", default="video_tool", help="serviço Compose que faz a legendagem (M3)")
     p.add_argument("--m3-reinicio", type=float, default=5, help="segundos entre terminar e voltar a arrancar (M3)")
+    p.add_argument("--m3-progresso", type=float, default=55,
+                   help="progresso da legendagem (%%) a partir do qual se conta para a terminar (M3; D33)")
     p.add_argument("--servicos-log", nargs="+", default=["video_tool", "projects"],
                    help="serviços Compose cujos logs se guardam em cada cenário (após o refactoring, os serviços de vídeo novos)")
     args = p.parse_args()

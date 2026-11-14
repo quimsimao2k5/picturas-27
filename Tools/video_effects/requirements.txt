@@ -1,0 +1,2 @@
+# Shared with every image through Tools/utils/requirements.txt (pika, Pillow, pytz, python-dotenv).
+# No extra dependencies for the effects stage.

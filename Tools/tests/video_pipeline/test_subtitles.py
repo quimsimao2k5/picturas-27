@@ -8,7 +8,7 @@ import pytest
 from PIL import Image, ImageChops
 
 import subtitles
-from video_processor import process_video, probe
+from pipeline import process_video, probe
 
 CAPTIONS = [{"procedure": "subtitles", "params": {}}]
 
@@ -86,21 +86,13 @@ def test_model_failure_does_not_publish_partial_output(sample_video, tmp_path, m
     assert not list(tmp_path.glob("captions-*"))
 
 
-def test_captions_clamp_times_and_remove_markup(tmp_path):
-    p = tmp_path / "captions.srt"
-    segments = [SimpleNamespace(start=-1, end=5, text="Hello {\\an8}<b> world\n\nagain"),
-                SimpleNamespace(start=5, end=7, text="outside")]
-    assert subtitles.write_captions(segments, p, 4, lambda _: None) == 1
-    text = p.read_text()
-    assert "00:00:00,000 --> 00:00:04,000" in text
-    assert "{" not in text and "<" not in text and "outside" not in text
-
-
 @pytest.mark.parametrize("following,expected_duration", [
     ({"procedure": "trim", "params": {"start": 3, "end": 4}}, 1),
     ({"procedure": "speed", "params": {"factor": 0.5}}, 3),
     ({"procedure": "speed", "params": {"factor": 2}}, 2),
 ])
+
+
 def test_preview_after_temporal_edit(sample_video, tmp_path, monkeypatch,
                                      following, expected_duration):
     """Preview must keep source frames needed by edits after the captions."""
@@ -137,10 +129,3 @@ def test_encoder_failure_preserves_previous_output(sample_video, tmp_path, monke
         process_video(sample_video, str(out), CAPTIONS)
     assert out.read_bytes() == b"previous successful output"
     assert not list(tmp_path.glob("captions-*"))
-
-
-@pytest.mark.parametrize("start,end", [(float("nan"), 1), (0, float("inf"))])
-def test_invalid_recognition_timestamps_are_rejected(tmp_path, start, end):
-    segment = SimpleNamespace(start=start, end=end, text="Hello")
-    with pytest.raises(ValueError, match="invalid timestamps"):
-        subtitles.write_captions([segment], tmp_path / "captions.srt", 4, lambda _: None)

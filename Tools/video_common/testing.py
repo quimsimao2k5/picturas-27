@@ -1,11 +1,7 @@
-import os
+"""Test fixtures shared by the video services (imported by each tests/conftest.py)."""
 import subprocess
-import sys
 
 import pytest
-
-# allows "import effects" / "import video_processor" as in the container
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 
 def make_video(path, seconds=4, size="320x240", fps=25, audio=True, vcodec="libx264"):
