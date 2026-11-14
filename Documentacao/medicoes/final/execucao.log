@@ -1,0 +1,116 @@
+[16:10:53] === aquecimento ===
+[16:10:53] Aquecimento: legendagem do vídeo de fala (descarrega o modelo Whisper) e um brilho no vídeo de 10 s
+[16:13:56]   aquec-legendas: total=177.18533301353455 erro=None
+[16:14:01]   aquec-brilho: total=3.893016815185547 erro=None
+[16:14:01]   logs de video_effects, video_subtitles, video_frames, projects guardados em aquecimento/logs_aquecimento.txt
+[16:14:01] === aquecimento concluído em 3.1 min ===
+[16:14:01] === s4 ===
+[16:14:01] S4 rep 1/5: sample_10s_720p.mp4
+[16:14:18] S4 rep 1/5: 02_curto_720p_30s.mp4
+[16:14:43] S4 rep 1/5: 01_demo_1080p_150s.mp4
+[16:17:44] S4 rep 2/5: sample_10s_720p.mp4
+[16:17:59] S4 rep 2/5: 02_curto_720p_30s.mp4
+[16:18:21] S4 rep 2/5: 01_demo_1080p_150s.mp4
+[16:20:52] S4 rep 3/5: sample_10s_720p.mp4
+[16:21:07] S4 rep 3/5: 02_curto_720p_30s.mp4
+[16:21:28] S4 rep 3/5: 01_demo_1080p_150s.mp4
+[16:23:59] S4 rep 4/5: sample_10s_720p.mp4
+[16:24:13] S4 rep 4/5: 02_curto_720p_30s.mp4
+[16:24:34] S4 rep 4/5: 01_demo_1080p_150s.mp4
+[16:26:54] S4 rep 5/5: sample_10s_720p.mp4
+[16:27:09] S4 rep 5/5: 02_curto_720p_30s.mp4
+[16:27:30] S4 rep 5/5: 01_demo_1080p_150s.mp4
+[16:29:38]   logs de video_effects, video_subtitles, video_frames, projects guardados em s4/logs_s4.txt
+[16:29:38] === s4 concluído em 15.6 min ===
+[16:29:38] === s1 ===
+[16:29:38] S1 rep 1/5: controlo (vídeo curto sozinho)
+[16:29:53] S1 rep 1/5: legendagem + vídeo curto
+[16:32:08]   curto: sozinho=3.5s com legendagem=16.0s (espera 6.5s)
+[16:32:18] S1 rep 2/5: controlo (vídeo curto sozinho)
+[16:32:33] S1 rep 2/5: legendagem + vídeo curto
+[16:34:58]   curto: sozinho=3.6s com legendagem=17.4s (espera 6.3s)
+[16:35:08] S1 rep 3/5: controlo (vídeo curto sozinho)
+[16:35:23] S1 rep 3/5: legendagem + vídeo curto
+[16:37:41]   curto: sozinho=3.9s com legendagem=12.3s (espera 4.5s)
+[16:37:51] S1 rep 4/5: controlo (vídeo curto sozinho)
+[16:38:07] S1 rep 4/5: legendagem + vídeo curto
+[16:40:36]   curto: sozinho=3.9s com legendagem=18.8s (espera 6.9s)
+[16:40:46] S1 rep 5/5: controlo (vídeo curto sozinho)
+[16:41:01] S1 rep 5/5: legendagem + vídeo curto
+Exception in thread Thread-1841 (_loop):
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/threading.py", line 1043, in _bootstrap_inner
+    self.run()
+    ~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/threading.py", line 994, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chico/Desktop/PICTURAS_CODIGO/fase2/picturas-27/Documentacao/medicoes/scripts/monitor.py", line 136, in _loop
+    for row in docker_stats():
+               ~~~~~~~~~~~~^^
+  File "/Users/chico/Desktop/PICTURAS_CODIGO/fase2/picturas-27/Documentacao/medicoes/scripts/monitor.py", line 73, in docker_stats
+    "cpu_pct": float(d.get("CPUPerc", "0%").rstrip("%") or 0),
+               ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '--'
+[16:43:03]   curto: sozinho=3.5s com legendagem=17.1s (espera 9.6s)
+[16:43:13]   logs de video_effects, video_subtitles, video_frames, projects guardados em s1/logs_s1.txt
+[16:43:13] === s1 concluído em 13.6 min ===
+[16:43:13] === s2 ===
+[16:43:13] S2 N=1 rep 1/5
+[16:43:18]   makespan=4.0s débito=15.02 vídeos/min
+[16:43:28] S2 N=1 rep 2/5
+[16:43:33]   makespan=3.8s débito=15.99 vídeos/min
+[16:43:44] S2 N=1 rep 3/5
+[16:43:48]   makespan=3.8s débito=15.63 vídeos/min
+[16:43:58] S2 N=1 rep 4/5
+[16:44:03]   makespan=3.8s débito=15.93 vídeos/min
+[16:44:13] S2 N=1 rep 5/5
+[16:44:18]   makespan=4.1s débito=14.60 vídeos/min
+[16:44:28] S2 N=2 rep 1/5
+[16:44:39]   makespan=7.9s débito=15.24 vídeos/min
+[16:44:49] S2 N=2 rep 2/5
+[16:44:59]   makespan=8.3s débito=14.39 vídeos/min
+[16:45:09] S2 N=2 rep 3/5
+[16:45:17]   makespan=6.0s débito=20.16 vídeos/min
+[16:45:27] S2 N=2 rep 4/5
+[16:45:36]   makespan=6.0s débito=19.89 vídeos/min
+[16:45:46] S2 N=2 rep 5/5
+[16:45:54]   makespan=5.6s débito=21.42 vídeos/min
+[16:46:04] S2 N=4 rep 1/5
+[16:46:18]   makespan=11.8s débito=20.28 vídeos/min
+[16:46:28] S2 N=4 rep 2/5
+[16:46:45]   makespan=14.1s débito=17.04 vídeos/min
+[16:46:55] S2 N=4 rep 3/5
+[16:47:12]   makespan=14.7s débito=16.37 vídeos/min
+[16:47:23] S2 N=4 rep 4/5
+[16:47:42]   makespan=15.3s débito=15.73 vídeos/min
+[16:47:52] S2 N=4 rep 5/5
+[16:48:08]   makespan=13.1s débito=18.30 vídeos/min
+[16:48:18] S2 N=8 rep 1/5
+[16:48:47]   makespan=25.1s débito=19.14 vídeos/min
+[16:48:57] S2 N=8 rep 2/5
+[16:49:31]   makespan=28.6s débito=16.81 vídeos/min
+[16:49:41] S2 N=8 rep 3/5
+[16:50:09]   makespan=22.3s débito=21.51 vídeos/min
+[16:50:19] S2 N=8 rep 4/5
+[16:50:50]   makespan=25.5s débito=18.80 vídeos/min
+[16:51:00] S2 N=8 rep 5/5
+[16:51:36]   makespan=30.2s débito=15.88 vídeos/min
+[16:51:46]   logs de video_effects, video_subtitles, video_frames, projects guardados em s2/logs_s2.txt
+[16:51:46] === s2 concluído em 8.6 min ===
+[16:51:46] === s3 ===
+[16:51:46] S3 rep 1/5
+[16:57:23] S3 rep 2/5
+[17:03:00] S3 rep 3/5
+[17:09:01] S3 rep 4/5
+[17:14:40] S3 rep 5/5
+[17:20:11]   logs de video_effects, video_subtitles, video_frames, projects guardados em s3/logs_s3.txt
+[17:20:11] === s3 concluído em 28.4 min ===
+[17:20:11] === m3 ===
+[17:20:11] M3 rep 1/5 (serviço terminado: video_subtitles, a 55 %)
+[17:23:03] M3 rep 2/5 (serviço terminado: video_subtitles, a 55 %)
+[17:26:03] M3 rep 3/5 (serviço terminado: video_subtitles, a 55 %)
+[17:29:03] M3 rep 4/5 (serviço terminado: video_subtitles, a 55 %)
+[17:32:28] M3 rep 5/5 (serviço terminado: video_subtitles, a 55 %)
+[17:36:02]   logs de video_effects, video_subtitles, video_frames, projects guardados em m3/logs_m3.txt
+[17:36:02] === m3 concluído em 15.9 min ===

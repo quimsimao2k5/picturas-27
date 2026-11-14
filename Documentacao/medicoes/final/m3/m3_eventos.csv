@@ -1,0 +1,31 @@
+rep,evento,epoch,detalhe
+1,kill,1794676912.878,"Container picturas-video_subtitles-1 Killing 
+ Container picturas-video_subtitles-1 Killed"
+1,start,1794676918.937,"Container picturas-rabbitmq-1 Waiting 
+ Container picturas-rabbitmq-1 Healthy 
+ Container picturas-video_subtitles-1 Starting 
+ Container picturas-video_subtitles-1 Started"
+2,kill,1794677085.559,"Container picturas-video_subtitles-1 Killing 
+ Container picturas-video_subtitles-1 Killed"
+2,start,1794677091.591,"Container picturas-rabbitmq-1 Waiting 
+ Container picturas-rabbitmq-1 Healthy 
+ Container picturas-video_subtitles-1 Starting 
+ Container picturas-video_subtitles-1 Started"
+3,kill,1794677266.682,"Container picturas-video_subtitles-1 Killing 
+ Container picturas-video_subtitles-1 Killed"
+3,start,1794677272.463,"Container picturas-rabbitmq-1 Waiting 
+ Container picturas-rabbitmq-1 Healthy 
+ Container picturas-video_subtitles-1 Starting 
+ Container picturas-video_subtitles-1 Started"
+4,kill,1794677462.785,"Container picturas-video_subtitles-1 Killing 
+ Container picturas-video_subtitles-1 Killed"
+4,start,1794677468.909,"Container picturas-rabbitmq-1 Waiting 
+ Container picturas-rabbitmq-1 Healthy 
+ Container picturas-video_subtitles-1 Starting 
+ Container picturas-video_subtitles-1 Started"
+5,kill,1794677667.545,"Container picturas-video_subtitles-1 Killing 
+ Container picturas-video_subtitles-1 Killed"
+5,start,1794677673.586,"Container picturas-rabbitmq-1 Waiting 
+ Container picturas-rabbitmq-1 Healthy 
+ Container picturas-video_subtitles-1 Starting 
+ Container picturas-video_subtitles-1 Started"

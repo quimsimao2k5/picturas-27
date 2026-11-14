@@ -1,15 +1,15 @@
 # 📝 Exercício 6 (Bloco 1) — Identificação e Comparação de Padrões Arquiteturais
 ### Fase 2: Melhoria de Requisitos Não Funcionais do PictuRAS
 
-> **RASCUNHO para revisão da equipa** (proposto pelo agente de IA a 11/11/2026, a partir do código, da configuração e da medição inicial completa, terminada às 15:56). Os pontos marcados com ⚠️ dependem de uma decisão da equipa.
+> Diagnóstico arquitetural da **solução de base** (commit `0523102`), antes do *refactoring*. Preparado com apoio de um agente de IA a partir do código, da configuração e da medição inicial, para revisão final da equipa (ver «Utilização de IA»). O estado das hipóteses sobre as alternativas escolhidas foi atualizado com a medição final (secção 2.6).
 
 ---
 
 **Equipa:** PL5-G7  
 **Elementos:** PG63958 Francisco Dias · PG65437 Rodrigo Rocha · PG64026 Rodrigo Fernandes · PG65424 Luís Miguel · PG63986 Joaquim Cunha  
 **Commit de partida:** `0523102` (`git rev-parse HEAD` em `picturas-um/picturas-27`: `052310226c51fa57a17101c7bd1ad795674aac95`; código igual a `b638a13`, só acrescenta documentação)  
-**Data da análise:** 2026-11-11  
-**Versão deste documento:** v0.2 (rascunho, com a medição inicial)  
+**Data da análise:** 2026-11-11 (medição inicial); revisão final a 2026-11-14  
+**Versão deste documento:** v1.0  
 **Versões usadas:** enunciado 1.1 · template 1.1
 
 ---
@@ -21,7 +21,7 @@
 | Commit de partida | `0523102` |
 | Comando(s) de arranque | Limpeza dos dados da instância (`docker compose down --remove-orphans` e remoção dos volumes de dados, mantendo `picturas_whisper_models`), depois `docker compose up -d --build`. Automatizado em `Documentacao/medicoes/medicao_inicial.command` (lógica em `lancar_medicao.sh`) |
 | Ambiente (SO, CPU, RAM, versões de Docker e Compose) | macOS, `Mac14,7` (MacBook Pro 13", 2022), Apple M2, 8 núcleos, 8 GiB; Docker 29.8.0 com 8 CPU, 6 GB de memória e 1 GB de swap atribuídos; Python 3.13.7 para os scripts de medição. Registo completo em `Documentacao/medicoes/baseline/ambiente.json` |
-| Projeto de teste (nº de imagens e de vídeos, amostras usadas) | ⚠️ Projeto misto (imagens + vídeos) a criar na aplicação para as capturas. Nas medições: um vídeo por projeto (`samples/video/sample_10s_720p.mp4`, `speech_mandela_177s_1080p.webm`, e `02_curto_720p_30s.mp4` e `01_demo_1080p_150s.mp4` em `Documentacao/medicoes/videos/`) |
+| Projeto de teste (nº de imagens e de vídeos, amostras usadas) | Projeto misto do teste de ponta a ponta (caso B: uma imagem 640×480 e o vídeo `sample_10s_720p.mp4`, pipeline brilho → corte 1–6 s → legendas; `Documentacao/testes_regressao/ponta_a_ponta.py`). Nas medições: um vídeo por projeto (`samples/video/sample_10s_720p.mp4`, `speech_mandela_177s_1080p.webm`, e `02_curto_720p_30s.mp4` e `01_demo_1080p_150s.mp4` em `Documentacao/medicoes/videos/`) |
 | Problemas encontrados ao lançar | (1) O nome de projeto Compose (`picturas`) é o mesmo da Fase 1: os volumes antigos têm de ser apagados antes do primeiro arranque (aviso do commit `0523102`). (2) O primeiro `--build` descarrega e instala as dependências de ~30 imagens (≈ 8 min nesta máquina) e ocupa vários GB. (3) Nenhum outro problema: API disponível às 14:31, todos os serviços `Up` |
 
 **Como é orquestrado o processamento em lote de imagens e de vídeos:**
@@ -43,25 +43,25 @@ No *Apply*, o frontend chama `POST …/process`; o `projects` valida o pipeline 
 | Diretrizes da Fase 2 | Versão 1, 4/11/2026 | Âmbito, ideias indicativas, princípios |
 | Slides da aula 11 (*Arch. Styles*) | JM Fernandes | Estilos: *pipe & filter*, *batch-sequential*, *publish-subscribe*, *client-server* |
 | `RAS_support_doc_architectural_patterns_PT.md` | Exercício 6 | Catálogo de padrões e níveis de análise |
-| `arquitetura_global.puml` | Equipa docente, 5/11/2026 | Vista da arquitetura global (secção 1.2) |
+| `arquitetura_global.puml` | Equipa docente, 5/11/2026 | Base da vista da arquitetura global, adaptada na secção 1.2 |
+| Teste de ponta a ponta | `Documentacao/testes_regressao/baseline/` (12/11/2026) | Comportamento observado do processamento de imagens e vídeos na base (15/15 verificações) |
 | Código e configuração | `0523102` | Evidências EV-01 a EV-21, EV-24, EV-25 |
 | Medição inicial | `Documentacao/medicoes/baseline/` (11/11/2026) | Evidências medidas (EV-22, EV-23, EV-26 a EV-30) |
 
 ### 1.2 Vista da arquitetura global
 
-> ⚠️ Q9 por decidir: usar a vista dos docentes tal como está, adaptá-la ou fazer uma nossa. Até lá usa-se a vista dos docentes, com citação.
+![Vista da arquitetura global com o caminho do vídeo destacado e as fragilidades medidas](arquitetura_global_video.svg)
 
-![Vista da arquitetura global com o caminho do vídeo destacado](../../../enunciados/arquitetura_global_plantuml.svg)
-
-**Ferramenta / notação:** PlantUML, diagrama de componentes (fonte: `arquitetura_global.puml`, equipa docente).
+**Ferramenta / notação:** diagrama de componentes em Mermaid (fonte: `arquitetura_global_video.mmd`). **Adaptado** da vista da equipa docente (`arquitetura_global.puml`, 5/11/2026): mantém os componentes, as filas, as ligações e as cores do original; acrescenta, a vermelho, as fragilidades da base com o resultado da medição inicial (F1–F3, F7; secção 3 do `CONTEXTO_E_DECISOES_FASE2.md`). Foi redesenhada em Mermaid para usar a mesma ferramenta do diagrama de sequência.
 
 | **Elemento (cor, forma ou estilo)** | **Significado** |
 |-------------------------------------|-----------------|
 | Seta laranja grossa | Caminho do vídeo |
 | Seta cinzenta | Padrão global / caminho de imagens |
 | Linha azul tracejada | Acesso ao volume partilhado `image_data` |
-| Componente laranja | `video_tool` (worker único) |
-| Pacote amarelo | RabbitMQ: exchange direto `picturas` e filas duráveis |
+| Componente e fila laranja | `video_tool` (worker único) e `video_queue` |
+| Caixa amarela | RabbitMQ: exchange direto `picturas` e filas duráveis |
+| Caixa vermelha, ligada a tracejado | Fragilidade da base e o que a mediu (S1–S3, M1–M3) ou a evidencia (`EV-nn`) |
 
 ### 1.3 Diagrama de sequência de um pedido completo
 
@@ -142,7 +142,7 @@ No *Apply*, o frontend chama `POST …/process`; o `projects` valida o pipeline 
 | Benefício | Uma só mensagem por vídeo simplifica o orquestrador para o vídeo (sem avançar cadeia) | Manutenibilidade — modificabilidade | EV-07 |
 | Desafio | Um consumidor, `prefetch_count=1`, sem réplicas: os vídeos de todos os utilizadores são processados um de cada vez | Eficiência — capacidade | EV-03, EV-09; débito constante de 16–18 vídeos/min de 1 a 8 utilizadores, nunca mais de 1 vídeo em processamento (EV-27) |
 | Desafio | A legendagem (Whisper em CPU, 2 threads) corre no mesmo worker e ocupa-o durante minutos | Eficiência — capacidade, comportamento temporal | EV-13; legendagem do vídeo de 177 s em 142 s (mediana); um vídeo de 10 s passa de 3,9 s para 144,7 s quando pedido durante uma legendagem (EV-26) |
-| Desafio | Todas as responsabilidades de vídeo (6) numa única unidade implantável: mudar a legendagem obriga a reconstruir e reiniciar o serviço que faz todos os vídeos | Manutenibilidade — modularidade, modificabilidade | EV-23 (M2, M1) |
+| Desafio | As 3 funcionalidades de vídeo (edição, legendagem, extração de fotogramas; 6 responsabilidades técnicas) numa única unidade implantável: mudar a legendagem obriga a reconstruir e reiniciar o serviço que faz todos os vídeos | Manutenibilidade — modularidade, modificabilidade | EV-23 (M2), EV-31 (M1) |
 | Desafio | Os 8 efeitos de fotograma estão duplicados (`Tools/video/effects.py` e as 8 ferramentas de imagem) | Manutenibilidade — modificabilidade, reutilização | EV-12, EV-23 |
 | Desafio | `heartbeat=0`: o broker não deteta um worker bloqueado | Fiabilidade — disponibilidade | EV-09; H-07 |
 | Desafio | Processamento fotograma a fotograma em Python, num só processo | Eficiência — utilização de recursos | EV-11; H-08 |
@@ -216,12 +216,15 @@ O vídeo herda a entrada única, a autenticação, o desacoplamento por filas du
 | EV-26 | Medição | `baseline/s1/` (S1, 5 repetições) | Vídeo de 10 s: 3,9 s sozinho; 144,7 s se pedido durante uma legendagem, dos quais 141,0 s à espera (mín. 126,6 s, máx. 168,7 s); legendagem do vídeo de 177 s em 141,8 s |
 | EV-27 | Medição | `baseline/s2/` (S2, 5 repetições por nível) | Débito (mediana): 15,9 / 16,7 / 17,6 / 16,8 vídeos/min com 1 / 2 / 4 / 8 utilizadores; tempo máximo de conclusão 3,8 / 7,2 / 13,7 / 28,5 s; nunca mais de 1 vídeo em processamento; 0 erros em 75 trabalhos |
 | EV-28 | Medição | `baseline/s3/` (S3, 5 repetições) | Rajada de 8 vídeos curtos + 1 legendagem: 1 réplica do `video_tool` durante todo o cenário (variação 0); até 9 vídeos à espera e 1 em processamento; CPU média do `video_tool` na rajada 319 % de 800 % disponíveis; rajada concluída em 158,8 s |
-| EV-29 | Medição | `baseline/m3/` (M3, 5 repetições; `m3_eventos.csv`; `logs_m3.txt`) | `video_tool` terminado ≈ 33 s depois de pedida a legendagem e arrancado 5 s depois: a mesma mensagem foi reentregue e a legendagem refeita do início (5/5 concluídas); os 4 vídeos curtos pedidos entretanto foram todos atrasados (100 %, tempo de conclusão mediano 132,8 s contra 13,7 s em S2 com N = 4), nenhum falhou |
-| EV-31 | Medição | `medicoes/baseline/m1/` (M1, 12/11/2026; sonda C3 em `C3_sonda.patch`) | Impacto de três mudanças de referência na base: **C1** (trocar o modelo Whisper, configuração) e **C2** (corrigir `subtitles.py`) obrigam a reiniciar o `video_tool` e interrompem as **6** responsabilidades de vídeo; **C3** (efeito de vídeo novo, sépia) toca **6 ficheiros em 3 componentes** (`Tools/video`, `projects`, `frontend`), obriga a reconstruir 3 unidades e também interrompe as 6 responsabilidades, alterando o ficheiro dos efeitos existentes (`effects.py`) |
+| EV-29 | Medição | `baseline/m3/` (M3, 5 repetições, 12/11/2026; `m3_eventos.csv`; `logs_m3.txt`) | `video_tool` terminado quando a legendagem passou os 55 % (≈ 82 s depois de pedida, já na etapa de reconhecimento de fala) e arrancado 5 s depois: a mesma mensagem foi reentregue e a legendagem refeita do início (5/5 concluídas); os 4 vídeos curtos pedidos entretanto foram todos atrasados (100 %, tempo de conclusão mediano 131,5 s contra 13,7 s em S2 com N = 4), nenhum falhou. A primeira medição, com a falha aos 20 % (`baseline/m3_20pct/`), deu o mesmo resultado (100 %, 132,8 s) |
+| EV-31 | Medição | `medicoes/baseline/m1/` (M1, 12/11/2026; sonda C3 em `C3_sonda.patch`) | Impacto de três mudanças de referência na base: **C1** (trocar o modelo Whisper, configuração) e **C2** (corrigir `subtitles.py`) obrigam a reiniciar o `video_tool` e interrompem as **3** funcionalidades de vídeo (6 responsabilidades técnicas); **C3** (efeito de vídeo novo, sépia) toca **6 ficheiros em 3 componentes** (`Tools/video`, `projects`, `frontend`), obriga a reconstruir 3 unidades e também interrompe as 3 funcionalidades, alterando o ficheiro dos efeitos existentes (`effects.py`) |
 | EV-30 | Medição | Verificação cruzada: `baseline/*/logs_*.txt` | Os 175 trabalhos dos CSV têm o mesmo número de conclusões no log do `video_tool`; o tempo de processamento medido pelos scripts difere do registado pelo worker em −0,4 a −0,03 s por trabalho (exceto M3, onde o worker só regista a tentativa bem-sucedida) |
-| EV-23 | Medição | `Documentacao/medicoes/baseline/m2/m2_modularidade.json` | 1 unidade implantável com as 6 responsabilidades de vídeo; Python de vídeo: 722 SLOC, CC máx. 22 (`video_processor.py`), 6 funções com CC > 10; 8 efeitos duplicados; procedimentos de vídeo espalhados por 3 componentes (6–7 ficheiros cada) |
+| EV-23 | Medição | `Documentacao/medicoes/baseline/m2/m2_modularidade.json` | 1 unidade implantável com as 3 funcionalidades de vídeo (6 responsabilidades técnicas); Python de vídeo: 722 SLOC, CC máx. 22 (`video_processor.py`), 6 funções com CC > 10; 8 efeitos duplicados; procedimentos de vídeo espalhados por 3 componentes (6–7 ficheiros cada) |
 | EV-24 | Configuração | `docker-compose.yaml` (`image_data:/app/images` no `projects` e em todas as ferramentas, ex.: linhas 151, 240, 253, 272, 286) | Volume partilhado entre o orquestrador e os workers |
 | EV-25 | Configuração | `Tools/video/Dockerfile`; `Tools/brightness/Dockerfile` | Contexto `./Tools`; cada imagem copia `Tools/utils`; o `video_tool` instala ffmpeg e fontes |
+| EV-32 | Medição (final) | `Documentacao/medicoes/final/` (14/11/2026, commit `67d222c`, mesma máquina e método) | Depois de ALT-1 + ALT-2: S1 — espera do vídeo de 10 s durante uma legendagem 6,5 s (base 141,0 s); S2 — até 3 vídeos em simultâneo, débito com N = 8 de 18,8 vídeos/min (base 16,8); S3 — `video_effects` sobe de 1 para 3 réplicas em 6–11 s e volta a 1, rajada em 172,1 s (base 158,8 s); S4 — tempo por vídeo igual à base (pior caso +2,4 %); 0 erros em todos os cenários |
+| EV-33 | Medição (final) | `final/m3/` | Com o `video_subtitles` terminado aos 55 %: 0 % dos vídeos curtos afetados (mediana; 3 repetições com 0 %, 2 com 75 %, por atraso no arranque de réplicas e disputa de CPU, sem erros); 5/5 legendagens concluídas |
+| EV-34 | Medição (final) | `final/m1/`, `final/m2/` | M2: 1 funcionalidade de vídeo por serviço (`video_effects`, `video_subtitles`, `video_frames`); M1: C1 e C2 só reiniciam o `video_subtitles` e interrompem 1 funcionalidade; C3 continua a tocar 6 ficheiros em 3 componentes, mas interrompe só a edição |
 
 | **ID** | **Hipótese** | **Como confirmar ou refutar** | **Estado** |
 |--------|--------------|-------------------------------|------------|
@@ -233,10 +236,10 @@ O vídeo herda a entrada única, a autenticação, o desacoplamento por filas du
 | H-06 | Uma ferramenta de imagem que caia a meio perde o trabalho | Terminar uma ferramenta de imagem durante o processamento | Por confirmar (fora do par A) |
 | H-07 | Com `heartbeat=0`, um `video_tool` bloqueado não é detetado e a mensagem nunca é reentregue | Simular um bloqueio do worker | Por confirmar |
 | H-08 | O custo do vídeo é dominado pelo laço por fotograma em Python num só processo | Perfilar o `video_tool` (tempo por fase) | Por confirmar |
-| H-09 | Em ALT-1, separar as etapas acrescenta tempo (mensagens e ficheiros intermédios), mas permite dar recursos a cada etapa | S4 e S1 na medição final | Por confirmar |
-| H-10 | Em ALT-2, com réplicas e uma fila própria para a legendagem, os vídeos curtos deixam de esperar pela legendagem e o débito cresce com a carga | S1, S2 e S3 na medição final | Por confirmar |
-| H-11 | Em ALT-1, uma falha na legendagem não afeta os outros vídeos | M3 na medição final | Por confirmar |
-| H-12 | Em ALT-1, mudar a legendagem só reconstrói e reinicia o serviço de legendagem | M1 e M2 na medição final | Por confirmar |
+| H-09 | Em ALT-1, separar as etapas acrescenta tempo (mensagens e ficheiros intermédios), mas permite dar recursos a cada etapa | S4 e S1 na medição final | **Confirmada:** o custo extra é desprezável (S4, pior caso +2,4 %) e cada serviço tem limites e réplicas próprios (EV-32) |
+| H-10 | Em ALT-2, com réplicas e uma fila própria para a legendagem, os vídeos curtos deixam de esperar pela legendagem e o débito cresce com a carga | S1, S2 e S3 na medição final | **Confirmada em parte:** a espera cai de 141 s para 6,5 s e passa a haver até 3 vídeos em simultâneo, mas o débito só sobe 12 % (16,8 → 18,8 vídeos/min), porque numa só máquina as réplicas disputam os mesmos 8 CPU (EV-32) |
+| H-11 | Em ALT-1, uma falha na legendagem não afeta os outros vídeos | M3 na medição final | **Confirmada** na mediana (0 % afetados, nenhum erro); a variação entre repetições deve-se ao arranque das réplicas, não à falha (EV-33) |
+| H-12 | Em ALT-1, mudar a legendagem só reconstrói e reinicia o serviço de legendagem | M1 e M2 na medição final | **Confirmada** (EV-34) |
 | H-13 | Em ALT-3, cada tarefa paga um custo de arranque, mas o motor de workflow dá paralelismo e novas tentativas | Não avaliado (alternativa não escolhida) | Por confirmar |
 
 ---
@@ -287,7 +290,7 @@ O vídeo herda a entrada única, a autenticação, o desacoplamento por filas du
 
 ### 3.3 Matriz de comparação de padrões
 
-> Escala: **Alto / Médio / Baixo** (nível de qualidade que o padrão suporta). As colunas do padrão global e do vídeo baseiam-se em evidências do código e da medição inicial; as das alternativas são hipóteses (`H-09` a `H-13`), a confirmar na medição final da alternativa escolhida.
+> Escala: **Alto / Médio / Baixo** (nível de qualidade que o padrão suporta). As colunas do padrão global e do vídeo baseiam-se em evidências do código e da medição inicial; as das alternativas são hipóteses (`H-09` a `H-13`) feitas antes do *refactoring*. As de ALT-1 e ALT-2, escolhidas e implementadas, foram verificadas na medição final (estado em 2.6): a única avaliação que não se confirmou é a capacidade de ALT-2 (Alto), que numa só máquina fica em Médio (H-10).
 
 | **Atributo de qualidade (ISO/IEC 25010)** | **Padrão global atual (referência)** | **Padrão atual do vídeo** | **ALT-1** | **ALT-2** | **ALT-3** |
 |-------------------------------------------|--------------------------------------|---------------------------|-----------|-----------|-----------|
@@ -301,7 +304,7 @@ O vídeo herda a entrada única, a autenticação, o desacoplamento por filas du
 
 ### 3.4 Adequação do padrão atual
 
-O **padrão global** (microsserviços com API Gateway e filas no RabbitMQ) continua adequado ao vídeo: dá-lhe desacoplamento, mensagens duráveis e uma fila própria, e é ele que torna possíveis ALT-1 e ALT-2 sem mudar a arquitetura. O **padrão atual do vídeo** (worker único com o pipeline numa mensagem) é adequado a **um vídeo de cada vez**: cumpre o REQ-VID-EDIT-010 com folga (0,39–0,90× a duração, EV-22) e, com o ack manual, não perde trabalho quando o worker falha (EV-29). Deixa de ser adequado com **vários utilizadores e com a legendagem**: os vídeos são processados um a um (EV-27, REQ-VID-EDIT-011 não cumprido), uma legendagem atrasa um vídeo de 10 s cerca de 141 s (EV-26) e os recursos não acompanham a carga (EV-28, só 40 % do CPU disponível usado). Ao mesmo tempo, concentrar as 6 responsabilidades de vídeo numa unidade (EV-23) faz com que qualquer mudança ou falha na legendagem afete todos os vídeos (EV-29). **ALT-2** responde à fragilidade de capacidade/elasticidade e **ALT-1** à de modularidade; as duas mantêm o padrão global e são complementares, porque separar a legendagem (ALT-1) é o que permite escalá-la à parte (ALT-2). ALT-3 resolveria as duas, mas com um custo e um risco de migração que não se justificam numa fase de *refactoring*. ⚠️ A escolha e a ordem de implementação são decisões da equipa (Bloco 2).
+O **padrão global** (microsserviços com API Gateway e filas no RabbitMQ) continua adequado ao vídeo: dá-lhe desacoplamento, mensagens duráveis e uma fila própria, e é ele que torna possíveis ALT-1 e ALT-2 sem mudar a arquitetura. O **padrão atual do vídeo** (worker único com o pipeline numa mensagem) é adequado a **um vídeo de cada vez**: cumpre o REQ-VID-EDIT-010 com folga (0,39–0,90× a duração, EV-22) e, com o ack manual, não perde trabalho quando o worker falha (EV-29). Deixa de ser adequado com **vários utilizadores e com a legendagem**: os vídeos são processados um a um (EV-27, REQ-VID-EDIT-011 não cumprido), uma legendagem atrasa um vídeo de 10 s cerca de 141 s (EV-26) e os recursos não acompanham a carga (EV-28, só 40 % do CPU disponível usado). Ao mesmo tempo, concentrar as 3 funcionalidades de vídeo numa unidade (EV-23) faz com que qualquer mudança ou falha na legendagem afete todos os vídeos (EV-29). **ALT-2** responde à fragilidade de capacidade/elasticidade e **ALT-1** à de modularidade; as duas mantêm o padrão global e são complementares, porque separar a legendagem (ALT-1) é o que permite escalá-la à parte (ALT-2). ALT-3 resolveria as duas, mas com um custo e um risco de migração que não se justificam numa fase de *refactoring*. A equipa escolheu por isso **ALT-1 + ALT-2** (decisão D15 do `CONTEXTO_E_DECISOES_FASE2.md`); a justificação detalhada e os *trade-offs* ficam para o Bloco 2.
 
 ---
 
@@ -315,4 +318,8 @@ O **padrão global** (microsserviços com API Gateway e filas no RabbitMQ) conti
 
 ## Utilização de IA
 
-Rascunho preparado por um agente de IA (Claude) a partir do código no commit `0523102`, da configuração, dos documentos de base e da medição inicial, com as evidências indicadas por ficheiro e linha. A equipa revê e valida todo o conteúdo antes de o usar no relatório.
+| **Ferramenta** | **Tarefas apoiadas** | **Validação pela equipa** |
+|----------------|----------------------|---------------------------|
+| Agente de IA (Claude, na aplicação Claude, com acesso ao repositório e ao computador de medição) | Leitura do código e da configuração, recolha das evidências com ficheiro e linha, proposta do texto das secções 0–3, diagramas (Mermaid), *scripts* e execução das medições inicial e final | As decisões (padrões, alternativas, escolha de ALT-1 + ALT-2) foram tomadas pela equipa a partir de opções apresentadas pelo agente; as evidências são verificáveis no commit `0523102` e nas medições (`Documentacao/medicoes/`); o texto é revisto pela equipa antes de entrar no relatório |
+
+As decisões tomadas e as alternativas consideradas estão registadas em `Documentacao/CONTEXTO_E_DECISOES_FASE2.md`.

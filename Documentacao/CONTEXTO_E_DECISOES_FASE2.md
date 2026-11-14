@@ -218,6 +218,30 @@ Segue o `DESENHO_SOLUCAO.md` e as decisões D24–D32.
 - **Verificação cruzada dos logs:** cada etapa escreve a sua linha `[video] msg=… ok …`; um vídeo com legendas tem duas (normalização + legendagem).
 - **M3 (D33):** o serviço da legendagem passa a ser terminado aos 55 % do progresso, nas duas fases (`cenarios.py --m3-progresso`, 55 por omissão). O M3 da base foi repetido aos 55 % a 12/11/2026 (secção 4A): 100 % afetados, como aos 20 %.
 
+## 4D. Medição Final — Resultados (14/11/2026, commit `67d222c`)
+
+Segunda medição final (a primeira foi inválida, secção 4C), com o mesmo método e a mesma máquina da base (D3); sem erros em nenhum trabalho (S1–S4, M3). Resultados em `medicoes/final/` (`resumo.md`). Comparação com a secção 4B (mediana de 5 repetições):
+
+| Métrica | Base | Final | Alvo / mínimo | Resultado |
+|---|---|---|---|---|
+| S1 — espera do vídeo curto durante uma legendagem | 141,0 s | **6,5 s** | ≤ 10 s / ≤ 30 s | Alvo cumprido |
+| S2 — vídeos em processamento simultâneo | 1 | **3** | ≥ 3 / ≥ 2 | Alvo cumprido |
+| S2 — débito com N = 8 | 16,8 /min | **18,8 /min** (+12 %) | ≥ 25 / ≥ 20 | **Não cumprido** |
+| S3 — réplicas | 1 | **até 3** do `video_effects` em 6–11 s; de volta a 1 antes do fim da rajada | ≥ 3 e volta ao mínimo em ≤ 120 s | Alvo cumprido |
+| S3 — duração da rajada | 158,8 s | **172,1 s** (+8 %) | ≤ 95 s / ≤ 127 s | **Não cumprido** |
+| S4 — efeito secundário (tempo por vídeo) | 3,9 / 11,5 / 134,7 s | 3,9 / 10,5 / 137,9 s | não piorar mais de 10 % | Cumprido (pior caso +2,4 %) |
+| M1 — C1/C2: funcionalidades interrompidas | 3 | **1** | 1 / ≤ 2 | Alvo cumprido |
+| M2 — funcionalidades por serviço | 3 | **1** | 1 / ≤ 2 | Alvo cumprido |
+| M3 — vídeos curtos afetados pela falha da legendagem | 100 % | **0 %** (mediana; 0 % em 3 repetições, 75 % em 2) | 0 % / ≤ 25 % | Alvo cumprido na mediana |
+| M3 — trabalhos perdidos | 0 | 0 | 0 | Cumprido |
+
+**Leitura dos resultados**
+
+- **O que melhorou:** os trabalhos deixaram de esperar uns pelos outros (S1), passaram a correr em paralelo (S2, S3), o *autoscaler* sobe e desce as réplicas como previsto (S3) e a falha da legendagem já não atrasa os outros vídeos (M3). A modularidade cumpre os alvos (M1, M2).
+- **O que não melhorou: a capacidade total.** Os vídeos correm numa só máquina (8 CPU no Docker) e cada vídeo já usa 2–3 núcleos sozinho (o `ffmpeg` paraleliza por dentro). Com 3 réplicas ao mesmo tempo cada vídeo fica mais lento (S2: de ≈ 3,4 s para ≈ 12 s com N = 8), por isso o débito só sobe 12 %. Mais réplicas só dão mais capacidade com mais recursos (outra máquina ou mais CPU).
+- **S3 — duração da rajada:** é marcada pela legendagem do vídeo de 177 s, que é o trabalho mais longo da rajada e não se divide (base 158,3 s, final 171,6 s, mais lenta por disputar CPU com os brilhos). O alvo de ≤ 95 s não era atingível com este cenário enquanto a legendagem sozinha demora mais do que isso; foi um erro na quantificação (4B).
+- **M3 — variação entre repetições:** nas repetições 4 e 5, 3 dos 4 vídeos curtos demoraram ≈ 28 s (limite de "afetado": 21,1 s). Não foi a falha da legendagem: esperaram ≈ 8–10 s que o *autoscaler* arrancasse réplicas novas do `video_effects` e depois disputaram CPU com o reconhecimento de fala. Nenhum falhou.
+
 ## 5. Próximos Passos Propostos
 
 1. ~~Equipa decide Q1–Q5.~~ Feito a 4/11/2026 (secção 6).
@@ -230,9 +254,9 @@ Segue o `DESENHO_SOLUCAO.md` e as decisões D24–D32.
 7. ~~**Testes de regressão na base.**~~ Feito a 12/11/2026 (secção 4A).
 8. ~~**Desenho da solução.**~~ `Documentacao/DESENHO_SOLUCAO.md`, aprovado a 12/11/2026 com as decisões D24–D32.
 8a. ~~**Teste de ponta a ponta na base** (D32).~~ Feito a 12/11/2026: 15/15 OK.
-9. ***Refactoring*** implementado a 12/11/2026 (secção 4C), **à espera da aprovação da equipa**; depois, testes de regressão e de ponta a ponta no Mac.
-10. **Medição final** (`medicoes/medicao_final.command`) e M1 sobre o código refatorado; comparação com a base e com os alvos.
-11. **Relatório e defesa:** Exercício 6 (adaptar a vista dos docentes, D19; Bloco 2 quando sair); descrever no relatório e no PowerPoint o que é e o que faz cada medição (S1–S4, M1–M3) e o fluxo das medições (`medicoes/FLUXO_DAS_MEDICOES.md`).
+9. ~~***Refactoring***~~ Aprovado e integrado (commits `aee398d` e `67d222c`); testes de regressão (101 + 10) e de ponta a ponta (15/15) a passar a 14/11/2026.
+10. ~~**Medição final** e M1 sobre o código refatorado; comparação com a base e com os alvos.~~ Feito a 14/11/2026 (secção 4D).
+11. **Relatório e defesa:** Exercício 6 — ~~Bloco 1~~ concluído a 14/11/2026 (`exercicio6/RAS-exercicio_6_bloco1_PL5-G7.md` v1.0, com a vista dos docentes adaptada em `arquitetura_global_video.mmd`/`.svg`, D19, e o estado das hipóteses H-09 a H-12 atualizado com a medição final); Bloco 2 quando sair; descrever no relatório e no PowerPoint o que é e o que faz cada medição (S1–S4, M1–M3) e o fluxo das medições (`medicoes/FLUXO_DAS_MEDICOES.md`).
 
 ---
 

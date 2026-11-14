@@ -1,0 +1,1819 @@
+=== Medição (final) — início: Sáb 14 Nov 2026 16:08:34 WET ===
+Commit: 67d222c Limite de memória do video_effects: 3 GB (D35); M1 final
+Python: /usr/local/bin/python3 Python 3.13.7
+Docker: 29.8.0 · CPUs 8 · memória 6210043904
+=== Limpeza dos dados (mantém picturas_whisper_models): Sáb 14 Nov 2026 16:08:37 WET ===
+ Container picturas-binarization_tool-1 Stopping 
+ Container picturas-saturation_tool-1 Stopping 
+ Container picturas-frontend-1 Stopping 
+ Container picturas-contrast_tool-1 Stopping 
+ Container picturas-autoscaler-1 Stopping 
+ Container picturas-img_storage-1 Stopping 
+ Container picturas-cut_tool-1 Stopping 
+ Container picturas-resize_tool-1 Stopping 
+ Container picturas-border_tool-1 Stopping 
+ Container picturas-watermark_tool_ms-1 Stopping 
+ Container picturas-rotate_tool-1 Stopping 
+ Container picturas-text_ai_tool-1 Stopping 
+ Container picturas-brightness_tool-1 Stopping 
+ Container picturas-expand_ai_tool-1 Stopping 
+ Container picturas-nginx-1 Stopping 
+ Container picturas-subscriptions-1 Stopping 
+ Container picturas-cut_ai_tool-1 Stopping 
+ Container picturas-obj_ai_tool-1 Stopping 
+ Container picturas-nginx-1 Stopped 
+ Container picturas-nginx-1 Removing 
+ Container picturas-resize_tool-1 Stopped 
+ Container picturas-resize_tool-1 Removing 
+ Container picturas-watermark_tool_ms-1 Stopped 
+ Container picturas-watermark_tool_ms-1 Removing 
+ Container picturas-cut_tool-1 Stopped 
+ Container picturas-cut_tool-1 Removing 
+ Container picturas-contrast_tool-1 Stopped 
+ Container picturas-contrast_tool-1 Removing 
+ Container picturas-frontend-1 Stopped 
+ Container picturas-frontend-1 Removing 
+ Container picturas-mongo-backup-1 Stopping 
+ Container picturas-people_ai_tool-1 Stopping 
+ Container picturas-bg_remove_ai_tool-1 Stopping 
+ Container picturas-upgrade_ai_tool-1 Stopping 
+ Container picturas-rotate_tool-1 Stopped 
+ Container picturas-rotate_tool-1 Removing 
+ Container picturas-cut_ai_tool-1 Stopped 
+ Container picturas-cut_ai_tool-1 Removing 
+ Container picturas-brightness_tool-1 Stopped 
+ Container picturas-brightness_tool-1 Removing 
+ Container picturas-subscriptions-1 Stopped 
+ Container picturas-subscriptions-1 Removing 
+ Container picturas-text_ai_tool-1 Stopped 
+ Container picturas-text_ai_tool-1 Removing 
+ Container picturas-border_tool-1 Stopped 
+ Container picturas-border_tool-1 Removing 
+ Container picturas-expand_ai_tool-1 Stopped 
+ Container picturas-expand_ai_tool-1 Removing 
+ Container picturas-autoscaler-1 Stopped 
+ Container picturas-autoscaler-1 Removing 
+ Container picturas-bg_remove_ai_tool-1 Stopped 
+ Container picturas-bg_remove_ai_tool-1 Removing 
+ Container picturas-saturation_tool-1 Stopped 
+ Container picturas-saturation_tool-1 Removing 
+ Container picturas-obj_ai_tool-1 Stopped 
+ Container picturas-obj_ai_tool-1 Removing 
+ Container picturas-binarization_tool-1 Stopped 
+ Container picturas-binarization_tool-1 Removing 
+ Container picturas-mongo-backup-1 Stopped 
+ Container picturas-mongo-backup-1 Removing 
+ Container picturas-upgrade_ai_tool-1 Stopped 
+ Container picturas-upgrade_ai_tool-1 Removing 
+ Container picturas-people_ai_tool-1 Stopped 
+ Container picturas-people_ai_tool-1 Removing 
+ Container picturas-img_storage-1 Stopped 
+ Container picturas-img_storage-1 Removing 
+ Container picturas-nginx-1 Removed 
+ Container picturas-ws_gateway-1 Stopping 
+ Container picturas-api_gateway-1 Stopping 
+ Container picturas-ws_gateway-1 Stopped 
+ Container picturas-ws_gateway-1 Removing 
+ Container picturas-api_gateway-1 Stopped 
+ Container picturas-api_gateway-1 Removing 
+ Container picturas-cut_tool-1 Removed 
+ Container picturas-frontend-1 Removed 
+ Container picturas-watermark_tool_ms-1 Removed 
+ Container picturas-brightness_tool-1 Removed 
+ Container picturas-contrast_tool-1 Removed 
+ Container picturas-binarization_tool-1 Removed 
+ Container picturas-resize_tool-1 Removed 
+ Container picturas-subscriptions-1 Removed 
+ Container picturas-img_storage-1 Removed 
+ Container picturas-border_tool-1 Removed 
+ Container picturas-seaweedfs-1 Stopping 
+ Container picturas-cut_ai_tool-1 Removed 
+ Container picturas-saturation_tool-1 Removed 
+ Container picturas-text_ai_tool-1 Removed 
+ Container picturas-autoscaler-1 Removed 
+ Container picturas-video_frames-1 Stopping 
+ Container picturas-video_effects-1 Stopping 
+ Container picturas-video_subtitles-1 Stopping 
+ Container picturas-mongo-backup-1 Removed 
+ Container picturas-subscriptions_mongoDB-1 Stopping 
+ Container picturas-upgrade_ai_tool-1 Removed 
+ Container picturas-people_ai_tool-1 Removed 
+ Container picturas-api_gateway-1 Removed 
+ Container picturas-users-1 Stopping 
+ Container picturas-expand_ai_tool-1 Removed 
+ Container picturas-generative-mock-1 Stopping 
+ Container picturas-projects-1 Stopping 
+ Container picturas-obj_ai_tool-1 Removed 
+ Container picturas-bg_remove_ai_tool-1 Removed 
+ Container picturas-ws_gateway-1 Removed 
+ Container picturas-rotate_tool-1 Removed 
+ Container picturas-generative-mock-1 Stopped 
+ Container picturas-generative-mock-1 Removing 
+ Container picturas-seaweedfs-1 Stopped 
+ Container picturas-video_frames-1 Stopped 
+ Container picturas-projects-1 Stopped 
+ Container picturas-projects-1 Removing 
+ Container picturas-video_effects-1 Stopped 
+ Container picturas-video_effects-1 Removing 
+ Container picturas-users-1 Stopped 
+ Container picturas-users-1 Removing 
+ Container picturas-video_frames-1 Removing 
+ Container picturas-seaweedfs-1 Removing 
+ Container picturas-subscriptions_mongoDB-1 Stopped 
+ Container picturas-subscriptions_mongoDB-1 Removing 
+ Container picturas-video_subtitles-1 Stopped 
+ Container picturas-video_subtitles-1 Removing 
+ Container picturas-generative-mock-1 Removed 
+ Container picturas-users-1 Removed 
+ Container picturas-users_mongoDB-1 Stopping 
+ Container picturas-users_mongoDB-1 Stopped 
+ Container picturas-users_mongoDB-1 Removing 
+ Container picturas-video_effects-1 Removed 
+ Container picturas-seaweedfs-1 Removed 
+ Container picturas-subscriptions_mongoDB-1 Removed 
+ Container picturas-video_frames-1 Removed 
+ Container picturas-projects-1 Removed 
+ Container picturas-projects_mongoDB-1 Stopping 
+ Container picturas-projects_mongoDB-1 Stopped 
+ Container picturas-projects_mongoDB-1 Removing 
+ Container picturas-video_subtitles-1 Removed 
+ Container picturas-rabbitmq-1 Stopping 
+ Container picturas-rabbitmq-1 Stopped 
+ Container picturas-rabbitmq-1 Removing 
+ Container picturas-users_mongoDB-1 Removed 
+ Container picturas-projects_mongoDB-1 Removed 
+ Container picturas-rabbitmq-1 Removed 
+ Network picturas_elk Removing 
+ Network picturas_elk Removed 
+picturas_image_data
+  apagado picturas_image_data
+picturas_project_data
+  apagado picturas_project_data
+picturas_rabbitmq_data
+  apagado picturas_rabbitmq_data
+picturas_seaweedfs_data
+  apagado picturas_seaweedfs_data
+picturas_subscription_data
+  apagado picturas_subscription_data
+picturas_user_data
+  apagado picturas_user_data
+DRIVER    VOLUME NAME
+local     picturas_minio_data
+local     picturas_whisper_models
+=== docker compose up -d --build: Sáb 14 Nov 2026 16:08:39 WET ===
+ Image picturas-ws_gateway Building 
+ Image picturas-resize_tool Building 
+ Image picturas-users Building 
+ Image picturas-projects Building 
+ Image picturas-binarization_tool Building 
+ Image picturas-saturation_tool Building 
+ Image picturas-cut_ai_tool Building 
+ Image picturas-video_effects Building 
+ Image picturas-autoscaler Building 
+ Image picturas-bg_remove_ai_tool Building 
+ Image picturas-upgrade_ai_tool Building 
+ Image picturas-video_frames Building 
+ Image picturas-rotate_tool Building 
+ Image picturas-img_storage Building 
+ Image picturas-obj_ai_tool Building 
+ Image picturas-subscriptions Building 
+ Image picturas-generative-mock Building 
+ Image picturas-rabbitmq Building 
+ Image picturas-people_ai_tool Building 
+ Image picturas-expand_ai_tool Building 
+ Image picturas-brightness_tool Building 
+ Image picturas-contrast_tool Building 
+ Image picturas-border_tool Building 
+ Image picturas-frontend Building 
+ Image picturas-api_gateway Building 
+ Image picturas-text_ai_tool Building 
+ Image picturas-cut_tool Building 
+ Image picturas-video_subtitles Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 14.68kB done
+#1 DONE 0.0s
+
+#2 [rabbitmq internal] load build definition from Dockerfile
+#2 transferring dockerfile: 460B 0.0s done
+#2 DONE 0.1s
+
+#3 [autoscaler internal] load build definition from Dockerfile
+#3 transferring dockerfile: 285B 0.0s done
+#3 DONE 0.1s
+
+#4 [img_storage internal] load build definition from Dockerfile
+#4 transferring dockerfile: 127B 0.0s done
+#4 DONE 0.1s
+
+#5 [generative-mock internal] load build definition from Dockerfile
+#5 transferring dockerfile: 204B 0.0s done
+#5 DONE 0.1s
+
+#6 [subscriptions internal] load build definition from Dockerfile
+#6 transferring dockerfile: 120B 0.0s done
+#6 DONE 0.1s
+
+#7 [projects internal] load build definition from Dockerfile
+#7 transferring dockerfile: 272B 0.0s done
+#7 DONE 0.1s
+
+#8 [cut_ai_tool internal] load build definition from Dockerfile
+#8 transferring dockerfile: 879B 0.0s done
+#8 DONE 0.1s
+
+#9 [rabbitmq internal] load metadata for docker.io/library/rabbitmq:4.0.5-management
+#9 ...
+
+#10 [api_gateway internal] load build definition from Dockerfile
+#10 transferring dockerfile: 126B 0.0s done
+#10 DONE 0.1s
+
+#11 [ws_gateway internal] load build definition from Dockerfile
+#11 transferring dockerfile: 160B done
+#11 DONE 0.1s
+
+#12 [users internal] load build definition from Dockerfile
+#12 transferring dockerfile: 127B 0.0s done
+#12 DONE 0.1s
+
+#13 [frontend internal] load build definition from Dockerfile
+#13 transferring dockerfile: 261B done
+#13 DONE 0.1s
+
+#14 [video_effects internal] load build definition from Dockerfile
+#14 transferring dockerfile: 573B done
+#14 DONE 0.1s
+
+#15 [cut_tool internal] load build definition from Dockerfile
+#15 transferring dockerfile: 253B done
+#15 DONE 0.1s
+
+#16 [bg_remove_ai_tool internal] load build definition from Dockerfile
+#16 transferring dockerfile: 272B done
+#16 DONE 0.1s
+
+#17 [contrast_tool internal] load build definition from Dockerfile
+#17 transferring dockerfile: 263B done
+#17 DONE 0.1s
+
+#18 [upgrade_ai_tool internal] load build definition from Dockerfile
+#18 transferring dockerfile: 371B done
+#18 DONE 0.1s
+
+#19 [rotate_tool internal] load build definition from Dockerfile
+#19 transferring dockerfile: 270B done
+#19 DONE 0.1s
+
+#20 [border_tool internal] load build definition from Dockerfile
+#20 transferring dockerfile: 270B done
+#20 DONE 0.1s
+
+#21 [resize_tool internal] load build definition from Dockerfile
+#21 transferring dockerfile: 270B done
+#21 DONE 0.1s
+
+#22 [brightness_tool internal] load build definition from Dockerfile
+#22 transferring dockerfile: 267B done
+#22 DONE 0.2s
+
+#23 [binarization_tool internal] load build definition from Dockerfile
+#23 transferring dockerfile: 271B done
+#23 DONE 0.2s
+
+#24 [text_ai_tool internal] load build definition from Dockerfile
+#24 transferring dockerfile: 457B done
+#24 DONE 0.2s
+
+#25 [obj_ai_tool internal] load build definition from Dockerfile
+#25 transferring dockerfile: 729B done
+#25 DONE 0.2s
+
+#26 [video_subtitles internal] load build definition from Dockerfile
+#26 transferring dockerfile: 649B done
+#26 DONE 0.2s
+
+#27 [saturation_tool internal] load build definition from Dockerfile
+#27 transferring dockerfile: 267B done
+#27 DONE 0.2s
+
+#28 [people_ai_tool internal] load build definition from Dockerfile
+#28 transferring dockerfile: 740B done
+#28 DONE 0.2s
+
+#29 [video_frames internal] load build definition from Dockerfile
+#29 transferring dockerfile: 569B done
+#29 DONE 0.2s
+
+#30 [expand_ai_tool internal] load build definition from Dockerfile
+#30 transferring dockerfile: 407B done
+#30 DONE 0.2s
+
+#31 [video_frames internal] load metadata for docker.io/library/python:3.11-slim
+#31 ...
+
+#32 [frontend internal] load metadata for docker.io/library/node:18
+#32 DONE 1.3s
+
+#33 [img_storage internal] load metadata for docker.io/library/node:latest
+#33 DONE 1.3s
+
+#34 [subscriptions internal] load .dockerignore
+#34 transferring context: 2B done
+#34 DONE 0.0s
+
+#35 [img_storage internal] load .dockerignore
+#35 transferring context: 2B done
+#35 DONE 0.0s
+
+#36 [api_gateway internal] load .dockerignore
+#36 transferring context: 2B done
+#36 DONE 0.0s
+
+#37 [ws_gateway internal] load .dockerignore
+#37 transferring context: 52B done
+#37 DONE 0.0s
+
+#38 [users internal] load .dockerignore
+#38 transferring context: 2B done
+#38 DONE 0.0s
+
+#39 [frontend internal] load .dockerignore
+#39 transferring context: 52B done
+#39 DONE 0.0s
+
+#40 [projects internal] load .dockerignore
+#40 transferring context: 2B done
+#40 DONE 0.0s
+
+#41 [ws_gateway 1/5] FROM docker.io/library/node:18@sha256:c6ae79e38498325db67193d391e6ec1d224d96c693a8a4d943498556716d3783
+#41 resolve docker.io/library/node:18@sha256:c6ae79e38498325db67193d391e6ec1d224d96c693a8a4d943498556716d3783 0.0s done
+#41 DONE 0.0s
+
+#42 [projects 1/4] FROM docker.io/library/node:latest@sha256:e18c3ccdf7d71619990b0e85639f506e2028a95410999cab24cc373cbd10e0ac
+#42 resolve docker.io/library/node:latest@sha256:e18c3ccdf7d71619990b0e85639f506e2028a95410999cab24cc373cbd10e0ac 0.0s done
+#42 DONE 0.0s
+
+#43 [img_storage internal] load build context
+#43 transferring context: 622B done
+#43 DONE 0.0s
+
+#44 [ws_gateway internal] load build context
+#44 transferring context: 186B done
+#44 DONE 0.0s
+
+#45 [api_gateway internal] load build context
+#45 transferring context: 538B done
+#45 DONE 0.0s
+
+#46 [subscriptions internal] load build context
+#46 transferring context: 593B done
+#46 DONE 0.0s
+
+#47 [frontend internal] load build context
+#47 transferring context: 7.66kB 0.0s done
+#47 DONE 0.0s
+
+#48 [img_storage 3/4] COPY . .
+#48 CACHED
+
+#49 [img_storage 4/4] RUN npm install
+#49 CACHED
+
+#50 [projects internal] load build context
+#50 transferring context: 1.99kB 0.0s done
+#50 DONE 0.0s
+
+#51 [ws_gateway 3/5] COPY package.json ./
+#51 CACHED
+
+#52 [ws_gateway 4/5] COPY . .
+#52 CACHED
+
+#53 [ws_gateway 2/5] WORKDIR /usr/src/app
+#53 CACHED
+
+#54 [ws_gateway 5/5] RUN npm i
+#54 CACHED
+
+#55 [users internal] load build context
+#55 transferring context: 761B 0.0s done
+#55 DONE 0.0s
+
+#56 [api_gateway 3/4] COPY . .
+#56 CACHED
+
+#57 [api_gateway 4/4] RUN npm install
+#57 CACHED
+
+#58 [subscriptions 3/4] COPY . .
+#58 CACHED
+
+#59 [subscriptions 4/4] RUN npm install
+#59 CACHED
+
+#60 [users 2/4] WORKDIR /app
+#60 CACHED
+
+#61 [users 3/4] COPY . .
+#61 CACHED
+
+#62 [users 4/4] RUN npm install
+#62 CACHED
+
+#63 [projects 3/5] WORKDIR /app
+#63 CACHED
+
+#64 [projects 4/5] COPY . .
+#64 CACHED
+
+#65 [projects 2/5] RUN apt-get update && apt-get install -y --no-install-recommends ffmpeg && rm -rf /var/lib/apt/lists/*
+#65 CACHED
+
+#66 [projects 5/5] RUN npm install
+#66 CACHED
+
+#67 [frontend 5/7] RUN bun i
+#67 CACHED
+
+#68 [frontend 6/7] COPY . .
+#68 CACHED
+
+#69 [frontend 4/7] RUN npm install -g bun
+#69 CACHED
+
+#53 [frontend 2/5] WORKDIR /usr/src/app
+#53 CACHED
+
+#70 [frontend 3/7] COPY package.json ./
+#70 CACHED
+
+#71 [frontend 7/7] RUN bun run build
+#71 CACHED
+
+#72 [img_storage] exporting to image
+#72 exporting layers done
+#72 exporting manifest sha256:e58b9318ded0827217f613dad74673dd84e0cd7706f35c1b9c50455834f92b2d done
+#72 exporting config sha256:2da9f43ae313535aff7f7fd8adba6f0a6960255cddbb205238c6fb01c7a4c1bb done
+#72 exporting attestation manifest sha256:eb75e49693e08fe954b66fefe3b582ce503c7344b62ba307760cde44f13a6369
+#72 exporting attestation manifest sha256:eb75e49693e08fe954b66fefe3b582ce503c7344b62ba307760cde44f13a6369 0.3s done
+#72 exporting manifest list sha256:e924d8d13ed825685ac247c290aa8047f9e72830a022e41f2ee5a527391efe5a
+#72 ...
+
+#73 [expand_ai_tool internal] load metadata for docker.io/library/python:3.10
+#73 DONE 1.8s
+
+#72 [img_storage] exporting to image
+#72 exporting manifest list sha256:e924d8d13ed825685ac247c290aa8047f9e72830a022e41f2ee5a527391efe5a 0.1s done
+#72 naming to docker.io/library/picturas-img_storage:latest
+#72 ...
+
+#74 [people_ai_tool internal] load .dockerignore
+#74 transferring context: 2B done
+#74 DONE 0.1s
+
+#9 [rabbitmq internal] load metadata for docker.io/library/rabbitmq:4.0.5-management
+#9 DONE 2.0s
+
+#31 [bg_remove_ai_tool internal] load metadata for docker.io/library/python:3.11-slim
+#31 DONE 2.0s
+
+#75 [contrast_tool internal] load build context
+#75 DONE 0.0s
+
+#76 [saturation_tool internal] load build context
+#76 DONE 0.0s
+
+#77 [brightness_tool internal] load build context
+#77 DONE 0.0s
+
+#78 [cut_tool internal] load build context
+#78 DONE 0.0s
+
+#79 [bg_remove_ai_tool internal] load build context
+#79 DONE 0.0s
+
+#80 [rotate_tool internal] load build context
+#80 DONE 0.0s
+
+#81 [border_tool internal] load build context
+#81 DONE 0.0s
+
+#82 [resize_tool internal] load build context
+#82 DONE 0.0s
+
+#83 [binarization_tool internal] load build context
+#83 DONE 0.0s
+
+#84 [generative-mock internal] load .dockerignore
+#84 transferring context: 2B done
+#84 DONE 0.0s
+
+#85 [autoscaler internal] load .dockerignore
+#85 transferring context: 2B done
+#85 DONE 0.0s
+
+#86 [rabbitmq internal] load .dockerignore
+#86 transferring context: 2B done
+#86 DONE 0.0s
+
+#87 [video_subtitles internal] load build context
+#87 transferring context: 25.32kB 0.0s done
+#87 DONE 0.1s
+
+#88 [text_ai_tool internal] load build context
+#88 transferring context: 69.44kB 0.0s done
+#88 DONE 0.1s
+
+#72 [img_storage] exporting to image
+#72 naming to docker.io/library/picturas-img_storage:latest 0.0s done
+#72 unpacking to docker.io/library/picturas-img_storage:latest 0.1s done
+#72 ...
+
+#89 [generative-mock internal] load build context
+#89 transferring context: 66B done
+#89 DONE 0.1s
+
+#90 [video_effects internal] load build context
+#90 transferring context: 40.86kB 0.0s done
+#90 DONE 0.1s
+
+#91 [autoscaler internal] load build context
+#91 transferring context: 169B done
+#91 DONE 0.1s
+
+#92 [rabbitmq internal] load build context
+#92 transferring context: 71B done
+#92 DONE 0.1s
+
+#93 [api_gateway] exporting to image
+#93 exporting layers done
+#93 exporting manifest sha256:7dc2c74e8db466ce779b14119ec5719f4fa874175edaa074cf10cbc1a36bf6ba done
+#93 exporting config sha256:8c9e880522446b90e13a8dea23037e910f031b808539f6b0230e1cd9436b5848 done
+#93 exporting attestation manifest sha256:5b97943acf2ecc02fd2c675feab92f06459ba167a6995107395576525a99bf02 0.3s done
+#93 exporting manifest list sha256:07dc0d2e32edf3b72bc745df94abec4c9d6e994983288e3847427870b595736a 0.1s done
+#93 naming to docker.io/library/picturas-api_gateway:latest 0.1s done
+#93 unpacking to docker.io/library/picturas-api_gateway:latest 0.1s done
+#93 DONE 0.8s
+
+#94 [video_frames internal] load build context
+#94 transferring context: 26.99kB 0.0s done
+#94 DONE 0.2s
+
+#95 [upgrade_ai_tool internal] load build context
+#95 transferring context: 6.38kB 0.0s done
+#95 DONE 0.3s
+
+#96 [expand_ai_tool internal] load build context
+#96 transferring context: 11.38kB 0.0s done
+#96 DONE 0.3s
+
+#97 [generative-mock 1/6] FROM docker.io/library/python:3.11-slim@sha256:07d4824036af339fa1b6ef769cc99d9c10a141769538b52b3b597c84f7a7b535
+#97 resolve docker.io/library/python:3.11-slim@sha256:07d4824036af339fa1b6ef769cc99d9c10a141769538b52b3b597c84f7a7b535 0.3s done
+#97 resolve docker.io/library/python:3.11-slim@sha256:07d4824036af339fa1b6ef769cc99d9c10a141769538b52b3b597c84f7a7b535 0.3s done
+#97 DONE 0.3s
+
+#98 [expand_ai_tool 1/8] FROM docker.io/library/python:3.10@sha256:c10791e6f69086d5216f7b5d3b839929c454e24305867ed9bc5152f0355b5423
+#98 resolve docker.io/library/python:3.10@sha256:c10791e6f69086d5216f7b5d3b839929c454e24305867ed9bc5152f0355b5423 0.3s done
+#98 DONE 0.3s
+
+#99 [cut_ai_tool internal] load build context
+#99 transferring context: 9.22kB 0.0s done
+#99 DONE 0.3s
+
+#100 [subscriptions] exporting to image
+#100 exporting layers done
+#100 exporting manifest sha256:d20299b6aab32721cd9576fc95e72be7e898f20d26924316d095b1ef82c68e71 done
+#100 exporting config sha256:6ff795058089c9dfe728568cea1771dc37857d739b46005251d9d8e0299774dc done
+#100 exporting attestation manifest sha256:320fec803c9b6ac06384c8d46f62420a298279fb228964d4c576553ce589c4ec 0.3s done
+#100 exporting manifest list sha256:3d5d884345bb4264274a8ae0e58550e948b53cf3b7725d4df1cf2875f89bbd4b 0.1s done
+#100 naming to docker.io/library/picturas-subscriptions:latest 0.0s done
+#100 unpacking to docker.io/library/picturas-subscriptions:latest 0.1s done
+#100 DONE 1.0s
+
+#72 [img_storage] exporting to image
+#72 DONE 1.0s
+
+#101 [rabbitmq 1/3] FROM docker.io/library/rabbitmq:4.0.5-management@sha256:697da87bf89699fda7c7da8067cc91b055353056d52a07e7f3c41bd67b0b5f71
+#101 resolve docker.io/library/rabbitmq:4.0.5-management@sha256:697da87bf89699fda7c7da8067cc91b055353056d52a07e7f3c41bd67b0b5f71 0.3s done
+#101 DONE 0.3s
+
+#102 [ws_gateway] exporting to image
+#102 exporting layers done
+#102 exporting manifest sha256:b4ca60b2e38ea7f5fdf9435b4e90392fc3cce45d98e7bd74d4ee7ffa28eb309f done
+#102 exporting config sha256:e6c248548df0154aa8f8515780cb0ade91262f2987315417e367ba6ac6aa674a done
+#102 exporting attestation manifest sha256:fb26d2f69af7950dd919b9b5ef9c565ca73f107d58119c2400a6735d17295efe 0.3s done
+#102 exporting manifest list sha256:4ce773223149caceca6d00a6242c19064df600d7f5df040af2f245a2558f09c5 0.2s done
+#102 naming to docker.io/library/picturas-ws_gateway:latest 0.0s done
+#102 unpacking to docker.io/library/picturas-ws_gateway:latest 0.0s done
+#102 DONE 1.0s
+
+#103 [users] exporting to image
+#103 exporting layers done
+#103 exporting manifest sha256:44e4192fbaacc85d0a38505f280d0bb1fe5388734fc5fc70f1a2eb113bcaf477 done
+#103 exporting config sha256:a200165d04f97346970ee418b1ee0cb8e0aabbcf28beec9367fe5442e144472d done
+#103 exporting attestation manifest sha256:ebb9efc1bd81b929627d2b7cada64014c92611fe1abc4aa02022faea270ee062 0.3s done
+#103 exporting manifest list sha256:00185bece30c1154f0cd2c5a5288be05b4fe8f769bff38da9d94612cdec67754 0.2s done
+#103 naming to docker.io/library/picturas-users:latest 0.0s done
+#103 unpacking to docker.io/library/picturas-users:latest 0.1s done
+#103 DONE 1.0s
+
+#104 [projects] exporting to image
+#104 exporting layers done
+#104 exporting manifest sha256:05b59fb0008f618ddedd29597f92c6361f2f53d168003869177ca2142c40d8c6 done
+#104 exporting config sha256:d22d72f884835cfe8ca3e6ce7e52b60a0d17090a9d30486c51fab81ec38e22e3 done
+#104 exporting attestation manifest sha256:28b6610b62818eca24d121f878c95932d38559721d43932c53b3b9b952bf261c 0.3s done
+#104 exporting manifest list sha256:e249c273cf6d2083af196d3c2938025b88561e1c551bc5018642b0bfa066e204 0.2s done
+#104 naming to docker.io/library/picturas-projects:latest 0.0s done
+#104 unpacking to docker.io/library/picturas-projects:latest 0.1s done
+#104 DONE 1.1s
+
+#105 [people_ai_tool internal] load build context
+#105 ...
+
+#106 [frontend] exporting to image
+#106 exporting layers done
+#106 exporting manifest sha256:102a4e0c1b23d72d11cbe027002fd85a1e2fd4f36e41a16a6948066164ce6480 done
+#106 exporting config sha256:7a99b34bd965ff73238ae2b0dd1137bc4b100a0cf630d3d8b3646fb9b4abdd39 0.1s done
+#106 exporting attestation manifest sha256:766e3457764a500b1b6b86c53a0722d6d8532595f56ee1c8a3d521ae37ce73a0 0.1s done
+#106 exporting manifest list sha256:e13059bac2b036ce86349f125af995410300fb01c890837bf22aa9d6b0451c7b 0.1s done
+#106 naming to docker.io/library/picturas-frontend:latest 0.0s done
+#106 unpacking to docker.io/library/picturas-frontend:latest 0.1s done
+#106 DONE 1.1s
+
+#105 [people_ai_tool internal] load build context
+#105 ...
+
+#82 [resize_tool internal] load build context
+#82 transferring context: 3.86kB 0.0s done
+#82 DONE 0.2s
+
+#75 [contrast_tool internal] load build context
+#75 transferring context: 437B 0.1s done
+#75 DONE 0.2s
+
+#78 [cut_tool internal] load build context
+#78 transferring context: 5.15kB 0.1s done
+#78 DONE 0.2s
+
+#83 [binarization_tool internal] load build context
+#83 transferring context: 3.85kB 0.1s done
+#83 DONE 0.2s
+
+#79 [bg_remove_ai_tool internal] load build context
+#79 transferring context: 3.69kB 0.1s done
+#79 DONE 0.2s
+
+#105 [people_ai_tool internal] load build context
+#105 transferring context: 19.70MB 0.7s done
+#105 DONE 0.8s
+
+#80 [rotate_tool internal] load build context
+#80 transferring context: 3.59kB 0.0s done
+#80 DONE 0.3s
+
+#107 [rabbitmq 2/3] COPY definitions.json /etc/rabbitmq/definitions.json
+#107 CACHED
+
+#108 [rabbitmq 3/3] COPY rabbitmq.conf /etc/rabbitmq/rabbitmq.conf
+#108 CACHED
+
+#81 [border_tool internal] load build context
+#81 transferring context: 425B 0.0s done
+#81 DONE 0.3s
+
+#76 [saturation_tool internal] load build context
+#76 transferring context: 4.77kB 0.0s done
+#76 DONE 0.3s
+
+#77 [brightness_tool internal] load build context
+#77 transferring context: 4.44kB 0.0s done
+#77 DONE 0.3s
+
+#109 [obj_ai_tool internal] load build context
+#109 transferring context: 18.73MB 0.7s done
+#109 DONE 0.8s
+
+#110 [generative-mock 4/5] RUN pip install --no-cache-dir -r requirements.txt
+#110 CACHED
+
+#111 [generative-mock 3/5] COPY requirements.txt .
+#111 CACHED
+
+#112 [generative-mock 2/6] WORKDIR /app
+#112 CACHED
+
+#113 [generative-mock 5/5] COPY server.py .
+#113 CACHED
+
+#114 [autoscaler 4/5] RUN pip install --no-cache-dir -r requirements.txt
+#114 CACHED
+
+#115 [autoscaler 3/5] COPY requirements.txt .
+#115 CACHED
+
+#116 [autoscaler 5/5] COPY . .
+#116 CACHED
+
+#117 [contrast_tool 5/6] RUN pip install --no-cache-dir -r ./utils/requirements.txt
+#117 CACHED
+
+#118 [contrast_tool 3/6] COPY ./contrast .
+#118 CACHED
+
+#119 [contrast_tool 4/6] COPY ./utils ./utils
+#119 CACHED
+
+#120 [bg_remove_ai_tool 5/6] RUN pip install --no-cache-dir -r ./utils/requirements.txt
+#120 CACHED
+
+#121 [bg_remove_ai_tool 3/6] COPY ./bg_remove_ai .
+#121 CACHED
+
+#122 [bg_remove_ai_tool 4/6] COPY ./utils ./utils
+#122 CACHED
+
+#123 [contrast_tool 6/6] RUN pip install --no-cache-dir -r requirements.txt
+#123 CACHED
+
+#124 [resize_tool 3/6] COPY ./resize .
+#124 CACHED
+
+#125 [resize_tool 4/6] COPY ./utils ./utils
+#125 CACHED
+
+#126 [resize_tool 5/6] RUN pip install --no-cache-dir -r ./utils/requirements.txt
+#126 CACHED
+
+#127 [resize_tool 6/6] RUN pip install --no-cache-dir -r requirements.txt
+#127 CACHED
+
+#128 [bg_remove_ai_tool 6/6] RUN pip install --no-cache-dir -r requirements.txt
+#128 CACHED
+
+#129 [saturation_tool 4/6] COPY ./utils ./utils
+#129 CACHED
+
+#130 [saturation_tool 3/6] COPY ./saturation .
+#130 CACHED
+
+#131 [saturation_tool 5/6] RUN pip install --no-cache-dir -r ./utils/requirements.txt
+#131 CACHED
+
+#132 [border_tool 4/6] COPY ./utils ./utils
+#132 CACHED
+
+#133 [border_tool 3/6] COPY ./border .
+#133 CACHED
+
+#134 [border_tool 5/6] RUN pip install --no-cache-dir -r ./utils/requirements.txt
+#134 CACHED
+
+#135 [brightness_tool 4/6] COPY ./utils ./utils
+#135 CACHED
+
+#136 [brightness_tool 5/6] RUN pip install --no-cache-dir -r ./utils/requirements.txt
+#136 CACHED
+
+#137 [brightness_tool 3/6] COPY ./brightness .
+#137 CACHED
+
+#138 [expand_ai_tool 6/8] RUN pip install --no-cache-dir -r /app/requirements.txt
+#138 CACHED
+
+#139 [expand_ai_tool 4/8] COPY utils/requirements.txt /app/utils-requirements.txt
+#139 CACHED
+
+#140 [expand_ai_tool 3/8] COPY expand_ai/requirements.txt /app/requirements.txt
+#140 CACHED
+
+#141 [expand_ai_tool 7/8] COPY expand_ai/expand_ai.py /app/expand_ai.py
+#141 CACHED
+
+#142 [expand_ai_tool 2/8] WORKDIR /app
+#142 CACHED
+
+#143 [expand_ai_tool 5/8] RUN pip install --no-cache-dir -r /app/utils-requirements.txt
+#143 CACHED
+
+#144 [binarization_tool 4/6] COPY ./utils ./utils
+#144 CACHED
+
+#145 [binarization_tool 5/6] RUN pip install --no-cache-dir -r ./utils/requirements.txt
+#145 CACHED
+
+#146 [binarization_tool 3/6] COPY ./binarization .
+#146 CACHED
+
+#147 [cut_tool 5/6] RUN pip install --no-cache-dir -r ./utils/requirements.txt
+#147 CACHED
+
+#148 [cut_tool 3/6] COPY ./cut .
+#148 CACHED
+
+#149 [cut_tool 4/6] COPY ./utils ./utils
+#149 CACHED
+
+#150 [rotate_tool 3/6] COPY ./rotate .
+#150 CACHED
+
+#151 [rotate_tool 5/6] RUN pip install --no-cache-dir -r ./utils/requirements.txt
+#151 CACHED
+
+#112 [saturation_tool 2/6] WORKDIR /app
+#112 CACHED
+
+#152 [rotate_tool 4/6] COPY ./utils ./utils
+#152 CACHED
+
+#153 [cut_tool 6/6] RUN pip install --no-cache-dir -r requirements.txt
+#153 CACHED
+
+#154 [binarization_tool 6/6] RUN pip install --no-cache-dir -r requirements.txt
+#154 CACHED
+
+#155 [rotate_tool 6/6] RUN pip install --no-cache-dir -r requirements.txt
+#155 CACHED
+
+#156 [saturation_tool 6/6] RUN pip install --no-cache-dir -r requirements.txt
+#156 CACHED
+
+#157 [border_tool 6/6] RUN pip install --no-cache-dir -r requirements.txt
+#157 CACHED
+
+#158 [expand_ai_tool 8/8] COPY utils /app/utils
+#158 CACHED
+
+#159 [brightness_tool 6/6] RUN pip install --no-cache-dir -r requirements.txt
+#159 CACHED
+
+#160 [resize_tool] exporting to image
+#160 exporting layers done
+#160 exporting manifest sha256:97d35337515848f742be1a9ea0daa87191fb1766727f1c30a7fa3585f7939926 done
+#160 exporting config sha256:afcdce091001815d6737a543c5086e32806a20bf0f200aa0b9f2900b1bf91622
+#160 ...
+
+#161 [upgrade_ai_tool 6/8] RUN pip install --no-cache-dir -r ./utils/requirements.txt
+#161 CACHED
+
+#162 [upgrade_ai_tool 5/8] COPY ./utils/requirements.txt utils/requirements.txt
+#162 CACHED
+
+#163 [upgrade_ai_tool 3/8] COPY upgrade_ai/requirements.txt requirements.txt
+#163 CACHED
+
+#164 [upgrade_ai_tool 7/8] COPY ./upgrade_ai .
+#164 CACHED
+
+#165 [upgrade_ai_tool 4/8] RUN pip install --no-cache-dir -r requirements.txt
+#165 CACHED
+
+#166 [autoscaler] exporting to image
+#166 exporting layers done
+#166 exporting manifest sha256:2cf034a23ba082de830656155a204553b20aa838bed8011568dc94ca20e217ac done
+#166 exporting config sha256:6f179f82874090b4a49e6d55bacf001ff89b6a4cda0d668a9c95cd7510d5bc40 done
+#166 exporting attestation manifest sha256:9424e85091d205c29faa47d3197fbcaf9efb0d8829a0102cbe045d09db3ff4bd 0.0s done
+#166 exporting manifest list sha256:b548cef6f002132fab2468edec7bb94d898955e48cf0c1b36eb6b5ec24e434e3 0.0s done
+#166 naming to docker.io/library/picturas-autoscaler:latest done
+#166 unpacking to docker.io/library/picturas-autoscaler:latest done
+#166 DONE 0.1s
+
+#167 [upgrade_ai_tool 8/8] COPY ./utils ./utils
+#167 CACHED
+
+#168 [video_subtitles 8/9] COPY ./video_common ./video_common
+#168 CACHED
+
+#169 [video_subtitles 5/9] RUN pip install --no-cache-dir -r ./utils/requirements.txt
+#169 CACHED
+
+#170 [video_subtitles 2/9] RUN apt-get update     && apt-get install -y --no-install-recommends ffmpeg fonts-dejavu-core fonts-noto-core fonts-noto-cjk     && rm -rf /var/lib/apt/lists/*
+#170 CACHED
+
+#171 [video_subtitles 7/9] RUN pip install --no-cache-dir -r requirements.txt
+#171 CACHED
+
+#172 [video_subtitles 6/9] COPY ./video_subtitles/requirements.txt ./requirements.txt
+#172 CACHED
+
+#173 [video_subtitles 3/9] WORKDIR /app
+#173 CACHED
+
+#174 [video_subtitles 4/9] COPY ./utils ./utils
+#174 CACHED
+
+#175 [video_subtitles 9/9] COPY ./video_subtitles .
+#175 CACHED
+
+#176 [video_frames 5/9] RUN pip install --no-cache-dir -r ./utils/requirements.txt
+#176 CACHED
+
+#177 [video_frames 6/9] COPY ./video_frames/requirements.txt ./requirements.txt
+#177 CACHED
+
+#178 [video_frames 8/9] COPY ./video_common ./video_common
+#178 CACHED
+
+#179 [video_frames 4/9] COPY ./utils ./utils
+#179 CACHED
+
+#180 [video_frames 7/9] RUN pip install --no-cache-dir -r requirements.txt
+#180 CACHED
+
+#181 [video_effects 4/9] COPY ./utils ./utils
+#181 CACHED
+
+#182 [video_effects 5/9] RUN pip install --no-cache-dir -r ./utils/requirements.txt
+#182 CACHED
+
+#183 [video_effects 7/9] RUN pip install --no-cache-dir -r requirements.txt
+#183 CACHED
+
+#184 [video_effects 3/9] WORKDIR /app
+#184 CACHED
+
+#185 [video_effects 2/9] RUN apt-get update     && apt-get install -y --no-install-recommends ffmpeg     && rm -rf /var/lib/apt/lists/*
+#185 CACHED
+
+#186 [video_effects 6/9] COPY ./video_effects/requirements.txt ./requirements.txt
+#186 CACHED
+
+#187 [video_effects 8/9] COPY ./video_common ./video_common
+#187 CACHED
+
+#188 [video_effects 9/9] COPY ./video_effects .
+#188 CACHED
+
+#189 [generative-mock] exporting to image
+#189 exporting layers done
+#189 exporting manifest sha256:088390f96f19221418496eafef5457f3287447e6c8eed03b3f31e5376b841dab done
+#189 exporting config sha256:8255bd8051f811aae28c9bd5913f09e5c26e994e8756b3e1b11b98b6a5f330c9 done
+#189 exporting attestation manifest sha256:904f4f25a3334c1a4245220166bc7da94e3827bd8253cb2179b86faf55112412 0.0s done
+#189 exporting manifest list sha256:6ee904500b132bf48a7617ef93789e301c832f39a564132d98a6e4dab79f873f 0.0s done
+#189 naming to docker.io/library/picturas-generative-mock:latest done
+#189 unpacking to docker.io/library/picturas-generative-mock:latest 0.0s done
+#189 DONE 0.1s
+
+#190 [text_ai_tool 3/9] RUN apt-get update && apt-get install -y     tesseract-ocr     && rm -rf /var/lib/apt/lists/*
+#190 CACHED
+
+#191 [text_ai_tool 8/9] COPY ./text_ai .
+#191 CACHED
+
+#192 [text_ai_tool 5/9] RUN pip install --no-cache-dir -r requirements.txt
+#192 CACHED
+
+#193 [text_ai_tool 7/9] RUN pip install --no-cache-dir -r utils/requirements.txt
+#193 CACHED
+
+#194 [text_ai_tool 6/9] COPY ./utils/requirements.txt utils/requirements.txt
+#194 CACHED
+
+#195 [text_ai_tool 4/9] COPY text_ai/requirements.txt requirements.txt
+#195 CACHED
+
+#196 [text_ai_tool 9/9] COPY ./utils utils
+#196 CACHED
+
+#197 [cut_ai_tool 3/9] RUN apt-get update && apt-get install -y --no-install-recommends         libgl1         libglib2.0-0     && rm -rf /var/lib/apt/lists/*
+#197 CACHED
+
+#198 [cut_ai_tool 8/9] COPY ./cut_ai .
+#198 CACHED
+
+#199 [cut_ai_tool 5/9] RUN pip install --no-cache-dir -r requirements.txt
+#199 CACHED
+
+#200 [cut_ai_tool 4/9] COPY cut_ai/requirements.txt requirements.txt
+#200 CACHED
+
+#201 [cut_ai_tool 6/9] COPY ./utils/requirements.txt utils/requirements.txt
+#201 CACHED
+
+#202 [cut_ai_tool 7/9] RUN pip install --no-cache-dir -r utils/requirements.txt
+#202 CACHED
+
+#203 [rabbitmq] exporting to image
+#203 exporting layers done
+#203 exporting manifest sha256:2888da90aebf0f7447e6f8ff495eea4d51ae9c6d9728259e546747674fc529e2 done
+#203 exporting config sha256:3316e7dfb40f749e08a000a54ded3332dc321772513b617c6e848ba3866eb7b8 done
+#203 exporting attestation manifest sha256:7508e4ab81bf02a42212696805710185ce5a03876ca062016af5ab34a6bcf3f9 0.0s done
+#203 exporting manifest list sha256:e43465010407f51b8108c4ff1d71f03d6a39d7b03e14efa045872fde41540b62 0.0s done
+#203 naming to docker.io/library/picturas-rabbitmq:latest done
+#203 unpacking to docker.io/library/picturas-rabbitmq:latest 0.0s done
+#203 DONE 0.1s
+
+#204 [video_frames 9/9] COPY ./video_frames .
+#204 CACHED
+
+#205 [cut_ai_tool 9/9] COPY ./utils utils
+#205 CACHED
+
+#206 [obj_ai_tool  6/11] RUN pip install --no-cache-dir -r requirements.txt
+#206 CACHED
+
+#207 [obj_ai_tool  9/11] COPY ./obj_ai .
+#207 CACHED
+
+#208 [obj_ai_tool  8/11] RUN pip install --no-cache-dir -r utils/requirements.txt
+#208 CACHED
+
+#209 [obj_ai_tool  5/11] COPY obj_ai/requirements.txt requirements.txt
+#209 CACHED
+
+#210 [obj_ai_tool 10/11] COPY ./utils utils
+#210 CACHED
+
+#211 [obj_ai_tool  7/11] COPY ./utils/requirements.txt utils/requirements.txt
+#211 CACHED
+
+#212 [obj_ai_tool 11/11] COPY ./models ../models
+#212 CACHED
+
+#213 [people_ai_tool 10/11] COPY ./utils utils
+#213 CACHED
+
+#214 [people_ai_tool  7/11] COPY ./utils/requirements.txt utils/requirements.txt
+#214 CACHED
+
+#215 [people_ai_tool  5/11] COPY people_ai/requirements.txt requirements.txt
+#215 CACHED
+
+#216 [people_ai_tool  4/11] RUN apt-get update && apt-get install -y --no-install-recommends         libgl1         libglib2.0-0         libsm6         libxext6         libxrender1         libfontconfig1         libice6         libxcb1     && rm -rf /var/lib/apt/lists/*
+#216 CACHED
+
+#217 [people_ai_tool  3/11] RUN pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+#217 CACHED
+
+#218 [people_ai_tool  8/11] RUN pip install --no-cache-dir -r utils/requirements.txt
+#218 CACHED
+
+#219 [people_ai_tool  9/11] COPY ./people_ai .
+#219 CACHED
+
+#112 [people_ai_tool 2/6] WORKDIR /app
+#112 CACHED
+
+#220 [people_ai_tool  6/11] RUN pip install --no-cache-dir -r requirements.txt
+#220 CACHED
+
+#221 [people_ai_tool 11/11] COPY ./models ../models
+#221 CACHED
+
+#160 [resize_tool] exporting to image
+#160 exporting config sha256:afcdce091001815d6737a543c5086e32806a20bf0f200aa0b9f2900b1bf91622 done
+#160 exporting attestation manifest sha256:c0b0f1ab74bae1372c67093ce335de91d62a6e0973ba80753c62937ccb0162c8 0.1s done
+#160 exporting manifest list sha256:4e892a4aeb2d8723330f8694b819d50b2a0c10cc03676f91d68fd175ccb5bf72
+#160 exporting manifest list sha256:4e892a4aeb2d8723330f8694b819d50b2a0c10cc03676f91d68fd175ccb5bf72 0.1s done
+#160 naming to docker.io/library/picturas-resize_tool:latest
+#160 naming to docker.io/library/picturas-resize_tool:latest 0.0s done
+#160 unpacking to docker.io/library/picturas-resize_tool:latest 0.0s done
+#160 DONE 0.3s
+
+#222 [contrast_tool] exporting to image
+#222 exporting layers done
+#222 exporting manifest sha256:f11fbe752c5417a5725cbe97c0658d13d9e6f3fbd7cf9df292d37a317f7700ed done
+#222 exporting config sha256:059ee3204ad453118340aac07c1fcaf2847e498874eb8ea875d4e3ac87f1ef80 done
+#222 exporting attestation manifest sha256:4188b09fc4942ffb89dc5986b551509e98dbaea60ba2313a32766b965f634c9f 0.1s done
+#222 exporting manifest list sha256:25b90a2e89c3dd8ba602c9f5a5125efd0141d5e03973ed3eedf1e221afe2fbd7 0.1s done
+#222 naming to docker.io/library/picturas-contrast_tool:latest 0.0s done
+#222 unpacking to docker.io/library/picturas-contrast_tool:latest 0.0s done
+#222 DONE 0.3s
+
+#223 [cut_tool] exporting to image
+#223 exporting layers done
+#223 exporting manifest sha256:76b7bdd51dfe7ff124b8300af80dc9587996b47354357ad639cbd7d2aa9333e6 done
+#223 exporting config sha256:a325e7213f647bf50aa6a1a829390239fc52ff17a17ca72fbc7960ce23a8085b done
+#223 exporting attestation manifest sha256:105b2b41b8d3f07aec009bca37fe1ccdf19ad8a82119c7af803250519dd407c1 0.1s done
+#223 exporting manifest list sha256:7011b8373469093acee63376d0e225c0f9e576b63aafea1490fda8d59f975058 0.1s done
+#223 naming to docker.io/library/picturas-cut_tool:latest 0.0s done
+#223 unpacking to docker.io/library/picturas-cut_tool:latest 0.0s done
+#223 DONE 0.3s
+
+#224 [rotate_tool] exporting to image
+#224 exporting layers done
+#224 exporting manifest sha256:0579c7df518f042fcf5d8683b09ea42e62c0407a6ebbcf8e9f5ae82debb884c6 0.0s done
+#224 exporting config sha256:262f46fbc9144d0230135593da77f74c92531d952b7916040abe06e8ecc43141 0.0s done
+#224 exporting attestation manifest sha256:463daba8c42dd2eb43611d33407f34828381aea42d6f9b5ad673511c2da9657c 0.1s done
+#224 exporting manifest list sha256:2b7449244957c48e530e8f85497b9959f83a65f6c1c1d85ff6a7fd5420eb6828 0.1s done
+#224 naming to docker.io/library/picturas-rotate_tool:latest 0.0s done
+#224 unpacking to docker.io/library/picturas-rotate_tool:latest 0.0s done
+#224 DONE 0.4s
+
+#225 [bg_remove_ai_tool] exporting to image
+#225 exporting layers done
+#225 exporting manifest sha256:ff538be43696dbbe39f2e6b91f3049ec825c7e9ef99622db61a4d78edf43bd39 0.0s done
+#225 exporting config sha256:407de4a611d4f27dc473065b80e42421c4fe6916617dba10371a67d5a2a30347 0.0s done
+#225 exporting attestation manifest sha256:a59ccae8abe54e7e5e10a43c0f7fdd17538e19ee47b8d5725963a2ad2b634b9c 0.1s done
+#225 exporting manifest list sha256:f5ed880887aa6761a18c1e59e6f8f9456a34c53faefe4ad2e21e30ff63816470 0.1s done
+#225 naming to docker.io/library/picturas-bg_remove_ai_tool:latest 0.0s done
+#225 unpacking to docker.io/library/picturas-bg_remove_ai_tool:latest 0.0s done
+#225 DONE 0.4s
+
+#226 [binarization_tool] exporting to image
+#226 exporting layers done
+#226 exporting manifest sha256:29de354078c178abb7ef2176755e020bc9b10e0456f62f91071fb8d04071db70 0.0s done
+#226 exporting config sha256:eb1fc6b34f441cab5267d6366cc92e8753ac4c60ffdacb311d0c0cd72cf153b8 0.0s done
+#226 exporting attestation manifest sha256:c96935d3d66a2ab0cb086c09139037e8f9ededfaaef086106757394a98836b1f 0.1s done
+#226 exporting manifest list sha256:b7f7db04ae3f9db155497b40379ecc91c7f6077de7b8bb3a7c7ca53089f618e9 0.1s done
+#226 naming to docker.io/library/picturas-binarization_tool:latest 0.0s done
+#226 unpacking to docker.io/library/picturas-binarization_tool:latest 0.0s done
+#226 DONE 0.4s
+
+#227 [video_subtitles] exporting to image
+#227 exporting layers done
+#227 exporting manifest sha256:71a03c1572196c994cf3f5fd25d71c5fe480bb451f44cc8f59aaebcaf7dfd7f9 0.0s done
+#227 exporting config sha256:ceeebdad41bf2798d9c706649b88b5619e40aab79513285669be51dd95f43ea7 0.0s done
+#227 exporting attestation manifest sha256:b589233ac18a1d7e14dde42e85be510899428ca57ec843df615d65f8e5caa73e 0.1s done
+#227 exporting manifest list sha256:8d666ca0eb40814130f7d43730646b541eef8b92d5127a0979321632f7a8af21 0.0s done
+#227 naming to docker.io/library/picturas-video_subtitles:latest 0.0s done
+#227 unpacking to docker.io/library/picturas-video_subtitles:latest 0.1s done
+#227 DONE 0.4s
+
+#228 [expand_ai_tool] exporting to image
+#228 exporting layers done
+#228 exporting manifest sha256:ccb7c2ea30087d5a073dd866df21cd54e9206d3593d6619a13c2440f47b5db96 0.0s done
+#228 exporting config sha256:9b54e6a13d51058361e08fca0dbe8a04b8a37e3e37c2e3843b76baed329bbcee 0.0s done
+#228 exporting attestation manifest sha256:9cf37b7821f5817400d655d114e342d96706d5c2c90a6228c8a2f7e297070283 0.1s done
+#228 exporting manifest list sha256:73fd3f4f6da430e757c4d094b2163b14848a2aafdc89ba9c75c3f1de463967d9 0.0s done
+#228 naming to docker.io/library/picturas-expand_ai_tool:latest 0.0s done
+#228 unpacking to docker.io/library/picturas-expand_ai_tool:latest 0.0s done
+#228 DONE 0.4s
+
+#229 [border_tool] exporting to image
+#229 exporting layers done
+#229 exporting manifest sha256:a46c87fa2231b75c1cf7d113288f081d97e015b466d87ee2c426e1b5395f8da8 0.0s done
+#229 exporting config sha256:a324b9a5e40d1d1638650ea59ecc56984b0470995e46293b96ea838b9a2f6c97 0.0s done
+#229 exporting attestation manifest sha256:cb63e9818dd6f1f7a55d21632a2dea6147b260cedc12b759c9eda8309e5b6fdb 0.1s done
+#229 exporting manifest list sha256:615d961617ea08238702298623d30e1387dad429a4ab251876260bbc594a3e8c 0.0s done
+#229 naming to docker.io/library/picturas-border_tool:latest 0.0s done
+#229 unpacking to docker.io/library/picturas-border_tool:latest 0.0s done
+#229 DONE 0.4s
+
+#230 [brightness_tool] exporting to image
+#230 exporting layers done
+#230 exporting manifest sha256:0c093bcf17cbd522b013b3ff233d45b18d499456709d35be4447e4bdf1f10ce0 0.0s done
+#230 exporting config sha256:3d2cc8e9489e0a9e95d141ac7ea56130e7eb051359a28eeb19f0d8c27edb9f86 0.0s done
+#230 exporting attestation manifest sha256:32eb6853041b2700769d4b36320a4f36e1815ff7dea8cda1fb3760b374bdd42f 0.1s done
+#230 exporting manifest list sha256:1ea91068b3800b9c04fab1f325695f47083a47b37c5c49ecc1bce113366b2026 0.0s done
+#230 naming to docker.io/library/picturas-brightness_tool:latest 0.0s done
+#230 unpacking to docker.io/library/picturas-brightness_tool:latest 0.1s done
+#230 DONE 0.4s
+
+#231 [saturation_tool] exporting to image
+#231 exporting layers done
+#231 exporting manifest sha256:957f79caec3649276e0f8c12f9a477dfbad01b09dc4ab1b284d1b84f63a140d1 0.0s done
+#231 exporting config sha256:91fffc68a27b3acc775a0fafcdb1bab4213de4b29b8ecd2c128a2aff0b9e8283 0.0s done
+#231 exporting attestation manifest sha256:8719b7f22e1969ce1b01849bd1d924a90e034513e07acf739298a82c7ddd1542 0.1s done
+#231 exporting manifest list sha256:57e9411029a758e94b7336739749c072ff497e0fb0ab642e2091ba015ab2c7c7 0.0s done
+#231 naming to docker.io/library/picturas-saturation_tool:latest 0.0s done
+#231 unpacking to docker.io/library/picturas-saturation_tool:latest 0.1s done
+#231 DONE 0.4s
+
+#232 [upgrade_ai_tool] exporting to image
+#232 exporting layers done
+#232 exporting manifest sha256:dfe148f8fec6c359df3d6117abc8e6e1207ddb7b40bf91b534d8455ac3b05879 0.0s done
+#232 exporting config sha256:ccd1f0dcb1fceae18d0682dbabf3c94e699533975000e2e86f5199ac1427284b 0.0s done
+#232 exporting attestation manifest sha256:6cd4dbb62459ae89058047150b486c512d15b7331d8293db04a94ee9797788f7 0.1s done
+#232 exporting manifest list sha256:2b4bfa8512944b2f8a76704ad6118767fb1adca579068ff3602dd3fe56505092 0.0s done
+#232 naming to docker.io/library/picturas-upgrade_ai_tool:latest 0.0s done
+#232 unpacking to docker.io/library/picturas-upgrade_ai_tool:latest 0.1s done
+#232 DONE 0.4s
+
+#233 [text_ai_tool] exporting to image
+#233 exporting layers done
+#233 exporting manifest sha256:bc9423b3bd38066ee325e3ce67c072274a9b4b3fcfbb01763c519b9f610047c2 0.0s done
+#233 exporting config sha256:c0830013217adcb889769aa9f51e48b3f35bb43f407063febc5048032ccfb7be 0.0s done
+#233 exporting attestation manifest sha256:7a64126edebe4b4d615c5d68652c397435ed722ca4acaa878e49c978ac31e2f5 0.1s done
+#233 exporting manifest list sha256:85b7e63cd9bfdcefddd7718fc7382c0fd5df6c6932bfbce889b93b4f1b3a18ee 0.0s done
+#233 naming to docker.io/library/picturas-text_ai_tool:latest 0.0s done
+#233 unpacking to docker.io/library/picturas-text_ai_tool:latest 0.1s done
+#233 DONE 0.4s
+
+#234 [video_effects] exporting to image
+#234 exporting layers done
+#234 exporting manifest sha256:5b0faa911e22d8672241332f4dc9d0b3bef8943218db1a76bac9008888cc2188 0.0s done
+#234 exporting config sha256:25e306897015e9ea68c61f905e413f12cd91e7e32880147f72491a4fe828284f 0.0s done
+#234 exporting attestation manifest sha256:d2ef743ca3674d9fae48b784a9b764a6a094591ae34c3eb86c6ee4d2fe2b3d17 0.1s done
+#234 exporting manifest list sha256:843aeb5be86d61ba33c68aec1b7a632c83760185973baf1c5c0f2fc1ea7ca096 0.0s done
+#234 naming to docker.io/library/picturas-video_effects:latest 0.0s done
+#234 unpacking to docker.io/library/picturas-video_effects:latest 0.0s done
+#234 DONE 0.4s
+
+#235 [video_frames] exporting to image
+#235 exporting layers done
+#235 exporting manifest sha256:02a8fac4ab46628f77df25a632fc949a4284686d17bdc7d40ef6f977a7397492 0.0s done
+#235 exporting config sha256:cb2c8828b107d0d86de2e7e9721273128c6f3d226fa92fd42df1aa1202ac4da2 0.0s done
+#235 exporting attestation manifest sha256:86a14d19653eee8fd1a9dc4356e1797957e3ac79c97f4b18644bf06f0f1950ff 0.1s done
+#235 exporting manifest list sha256:60b0997b07a58d6b3f599e16aded9d693566111833baf2f6f5bbe6d35006a792 0.0s done
+#235 naming to docker.io/library/picturas-video_frames:latest 0.0s done
+#235 unpacking to docker.io/library/picturas-video_frames:latest 0.0s done
+#235 DONE 0.4s
+
+#236 [obj_ai_tool] exporting to image
+#236 exporting layers done
+#236 exporting manifest sha256:2e00c926b4955dd832e032e15f4e70a74c04a10f78148263f1ddecb94b8cfcdd 0.0s done
+#236 exporting config sha256:d5b5d22e4d6f4a151e326e9698a2fbd5cae1894d094a13efeb2d2b7744c966c6 0.0s done
+#236 exporting attestation manifest sha256:eb5e1492d64b3f55b2709cb038384b266d1e8420c8ca97437f55aed9b6ae8a9e 0.1s done
+#236 exporting manifest list sha256:55337ac17076569cd1210fae18e706bbb10f3e3f1cb41df5c7496d91d0d7ab71 0.0s done
+#236 naming to docker.io/library/picturas-obj_ai_tool:latest 0.0s done
+#236 unpacking to docker.io/library/picturas-obj_ai_tool:latest 0.0s done
+#236 DONE 0.4s
+
+#237 [people_ai_tool] exporting to image
+#237 exporting layers done
+#237 exporting manifest sha256:47e2a06798cab6828faf34fc92136dad725fe47071c8a930af067aacdb8d5687 0.0s done
+#237 exporting config sha256:14c7f16ef1d634dc2eddd39d485d4127abf2b347f4fab21e1a059bb892b00dae 0.0s done
+#237 exporting attestation manifest sha256:1dcf3474a5d89c383226c706e36f06188adf443660a9dfebaaa217dc5cd0f1ea 0.1s done
+#237 exporting manifest list sha256:ffaedfab84c30982a7576dbaff1c5c615e55e904a13d7da644b60d189015872e 0.0s done
+#237 naming to docker.io/library/picturas-people_ai_tool:latest 0.0s done
+#237 unpacking to docker.io/library/picturas-people_ai_tool:latest 0.0s done
+#237 DONE 0.4s
+
+#238 [cut_ai_tool] exporting to image
+#238 exporting layers done
+#238 exporting manifest sha256:6e31b06fc71dd5afa7c03998cf906d686a795540321a2f9fcf0d7a3df25b8238 0.0s done
+#238 exporting config sha256:fd4cde01cd1582d662333c1d6257362cf905758de397cca40f6fcc4f2422b67b 0.0s done
+#238 exporting attestation manifest sha256:e5e12e413cd4478b2bd2e48391ed6a3c4244a2c124de4a605ea4d26da7bb701a 0.1s done
+#238 exporting manifest list sha256:3ffa80efaec40aa53a74afbf55a500151c184fe6e2d72bc4f57361818ee04dc9 0.0s done
+#238 naming to docker.io/library/picturas-cut_ai_tool:latest 0.0s done
+#238 unpacking to docker.io/library/picturas-cut_ai_tool:latest 0.0s done
+#238 DONE 0.4s
+
+#239 [frontend] resolving provenance for metadata file
+#239 ...
+
+#240 [api_gateway] resolving provenance for metadata file
+#240 DONE 0.7s
+
+#241 [img_storage] resolving provenance for metadata file
+#241 DONE 0.7s
+
+#242 [subscriptions] resolving provenance for metadata file
+#242 DONE 0.1s
+
+#243 [obj_ai_tool] resolving provenance for metadata file
+#243 DONE 0.0s
+
+#239 [frontend] resolving provenance for metadata file
+#239 DONE 0.3s
+
+#244 [saturation_tool] resolving provenance for metadata file
+#244 DONE 0.1s
+
+#245 [brightness_tool] resolving provenance for metadata file
+#245 DONE 0.1s
+
+#246 [expand_ai_tool] resolving provenance for metadata file
+#246 DONE 0.1s
+
+#247 [generative-mock] resolving provenance for metadata file
+#247 DONE 0.2s
+
+#248 [ws_gateway] resolving provenance for metadata file
+#248 DONE 0.2s
+
+#249 [autoscaler] resolving provenance for metadata file
+#249 DONE 0.2s
+
+#250 [contrast_tool] resolving provenance for metadata file
+#250 DONE 0.2s
+
+#251 [bg_remove_ai_tool] resolving provenance for metadata file
+#251 DONE 0.0s
+
+#252 [cut_tool] resolving provenance for metadata file
+#252 DONE 0.2s
+
+#253 [video_effects] resolving provenance for metadata file
+#253 DONE 0.1s
+
+#254 [binarization_tool] resolving provenance for metadata file
+#254 DONE 0.0s
+
+#255 [resize_tool] resolving provenance for metadata file
+#255 DONE 0.2s
+
+#256 [video_frames] resolving provenance for metadata file
+#256 DONE 0.1s
+
+#257 [rabbitmq] resolving provenance for metadata file
+#257 DONE 0.2s
+
+#258 [rotate_tool] resolving provenance for metadata file
+#258 DONE 0.1s
+
+#259 [cut_ai_tool] resolving provenance for metadata file
+#259 DONE 0.1s
+
+#260 [users] resolving provenance for metadata file
+#260 DONE 0.5s
+
+#261 [upgrade_ai_tool] resolving provenance for metadata file
+#261 DONE 0.1s
+
+#262 [border_tool] resolving provenance for metadata file
+#262 DONE 0.0s
+
+#263 [video_subtitles] resolving provenance for metadata file
+#263 DONE 0.1s
+
+#264 [projects] resolving provenance for metadata file
+#264 DONE 0.3s
+
+#265 [text_ai_tool] resolving provenance for metadata file
+#265 DONE 0.1s
+
+#266 [people_ai_tool] resolving provenance for metadata file
+#266 DONE 0.1s
+ Image picturas-cut_ai_tool Built 
+ Image picturas-video_effects Built 
+ Image picturas-projects Built 
+ Image picturas-rotate_tool Built 
+ Image picturas-frontend Built 
+ Image picturas-video_frames Built 
+ Image picturas-video_subtitles Built 
+ Image picturas-cut_tool Built 
+ Image picturas-img_storage Built 
+ Image picturas-rabbitmq Built 
+ Image picturas-api_gateway Built 
+ Image picturas-binarization_tool Built 
+ Image picturas-people_ai_tool Built 
+ Image picturas-autoscaler Built 
+ Image picturas-contrast_tool Built 
+ Image picturas-brightness_tool Built 
+ Image picturas-text_ai_tool Built 
+ Image picturas-saturation_tool Built 
+ Image picturas-expand_ai_tool Built 
+ Image picturas-upgrade_ai_tool Built 
+ Image picturas-obj_ai_tool Built 
+ Image picturas-resize_tool Built 
+ Image picturas-users Built 
+ Image picturas-subscriptions Built 
+ Image picturas-bg_remove_ai_tool Built 
+ Image picturas-generative-mock Built 
+ Image picturas-border_tool Built 
+ Image picturas-ws_gateway Built 
+ Network picturas_elk Creating 
+ Volume picturas_rabbitmq_data Creating 
+ Volume picturas_project_data Creating 
+ Volume picturas_rabbitmq_data Creating 
+ Volume picturas_seaweedfs_data Creating 
+ Volume picturas_seaweedfs_data Creating 
+ Volume picturas_image_data Creating 
+ Volume picturas_image_data Creating 
+ Volume picturas_user_data Creating 
+ Volume picturas_user_data Creating 
+ Volume picturas_project_data Creating 
+ Volume picturas_subscription_data Creating 
+ Volume picturas_subscription_data Creating 
+ Network picturas_elk Creating 
+ Volume picturas_rabbitmq_data Created 
+ Volume picturas_rabbitmq_data Created 
+ Volume picturas_subscription_data Created 
+ Volume picturas_subscription_data Created 
+ Volume picturas_user_data Created 
+ Volume picturas_user_data Created 
+ Volume picturas_image_data Created 
+ Volume picturas_image_data Created 
+ Volume picturas_project_data Created 
+ Volume picturas_project_data Created 
+ Volume picturas_seaweedfs_data Created 
+ Volume picturas_seaweedfs_data Created 
+ Network picturas_elk Created 
+ Network picturas_elk Created 
+ Container picturas-projects_mongoDB-1 Creating 
+ Container picturas-users_mongoDB-1 Creating 
+ Container picturas-generative-mock-1 Creating 
+ Container picturas-rabbitmq-1 Creating 
+ Container picturas-frontend-1 Creating 
+ Container picturas-seaweedfs-1 Creating 
+ Container picturas-subscriptions_mongoDB-1 Creating 
+ Container picturas-generative-mock-1 Created 
+ Container picturas-seaweedfs-1 Created 
+ Container picturas-img_storage-1 Creating 
+ Container picturas-rabbitmq-1 Created 
+ Container picturas-video_frames-1 Creating 
+ Container picturas-brightness_tool-1 Creating 
+ Container picturas-saturation_tool-1 Creating 
+ Container picturas-border_tool-1 Creating 
+ Container picturas-obj_ai_tool-1 Creating 
+ Container picturas-expand_ai_tool-1 Creating 
+ Container picturas-cut_ai_tool-1 Creating 
+ Container picturas-binarization_tool-1 Creating 
+ Container picturas-contrast_tool-1 Creating 
+ Container picturas-bg_remove_ai_tool-1 Creating 
+ Container picturas-rotate_tool-1 Creating 
+ Container picturas-video_subtitles-1 Creating 
+ Container picturas-text_ai_tool-1 Creating 
+ Container picturas-people_ai_tool-1 Creating 
+ Container picturas-watermark_tool_ms-1 Creating 
+ Container picturas-upgrade_ai_tool-1 Creating 
+ Container picturas-ws_gateway-1 Creating 
+ Container picturas-cut_tool-1 Creating 
+ Container picturas-resize_tool-1 Creating 
+ Container picturas-video_effects-1 Creating 
+ Container picturas-users_mongoDB-1 Created 
+ Container picturas-users-1 Creating 
+ Container picturas-projects_mongoDB-1 Created 
+ Container picturas-projects-1 Creating 
+ Container picturas-subscriptions_mongoDB-1 Created 
+ Container picturas-mongo-backup-1 Creating 
+ Container picturas-frontend-1 Created 
+ Container picturas-img_storage-1 Created 
+ Container picturas-rotate_tool-1 Created 
+ Container picturas-bg_remove_ai_tool-1 Created 
+ Container picturas-cut_tool-1 Created 
+ Container picturas-brightness_tool-1 Created 
+ Container picturas-contrast_tool-1 Created 
+ Container picturas-people_ai_tool-1 Created 
+ Container picturas-resize_tool-1 Created 
+ Container picturas-border_tool-1 Created 
+ Container picturas-watermark_tool_ms-1 Created 
+ Container picturas-binarization_tool-1 Created 
+ Container picturas-saturation_tool-1 Created 
+ Container picturas-video_effects-1 Created 
+ Container picturas-text_ai_tool-1 Created 
+ Container picturas-upgrade_ai_tool-1 Created 
+ Container picturas-video_subtitles-1 Created 
+ Container picturas-cut_ai_tool-1 Created 
+ Container picturas-video_frames-1 Created 
+ Container picturas-autoscaler-1 Creating 
+ Container picturas-ws_gateway-1 Created 
+ Container picturas-projects-1 Created 
+ Container picturas-obj_ai_tool-1 Created 
+ Container picturas-expand_ai_tool-1 Created 
+ Container picturas-mongo-backup-1 Created 
+ Container picturas-autoscaler-1 Created 
+ Container picturas-users-1 Created 
+ Container picturas-subscriptions-1 Creating 
+ Container picturas-api_gateway-1 Creating 
+ Container picturas-api_gateway-1 Created 
+ Container picturas-nginx-1 Creating 
+ Container picturas-nginx-1 Created 
+ Container picturas-subscriptions-1 Created 
+ Container picturas-seaweedfs-1 Starting 
+ Container picturas-subscriptions_mongoDB-1 Starting 
+ Container picturas-rabbitmq-1 Starting 
+ Container picturas-generative-mock-1 Starting 
+ Container picturas-frontend-1 Starting 
+ Container picturas-users_mongoDB-1 Starting 
+ Container picturas-projects_mongoDB-1 Starting 
+ Container picturas-seaweedfs-1 Started 
+ Container picturas-img_storage-1 Starting 
+ Container picturas-subscriptions_mongoDB-1 Started 
+ Container picturas-rabbitmq-1 Started 
+ Container picturas-rabbitmq-1 Waiting 
+ Container picturas-rabbitmq-1 Waiting 
+ Container picturas-rabbitmq-1 Waiting 
+ Container picturas-rabbitmq-1 Waiting 
+ Container picturas-rabbitmq-1 Waiting 
+ Container picturas-rabbitmq-1 Waiting 
+ Container picturas-rabbitmq-1 Waiting 
+ Container picturas-rabbitmq-1 Waiting 
+ Container picturas-rabbitmq-1 Waiting 
+ Container picturas-rabbitmq-1 Waiting 
+ Container picturas-rabbitmq-1 Waiting 
+ Container picturas-rabbitmq-1 Waiting 
+ Container picturas-rabbitmq-1 Waiting 
+ Container picturas-rabbitmq-1 Waiting 
+ Container picturas-rabbitmq-1 Waiting 
+ Container picturas-rabbitmq-1 Waiting 
+ Container picturas-rabbitmq-1 Waiting 
+ Container picturas-rabbitmq-1 Waiting 
+ Container picturas-rabbitmq-1 Waiting 
+ Container picturas-generative-mock-1 Started 
+ Container picturas-generative-mock-1 Waiting 
+ Container picturas-rabbitmq-1 Waiting 
+ Container picturas-frontend-1 Started 
+ Container picturas-users_mongoDB-1 Started 
+ Container picturas-users-1 Starting 
+ Container picturas-projects_mongoDB-1 Started 
+ Container picturas-rabbitmq-1 Waiting 
+ Container picturas-mongo-backup-1 Starting 
+ Container picturas-img_storage-1 Started 
+ Container picturas-users-1 Started 
+ Container picturas-subscriptions-1 Starting 
+ Container picturas-mongo-backup-1 Started 
+ Container picturas-subscriptions-1 Started 
+ Container picturas-generative-mock-1 Healthy 
+ Container picturas-rabbitmq-1 Healthy 
+ Container picturas-projects-1 Starting 
+ Container picturas-projects-1 Started 
+ Container picturas-api_gateway-1 Starting 
+ Container picturas-rabbitmq-1 Healthy 
+ Container picturas-contrast_tool-1 Starting 
+ Container picturas-rabbitmq-1 Healthy 
+ Container picturas-cut_ai_tool-1 Starting 
+ Container picturas-rabbitmq-1 Healthy 
+ Container picturas-people_ai_tool-1 Starting 
+ Container picturas-rabbitmq-1 Healthy 
+ Container picturas-upgrade_ai_tool-1 Starting 
+ Container picturas-rabbitmq-1 Healthy 
+ Container picturas-obj_ai_tool-1 Starting 
+ Container picturas-rabbitmq-1 Healthy 
+ Container picturas-video_frames-1 Starting 
+ Container picturas-rabbitmq-1 Healthy 
+ Container picturas-border_tool-1 Starting 
+ Container picturas-rabbitmq-1 Healthy 
+ Container picturas-text_ai_tool-1 Starting 
+ Container picturas-rabbitmq-1 Healthy 
+ Container picturas-rabbitmq-1 Healthy 
+ Container picturas-bg_remove_ai_tool-1 Starting 
+ Container picturas-resize_tool-1 Starting 
+ Container picturas-rabbitmq-1 Healthy 
+ Container picturas-binarization_tool-1 Starting 
+ Container picturas-rabbitmq-1 Healthy 
+ Container picturas-video_effects-1 Starting 
+ Container picturas-rabbitmq-1 Healthy 
+ Container picturas-cut_tool-1 Starting 
+ Container picturas-rabbitmq-1 Healthy 
+ Container picturas-watermark_tool_ms-1 Starting 
+ Container picturas-rabbitmq-1 Healthy 
+ Container picturas-video_subtitles-1 Starting 
+ Container picturas-rabbitmq-1 Healthy 
+ Container picturas-brightness_tool-1 Starting 
+ Container picturas-rabbitmq-1 Healthy 
+ Container picturas-saturation_tool-1 Starting 
+ Container picturas-rabbitmq-1 Healthy 
+ Container picturas-ws_gateway-1 Starting 
+ Container picturas-rabbitmq-1 Healthy 
+ Container picturas-rotate_tool-1 Starting 
+ Container picturas-rabbitmq-1 Healthy 
+ Container picturas-expand_ai_tool-1 Starting 
+ Container picturas-api_gateway-1 Started 
+ Container picturas-contrast_tool-1 Started 
+ Container picturas-cut_ai_tool-1 Started 
+ Container picturas-people_ai_tool-1 Started 
+ Container picturas-upgrade_ai_tool-1 Started 
+ Container picturas-obj_ai_tool-1 Started 
+ Container picturas-video_frames-1 Started 
+ Container picturas-border_tool-1 Started 
+ Container picturas-text_ai_tool-1 Started 
+ Container picturas-bg_remove_ai_tool-1 Started 
+ Container picturas-resize_tool-1 Started 
+ Container picturas-binarization_tool-1 Started 
+ Container picturas-video_effects-1 Started 
+ Container picturas-cut_tool-1 Started 
+ Container picturas-watermark_tool_ms-1 Started 
+ Container picturas-video_subtitles-1 Started 
+ Container picturas-rabbitmq-1 Waiting 
+ Container picturas-rabbitmq-1 Healthy 
+ Container picturas-autoscaler-1 Starting 
+ Container picturas-brightness_tool-1 Started 
+ Container picturas-saturation_tool-1 Started 
+ Container picturas-ws_gateway-1 Started 
+ Container picturas-nginx-1 Starting 
+ Container picturas-rotate_tool-1 Started 
+ Container picturas-expand_ai_tool-1 Started 
+ Container picturas-autoscaler-1 Started 
+ Container picturas-nginx-1 Started 
+=== À espera que a API responda: Sáb 14 Nov 2026 16:09:42 WET ===
+API pronta (HTTP 401) após 10 s
+api_gateway	Up About a minute
+autoscaler	Up About a minute
+bg_remove_ai_tool	Up About a minute
+binarization_tool	Up About a minute
+border_tool	Up About a minute
+brightness_tool	Up About a minute
+contrast_tool	Up About a minute
+cut_ai_tool	Up About a minute
+cut_tool	Up About a minute
+expand_ai_tool	Up About a minute
+frontend	Up About a minute
+generative-mock	Up About a minute (healthy)
+img_storage	Up About a minute
+mongo-backup	Up About a minute
+nginx	Up About a minute
+obj_ai_tool	Up About a minute
+people_ai_tool	Up About a minute
+projects	Up About a minute
+projects_mongoDB	Up About a minute (healthy)
+rabbitmq	Up About a minute (healthy)
+resize_tool	Up About a minute
+rotate_tool	Up About a minute
+saturation_tool	Up About a minute
+seaweedfs	Up About a minute
+subscriptions	Up About a minute
+subscriptions_mongoDB	Up About a minute (healthy)
+text_ai_tool	Up About a minute
+upgrade_ai_tool	Up About a minute
+users	Up About a minute
+users_mongoDB	Up About a minute (healthy)
+video_effects	Up About a minute
+video_frames	Up About a minute
+video_subtitles	Up About a minute
+watermark_tool_ms	Up About a minute
+ws_gateway	Up About a minute
+=== Medição completa: Sáb 14 Nov 2026 16:10:50 WET ===
+Ambiente registado em /Users/chico/Desktop/PICTURAS_CODIGO/fase2/picturas-27/Documentacao/medicoes/final/ambiente.json
+[16:10:53] === aquecimento ===
+[16:10:53] Aquecimento: legendagem do vídeo de fala (descarrega o modelo Whisper) e um brilho no vídeo de 10 s
+[16:13:56]   aquec-legendas: total=177.18533301353455 erro=None
+[16:14:01]   aquec-brilho: total=3.893016815185547 erro=None
+[16:14:01]   logs de video_effects, video_subtitles, video_frames, projects guardados em aquecimento/logs_aquecimento.txt
+[16:14:01] === aquecimento concluído em 3.1 min ===
+[16:14:01] === s4 ===
+[16:14:01] S4 rep 1/5: sample_10s_720p.mp4
+[16:14:18] S4 rep 1/5: 02_curto_720p_30s.mp4
+[16:14:43] S4 rep 1/5: 01_demo_1080p_150s.mp4
+[16:17:44] S4 rep 2/5: sample_10s_720p.mp4
+[16:17:59] S4 rep 2/5: 02_curto_720p_30s.mp4
+[16:18:21] S4 rep 2/5: 01_demo_1080p_150s.mp4
+[16:20:52] S4 rep 3/5: sample_10s_720p.mp4
+[16:21:07] S4 rep 3/5: 02_curto_720p_30s.mp4
+[16:21:28] S4 rep 3/5: 01_demo_1080p_150s.mp4
+[16:23:59] S4 rep 4/5: sample_10s_720p.mp4
+[16:24:13] S4 rep 4/5: 02_curto_720p_30s.mp4
+[16:24:34] S4 rep 4/5: 01_demo_1080p_150s.mp4
+[16:26:54] S4 rep 5/5: sample_10s_720p.mp4
+[16:27:09] S4 rep 5/5: 02_curto_720p_30s.mp4
+[16:27:30] S4 rep 5/5: 01_demo_1080p_150s.mp4
+[16:29:38]   logs de video_effects, video_subtitles, video_frames, projects guardados em s4/logs_s4.txt
+[16:29:38] === s4 concluído em 15.6 min ===
+[16:29:38] === s1 ===
+[16:29:38] S1 rep 1/5: controlo (vídeo curto sozinho)
+[16:29:53] S1 rep 1/5: legendagem + vídeo curto
+[16:32:08]   curto: sozinho=3.5s com legendagem=16.0s (espera 6.5s)
+[16:32:18] S1 rep 2/5: controlo (vídeo curto sozinho)
+[16:32:33] S1 rep 2/5: legendagem + vídeo curto
+[16:34:58]   curto: sozinho=3.6s com legendagem=17.4s (espera 6.3s)
+[16:35:08] S1 rep 3/5: controlo (vídeo curto sozinho)
+[16:35:23] S1 rep 3/5: legendagem + vídeo curto
+[16:37:41]   curto: sozinho=3.9s com legendagem=12.3s (espera 4.5s)
+[16:37:51] S1 rep 4/5: controlo (vídeo curto sozinho)
+[16:38:07] S1 rep 4/5: legendagem + vídeo curto
+[16:40:36]   curto: sozinho=3.9s com legendagem=18.8s (espera 6.9s)
+[16:40:46] S1 rep 5/5: controlo (vídeo curto sozinho)
+[16:41:01] S1 rep 5/5: legendagem + vídeo curto
+Exception in thread Thread-1841 (_loop):
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/threading.py", line 1043, in _bootstrap_inner
+    self.run()
+    ~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/threading.py", line 994, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chico/Desktop/PICTURAS_CODIGO/fase2/picturas-27/Documentacao/medicoes/scripts/monitor.py", line 136, in _loop
+    for row in docker_stats():
+               ~~~~~~~~~~~~^^
+  File "/Users/chico/Desktop/PICTURAS_CODIGO/fase2/picturas-27/Documentacao/medicoes/scripts/monitor.py", line 73, in docker_stats
+    "cpu_pct": float(d.get("CPUPerc", "0%").rstrip("%") or 0),
+               ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '--'
+[16:43:03]   curto: sozinho=3.5s com legendagem=17.1s (espera 9.6s)
+[16:43:13]   logs de video_effects, video_subtitles, video_frames, projects guardados em s1/logs_s1.txt
+[16:43:13] === s1 concluído em 13.6 min ===
+[16:43:13] === s2 ===
+[16:43:13] S2 N=1 rep 1/5
+[16:43:18]   makespan=4.0s débito=15.02 vídeos/min
+[16:43:28] S2 N=1 rep 2/5
+[16:43:33]   makespan=3.8s débito=15.99 vídeos/min
+[16:43:44] S2 N=1 rep 3/5
+[16:43:48]   makespan=3.8s débito=15.63 vídeos/min
+[16:43:58] S2 N=1 rep 4/5
+[16:44:03]   makespan=3.8s débito=15.93 vídeos/min
+[16:44:13] S2 N=1 rep 5/5
+[16:44:18]   makespan=4.1s débito=14.60 vídeos/min
+[16:44:28] S2 N=2 rep 1/5
+[16:44:39]   makespan=7.9s débito=15.24 vídeos/min
+[16:44:49] S2 N=2 rep 2/5
+[16:44:59]   makespan=8.3s débito=14.39 vídeos/min
+[16:45:09] S2 N=2 rep 3/5
+[16:45:17]   makespan=6.0s débito=20.16 vídeos/min
+[16:45:27] S2 N=2 rep 4/5
+[16:45:36]   makespan=6.0s débito=19.89 vídeos/min
+[16:45:46] S2 N=2 rep 5/5
+[16:45:54]   makespan=5.6s débito=21.42 vídeos/min
+[16:46:04] S2 N=4 rep 1/5
+[16:46:18]   makespan=11.8s débito=20.28 vídeos/min
+[16:46:28] S2 N=4 rep 2/5
+[16:46:45]   makespan=14.1s débito=17.04 vídeos/min
+[16:46:55] S2 N=4 rep 3/5
+[16:47:12]   makespan=14.7s débito=16.37 vídeos/min
+[16:47:23] S2 N=4 rep 4/5
+[16:47:42]   makespan=15.3s débito=15.73 vídeos/min
+[16:47:52] S2 N=4 rep 5/5
+[16:48:08]   makespan=13.1s débito=18.30 vídeos/min
+[16:48:18] S2 N=8 rep 1/5
+[16:48:47]   makespan=25.1s débito=19.14 vídeos/min
+[16:48:57] S2 N=8 rep 2/5
+[16:49:31]   makespan=28.6s débito=16.81 vídeos/min
+[16:49:41] S2 N=8 rep 3/5
+[16:50:09]   makespan=22.3s débito=21.51 vídeos/min
+[16:50:19] S2 N=8 rep 4/5
+[16:50:50]   makespan=25.5s débito=18.80 vídeos/min
+[16:51:00] S2 N=8 rep 5/5
+[16:51:36]   makespan=30.2s débito=15.88 vídeos/min
+[16:51:46]   logs de video_effects, video_subtitles, video_frames, projects guardados em s2/logs_s2.txt
+[16:51:46] === s2 concluído em 8.6 min ===
+[16:51:46] === s3 ===
+[16:51:46] S3 rep 1/5
+[16:57:23] S3 rep 2/5
+[17:03:00] S3 rep 3/5
+[17:09:01] S3 rep 4/5
+[17:14:40] S3 rep 5/5
+[17:20:11]   logs de video_effects, video_subtitles, video_frames, projects guardados em s3/logs_s3.txt
+[17:20:11] === s3 concluído em 28.4 min ===
+[17:20:11] === m3 ===
+[17:20:11] M3 rep 1/5 (serviço terminado: video_subtitles, a 55 %)
+[17:23:03] M3 rep 2/5 (serviço terminado: video_subtitles, a 55 %)
+[17:26:03] M3 rep 3/5 (serviço terminado: video_subtitles, a 55 %)
+[17:29:03] M3 rep 4/5 (serviço terminado: video_subtitles, a 55 %)
+[17:32:28] M3 rep 5/5 (serviço terminado: video_subtitles, a 55 %)
+[17:36:02]   logs de video_effects, video_subtitles, video_frames, projects guardados em m3/logs_m3.txt
+[17:36:02] === m3 concluído em 15.9 min ===
+# Resumo das medições — final
+
+### S1 — Bloqueio pela legendagem
+
+| Métrica | n | Mediana | Mín. | Máx. | IQR |
+|---|---|---|---|---|---|
+| curto_sozinho_total_s | 5 | 3.63 | 3.53 | 3.9 | 0.34 |
+| curto_com_legendagem_espera_s | 5 | 6.51 | 4.46 | 9.57 | 2.86 |
+| curto_com_legendagem_total_s | 5 | 17.06 | 12.32 | 18.82 | 3.92 |
+| atraso_causado_pela_legendagem_s | 5 | 13.53 | 8.47 | 14.91 | 3.85 |
+| legendagem_total_s | 5 | 135.63 | 120.21 | 146.44 | 17.71 |
+
+### S2 — Carga concorrente
+
+| Métrica | n | Mediana | Mín. | Máx. | IQR |
+|---|---|---|---|---|---|
+| N=1 · makespan_s | 5 | 3.84 | 3.75 | 4.11 | 0.29 |
+| N=1 · debito_videos_min | 5 | 15.63 | 14.6 | 15.99 | 1.15 |
+| N=1 · max_videos_em_processamento_simultaneo | 5 | 1 | 1 | 1 | 0.0 |
+| N=1 · tempo_medio_conclusao_s | 5 | 3.84 | 3.75 | 4.11 | 0.29 |
+| N=1 · tempo_max_conclusao_s | 5 | 3.84 | 3.75 | 4.11 | 0.29 |
+| N=1 · espera_media_s | 5 | 0.38 | 0.36 | 0.45 | 0.06 |
+| N=1 · trabalhos_com_erro | | 0 | | | |
+| N=2 · makespan_s | 5 | 6.03 | 5.6 | 8.34 | 2.33 |
+| N=2 · debito_videos_min | 5 | 19.89 | 14.39 | 21.41 | 5.97 |
+| N=2 · max_videos_em_processamento_simultaneo | 5 | 2 | 1 | 2 | 1.0 |
+| N=2 · tempo_medio_conclusao_s | 5 | 5.87 | 5.45 | 6.07 | 0.38 |
+| N=2 · tempo_max_conclusao_s | 5 | 6.03 | 5.6 | 8.34 | 2.32 |
+| N=2 · espera_media_s | 5 | 0.53 | 0.48 | 2.28 | 1.73 |
+| N=2 · trabalhos_com_erro | | 0 | | | |
+| N=4 · makespan_s | 5 | 14.09 | 11.84 | 15.25 | 2.48 |
+| N=4 · debito_videos_min | 5 | 17.04 | 15.73 | 20.28 | 3.24 |
+| N=4 · max_videos_em_processamento_simultaneo | 5 | 3 | 2 | 3 | 0.5 |
+| N=4 · tempo_medio_conclusao_s | 5 | 10.97 | 8.86 | 12.05 | 2.37 |
+| N=4 · tempo_max_conclusao_s | 5 | 14.08 | 11.77 | 15.21 | 2.48 |
+| N=4 · espera_media_s | 5 | 3.17 | 2.79 | 3.33 | 0.48 |
+| N=4 · trabalhos_com_erro | | 0 | | | |
+| N=8 · makespan_s | 5 | 25.53 | 22.32 | 30.23 | 5.69 |
+| N=8 · debito_videos_min | 5 | 18.8 | 15.88 | 21.51 | 3.98 |
+| N=8 · max_videos_em_processamento_simultaneo | 5 | 3 | 3 | 3 | 0.0 |
+| N=8 · tempo_medio_conclusao_s | 5 | 16.96 | 14.5 | 19.89 | 4.06 |
+| N=8 · tempo_max_conclusao_s | 5 | 25.45 | 22.03 | 30.11 | 5.8 |
+| N=8 · espera_media_s | 5 | 8.86 | 7.51 | 10.67 | 2.22 |
+| N=8 · trabalhos_com_erro | | 0 | | | |
+
+### S3 — Adaptação à carga
+
+| Métrica | n | Mediana | Mín. | Máx. | IQR |
+|---|---|---|---|---|---|
+| replicas_video_max | 5 | 5 | 5 | 5 | 0.0 |
+| variacao_replicas_video | 5 | 2 | 2 | 2 | 0.0 |
+| max_videos_a_espera | 5 | 9 | 9 | 9 | 0.0 |
+| max_videos_em_processamento_simultaneo | 5 | 3 | 3 | 3 | 0.0 |
+| cpu_video_medio_na_rajada_pct | 5 | 356.44 | 348.87 | 365.57 | 9.33 |
+| duracao_rajada_s | 5 | 172.05 | 163.67 | 194.35 | 16.59 |
+
+### S4 — Tempo de edição / duração
+
+| Métrica | n | Mediana | Mín. | Máx. | IQR |
+|---|---|---|---|---|---|
+| sample_10s_720p.mp4 · total_s | 5 | 3.91 | 3.7 | 4.79 | 0.67 |
+| sample_10s_720p.mp4 · razao_tempo_duracao | 5 | 0.39 | 0.37 | 0.48 | 0.07 |
+| 02_curto_720p_30s.mp4 · total_s | 5 | 10.54 | 10.21 | 13.53 | 1.84 |
+| 02_curto_720p_30s.mp4 · razao_tempo_duracao | 5 | 0.35 | 0.34 | 0.45 | 0.06 |
+| 01_demo_1080p_150s.mp4 · total_s | 5 | 137.93 | 116.19 | 167.44 | 31.54 |
+| 01_demo_1080p_150s.mp4 · razao_tempo_duracao | 5 | 0.92 | 0.77 | 1.12 | 0.21 |
+
+### M3 — Isolamento de falhas
+
+| Métrica | n | Mediana | Mín. | Máx. | IQR |
+|---|---|---|---|---|---|
+| referencia_s2_n4_tempo_max_s | | 14.08 | | | |
+| curtos_afetados_pct | 5 | 0.0 | 0.0 | 75.0 | 75.0 |
+| curtos_falhados_por_rep | 5 | 0 | 0 | 0 | 0.0 |
+| curtos_total_s | 20 | 18.81 | 6.36 | 29.07 | 18.13 |
+| legendagens_concluidas | | 5/5 | | | |
+
+### M1 — Impacto de uma mudança
+
+| Mudança | Ficheiros | Componentes | Unidades a reconstruir | Unidades a reiniciar | Funcionalidades de vídeo interrompidas | (responsabilidades técnicas) |
+|---|---|---|---|---|---|---|
+| C1 | 1 | docker-compose.yaml | — | video_subtitles | 1 (legendagem) | 3 |
+| C2 | 1 | Tools/video_subtitles | video_subtitles | video_subtitles | 1 (legendagem) | 3 |
+| C3 | 6 | Tools/video_effects, frontend, projects | frontend, projects, video_effects | frontend, projects, video_effects | 1 (edicao) | 4 |
+
+### M2 — Acoplamento estático
+
+- Unidades implantáveis com responsabilidades de vídeo: 3
+- Máximo de funcionalidades de vídeo numa unidade (edição, legendagem, extração): 1 — {'video_effects': ['edicao'], 'video_subtitles': ['legendagem'], 'video_frames': ['extracao_fotogramas']}
+- Máximo de responsabilidades técnicas numa unidade (detalhe): 4
+- Python de vídeo: 778 SLOC, CC média 3.1, CC máx. 20, funções com CC > 10: 4
+- Efeitos duplicados entre imagem e vídeo: 8
+
+=== Fim: Sáb 14 Nov 2026 17:36:03 WET · código de saída 0 ===
+CONCLUÍDO
