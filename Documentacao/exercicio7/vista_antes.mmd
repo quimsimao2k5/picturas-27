@@ -1,0 +1,36 @@
+%%{init: {"flowchart": {"defaultRenderer": "elk", "curve": "linear"}, "themeVariables": {"fontSize": "15px"}}}%%
+flowchart LR
+  user["Browser"] --> entry["nginx +<br/>API Gateway"]
+  entry -- "Apply" --> projects["projects (orquestrador)<br/>1 mensagem por vídeo,<br/>com o pipeline completo"]
+  subgraph rmq["RabbitMQ · exchange «picturas»"]
+    direction TB
+    vq[["video_queue"]]
+    pq[["project_queue"]]
+    wq[["ws_queue"]]
+  end
+  subgraph svc["Processamento de vídeo"]
+    direction TB
+    vt["video_tool · 1 contentor, sem réplicas<br/>efeitos + legendagem (Whisper) + extração<br/>prefetch = 1 · ack no fim"]
+  end
+  projects == "pipeline" ==> vq
+  vq ==> vt
+  vt == "resultado e progresso" ==> pq
+  vt ==> wq
+  pq -- "resposta" --> projects
+  wq --> ws["WS Gateway"]
+  ws -- "progresso" --> user2["Browser"]
+  projects ~~~ vq
+  rmq ~~~ svc
+  vol[/"volume image_data"/]
+  projects -.- vol
+  vt -.- vol
+  classDef video fill:#FDE7D3,stroke:#C2410C,stroke-width:2px,color:#111
+  classDef base fill:#F4F5F7,stroke:#9AA0A6,color:#111
+  classDef queue fill:#FFFFFF,stroke:#B45309,color:#111
+  classDef volc fill:#EEF2FF,stroke:#4F46E5,color:#111
+  class vt,vq video
+  class pq,wq queue
+  class user,user2,entry,projects,ws base
+  class vol volc
+  style rmq fill:#FFFBEB,stroke:#B45309
+  style svc fill:#FFFFFF,stroke:#C2410C,stroke-dasharray:4

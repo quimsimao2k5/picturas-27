@@ -225,6 +225,8 @@ O vídeo herda a entrada única, a autenticação, o desacoplamento por filas du
 | EV-32 | Medição (final) | `Documentacao/medicoes/final/` (14/11/2026, commit `67d222c`, mesma máquina e método) | Depois de ALT-1 + ALT-2: S1 — espera do vídeo de 10 s durante uma legendagem 6,5 s (base 141,0 s); S2 — até 3 vídeos em simultâneo, débito com N = 8 de 18,8 vídeos/min (base 16,8); S3 — `video_effects` sobe de 1 para 3 réplicas em 6–11 s e volta a 1, rajada em 172,1 s (base 158,8 s); S4 — tempo por vídeo igual à base (pior caso +2,4 %); 0 erros em todos os cenários |
 | EV-33 | Medição (final) | `final/m3/` | Com o `video_subtitles` terminado aos 55 %: 0 % dos vídeos curtos afetados (mediana; 3 repetições com 0 %, 2 com 75 %, por atraso no arranque de réplicas e disputa de CPU, sem erros); 5/5 legendagens concluídas |
 | EV-34 | Medição (final) | `final/m1/`, `final/m2/` | M2: 1 funcionalidade de vídeo por serviço (`video_effects`, `video_subtitles`, `video_frames`); M1: C1 e C2 só reiniciam o `video_subtitles` e interrompem 1 funcionalidade; C3 continua a tocar 6 ficheiros em 3 componentes, mas interrompe só a edição |
+| EV-35 | Configuração (final) | `docker-compose.yaml:346` (commit `67d222c`) | O serviço `autoscaler` monta `/var/run/docker.sock` para criar e remover réplicas: tem controlo sobre o Docker do anfitrião (efeito colateral de ALT-2 na segurança) |
+| EV-36 | Medição (final) | Primeira medição final, 14/11/2026, commit `aee398d` (registo em `CONTEXTO_E_DECISOES_FASE2.md`, secção 4C; decisão D35) | Com 1 GB de memória por réplica do `video_effects`, os vídeos 1080p falharam ("Broken pipe": o `ffmpeg` foi terminado ao passar o limite) e a normalização demorou 528 s em vez de ≈ 2 min; com 3 GB, 0 erros (EV-32) |
 
 | **ID** | **Hipótese** | **Como confirmar ou refutar** | **Estado** |
 |--------|--------------|-------------------------------|------------|
@@ -320,6 +322,6 @@ O **padrão global** (microsserviços com API Gateway e filas no RabbitMQ) conti
 
 | **Ferramenta** | **Tarefas apoiadas** | **Validação pela equipa** |
 |----------------|----------------------|---------------------------|
-| Agente de IA (Claude, na aplicação Claude, com acesso ao repositório e ao computador de medição) | Leitura do código e da configuração, recolha das evidências com ficheiro e linha, proposta do texto das secções 0–3, diagramas (Mermaid), *scripts* e execução das medições inicial e final | As decisões (padrões, alternativas, escolha de ALT-1 + ALT-2) foram tomadas pela equipa a partir de opções apresentadas pelo agente; as evidências são verificáveis no commit `0523102` e nas medições (`Documentacao/medicoes/`); o texto é revisto pela equipa antes de entrar no relatório |
+| Agente de IA (Claude) | Leitura do código e da configuração, recolha das evidências com ficheiro e linha, proposta do texto das secções 0–3, diagramas (Mermaid), *scripts* e execução das medições inicial e final | As decisões (padrões, alternativas, escolha de ALT-1 + ALT-2) foram tomadas pela equipa a partir de opções apresentadas pelo agente; as evidências são verificáveis no commit `0523102` e nas medições (`Documentacao/medicoes/`); o texto é revisto pela equipa antes de entrar no relatório |
 
 As decisões tomadas e as alternativas consideradas estão registadas em `Documentacao/CONTEXTO_E_DECISOES_FASE2.md`.

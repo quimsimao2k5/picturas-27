@@ -1,0 +1,45 @@
+%%{init: {"flowchart": {"defaultRenderer": "elk", "curve": "linear"}, "themeVariables": {"fontSize": "15px"}}}%%
+flowchart LR
+  user["Browser"] --> entry["nginx +<br/>API Gateway"]
+  entry -- "Apply" --> projects["projects (orquestrador)<br/>«tática: TAT-07»<br/>divide o pipeline em etapas<br/>e envia a seguinte<br/>quando a anterior responde"]
+  subgraph rmq["RabbitMQ · exchange «picturas»"]
+    direction TB
+    eq[["video_effects_queue<br/>«tática: TAT-02»"]]
+    sq[["video_subtitles_queue<br/>«tática: TAT-02»"]]
+    fq[["video_frames_queue<br/>«tática: TAT-02»"]]
+    pq[["project_queue"]]
+    wq[["ws_queue"]]
+  end
+  subgraph svc["Processamento de vídeo · «tática: TAT-06» · código comum em video_common «tática: TAT-08»"]
+    direction TB
+    ve["video_effects × 1–3<br/>efeitos de fotograma, trim, speed"]
+    vs["video_subtitles × 1–2<br/>reconhecimento de fala e legendas"]
+    vf["video_frames × 1–2<br/>extração de fotogramas"]
+  end
+  projects == "uma etapa de cada vez" ==> eq
+  projects ==> sq
+  projects ==> fq
+  eq ==> ve
+  sq ==> vs
+  fq ==> vf
+  svc == "resposta da etapa e progresso" ==> pq
+  svc ==> wq
+  pq -- "resposta" --> projects
+  wq --> ws["WS Gateway"]
+  ws -- "progresso" --> user2["Browser"]
+  auto["autoscaler «tática: TAT-01»<br/>a cada 2 s, 1 réplica por mensagem;<br/>desce após 30 s"]
+  rmq -. "tamanho das filas<br/>(API de gestão)" .-> auto
+  auto -. "cria / remove réplicas<br/>(docker.sock)" .-> svc
+  vol[/"volume image_data<br/>(+ ficheiros intermédios)"/]
+  projects -.- vol
+  svc -.- vol
+  classDef novo fill:#E3F4E8,stroke:#2E7D32,stroke-width:2px,color:#111
+  classDef base fill:#F4F5F7,stroke:#9AA0A6,color:#111
+  classDef queue fill:#FFFFFF,stroke:#B45309,color:#111
+  classDef volc fill:#EEF2FF,stroke:#4F46E5,color:#111
+  class ve,vs,vf,eq,sq,fq,auto,projects novo
+  class pq,wq queue
+  class user,user2,entry,ws base
+  class vol volc
+  style rmq fill:#FFFBEB,stroke:#B45309
+  style svc fill:#FFFFFF,stroke:#2E7D32,stroke-dasharray:4
